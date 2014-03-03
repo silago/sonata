@@ -1,0 +1,113 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/catalog/listItems.php?lang={$curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к управлению товарами </a></td>
+    <td><div align="right"><a href="/admin/cfg/catalog/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+
+<form action="addItemGo.php?lang={$curLang}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("formSubmit");'>
+  <table border="0" cellpadding="4" cellspacing="0" width="100%" class="inputTable">
+	<tr>
+		<th align="center" colspan="2"><strong>Добавить товар</strong></th>
+	</tr>
+	
+	<tr>
+		<td align="center" colspan="2"><strong><font color="red">{$error}</font></strong></td>
+	</tr>
+	
+	<tr>
+		<td align="right" width="50%"><strong>Группа товара:</strong></td>
+		<td>{$selectOwnerId}</td>
+	</tr>
+	
+	<tr>
+		<td align="right" width="30%"><strong>Название товара:</strong></td>
+		<td><input type="text" name="name" value="{$name}" maxlength="255" style="width: 99%;" /></td>
+	</tr>
+	
+	<tr>
+		<td align="right" width="30%"><strong>uri:</strong></td>
+		<td><input type="text" name="uri" value="{$uri}" maxlength="255" style="width: 99%;" /></td>
+	</tr>
+	
+	<tr>
+		<td align="right" width="30%">Артикул товара:</td>
+		<td><input type="text" name="article" value="{$article}" maxlength="255" style="width: 99%;" /></td>
+	</tr>
+	
+	<tr>
+      <td align="right">Цена:</td>
+      <td><input name="price" type="text" style="width: 99%;" value="{$price}" maxlength="255" /></td>
+    </tr>	
+	
+	<tr>
+      <td align="right">Старая цена:</td>
+      <td><input name="price_old" type="text" style="width: 99%;" value="{$price_old}" maxlength="255" /></td>
+    </tr>
+	
+	<tr>
+      <td align="right">Новинка:</td>
+      <td><input name="new" type="checkbox" value="1" /></td>
+    </tr>
+	
+	<tr>
+      <td align="right">Хит продаж:</td>
+      <td><input name="hit" type="checkbox" value="1" /></td>
+    </tr>
+	
+    <tr>
+		<td align="right" width="30%" rowspan="2">Фото товара: </td>
+		<td><input type="file" name="mainphoto" id="item_main_photo"/></td>
+	</tr>
+	
+	<tr class="item_main_photo_upl">		
+		<td id="item_main_photo_upl">
+		{if !empty($uploaded_photos)}
+			{foreach from=$uploaded_photos item=item key=key}
+				<input type="text" id="main_photo" value="{$item}" name="main_photo_upl[{$key}]">
+			{/foreach}
+		{/if}		
+		</td>
+	</tr>
+    {$imageForm1}	    
+    <tr>
+      <th colspan="2" align="center"><strong>Описание</strong> </th>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">{$fckFullTextForm}</td>
+    </tr>
+    
+	{$imageForm2}
+
+    <tr>
+		<td align="right" width="30%" rowspan="2">Дополнительные фотографии товара: </td>
+		<td><input type="file" name="item_add_photo" id="item_add_photo"/></td>
+	</tr>
+	
+	<tr class="item_add_photo_upl">		
+		<td id="item_add_photo_upl">
+		{if !empty($add_photos)}
+			{foreach from=$add_photos key=k item=v}				 				
+				<img src="/userfiles/catalog/items/add/{$v.filename}" />
+			{/foreach}
+		{/if}		
+		</td>
+	</tr>
+    <tr>
+      <td align="right">Заголовок страницы при просмотре товара:</td>
+      <td><input name="title" type="text" style="width: 99%;" value="{$title}" maxlength="255" /></td>
+    </tr>	
+	<tr>
+      <td align="right">Краткое описание (META) :</td>
+      <td><input name="md" type="text" style="width: 99%;" value="{$md}" maxlength="255" /></td>
+    </tr>
+    <tr>
+      <td align="right">Ключевые слова (META) :</td>
+      <td><input name="mk" type="text" style="width: 99%;" value="{$mk}" maxlength="255" /></td>
+    </tr>    
+    <tr>
+      <td colspan="2" align="center"><input type="submit" value="  СОХРАНИТЬ  " class="submit" id="formSubmit"></td>
+    </tr>
+</table>
+
+</form>

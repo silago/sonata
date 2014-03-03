@@ -1,0 +1,27 @@
+{foreach from=$item key=key item=item}
+<tr>
+	<td>
+		<span style="strong"><a href="/admin/catalog/editItem.php?id={$item.item_id}">{$item.name}</a></span>
+		<br/>
+		<span style="font-size:11px;color:#a0a0a0">{$item.small_desc}</span>
+	</td>
+	<td width="75px"><img src="{$item.photo}" height="75px;"></td>
+	<td style="text-align:center">{$item.price}</td>
+	<td style="text-align:center">{$item.price_old}</td>
+	<td style="text-align:center">
+        <input type="checkbox" name="itemnew" value="1" {if ($item.is_new)==1}checked{/if} />
+        <input type="hidden" name="item_id" value="{$item.item_id}"/>
+
+    </td>
+	<td style="text-align:center">
+        <input type="checkbox" name="itemhit" {if ($item.is_hit)==1}checked{/if} />
+        <input type="hidden" name="item_id" value="{$item.item_id}"/>
+    </td>
+	<td style="text-align:center; width:75px;"> 
+		<div class="btn-group" style="margin-left:2px;">   
+			<a class="btn btn-primary" rel="tooltip" data-original-title="Редактировать товар" href="/admin/catalog/editItem.php?id={$item.item_id}"><i class="icon-pencil icon-white"></i></a>
+			<a class="btn btn-danger" rel="tooltip" data-original-title="Удалить товар" onclick="return confirm('Удалить товар?')" href="/admin/catalog/delete.php.php?id={$item.item_id}"><i class="icon-trash icon-white"></i></a>
+		</div>
+	</td>  
+</tr>
+{/foreach}

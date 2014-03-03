@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!-- inner -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="{mk}" />
+		<meta name="description" content="{md}"/>
+		
+		<title>{title}</title>
+		
+        <link type="text/css" rel="stylesheet" href="/css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/jquery.fancybox-1.3.4.css"/>
+		
+		<script type="text/javascript" src="/js/jquery.base.latest.min.js"></script><!-- 1.7.1 -->
+		<script type="text/javascript" src="/js/jquery.fancybox-1.3.4.min.js"></script>
+		<script type="text/javascript" src="/js/site.init.js"></script>
+    </head>
+    <body>
+	{%% browsShow() %%}
+        <div>
+			{%% confShow(name:HeaderContacts;) %%}
+		</div>
+		<div>{navigation}</div>
+		<div>
+			{%% pagesMenuUL() %%}
+		</div>
+		<div>
+			<h1>{pageTitle}</h1>
+			{content}
+		</div>
+		<div>
+			{%% news(GROUP: 1; LIMIT: 3;) %%}
+			<a href="/news/showGroup/1.html">Все новости</a></div>
+		</div>
+		<div>
+			{%% confShow(name:copyrights;) %%}
+        </div>
+		<div style="visibility: hidden; position: absolute; top: 0px;">{%% stat() %%}</div>
+    </body>
+</html>

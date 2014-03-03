@@ -1,0 +1,6 @@
+<br><br><br>
+<h2>Комментарии</h2>
+{foreach from=$comments key=id item=empty}
+	<b>{$comments.$id.autorName}</b> [e-mail: {$comments.$id.emailAddress|escape}) от {$comments.$id.addTime|escape}]<br>
+    {$comments.$id.text|escape}<br>
+{/foreach}

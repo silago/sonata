@@ -1,0 +1,46 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/faq/index.php?lang={curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к списку вопросов </a></td>
+    <td><div align="right"><a href="/admin/cfg/faq/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+<form action="" method="post" onsubmit='disableSubmit("submitFormKey", "Пожалуйста, подождите..")'>
+<table width="100%" border="0" cellpadding="4" cellspacing="0" class="inputTable">
+    <tr >
+	  <th  colspan="2">
+	    <strong>Ответ/редактирование вопроса модуля "Вопрос-Ответ"</strong>
+	  </th>
+	</tr>
+
+    <tr >
+	  <td  colspan="2" align="center">
+	    <strong><font color="red">{error}</font></strong>
+	  </td>
+	</tr>
+
+  	<tr >
+		<th  colspan="2"><strong>Вопрос</small></td>
+	</tr>
+
+  	<tr >
+		<td align="center" colspan="2"><textarea name="question" style="width: 90%; height: 150px">{question}</textarea></td>
+	</tr>
+
+  	<tr >
+		<th  colspan="2"><strong>Ответ</small></td>
+	</tr>
+
+  	<tr >
+		<td align="center" colspan="2">{answerForm}</td>
+	</tr>
+
+  	<tr >
+		<td align="right"  colspan="2">&nbsp;</td>
+	</tr>
+
+  	<tr >
+		<td align="center"><input type="submit" value="  СОХРАНИТЬ  " id="submitFormKey" class="submit"></td>
+	</tr>
+	<input type="hidden" name="go" value="go">
+</table>
+</form>

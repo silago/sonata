@@ -1,0 +1,37 @@
+<table class="inputTable" cellpadding="4" cellspacing="1">
+	<tr>
+		<th colspan="2">Комментарии к новости</th>
+	</tr>
+	
+	<tr>
+		<td align="center" colspan="2" align="center"><strong>Текст новости</strong></td>
+	</tr>
+
+	<tr>
+		<td align="left" colspan="2">
+			<strong>{$newsTitle}</strong><br>
+			{$fullNewsText}<br><br>
+			<table width="100%" cellpadding="3" cellspacing="0">
+			{foreach from=$comments key=id item=empty}
+				<tr><td bgcolor="{if $comments.$id.status == 0}#FFEEEE{/if}">
+				<strong>Комментарий от {$comments.$id.autorName|escape}, <a href="mailto:{$comments.$id.emailAddress|escape}">{$comments.$id.emailAddress|escape}</a></strong> <br>Статус: {if $comments.$id.status == 0}<font color="red">требует проверки!</font>{else}проверен, разрешен к публикации{/if}<br>
+				{$comments.$id.text}<br>
+				[
+				{if $comments.$id.status == 0}
+					<a href="allowComment.php?id={$id}&lang={$curLang}">Разрешить публикацию</a> |
+				{/if}
+
+				<a href="deleteComment.php?id={$id}&lang={$curLang}" onclick="return confirm(&quot;Удалить комментарий?&quot;)">Удалить</a>
+
+				]
+				</td></tr>
+					
+			{foreachelse}
+			</table>							
+			<strong>Нет комментариев</strong>
+			{/foreach}
+			
+		</td>
+	</tr>
+	
+</table>

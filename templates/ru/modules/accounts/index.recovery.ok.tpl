@@ -1,0 +1,1 @@
+<div align="center">Новый пароль отправлен Вам на E-Mail: {$email}</div>

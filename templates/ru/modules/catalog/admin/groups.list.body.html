@@ -1,0 +1,23 @@
+<div id="info">
+	<ul class="breadcrumb">
+		<li><a href="#">Управление магазином</a><span class="divider">/</span></li>
+		<li><a href="#">Каталог</a><span class="divider">/</span></li>	
+		<li class="active"><a href="/admin/catalog/groupList.php">Список групп</a><span class="divider">/</span></li>
+	</ul>
+</div>
+<a class="btn btn-success" href="/admin/catalog/addGroup.php"><i class="icon-plus icon-white"></i> Добавить новую группу</a>
+<br /><br />
+<form method="post"  action="/admin/catalog/grpposchange.php" id="grplist">
+<div class="well" style="padding:0px;margin-bottom:100px;">
+<table border="0" id="tree" cellpadding="4" cellspacing="0" width="100%" class="table" style="margin-bottom:0px;">
+	<tr id="node-0" style="background-color:#ffffff;">
+	<td style="padding-left:27px;background-color:#ffffff;min-width:300px;font-weight:bold;">Группы</td>
+	<td style="font-weight:bold;text-align:center" width="125px;">Действия</td>
+	<td style="font-weight:bold;text-align:center"  width="120px;">Группа скрыта</td>
+	<td style="font-weight:bold;text-align:center" width="100px;">Позиция</td>
+	</tr>
+	{body}
+</table>
+</div>
+</form>
+

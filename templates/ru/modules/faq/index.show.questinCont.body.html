@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		var showOrHide = false;
+		$('ul#faq-list li').click(function() {
+			$(this).find('div.faq-answer').stop().slideToggle();			
+		});
+	});
+</script>
+<h4>Список вопросов:</h4>
+<ul id="faq-list">
+	{body}
+</ul>

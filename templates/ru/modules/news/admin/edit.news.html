@@ -1,0 +1,138 @@
+<div id="info">
+    <ul class="breadcrumb">
+        <li><a href="#">Управление сайтом</a><span class="divider">/</span></li>
+        <li><a href="/admin/news/showGroups.php">Новости</a><span class="divider">/</span></li>
+        <li><a href="/admin/news/list.php">Список новостей</a><span class="divider">/</span></li>
+        <li class="active"><a>Редактирование новости <strong>"{$title}"</strong></a></li>
+    </ul>
+</div>
+
+{if $error}
+<div class="row">
+    <div class="span12">
+        <div class="alert alert-error">
+            {foreach from=$error key=key item=item}
+            {$item}<br/>
+            {/foreach}
+        </div>
+    </div>
+</div>
+{/if}
+
+
+<form action="/admin/news/editGo.php" method="post">
+    <fieldset>
+        <div class="row">
+            <div class="span4 offset4">
+                <strong>Группа новости: </strong> {$selectOwnerId}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="title"><strong>Заголовок новости:</strong></label>
+                    <div class="controls">
+                        <input type="text" id="title" name="title" value="{$title}" maxlength="255" style="width: 99%">
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="url"><strong>Uri новости:</strong></label>
+                    <div class="controls">
+                        <input type="text" name="uri" value="{$uri}" id="url" style="width:99%" maxlength="255" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="datepicker"><strong>Новость от:</strong></label>
+                    <div class="controls">
+                        <input type="text" id="datepicker" name="date" value="{$date|date_format:"%d.%m.%Y"}" maxlength="255" style="width: 99%">
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="status"><strong>Статус новости:</strong></label>
+                    <div class="controls">
+                        <select name="status" id="status">
+                            <option value="1" {if $status==1}selected{/if}>Опубликована</option>
+                            <option value="0" {if $status==0}selected{/if}>Скрыта</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <center><strong>Краткое описание новости:</strong></center>
+                {$smallForm}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <center><strong>Новость полностью:</strong></center>
+                {$fullForm}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6 offset3">
+                <div class="control-group">
+                    <label class="control-label" for="pageTitle">Заголовок страницы (META-title):</label>
+                    <div class="controls">
+                        <input type="text" name="pageTitle" value="{$pageTitle}" id="pageTitle" style="width:99%" maxlength="255">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="md">Краткое описание новости (META-description):</label>
+                    <div class="controls">
+                        <input type="text" id="md" name="md" value="{$md}" maxlength="255" style="width: 99%">
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="uri">Ключевые слова (META-keywords):</label>
+                    <div class="controls">
+                        <input type="text" name="mk" value="{$mk}" id="mk" style="width:99%" maxlength="255">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <input type="hidden" id="action" name="action" value="news">
+                <input type="hidden" name="newsId" value="{$id}">
+                <input type="hidden" name="ownerIdOriginal" value="{$ownerId}">
+                <center><button type="submit" class="btn btn-primary" id="formSubmit">СОХРАНИТЬ</button></center>
+            </div>
+        </div>
+    </fieldset>
+</form>

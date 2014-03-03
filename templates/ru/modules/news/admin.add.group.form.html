@@ -1,0 +1,82 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/news/index.php?lang={curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к управлению новостями</a></td>
+    <td><div align="right"><a href="/admin/cfg/news/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+<form action="?lang={curLang}&id={valueId}" method="post" onsubmit='disableSubmit("formSubmit");'>
+	<table width="100%" border="1" cellpadding="4" cellspacing="0" class="inputTable">
+    <tr >
+	  <th  colspan="2">
+	    <strong>{action} новой группы </strong></th>
+	</tr>
+	
+	<tr >
+	  <td  colspan="2" align="center">
+	    <strong><font color="red">{error}</font></strong>
+	  </td>
+	</tr>
+
+    <tr >
+	  <td  align="right" width="50%">
+	    <strong>Владелец группы</strong>
+	  </td>
+      <td  align="left">
+	     {selectOwnerId}
+      </td>
+    </tr>
+	
+    <tr >
+	  <td  align="right">
+	    <strong>Название группы:</strong>
+	  </td>
+      <td  align="left">
+	     <input type="text" name="title" value="{valueTitle}" style="width:99%" maxlength="255">
+      </td>
+    </tr>
+
+    <tr >
+	  <td  align="right">
+	    Шаблон для группы новостей:
+	  </td>
+      <td  align="left">
+	     <input type="text" name="template" value="{valueTemplate}" style="width:99%" maxlength="255">
+      </td>
+    </tr>
+
+    <tr >
+	  <td  align="right">
+	   	Показывать ли группу в меню навигации: 
+	  </td>
+      <td  align="left">
+	     [selectNavigationShow="{valueNavigationShow}"]
+      </td>
+    </tr>
+
+    <tr >
+	  <td  align="right">
+	    Название главной страницы в меню навигации:
+	  </td>
+      <td  align="left">
+	     <input type="text" name="navigationMainTitle" value="{valueNavigationMainTitle}" style="width:99%" maxlength="255">
+      </td>
+    </tr>
+
+	<tr >
+	  <td  align="right">
+	    Язык добовляемой группы:
+	  </td>
+      <td  align="left">
+	     [selectLang="{valueLang}"]
+      </td>
+    </tr>
+
+    <tr >
+	  <td  colspan="2" align="center">
+	     <input type="submit" value="   СОХРАНИТЬ   " class="submit" id="formSubmit">
+	  </td>
+	</tr>
+
+	</table>
+<input type="hidden" name="go" value="go">
+</form>

@@ -1,0 +1,13 @@
+{foreach from=$news key=key item=item}
+    <tr>
+        <td style="text-align:center">{$item.date|date_format:"%d.%m.%Y"}</td>
+        <td style="text-align:center">{$item.title}</td>
+        <td style="text-align:center">
+            <div class="btn-group" style="padding-left:12px;">
+                <a class="btn btn-primary" rel="tooltip" data-original-title="Редактировать группу" href="/admin/news/edit.php?id={$item.id}"><i class="icon-pencil icon-white"></i></a>
+                <a class="btn btn-danger" onclick="return confirm('Удалить новость?');" rel="tooltip" data-original-title="Удалить новость" href="/admin/news/delete.php?id={$item.id}"><i class="icon-trash icon-white"></i></a>
+            </div>
+        </td>
+    </tr>
+{/foreach}
+

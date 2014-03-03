@@ -1,0 +1,26 @@
+<form action="addGo.php?lang={curLang}&category={category}&type={type}" method="post">
+	<table border="1" cellspacing="0" cellpadding="4" class="inputTable" width="100%">
+		<tr>
+			<th colspan="3" align="center"><strong>Добавить параметр</strong></th>
+		</tr>
+	
+		<tr>
+			<td><strong>Название переменной:</strong></td>
+			<td colspan="2"><input type="text" name="name" maxlength="255" style="width: 99%"></td>
+		</tr>
+
+		<tr>
+			<td valign="top"><strong>Значение:</strong></td>
+			<td colspan="2"><textarea name="value" style="width: 99%; height: 100px;"></textarea></td>
+		</tr>
+
+		<tr>
+			<td valign="top"><strong>Описание:</strong></td>
+			<td colspan="2"><textarea name="description" style="width: 99%; height: 100px;"></textarea></td>
+		</tr>
+		<tr>
+		  <td colspan="3" align="right">
+		    <input type="submit" value="Добавить параметр"></td>
+	  </tr>
+	</table>
+</form>

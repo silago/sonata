@@ -1,0 +1,90 @@
+/*
+ * jQuery FlexSlider v1.0 (Release)
+ * http://flex.madebymufffin.com
+ *
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Необходимые стили для FlexSlider
+*********************************/ 
+.flexslider {width: 100%; margin: 0; padding: 0;}
+.flexslider .slides li {width:754px; height:350px; list-style-type:none;} /* Скрываем слайды доя загрузки JS. Избегаем дергания изображений */
+.flexslider .slides img {max-width: 100%; display: block;}
+
+
+/* Тема по умолчанию для FlexSlider
+*********************************/
+.flexslider {width:754px; height:350px;}
+.flexslider .slides  li {position: relative;}
+/* Предполагаемый контейнер для устнановок анимации "slides".*/
+.flexslider-container {position: relative;}
+
+
+/* Стиль заголовков */
+.flex-caption {
+	position:absolute;
+	left:287px; top:99px;
+	width:400px;
+	z-index:1000; }
+.flex-caption p.title{
+	font:60px Tahoma;
+	color:#ffffff;
+	text-transform:1px 1px 5px #005b90;
+	padding:0px 0px 0 0px;}
+.flex-caption p{
+	font:16px Arial;
+	color:#ffffff;
+	line-height:20px;
+	padding:0px 0px 12px 14px;}
+.flex-caption a{
+	display:block;
+	font:11px Arial;
+	color:#616161;
+	font-weight:bold;
+	padding:1px 0 0 0;
+	background:url(/templates/ru/images/img/button_slider.png) repeat-x left top;
+	height:15px; width:98px;
+	text-align:center;
+	border-radius: 2px; moz-border-radius: 2px; webkit-border-radius: 2px;
+	behavior: url(css/PIE.htc);
+	text-decoration:none;
+	margin-left:14px;}
+.flex-caption a:hover{ text-decoration:underline;}
+
+/* Навигация */
+.flex-direction-nav{ }
+.flex-direction-nav li{ list-style-type:none;}
+.flex-direction-nav li a { cursor: pointer; text-indent: -9999px;} /* set negative margin-top equal to half the height on the directional-nav for perfect vertical centering */
+.flex-direction-nav li a.next {position:absolute;
+	z-index:1000;
+	background:url(/templates/ru/images/img/slider_next.png) no-repeat; 
+	height:57px; width:21px; 
+	right:-5px; top:147px;}
+.flex-direction-nav li a.prev {position:absolute;
+	position:absolute;
+	z-index:1000;
+	background:url(/templates/ru/images/img/slider_prev.png) no-repeat; 
+	height:57px; width:21px; 
+	left:-5px; top:147px;}
+
+/* Управление */
+.flex-control-nav {position:absolute;
+	left:0px; bottom:0px;
+	height:13px;
+	display:none;
+	z-index:1000;} /* set negative margin-left equal to half the width on the control-nav for perfect centering */
+.flex-control-nav li {margin: 0 0 0 0; float: left; list-style-type:none;}
+.flex-control-nav li:first-child {margin: 0;}
+.flex-control-nav li a { float:left;
+	text-indent:-9999px;
+	margin-right:7px;
+	list-style-type:none;
+	background:url(/templates/ru/images/img/nav_slider.png) no-repeat left top;
+	display:block;
+	width:13px; height:13px;
+	cursor:pointer;
+	font:0px Arial;}
+.flex-control-nav li a:hover {background:url(/templates/ru/images/img/nav_slider.png) no-repeat left bottom;}
+.flex-control-nav li a.active {background:url(/templates/ru/images/img/nav_slider.png) no-repeat left bottom; cursor: default;}

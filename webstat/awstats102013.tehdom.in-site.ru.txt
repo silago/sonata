@@ -1,0 +1,471 @@
+AWSTATS DATA FILE 6.95 (build 1.943)
+# If you remove this file, all statistics for date 201310 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.tehdom.in-site.ru.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1963                
+POS_TIME 2635                
+POS_VISITOR 6525                
+POS_DAY 6770                
+POS_DOMAIN 3263                
+POS_LOGIN 3497                
+POS_ROBOT 3683                
+POS_WORMS 3893                
+POS_EMAILSENDER 4024                
+POS_EMAILRECEIVER 4167                
+POS_SESSION 7104                
+POS_SIDER 7288                
+POS_FILETYPES 4302                
+POS_OS 4563                
+POS_BROWSER 4649                
+POS_SCREENSIZE 4803                
+POS_UNKNOWNREFERER 4877                
+POS_UNKNOWNREFERERBROWSER 4997                
+POS_ORIGIN 5112                
+POS_SEREFERRALS 5253                
+POS_PAGEREFS 5397                
+POS_SEARCHWORDS 5545                
+POS_KEYWORDS 5697                
+POS_MISC 2299                
+POS_ERRORS 5756                
+POS_CLUSTER 3353                
+POS_SIDER_404 5897                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20131101121621 1 0 10294198329906
+FirstTime 20131009012832
+LastTime 20131031174556
+LastUpdate 20131102001053 1 0 0 0 0
+TotalVisits 21                  
+TotalUnique 4                   
+MonthHostsKnown 0                   
+MonthHostsUnknown 4                   
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 6 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 0 0 0 0 0 0
+1 1 2 6908 1 1 491
+2 0 0 0 0 0 0
+3 0 0 0 0 0 0
+4 0 0 0 0 0 0
+5 0 0 0 0 0 0
+6 0 0 0 0 0 0
+7 0 0 0 0 0 0
+8 0 0 0 1 1 371
+9 3 8 5227 0 0 0
+10 167 3748 4644745 9 12 3835
+11 301 2889 5988248 8 11 84260
+12 326 4926 9929896 18 26 46757
+13 602 5906 15706434 12 32 28374
+14 1315 9133 17188109 22 33 59326
+15 510 4184 8563789 30 45 152271
+16 955 8195 12543926 48 141 258895
+17 935 7267 13087093 23 60 66445
+18 0 0 0 0 0 0
+19 0 0 0 0 0 0
+20 0 0 0 0 0 0
+21 0 0 0 0 0 0
+22 0 0 0 0 0 0
+23 0 0 0 0 0 0
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 5115 46258 87664375
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 1
+User 26 26 5392 20131030161153
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 2
+w3c_validator 35 257952 20131028161935 0
+no_user_agent 1 371 20131031085459 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+css 6731 3571883 0 0
+png 10965 7858032 0 0
+htm 2 4168 0 0
+php 712 16438998 0 0
+html 3518 7372528 0 0
+js 14062 14681191 0 0
+jpg 1741 10155783 0 0
+jpeg 3979 20836445 0 0
+Unknown 883 6189399 0 0
+gif 3665 555948 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 4
+winxp 503
+Unknown 26
+linux 33095
+win2008 12634
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 6
+firefox18.0 4
+chrome30.0.1599.101 4588
+chrome30.0.1599.69 52
+Unknown 26
+firefox24.0 40721
+opera9.80 867
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 1
+1C_Enterprise/8.2 20131030161153
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+1C_Enterprise/8.2 20131030161153
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 563 592
+From1 0 0
+From2 0 0
+From3 0 0
+From4 4552 45666
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+302 95 65179
+206 2 91378
+500 125 127125
+404 42 47220
+301 34 15621
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 5
+/undefinedindex.php 1 http://www.tehdom.in-site.ru/login
+/admin/catalog/sounds/rm.wav 6 http://www.tehdom.in-site.ru/admin/catalog/editItem.php
+/css/print1.css 3 http://www.tehdom.in-site.ru/bill/
+/img/tehnodomDisccount.png 2 http://www.tehdom.in-site.ru/
+/tehnodomDisccount.png 30 http://www.tehdom.in-site.ru/group95
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 4
+212.44.146.122 4870 45587 83301271 20131031174556
+90.188.243.29 243 667 4349233 20131030172728
+217.69.133.186 1 2 6908 20131009012832
+217.69.133.169 1 2 6963 20131022153002
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 10
+20131009 1 2 6908 1
+20131021 434 2154 10168694 2
+20131022 545 5185 12798834 3
+20131023 1945 12810 17815912 1
+20131024 329 2097 4734472 1
+20131025 237 4424 5613816 2
+20131028 887 16817 22119549 1
+20131029 323 1291 4466506 3
+20131030 391 1364 8921778 5
+20131031 23 114 1017906 2
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 5
+1h+ 10
+5mn-15mn 1
+0s-30s 4
+30s-2mn 4
+30mn-1h 2
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 204
+/totalbill/ 962 368565 0 1
+/totalitems/ 961 363541 0 7
+/ 347 2063101 12 4
+/updamount/ 325 137319 0 0
+/basket 203 1289406 1 0
+/addgood/ 188 94980 0 0
+/catalogsearch 152 936334 0 0
+/group95/item1/ 107 651115 0 0
+/myadmin/index.php 103 218917 0 0
+/group145/item545/ 94 549271 0 0
+/group15/item2/ 25 132653 0 0
+/myadmin/server_sql.php 1 8259 0 0
+/catalog/ 11 89622 0 0
+/group94/item260/ 13 87889 0 0
+/group94/item262/ 1 6479 0 0
+/dostavka-i-oplata/ 43 332913 0 1
+/admin/catalog/photoDelete.php 19 8348 0 0
+/group35 2 11514 0 0
+/orderslist/ 3 18363 0 0
+/group143/item450/ 1 6407 0 0
+/bill/ 3 3976 0 0
+/myadmin/import.php 22 471881 0 0
+/group33/item99/ 1 6520 0 0
+/group145 32 260697 0 0
+/kontakty/ 30 185650 1 2
+/vakansii/ 20 116736 0 0
+/group18 12 100094 0 0
+/myadmin/js/get_image.js.php 11 23265 0 0
+/group59/item196/ 1 6680 0 0
+/myadmin/version_check.php 7 2667 0 0
+/group14 5 39881 0 0
+/group57/item179/ 1 6476 0 0
+/admin/menu/index.php 11 81918 0 0
+/group56 1 6567 0 0
+/group32/item124/ 2 12911 0 0
+/group8 6 50155 0 0
+/admin/catalog/addGroup.php 2 21696 0 0
+/myadmin/js/get_scripts.js.php 29 3342913 0 0
+/logingo/ 1 6556 0 0
+/group64 2 15933 0 0
+/group1 48 391096 0 0
+/group142 7 58690 0 0
+/group135 38 319983 0 1
+/group110 1 8764 0 0
+/myadmin/db_structure.php 4 421569 0 0
+/savedata/ 3 21041 0 0
+/group70/item211/ 3 19992 0 0
+/group13/item16/ 2 12550 0 0
+/register 2 12649 0 0
+/o-kompanii/ 24 159962 0 0
+/group20/item45/ 6 40043 0 0
+/group53 1 7345 0 0
+/group20/ 5 41517 0 0
+/group143/item449/ 2 13594 0 0
+/group6 5 30266 0 0
+/group21 2 14704 0 0
+/myadmin/ 7 26453 0 0
+/group59 1 7509 0 0
+/admin/security/userEdit.php/25 1 7461 0 0
+/admin/page/add.php 1 8446 0 0
+/group97 3 22990 1 0
+/group151 1 7804 0 0
+/login 25 161742 0 0
+/admin/catalog/config.php 6 45264 0 0
+/group54 1 7346 0 0
+/group94/item261/ 1 6483 0 0
+/group16/item23/ 1 6551 0 0
+/group75 1 7222 0 0
+/group10 3 22364 0 0
+/include/ext/elfinder/elfinder.html 1 1433 0 0
+/hit 1 7328 0 0
+/group30 5 40199 0 0
+/myadmin/db_sql.php 2 18244 0 0
+/group93 3 23184 0 0
+/myadmin/navigation.php 26 572299 0 0
+/admin/catalog/editItem.php 9 91046 0 0
+/group36/item64/ 1 4598 0 0
+/checkout 4 34902 0 0
+/admin/catalog/installModule.php 25 17990 0 0
+/checkout/ 56 478649 1 0
+/group19 2 14684 0 0
+/group209/item825/ 4 25928 0 0
+/group58 3 23200 0 0
+/catalogsearch/ 2 22568 0 0
+/group69/item212/ 1 6659 0 0
+/admin/news/showGroups.php 4 29908 0 0
+/lcd/lg-televizor/ 2 6844 0 1
+/group4 13 97375 0 0
+/admin/slider/list.php 4 30616 0 0
+/group51 4 32574 0 0
+/group22 1 5664 0 0
+/group24/item70/ 1 6470 0 0
+/admin/news/editGroup.php 1 7514 0 0
+/order 4 29881 0 0
+/group42 2 15386 1 0
+/group139 1 8168 0 0
+/group78/item224/ 2 12861 0 0
+/group9/item7/ 22 101788 0 0
+/group9 12 97050 0 0
+/admin/tags/ 4 33480 0 0
+/include/ext/tiny_mce/plugins/codemagic/codemagic.htm 1 1405 0 0
+/group143/item454/ 1 6598 0 0
+/group69 1 7666 0 0
+/group71 13 104716 0 0
+/tv 1 7313 0 0
+/group16 1 7342 0 0
+/group73 1 7343 0 0
+/myadmin/tbl_row_action.php 2 87711 0 0
+/registergo/ 11 5300 0 0
+/group136 1 8515 0 0
+/tv1 1 7242 0 0
+/group3/item77/ 1 6516 0 0
+/admin/catalog/setItemNew.php 8 3128 0 0
+/admin/catalog/addItem.php 1 12626 0 0
+/myadmin/tbl_replace.php 2 8214 0 0
+/group44 1 7566 0 0
+/glavnaja/ 65 403189 1 1
+/group36 1 5644 0 0
+/orderslist 3 18975 0 0
+/admin/security/showUserList.php 11 90857 0 0
+/tag 11 71466 0 0
+/admin/catalog/photoResize.php 7 3451 0 0
+/cabinet 6 42183 0 0
+/group52 1 7344 0 0
+/group7 80 572676 0 0
+/myadmin/querywindow.php 1 3901 0 0
+/group70/item210/ 1 6660 0 0
+/group47/item239/ 1 5141 0 0
+/group2 6 44026 0 0
+/lcd/ru/ 1 6162 0 0
+/1c/exchange.php 35 7908 1 0
+/group2/item59/ 1 6684 0 0
+/admin/catalog/setItemHit.php 4 1564 0 0
+/admin/page/uriCheck.php 2 772 0 0
+/myadmin/js/messages.php 26 649878 0 0
+/%5Bobject%20Object%5D 4 5668 0 0
+/group5 5 36876 0 0
+/group42/item155/ 1 6524 0 0
+/group20 1 5977 0 0
+/group77 5 37373 0 0
+/group5/item90/ 3 18762 0 0
+/admin/orders/config.php 1 7389 0 0
+/group12 5 37474 0 0
+/group48 1 7572 0 0
+/group148/item567/ 1 6702 0 0
+/include/ext/elfinder/php/connector.php 66 45814 0 0
+/group209 1 8298 0 0
+/admin/catalog/listItems.php 37 373078 0 1
+/group60 4 32274 0 0
+/group34 4 23176 0 0
+/register/ 10 61705 0 0
+/garantija/ 20 117114 0 0
+/group96 1 8636 0 0
+/catalog 21 156479 0 0
+/group2/item58/ 9 58134 0 0
+/admin/menu/addMenu.php 1 30429 0 0
+/group15 12 61364 0 0
+/group4/item85/ 20 31982 0 0
+/group70 1 7709 0 0
+/admin/page/edit.php 21 197067 0 0
+/admin/security/config.php 1 7456 0 0
+/admin/orders/showList.php 10 80086 0 0
+/group15/item3/ 1 6483 0 0
+/group56/item251/ 1 5134 0 0
+/group121/item376/ 1 6526 0 0
+/group59/item194/ 23 149018 1 0
+/group13 4 29846 0 0
+/admin/page/index.php 63 424603 0 0
+/group47 1 7029 0 0
+/group209/item823/ 1 6269 0 0
+/admin/security/showConfig.php 1 7553 0 0
+/group79 16 137354 0 0
+/group35/item66/ 1 4599 0 0
+/group17 1 7347 0 0
+/muzykalnye-tsentry 1 6919 0 0
+/delformcart/ 37 58740 0 1
+/group95 20 137303 0 0
+/myadmin/sql.php 70 8071322 0 0
+/registerandcheckout/ 2 829 0 0
+/myadmin/phpmyadmin.css.php 21 360822 0 0
+/domashnie-kinoteatry 1 6926 0 0
+/group145/item541/ 1 6834 0 0
+/group208 6 51094 0 0
+/group68 8 61771 1 0
+/admin/menu/editMenu.php 8 251908 0 0
+/group55 1 7346 0 0
+/group148 1 7581 0 0
+/group52/item180/ 1 6474 0 0
+/group140/item577/ 2 13684 0 0
+/include/ext/tiny_mce/plugins/advimage/image.htm 1 2763 0 0
+/admin/catalog/uriCheck.php 3 1140 0 0
+/confirmorder/ 2 784 0 0
+/basket/ 6 42768 0 0
+/group3 7 52335 0 0
+/group139/item510/ 1 6838 0 0
+/group32/item132/ 1 6455 0 0
+/group137 6 48116 0 0
+/group50 1 7573 0 0
+/group23 4 29381 0 0
+/audio-i-videotehnika 1 6907 0 0
+/admin/catalog/groupList.php 10 171468 0 1
+/group43 1 7567 0 0
+/myadmin/tbl_sql.php 13 116093 0 0
+/group139/item498/ 1 6733 0 0
+END_SIDER

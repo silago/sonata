@@ -1,0 +1,32 @@
+<table width=100% border=1 cellpadding=0 cellspacing=0 class="inputTable">
+  <tr><td align="center">
+<form action="index.php?show=show" method="post">
+      <strong>Показать статистику по:</strong>
+      <select name="type">
+              <option value="0"{s0}> ---- ВЫБЕРИТЕ ---- </option>
+              <option value="1"{s1}>Кликам/IP адресам/посетитялям</option>
+			  <option value="2"{s2}>Точки входа/выхода</option>
+              <option value="3"{s3}>IP адресам</option>
+              <option value="4"{s4}>Странам</option>
+              <option value="6"{s6}>Ссылающимся страницам</option>
+              <option value="7"{s7}>Ссылающимся доменам</option>
+              <option value="8"{s8}>Разрешению экрана</option>
+              <option value="9"{s9}>Браузерам</option>
+              <option value="10"{s10}>Включен JavaScript</option>
+      </select>
+      <input type="submit" value="ПОКАЗАТЬ">
+      <br><br>
+      За период с
+      <select name="sinceDay">{sinceDay}</select>
+      <select name="sinceMonth">{sinceMonth}</select>
+      <select name="sinceYear">{sinceYear}</select>
+
+      по
+      <select name="forDay">{forDay}</select>
+      <select name="forMonth">{forMonth}</select>
+      <select name="forYear">{forYear}</select>
+
+</form>
+</td></tr></table>
+<br>
+<a href="/admin/stat/update.php"><img src="/templates/ru/images/api/update.jpg" width="25" height="25" border="0" align="absmiddle" /> Обновить базу данных стран</a><br>

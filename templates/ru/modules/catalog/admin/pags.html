@@ -1,0 +1,17 @@
+<center>
+
+{if $offset>0}
+<a href="/admin/catalog/listItems.php?items={$offset-20}{if $parent_group_id }&parent_group_id={$parent_group_id}{/if}"><< Назад</a>
+{/if}
+<span> &nbsp; &nbsp; </span>
+<span> Страница: {$offset/20+1} </span>
+<span> &nbsp; &nbsp; </span>
+{if $items|@count == 20}
+<a href="/admin/catalog/listItems.php?items={$offset+20}{if $parent_group_id }&parent_group_id={$parent_group_id}{/if}">Вперед >></a>
+
+{/if}
+
+</center>
+<br>
+<br>
+<br>

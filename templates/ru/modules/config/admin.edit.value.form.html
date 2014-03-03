@@ -1,0 +1,14 @@
+<form action="editGo.php?lang={curLang}" method="post">
+	<table border="1" cellspacing="0" cellpadding="4" width="100%" class="inputTable">
+		<tr><th colspan="2">Редактирование параметра</th></tr>
+		<tr><td width="30%"> <strong>Категория:</strong></td><td><input type="text" name="category" value="{category}" disabled="disabled" style="width: 99%" /></td></tr>
+		<tr><td><strong>Тип:</strong></td><td><input type="text" name="type" value="{type}" disabled="disabled" style="width: 99%" /></td></tr>
+		<tr><td><strong>Название переменной:</strong></td><td><input type="text" name="name" value="{name}" disabled="disabled" style="width: 99%" /></td></tr>
+		<tr><td><strong>Значение:</strong></td><td><textarea name="value" style="width: 99%; height: 150px" />{value}</textarea></td></tr>
+  		<tr><td><strong>Описание:</strong></td><td><textarea name="description" style="width: 99%; height: 150px" />{description}</textarea></td></tr>
+    	<tr><th colspan="2"><input type="submit" id="submit" value="Сохранить"></th></tr>			
+	</table>
+<input type="hidden" name="category" value="{category}">
+<input type="hidden" name="type" value="{type}">
+<input type="hidden" name="name" value="{name}">
+</form>

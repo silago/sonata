@@ -1,0 +1,151 @@
+<div id="info">
+<ul class="breadcrumb">
+	<li><a href="#">Управление сайтом</a><span class="divider">/</span></li>
+	<li><a href="/admin/menu/index.php">Меню навигации</a><span class="divider">/</span></li>	
+	<li class="active">{if !empty($smarty.get.menuid)}Редактирование меню "{$menuTitle}"{else}Добавление нового меню{/if}</li>	
+</ul>
+{$error}
+</div>
+
+<div class="row">
+	<div class="span3 struct">
+		<h4>Разделы сайта:</h4><br/>			
+				
+				<div style="background:#f5f5f5;" class="main">
+						<h4>Произвольные ссылки <span style="float:right;cursor:pointer;" onclick="$('div#customlinks').toggle();"><i title="Подробнее" class="icon-chevron-down"></i></span></h4>					
+				</div>
+				<div class="info" id="customlinks">
+					<form class="form-vertical" action="#" onsubmit="return add();">				
+						<div class="control-group">  						
+							<div class="controls">
+								<input type="text" id="titleManual" placeholder="Заголовок ссылки">
+							</div>
+							<div class="controls">
+								<input type="text" id="urlManual" placeholder="Ссылка">
+							</div>						
+							<div class="controls">
+								<button type="submit" class="btn btn-primary pull-right" >Добавить ссылку</button>
+							</div>						
+						</div>
+					</form>
+				</div>
+				
+				{if !empty($pagesTree)}
+				<div style="background:#f5f5f5;" class="main">
+						<h4>Страницы сайта <span style="float:right;cursor:pointer;" onclick="$('div#pageblock').toggle();"><i title="Подробнее" class="icon-chevron-down"></i></span></h4>					
+				</div>
+				<div class="info" id="pageblock">
+					<form class="form-vertical" action="#" onsubmit="return multiadd('pageblock');">					
+						{$pagesTree}
+						<div class="control-group" style="padding-bottom:2px;">
+							<div class="controls">
+								<button type="submit" class="btn btn-primary pull-right" >Добавить ссылку</button>
+						</div>
+						</div>
+					</form>
+				</div>
+				{/if}
+				
+				{if !empty($catalogGroupsTree)}				
+					<div style="background:#f5f5f5;" class="main">
+						<h4>Группы каталога <span style="float:right;cursor:pointer;" onclick="$('div#cataloggroupsblock').toggle();"><i title="Подробнее" class="icon-chevron-down"></i></span></h4>					
+					</div>
+					<div class="info" id="cataloggroupsblock">
+						<form class="form-vertical" action="#" onsubmit="return multiadd('cataloggroupsblock');">					
+						{$catalogGroupsTree}						
+						<div class="control-group" style="padding-bottom:2px;">
+							<div class="controls">
+								<button type="submit" class="btn btn-primary pull-right" >Добавить ссылку</button>
+							</div>
+						</div>						
+						</form>
+					</div>				
+				{/if}								
+				
+				{if !empty($catalogItemsTree)}
+				<div style="background:#f5f5f5;" class="main">
+					<h4>Товары каталога <span style="float:right;cursor:pointer;" onclick="$('div#catalogitemsblock').toggle();"><i title="Подробнее" class="icon-chevron-down"></i></span></h4>					
+				</div>
+				<div class="info" id="catalogitemsblock">
+					<form class="form-vertical" action="#" onsubmit="return multiadd('catalogitemsblock');">					
+					{$catalogItemsTree}
+					<div class="control-group" style="padding-bottom:2px;">
+						<div class="controls">
+							<button type="submit" class="btn btn-primary pull-right" >Добавить ссылку</button>
+						</div>
+					</div>
+				</form>
+				</div>
+				{/if}
+				
+				{if !empty($newsGroupsTree)}
+				<div style="background:#f5f5f5;" class="main">
+					<h4>Группы новостей <span style="float:right;cursor:pointer;" onclick="$('div#newsgroupsblock').toggle();"><i title="Подробнее" class="icon-chevron-down"></i></span></h4>					
+				</div>
+				<div class="info" id="newsgroupsblock">
+				<form class="form-vertical" action="#" onsubmit="return multiadd('newsgroupsblock');">					
+					{$newsGroupsTree}
+					<div class="control-group" style="padding-bottom:2px;">
+						<div class="controls">
+							<button type="submit" class="btn btn-primary pull-right" >Добавить ссылку</button>
+						</div>
+					</div>
+				</form>
+				</div>
+				{/if}
+				
+				{if !empty($newsTree)}
+				<div style="background:#f5f5f5;" class="main">
+					<h4>Новости <span style="float:right;cursor:pointer;" onclick="$('div#newsblock').toggle();"><i title="Подробнее" class="icon-chevron-down"></i></span></h4>					
+				</div>
+				<div class="info" id="newsblock">
+				<form class="form-vertical" action="#" onsubmit="return multiadd('newsblock');">					
+					{$newsTree}
+					<div class="control-group" style="padding-bottom:2px;">
+						<div class="controls">
+							<button type="submit" class="btn btn-primary pull-right" >Добавить ссылку</button>
+						</div>
+					</div>
+				</form>
+				</div>
+				{/if}
+				
+				{if !empty($galleryGroupsTree)}
+					<div style="background:#f5f5f5;" class="main">
+						<h4>Альбомы галлереи <span style="float:right;cursor:pointer;" onclick="$('div#gallerygroupsblock').toggle();"><i title="Подробнее" class="icon-chevron-down"></i></span></h4>					
+					</div>
+					<div class="info" id="gallerygroupsblock">
+						<form class="form-vertical" action="#" onsubmit="return multiadd('gallerygroupsblock');">					
+							{$galleryGroupsTree}
+							<div class="control-group" style="padding-bottom:2px;">
+								<div class="controls">
+									<button type="submit" class="btn btn-primary pull-right" >Добавить ссылку</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				{/if}
+				
+	</div>
+	<div class="span9">
+		<h4>Структура меню:</h4><br/>
+		<form class="form well" action="/admin/menu/addMenuGo.php" onsubmit="return menuCheck();" style="background:none; border-color:#e4e4e4" method="post">   
+			<button type="submit" style="margin-bottom:15px;" class="btn btn-primary">Сохранить</button>
+			<button style="margin-bottom:15px;" class="btn btn-danger pull-right" onclick="return deletedMenuItems();">Удалить все пункты меню</button>
+			<div class="control-group well">  						
+						<div class="controls">
+							<label class="control-label" for="menuTitle">Название меню:</label> 
+						</div>		
+			<input type="text" name="menuTitle" id="menuTitle" value="{if !empty($menuTitle)}{$menuTitle}{else}{$smarty.post.menuTitle}{/if}" />
+			<input type="hidden" name="menuid" id="menuid" value="{if !empty($menuid)}{$menuid}{else}{/if}" />
+			</div>
+		
+		
+		<div class="menu"> 			
+			<ol class="sortable">{$itemsTree}</ol>	
+		</div>
+			<button type="submit" class="btn btn-primary">Сохранить</button>
+			<button class="btn btn-danger pull-right" onclick="return deletedMenuItems();>Удалить все пункты меню</button>			
+		</form>
+	</div>
+</div>

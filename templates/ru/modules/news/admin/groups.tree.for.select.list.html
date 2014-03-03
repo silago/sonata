@@ -1,0 +1,6 @@
+<select name="ownerId">
+    <option value="0" {if $defaultValue == '0' && !($smarty.post.ownerId)}selected{/if}>--- НЕТ ---</option>
+{foreach from=$groups item=item key=key}
+    <option value="{$item.id}" {if $defaultValue == $item.id}selected{elseif $item.id == $smarty.post.ownerId}selected{/if}>{$item.del} {$item.title}</option>
+{/foreach}
+</select>

@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>  <!-- inner -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{pageTitle} | Белая нерпа</title>
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/nivo.css" />
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/cusel.css" />
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/niceforms-default.css" />
+        <!-- <script type="text/javascript" src="/templates/ru/js/jquery-1.6.1.js"></script> -->
+        <script type="text/javascript" src="/templates/ru/js/jquery.easing.1.3.js" ></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		
+        <!--<script type="text/javascript" src="/templates/ru/js/custom.js" ></script>-->
+        <script type="text/javascript" src="/templates/ru/js/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/cusel.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/jScrollPane.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/jquery.mousewheel.js"></script>	
+        <script type="text/javascript" src="/templates/ru/js/jquery.radio.min.js"></script>	
+        <script type="text/javascript" src="/templates/ru/js/organictabs.jquery.js"></script>
+		
+<!-- COLOR BOX -->
+		<link rel="stylesheet" href="/colorbox/colorbox.css" />
+		<script src="/colorbox/jquery.colorbox.js"></script>
+		<script>
+			$(document).ready(function(){
+				//Examples of how to assign the ColorBox event to elements
+				$(".group1").colorbox({rel:'group1', transition:"fade"});
+				$(".akciya").colorbox({rel:'akciya'});
+			});
+		</script>
+<!--// COLOR BOX -->
+			
+    </head>
+    <body>
+
+
+        <!-- BEGIN BODY -->
+
+
+
+        <!-- BEGIN HEADER -->
+        <div class="boxHeader">
+            <div class="headerTopWrapper">
+               	{%% topLoginForm () %%}
+            </div>
+        </div>
+        <div id="header">			
+            <div class="logo"><a href="/"><img src="/templates/ru/images/img/logo.png"   alt="" border="0" /></a></div>
+            <div class="slogan">— Найди свой стиль!</div>
+            <div class="boxTel"><span>8 (3952) <span>75-75-37</span></span><br />C 9.00 до 19.00</div>
+            <form action="" name="Search" method="post">
+                <div class="inputSearch"><input type="text" name="search" value="я ищу" onfocus="this.value=''" onblur="this.value='я ищу'" /></div>
+                <input type="submit" value=""  class="button_search" />
+            </form>
+            <div class="boxNav">
+                <!--<ul>
+                    <li class="first"><a href="#">О компании</a></li>
+                    <li><a href="#">КАТАЛОГ</a></li>
+                    <li><a href="#">Таблицы размеро</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">ДОСТАВКА И ОПЛАТА</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li class="withoutLine"><a href="#">зОЛОТАЯ НЕРПА</a></li>
+                    <li class="last"><a href="#">Распродажа</a></li>
+                </ul>-->
+                {%% showMenu (menuid: 1;) %%}
+            </div>
+        </div>
+
+
+        <!-- HEADER EOF   -->	
+
+        <!-- BEGIN CONTENT -->
+
+        <div id="content">
+            <div class="contentLeft">
+                <div class="subnav">
+                    <!--<ul>
+                        <li class="active"><a href="#"><span>ЖЕНСКАЯ КОЛЛЕКЦИЯ</span></a>
+                            <ul>
+                                <li><a href="#">Новое поступление</a></li>
+                                <li class="active"><a href="#">Блузы</a>
+                                    <ul>
+                                        <li><a href="#">Рукавом ¾</a></li>
+                                        <li class="active"><a href="#">С длинным рукавом</a></li>
+                                        <li><a href="#">С коротким рукавом</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Рубашки</a></li>
+                                <li><a href="#">Юбки</a></li>
+                                <li><a href="#">Брюки</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span>МУЖСКАЯ КОЛЛЕКЦИЯ</span></a></li>
+                        <li><a href="#"><span>АКССЕСУАРЫ</span></a></li>
+                        <li><a href="#"><span>РАСПРОДАЖА</span></a></li>
+                    </ul>-->
+					{%% catalogLeftMenu () %%}
+                </div>
+                <div class="boxNew">
+                    <p class="title">Новости</p>
+                    <div class="blockWhite">
+                        {%% news(GROUP: 2; LIMIT: 3;) %%}
+                    </div>
+                    <div class="formNewTop"><p>Подпишись на новости:</p></div>
+                    <div class="boxFormNew">
+                        <form action="" name="Form_new" method="post">
+                            <input type="text" name="search" value="Ваш E-Mail" onfocus="this.value=''" onblur="this.value='Ваш E-Mail'" />
+                            <input type="submit" value="ОК" />
+                        </form>
+                    </div>
+                </div>
+                <div class="boxReviews">
+                    <p class="title">Отзывы <img src="/templates/ru/images/img/img_1.png"   alt="" border="0" /></p>
+                    <!--<div class="oneReview">
+                        <p class="name">Антонина</p>
+                        <div class="boxRaiting">
+                            <span class="on"></span>
+                            <span class="on"></span>
+                            <span class="on"></span>
+                            <span class="on"></span>
+                            <span class="off"></span>
+                            <div class="clear"></div>		
+                        </div>
+                        <p>Повседневный образ не обязательно должен быть скучным, банальным и неброским, сделайте его ярким и впечатляющим, добавив в свой гардероб стильные женские рубашки и туники. Именно они сделают Ваш внешний вид элегантным и благородным, при этом сохранив его соблазнительность и женственность. </p>
+                        <a href="#">далее</a>
+                    </div>-->
+					{%% testimonialShow () %%}
+                    <a href="/testimonials" class="allReview">Все отзывы</a>
+                    <div class="clear"></div>	
+                </div>
+            </div>
+            <div class="contentRight">
+                {content}
+            </div>
+            <div class="clear"></div>	
+            <div class="boxAbout">                
+                <div class="tinymce">                    
+                    <!--<h1>Белая нерпа</h1>
+                    <p>Добро пожаловать в интернет-магазин belayanerpa.ru, где каждый клиент сможет выбрать и купить подходящий под стиль и предпочтения предмет одежды, выбрав из 250 000 товаров. Интернет-магазин belayanerpa.ru, где каждый клиент сможет выбрать и купиинтернет-магазин belayanerpa.ru, где каждый клиент сможет.</p>
+                    -->
+                </div>
+            </div>		
+        </div>	
+
+        <!-- CONTENT EOF   -->
+
+        <!-- BEGIN FOOTER -->	
+
+        <div class="boxFooter">
+            <div id="footer">
+                <div class="footerBlock1">
+                    <p class="titleBlock">Мой профиль</p>
+                    <!--<ul>
+                        <li><a href="#">Авторизация</a></li>
+                        <li><a href="#">Создать учетную запись</a></li>
+                    </ul>-->
+					{%% showMenu (menuid: 4;) %%}
+                </div>
+                <div class="footerBlock1">
+                    <p class="titleBlock">Белая нерпа</p>
+                    <!--<ul>
+                        <li><a href="/novosti/">Новости</a></li>
+                        <li><a href="#">О магазине</a></li>
+                        <li><a href="#">Наша продукция</a></li>
+                        <li><a href="#">О «Золотой нерпе»</a></li>
+                        <li><a href="/kontakty/">Контакты</a></li>
+                        <li><a href="#">Подарочные сертификаты</a></li>
+                        <li><a href="/aktsii/">Акции</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                    </ul>-->
+					{%% showMenu (menuid: 3;) %%}
+                </div>
+                <div class="footerBlock1">
+                    <p class="titleBlock">Покупателям</p>
+                    <!--<ul>
+                        <li><a href="/tablitsy-razmerov/">Ваш размер</a></li>
+                        <li><a href="/dostavka-i-oplata/#dostavka">Доставка</a></li>					
+                        <li><a href="/dostavka-i-oplata/">Оплата</a></li>
+                        <li><a href="#">Возврат и обмен</a></li>
+                        <li><a href="#">Полезные статьи</a></li>					
+                    </ul>-->
+					{%% showMenu (menuid: 2;) %%}
+                </div>
+                <div class="footerBlock2">
+                    <p class="titleBlock">Контакты</p>
+                    <p><span><span>8 (3952)</span> 75-75-37</span><br/>C 9.00 до 19.00</p>
+                    <p>г. Иркутск, ул.Советская, 25, пав. 24</p>
+                </div>
+                <div class="footerBlock2">
+                    <p class="titleBlock">ПРИСОЕДИНЯЙТЕСЬ</p>
+                    <a href="http://vk.com/nerpamoda" class="iconFooter1" target="_blank">Вконтакте</a>
+                    <a href="http://www.facebook.com/nerpamoda" class="iconFooter2" target="_blank">Facebook</a>
+                    <a href="http://odnoklassniki.ru/group/52848614113393" class="iconFooter3" target="_blank">Однокласники</a>
+                </div>
+                <div class="clear"></div>	
+            </div>
+        </div>
+
+
+
+        <!-- FOOTER EOF   -->			
+
+
+    </body>
+</html>

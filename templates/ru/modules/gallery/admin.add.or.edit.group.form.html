@@ -1,0 +1,79 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/gallery/listGroups.php?lang={curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к управлению фотоальбомами </a></td>
+    <td><div align="right"><a href="/admin/cfg/gallery/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+
+<form action="?go=go&id={id}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("submitForm");'>
+	<center>
+		<table border="0" width="100%" cellpadding="4" cellspacing="0" class="inputTable">
+			<tr>
+				<th colspan="2">{action} альбома</th>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center"><font color="red"><strong>{error}</strong></font></td>
+			</tr>
+
+			<tr>
+				<td width="50%"><strong>Название альбома:</strong></td>
+				<td ><input type="text" name="groupTitle" value="{groupTitle}" style="width: 99%;"></td>
+			</tr>
+
+			<tr>
+				<td width="50%"><strong>Описание альбома:</strong></td>
+				<td>{wysiwygEditor}</td>
+			</tr>
+			
+			
+			<tr>
+				<td><strong>Владелец альбома:</strong></td>
+				<td>{selectOwnerId}</td>
+			</tr>
+
+			<tr>
+				<td>Фото альбома:</td>
+				<td><input type="file" name="groupThumb" style="width: 99%"></td>
+			</tr>
+
+			{thumb}
+
+			<tr>
+				<td >Шаблон для альбома: </td>
+				<td ><input name="template" type="text" id="template" style="width: 99%;" value="{template}"></td>
+			</tr>
+
+			<tr>
+				<td >Показывать ли группу в меню &quot;Навигация&quot;:</td>
+				<td >[selectNavigationShow="{navigationShow}"]</td>
+			</tr>
+
+			<tr>
+				<td  nowrap="nowrap">Название главной страницы в меню &quot;Навигация&quot;:</td>
+				<td ><input name="navigationMainTitle" type="text" id="navigationMainTitle" style="width: 99%;" value="{navigationMainTitle}"></td>
+			</tr>
+
+			<tr>
+				<td >Краткое описание альбома  (meta):</td>
+				<td ><input name="md" type="text" id="md" style="width: 99%;" value="{md}"></td>
+			</tr>
+			<tr>
+				<td >Ключевые слова для альбома (meta): </td>
+				<td ><input name="mk" type="text" id="mk" style="width: 99%;" value="{mk}"></td>
+			</tr>
+
+			<tr>
+				<td >Язык:</td>
+				<td >[selectLang="{curLang}"]</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="  Сохранить  " class="submit" id="submitForm"></td>
+				
+			</tr>
+			
+		</table>
+		<br><br>
+		
+	</center>
+</form>	

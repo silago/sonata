@@ -1,0 +1,132 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/page/index.php?lang={curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к управлению страницами</a></td>
+    <td><div align="right"><a href="/admin/cfg/page/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+
+<br />
+
+<form action="?lang={curLang}&id={id}" enctype="multipart/form-data" method="post" onsubmit='disableSubmit("formSubmit");'>
+  
+  <table width="100%" border="0" cellpadding="4" cellspacing="0" class="inputTable">
+    <tr >
+	  <th  colspan="2">
+	    <strong>{action}  страницы</strong>	  </th>
+	</tr>
+
+    <tr >
+	  <td  colspan="2" align="center">
+	    <strong><font color="red">{error}</font></strong>	  </td>
+	</tr>
+
+    <tr >
+	  <td  align="right" width="50%">
+	    <strong>Владелец страницы</strong>	  </td>
+      <td  align="left">
+	     {selectOwnerPage}      </td>
+    </tr>
+
+  	<tr >
+		<td align="right" >
+	  		<strong>Название страницы:</strong><br><small><em>Например: О компании</em></small>		</td>
+    
+		<td align="left" >
+	  		<input type="text" name="title" style="width: 99%;" value="{valueTitle}">		</td>
+    </tr>
+
+  	<tr >
+		<td align="right" >
+	  		<strong>Адрес страницы (uri):</strong><br><small><em>Только латинские символы, например: about</em></small>		</td>
+    
+	  <td align="left" >
+	  		<input type="text" name="uri" style="width: 99%;" value="{valueUri}"></td>
+    </tr>
+
+
+  	<tr >
+		<td align="right" >
+	  		Используемый шаблон:		</td>
+    
+		<td align="left" >
+	  		<input type="text" name="template" style="width: 99%;" value="{valueTemplate}">		</td>
+    </tr>
+  	<tr >
+      <td align="right" > Заголовок сайта (title): </td>
+  	  <td align="left" ><input name="pageTitle" type="text" id="pageTitle" style="width: 99%;" value="{valuePageTitle}" maxlength="255" />      </td>
+    </tr>
+  	<tr >
+      <td align="right" > Показывать ли страницу в меню навигации </td>
+  	  <td align="left" > [selectNavigationShow="{valueNavigationShow}"] </td>
+    </tr>
+
+  	<tr >
+		<td align="right" >
+	  		Название главной страницы в меню навигации:		</td>
+    
+		<td align="left" >
+	  		<input type="text" name="navigationMainTitle" style="width: 99%;" value="{valueNavigationMainTitle}">		</td>
+    </tr>
+
+  	<tr >
+		<td align="right" >
+	  		Редирект:		</td>
+    
+		<td align="left" >
+	  		<input type="text" name="redirect" style="width: 99%;" value="{valueRedirect}">		</td>
+    </tr>
+	
+	<tr >
+		<td align="right" >
+	  		Фото:		</td>
+    
+		<td align="left" >
+	  		<input type="file" name="photo" style="width: 99%">	</td>
+    </tr>
+<tr>
+	<td align="center" colspan="2">
+	
+		{photopage}
+	</td>
+</tr>
+	{uploadedPhoto}
+	<tr><td colspan="2">&nbsp;</td></tr>
+
+  	<tr >
+		<th  colspan="2"><p><strong>Текст страницы:		</strong></p>		  </th>
+  	</tr>
+  	<tr >
+		<td align="center"  colspan="2">
+	  		{fckFormText}		</td>
+  	</tr>
+
+  	<tr >
+		<td align="right" >
+	  		Описание (META):		</td>
+    
+		<td align="left" >
+	  		<input type="text" name="md" style="width: 99%;" value="{valueMd}">		</td>
+    </tr>
+
+  	<tr >
+		<td align="right" >
+	  		Ключевые слова (META):		</td>
+    
+		<td align="left" >
+	  		<input type="text" name="mk" style="width: 99%;" value="{valueMk}">		</td>
+    </tr>
+
+  	<tr >
+		<td align="right" >
+	  		Язык добавляемой страницы:		</td>
+    
+		<td align="left" >
+	  		[selectLang="{valueLang}"]		</td>
+    </tr>
+	<tr><td colspan="2" align="center"><input type="submit" value="   СОХРАНИТЬ   " class="submit" id="formSubmit"></td></tr>
+</table>
+
+<center><p></p></center>
+
+<input type="hidden" name="go" value="go">
+</form>

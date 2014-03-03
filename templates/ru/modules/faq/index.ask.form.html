@@ -1,0 +1,10 @@
+<form action="/faq/ask.php" method="post" style="margin-top: 25px;">
+	<div>	Если Вы не нашли ответ на свой вопрос на сайте, задайте его нам:</div>
+	<div style="color: red;"><small>{error}</small></div>
+	<div><textarea name="question" style="width: 90%; height: 100px;" class="formSiteBody">{valueQuestion}</textarea></div>
+	<div style="margin: 10px 0">
+		Введите код с картинки:&nbsp;<img src="/imageCheckCode.php" alt="CheckCode" class="nobord" />&nbsp;
+		<input type="text" name="checkCode" size="6" />
+		<input type="submit" value="   Задать вопрос   " class="button">
+	</div>
+</form>

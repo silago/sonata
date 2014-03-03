@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="UTF-8"/>
+        <title>{title} | {pageTitle}</title> 
+        <meta name="description" content="{title}"/>  
+        <link href="/images/favicon.png" rel="icon"/>
+        <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
+        <link href="/css/cloud-zoom.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/simple_menu.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/slideshow.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/jquery.prettyphoto.css" rel="stylesheet" type="text/css"/> 
+        <script src="http://code.jquery.com/jquery-1.10.1.js" language="javascript" ></script>
+        <script type="text/javascript" src="/js/jquery/ui/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="/js/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css"/>
+        <script type="text/javascript" src="/js/jquery/ui/external/jquery.cookie.js"></script> 
+        <link rel="stylesheet" type="text/css" href="/js/jquery/fancybox/jquery.fancybox-1.3.4.css" media="screen"/>
+        <script type="text/javascript" src="/js/jquery/colorbox/jquery.colorbox.js"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.cycle.js"></script>
+        <link rel="stylesheet" type="text/css" href="/js/jquery/colorbox/colorbox.css" media="screen"/>
+        <!--[if IE]>
+        <script type="text/javascript" src="/js/jquery/fancybox/jquery.fancybox-1.3.4-iefix.js"></script>
+        <![endif]-->
+        <!--[if lt IE 8]><div style='clear:both;height:59px;padding:0 15px 0 15px;position:relative;z-index:10000;text-align:center;'><a href="/../windows.microsoft.com/ru-ru/windows/upgrade-your-browser.htm"><img src="/../storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+        <script type="text/javascript" src="/js/jquery/tabs.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/js.js"></script>
+        <script type="text/javascript" src="/js/jquery/easytooltip.js"></script> 
+        <script type="text/javascript" src="/js/jquery.equalheights.js"></script>
+        <script type="text/JavaScript" src="/js/cloud-zoom.1.0.2.js"></script>
+        <script type="text/javascript" src="/js/jquery.prettyphoto.js"></script>
+        <script type="text/javascript" src="/js/jscript_zjquery.anythingslider.js"></script>
+        <script type="text/javascript" src="/js/superfish.js"></script>
+        <script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+        <script type="text/javascript" src="/js/js.js"></script>
+        <script type="text/javascript" src="/js/jquery/nivo-slider/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.cycle.js"></script>
+        <!--[if  IE 8]>
+            <style>
+                .success, #header #cart .content  { border:1px solid #e7e7e7;}
+            </style>
+        <![endif]-->
+        <!--[if  IE 7]>
+        <link rel="stylesheet" type="text/css" href="/css/ie7.css" />
+        <![endif]-->
+        <!--[if lt IE 7]>
+        <link rel="stylesheet" type="text/css" href="/css/ie6.css" />
+        <script type="text/javascript" src="/js/dd_belatedpng_0.0.8a-min.js"></script>
+        <script type="text/javascript">
+        DD_belatedPNG.fix('#logo img');
+        </script>
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="/css/livesearch.css"/>
+        
+         <script type="text/javascript" src="/js/jquery.notification.js"></script>
+        
+         <link href="/css/notification.css" rel="stylesheet" type="text/css"/>
+		
+    </head>
+    <body class="common-home">
+        <div class="main-shining">
+            <div class="row-1">
+                <div id="header">
+                    <div class="header-top1"> 
+                        <div id="welcome">
+                            {%% topLoginForm () %%} 
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+						{%% contact() %%}
+							 
+                    <div class="cart-inner"><div id="cart">
+                            <div class="heading">
+							
+								
+                                     <a href="/basket"> 
+                                    <span id="cart-total">
+                                  {%% topCart() %%}  
+                                    </span> </a>
+                                    <span class="clear"></span>
+                             
+                            </div> 
+                        </div>
+                    </div>
+                    <div id="logo"><a href="/"><img src="/images/logo.png" title="{title}" alt="{title}"/></a></div>
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="center">
+                   
+                    <div id="search">
+                            <form action="/catalogsearch" name="Search" method="get">
+                        <span class="search-bg">
+                            <input type="text" name="s" value="" onClick="this.value = '';" onKeyDown="this.style.color = '#fff';"/>
+                        </span>
+                            </form>
+                    </div> 
+                    {%% showMenu (menuid: 1;) %%}
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="main-bg">
+                <div class="main-container">
+                    <p id="back-top"> <a href="#top"><span></span></a> </p>
+                    <div id="container">
+                        <div id="notification"> </div>
+                        <div id="column-left">
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $('li.cat-header ul').each(function(index) {
+                                        $(this).prev().addClass('idCatSubcat')
+                                    });
+                                    $('li.cat-header a').after('<span></span>');
+                                    $('li.cat-header ul').css('display', 'none');
+                                    $('li.cat-header ul.active').css('display', 'block');
+                                    $('li.cat-header ul').each(function(index) {
+                                        $(this).prev().addClass('close').click(function() {
+                                            if (
+                                                    $(this).next().css('display') == 'none') {
+                                                $(this).next().slideDown(400, function() {
+                                                    $(this).prev().removeClass('collapsed').addClass('expanded');
+                                                    $(this).prev().prev().removeClass('closed').addClass('opened');
+                                                });
+                                            } else {
+                                                $(this).next().slideUp(400, function() {
+                                                    $(this).prev().removeClass('expanded').addClass('collapsed');
+                                                    $(this).prev().prev().removeClass('opened').addClass('closed');
+                                                    $(this).find('ul').each(function() {
+                                                        $(this).hide().prev().removeClass('expanded').addClass('collapsed');
+                                                    });
+                                                });
+                                            }
+                                            return false;
+                                        });
+                                    });
+                                });
+                            </script>
+                            <div class="box category">
+                                <div class="box-heading">Категории</div>
+                                <div class="box-content">
+                                    <div class="box-category">
+                                        {%% catalogLeftMenu () %%}
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $(function() {
+                                        $('.manufacturers li ').last().addClass('last');
+                                    });
+                                });
+                            </script>
+                            <div class="box manufacturers">
+                                <div class="box-heading"><span>Бренды</span></div>
+                                <div class="box-content">
+                                    
+                                       {%% showBrands() %%}
+                                    
+                                </div>
+                            </div> <div class="box bestsellers">
+                                <div class="box-heading">Лидеры продаж</div>
+                                <div class="box-content">
+                                       <div class="box-product"> <ul>
+
+                                            {%% showBestSell () %%}
+                                        </ul>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="content">
+                            <div class="content-box">
+                                <div class="content-top">  
+										{content}  
+								</div>
+								<div class="content-bottom"> 
+									<div class="box featured">
+										<div class="box-heading">Новинки</div>
+										<div class="box-content">
+											<div class="box-product">
+												<ul> 
+													{%% showHits () %%} 
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="footer-wrap">
+                        <div id="footer">
+                            <div class="wrapper">
+                                <div class="column col-1">
+                                    <h3>Информация</h3>
+                                    {%% showBotMenu (menuid: 1; ) %%}
+                                </div>
+                                 
+                                <div class="column col-4">
+                                    <h3>Мой профиль</h3> 
+                                    {%% showBotMenu (menuid:4;) %%} 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrapper">
+                            <div id="powered">Разработка сайта: <a style="color:#0078d5;" href="http://in-site.ru">In-Site</a></div>
+                        </div>
+                    </div>
+
+
+                    <script type="text/javascript" src="/js/livesearch.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">/* CloudFlare analytics upgrade */
+        </script>
+    </body></html>

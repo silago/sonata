@@ -1,0 +1,126 @@
+/*
+ * jQuery Nivo Slider v2.3
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2010, Gilbert Pellegrom
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * March 2010
+ */
+ 
+ 
+/* The Nivo Slider styles */
+.nivoSlider {
+	position:relative;
+	width:754px; height:350px;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	display:none;
+}
+
+.nivo-directionNav{
+	display:block;}
+/* The slices in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	height:100%;
+}
+/* Caption styles */
+.nivo-caption {
+	left:0; top:0;
+	z-index:1000;
+}
+.boxCaption{
+	position:absolute;
+	left:287px; top:99px;
+	width:400px;
+	z-index:1000;}
+.nivo-caption p.title{
+	font:60px Tahoma;
+	color:#ffffff;
+	text-transform:1px 1px 5px #005b90;
+	padding:0px 0px 0 0px;}
+.nivo-caption p{
+	font:16px Arial;
+	color:#ffffff;
+	line-height:20px;
+	padding:0px 0px 12px 14px;}
+.nivo-caption a{
+	display:block;
+	font:11px Arial;
+	color:#616161;
+	font-weight:bold;
+	padding:1px 0 0 0;
+	background:url(/templates/ru/images/img/button_slider.png) repeat-x left top;
+	height:15px; width:98px;
+	text-align:center;
+	border-radius: 2px; moz-border-radius: 2px; webkit-border-radius: 2px;
+	behavior: url(css/PIE.htc);
+	text-decoration:none;
+	margin-left:14px;}
+.nivo-caption a:hover{ text-decoration:underline;}
+
+	
+
+	
+
+.nivo-html-caption {
+    display:none;
+}
+.nivo-controlNav {
+  position:absolute;
+	right:-6px; bottom:-26px;
+	height:15px;
+	z-index:1000;
+}
+.nivo-controlNav a {
+    float:left;
+	margin-left:3px;
+	list-style-type:none;
+	background:url(/templates/ru/images/img/slider_nav.png) no-repeat left top;
+	display:block;
+	width:15px; height:15px;
+	cursor:pointer;
+	font:0px Arial;
+}
+.nivo-controlNav a:hover {
+   background:url(/templates/ru/images/img/slider_nav.png) no-repeat left bottom;
+}
+.nivo-controlNav a.active {
+   background:url(/templates/ru/images/img/slider_nav.png) no-repeat left bottom;
+}
+.nivo-prevNav {
+	position:absolute;
+	z-index:1000;
+	background:url(/templates/ru/images/img/slider_prev.png) no-repeat; 
+	height:57px; width:21px; 
+	left:-5px; top:147px;
+	
+}
+.nivo-prevNav:hover{}
+.nivo-nextNav {
+	position:absolute;
+	z-index:1000;
+	background:url(/templates/ru/images/img/slider_next.png) no-repeat; 
+	height:57px; width:21px; 
+	right:-5px; top:147px;
+	
+	
+}
+.nivo-nextNav:hover{}

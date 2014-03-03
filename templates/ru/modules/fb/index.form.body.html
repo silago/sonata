@@ -1,0 +1,13 @@
+<form action="send.php" method="post" id="form">
+<div class="fb_error">{error}</div>
+<div class="fb_body">
+	<div class="fb_rows">
+		{body}
+	</div>
+	<div class="capcha">
+		<div><img src="/imageCheckCode.php" alt="CheckCode" class="nobord" /></div>
+		<div>{enterCode}: <input type="text" name="checkCode" size="6" /></div>
+	</div>
+	<div class="fb_submit"><input type="submit" value="{send}" class="button" /></div>
+</div>
+</form>

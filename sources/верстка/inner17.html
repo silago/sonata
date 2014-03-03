@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>title</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.selectBox.js"></script>
+<script type="text/javascript" src="js/niceRadio.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "images/calendare.png",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+  <script type="text/javascript">
+ $(document).ready(function() {
+     $("select").selectBox();
+ });
+ </script>
+</head>
+<body>
+	<div class="top-head">
+		<div class="wrap">
+			<div class="enter-box">
+				<span>Линый кабинет</span>	
+				<a href="#">Войти</a>
+			</div>	
+
+			<div class="basket-box">
+				<span>В вашей корзине</span>
+				<a href="#">5 товаров</a>
+				<a class="bs-button" href="#">Заказать</a>
+			</div>
+		</div>	
+	</div>
+
+	<div class="header">
+		<div class="wrap">
+			<div class="logo">
+				<a href="#"><img src="images/logo.png" height="69" width="256" alt="" /></a>	
+			</div>	
+
+			<div class="search">
+				<form action="">
+					<input type="text" placeholder="Поиск">	
+					<input type="submit">
+				</form>	 
+			</div>
+
+			<div class="phone">
+				<img src="images/girl.png" height="59" width="59" alt="" />	
+				<div class="phone-number">
+					<p><strong>8 (3952)</strong> 505-818</p>	
+					<span>Многоканальный</span>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<div class="wrap">
+		<div class="menu">
+			<ul>
+				<li class="active"><a href="#"><p>Магазин</p></a></li>
+				<li><a href="#"><p>Готовые решения</p></a></li>
+				<li><a href="#"><p>Услуги</p></a></li>
+				<li><a href="#"><p>О компании</p></a></li>
+				<li><a href="#"><p>Калькулятор</p></a></li>
+				<li><a href="#"><p>Помощь</p></a></li>
+				<li><a href="#"><p>Контакты</p></a></li>
+			</ul>	
+		</div>	
+	</div>
+
+	<div class="bg">
+		<div class="wrap">
+			<div class="box-container">
+				<h2>Информация для доставки и оплаты</h2>
+
+				<div class="box-cont">
+					<div class="serv-form">
+						<div class="block">
+								<span>Имя <strong>*</strong></span>
+								<input type="text" placeholder="Антон Антоныч" />	
+							</div>	
+
+							<div class="block">
+								<span>Телефон <strong>*</strong></span>
+								<input type="text" placeholder="+7 (495) 456-24-23" />	
+							</div>
+
+							<div class="block">
+								<span>E-Mail <strong>*</strong></span>
+								<input type="text" placeholder="info@antinich.ru" class="alert-input" />	
+								<p class="alert-text">Не корректно указан адрес электронной почты! <img src="images/ln.png" height="10" width="3" alt="" /></p>
+							</div>
+
+							<div class="radio-block">
+								<label><input class="niceRadio" type="radio" name="check2" /> Доставка</label>
+								<label><input class="niceRadio" type="radio" name="check2" /> Самовывоз</label>	
+							</div>
+
+							<div class="block">
+								<span>Улица <strong>*</strong></span>
+								<input type="text" placeholder="" />	
+							</div>
+
+							<div class="block">
+								<div class="bl-box">
+											<div class="adr">
+												<span>Улица </span>
+												<input type="text" placeholder="5" class="c1" />	
+											</div>
+
+											<div class="adr">
+												<span>Корпус</span>
+												<input type="text" placeholder="2" class="c2" />	
+											</div>	
+
+											<div class="adr">
+												<span>Квартира/офис</span>
+												<input type="text" placeholder="16" class="c3" />	
+											</div>
+										</div>	
+							</div>
+
+							<div class="block">
+								<span>Желаемая дата<br /> доставки </span>
+								<input type="text" id="datepicker" class="cl" />
+
+								<div class="time-block">
+									<span class="span-text">Время</span>	
+
+									<select>
+										<option>00</option>
+										<option>01</option>
+										<option>02</option>
+										<option>03</option>
+										<option>04</option>
+									</select>
+
+									:
+
+									<select>
+										<option>00</option>
+										<option>01</option>
+										<option>02</option>
+										<option>03</option>
+										<option>04</option>
+									</select>
+								</div>	
+							</div>
+
+							<div class="pay-serv">
+								<p>Оплата <strong>NNNNNN</strong> руб.</p>	
+
+								<label><input class="niceRadio" type="radio" name="check1" /> Оплатить онлайн банковской картой</label>
+								<label><input class="niceRadio" type="radio" name="check1" /> Выписать счет для оплаты</label>	
+								<label><input class="niceRadio" type="radio" name="check1" /> Наличными. Курьеру при доставке</label>
+								<label><input class="niceRadio" type="radio" name="check1" /> Банковкой картой, курьеру при доставке</label>
+
+								<input type="submit" value="Продолжить" />	
+
+								<div class="help-text">
+									Подробное описание способа оплаты. Выписывая счет, вы имеете возможность оплатить свой заказ одним из способов, предложенных в данной форме. Выписывая счет, вы имеете возможность оплатить свой заказ одним из способов, предложенных в данной форме.
+									<img src="images/help-img.png" height="10" width="4" alt="" />	
+								</div>
+							</div>
+					</div>	
+				</div>	
+			</div>	
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div class="footer_blank"></div>
+
+<div id="footer">
+	<div class="sub-info">
+		<div class="sub-box">
+			<span>Способы оплаты:</span>	
+			<p><a href="#">Наличный расчет</a></p>
+			<p><a href="#">Безналичный расчет</a></p>
+		</div>
+
+		<div class="sub-box">
+			<span>Мы принимаем:</span>	
+			<a href="#"><img src="images/visa.png" height="34" width="58" alt="" /></a>
+			<a href="#"><img src="images/mastercard.png" height="34" width="58" alt="" /></a>
+		</div>	
+
+		<div class="sub-box">
+			<span>Адрес и почта:</span>	
+			<p class="address">г. Иркутск, ул. Декабрьских событий 50/1</p>
+			<p class="mail"><a href="mailto:soneta@sonetarf.ru">soneta@sonetarf.ru</a></p>
+		</div>
+		<div class="clear"></div>
+
+		<p class="copyright">© Copyright ООО «Сонета» 1992-2014 Все права защищены.</p>
+	</div>
+
+	<div class="sub-phone">
+		<span>Многоканльный:</span>	
+		<p><strong>8 (3952)</strong> 505-818</p>
+
+		<span>Факс / бухгалтерия:</span>	
+		<p><strong>8 (3952)</strong> 30-19-02</p>
+	</div>
+</div>
+
+</body>
+</html>

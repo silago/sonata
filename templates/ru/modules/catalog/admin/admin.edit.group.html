@@ -1,0 +1,149 @@
+<ul class="breadcrumb">
+	<li><a href="#">Управление магазином</a><span class="divider">/</span></li>
+	<li><a href="/admin/catalog/groupList.php">Каталог</a><span class="divider">/</span></li>	
+	<li><a href="/admin/catalog/groupList.php">Группы</a><span class="divider">/</span></li>	
+	<li class="active"><a href="/admin/catalog/editGroup.php?id={$group_id}">Редактирование группы <strong>"{$name}"</strong></a></li>
+</ul>
+
+
+<div class="row">
+	<div class="span12">
+	{$error}
+	</div>	
+</div>
+<form class="form-vertical" action="editGroupGo.php?id={$group_id}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("submitFormKey", "Пожалуйста, подождите..")'>
+	<fieldset>
+		<div class="row">
+			<div class="span3">
+			<div class="control-group">
+			<label class="control-label" for="parent_group_id"><strong>Владелец группы:</strong></label>
+				<div class="controls">
+					{$selectGroup}
+				</div>
+			</div>
+			</div>
+			<div class="span9">
+			<div class="control-group">
+			<label class="control-label" for="hidden"><strong>Группа скрыта:</strong></label>			
+				<div class="controls">
+					<input type="checkbox" name="hidden" id="hidden" value="1" {$select} />
+				</div>
+			</div>
+			</div>
+		</div>		
+		<div class="row">
+			<div class="span6">
+				<div class="control-group">
+					<label class="control-label" for="name"><strong>Название группы:</strong></label>
+					<div class="controls">
+						<input type="text" name="name" id="name" maxlength="255" style="width: 99%" value="{$name}" />
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="control-group">
+					<label class="control-label" tooltip="123" for="uri"><strong>uri:</strong></label>
+					<div class="controls">
+						<input type="text" name="uri" id="uri" maxlength="255" style="width: 99%" value="{$uri}" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<a href="#myModal" role="button" class="btn btn-info" data-toggle="modal">Выбрать фото</a>				
+				<div class="modal hide" id="myModal" style="width:auto; left:40%; top:35%;">				
+					<div class="modal-header" style="height:20px;">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3>Файловый менеджер</h3>
+					</div>
+					<div class="modal-body" style="max-height:520px; height:520px;">
+						<div id="catalog_group_photo"></div>
+					</div>
+					<div class="modal-footer" style="height:20px;">
+						<a href="#" class="btn btn-info" data-dismiss="modal">Закрыть</a>					
+					</div>
+				</div>				
+				<div class="row" style="padding-top:10px;">
+					<div class="span6"><div id="resultphoto"><ul class="thumbnails">{$photoForm}</ul></div></div>
+				</div>
+			</div>
+			<div class="span6">
+			<a href="#myModal1" role="button" class="btn btn-info" data-toggle="modal">Выбрать миниатюру</a>
+			<div class="modal hide" id="myModal1" style="width:auto; left:40%; top:35%;">				
+					<div class="modal-header" style="height:20px;">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3>Файловый менеджер</h3>
+					</div>
+					<div class="modal-body" style="max-height:520px; height:520px;">
+						<div id="catalog_group_thumb"></div>
+					</div>
+					<div class="modal-footer" style="height:20px;">
+						<a href="#" class="btn btn-info" data-dismiss="modal">Закрыть</a>					
+					</div>
+				</div>
+				<div class="row" style="padding-top:10px;">
+					<div class="span6"><div id="resultthumb"><ul class="thumbnails">{$thumbForm}</ul></div></div>				
+				</div>			
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="span12">
+			<div class="control-group">
+					<label class="control-label"><strong>Описание группы:</strong></label>
+					<div class="controls">
+						{$fckSmallTextForm}
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div class="row">
+			<div class="span4">
+				<div class="control-group">
+					<label class="control-label" for="title">Заголовок страницы при просмотре группы:</label>
+					<div class="controls">
+						<input name="title" type="text" id="title" style="width: 99%" value="{$title}" maxlength="255" />
+					</div>
+				</div>
+			</div>
+			<div class="span4">
+				<div class="control-group">
+					<label class="control-label" for="md">Краткое описание (META-description):</label>
+					<div class="controls">
+						<input name="md" type="text" id="md" style="width: 99%" value="{$md}" maxlength="255" />
+					</div>
+				</div>
+			</div>
+			<div class="span4">
+				<div class="control-group">
+					<label class="control-label" for="mk">Ключевые слова (META-keywords):</label>
+					<div class="controls">
+						<input name="mk" type="text" id="mk" style="width: 99%" value="{$mk}" maxlength="255" />
+					</div>
+				</div>
+			</div>			
+		</div>		
+		<div class="row">
+			<div class="span3 offset6">
+				<button type="submit" class="btn btn-primary">Сохранить</button>
+			</div>			
+		</div>
+	</fieldset>
+</form>
+
+
+
+
+<!-- <form action="editGroupGo.php?lang={$curLang}&id={$group_id}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("submitFormKey", "Пожалуйста, подождите..")'>
+<table border="0" width="100%" cellpadding="4" cellspacing="0" class="inputTable">	
+	<tr>
+		<td colspan="2" align="center"><font color="#FF0000"><strong>{$error}</strong></font></td>
+	</tr>		    
+	<tr>
+      <td align="right">Фото при отображении группы:</td>
+	  <td><input name="photo" type="file" id="photo" style="width: 70%"/></td>
+	</tr>  
+  {$photoForm}  
+</table>
+</form> -->

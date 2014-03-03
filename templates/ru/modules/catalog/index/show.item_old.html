@@ -1,0 +1,203 @@
+<div class="midCol">
+    <div class="item">
+        <div class="itemBrd" id="mainphoto">
+            <a class="group1" href="{$mainfilename}"><img width="1024" src="{$mainthumb}"></a>
+        </div>
+    </div>
+    {if !empty($photos)}
+    {foreach from=$photos item=item key=key}
+        <div class="subItem">
+            <div class="itemBrd">
+                <a class="group1" href="{$item.filename}"><img width="1024" src="{$item.thumb}"></a>
+            </div>
+        </div>
+      {/foreach}
+      {/if}
+</div>
+<div class="rigthCol">
+    <hr>
+    <div class="itemLongName">{$name}</div>
+
+    {if !empty($article)}
+        <div class="itemArticle">[артикул {$article}]</div><hr>
+    {/if}
+
+    {if !empty($price)}
+        <div class="itemText">Цена:</div><div class="itemPrice">{$price} р.</div>
+        <div style="padding-left:50px;">
+            <div class="itemPriceDiscoint"><span class="lineThrough">{$price_old}</span> р.</div>
+        </div>
+    <hr>
+    {/if}
+
+    {if !empty($description)}
+        <div class="itemTxt">
+            {$description}
+        </div>
+    {/if}
+    <hr>
+    <div class="itemCart"><a href="#" onclick='return addToChart("{$id}")'>добавить в корзину</a></div>
+</div>
+
+
+				<a href="#" class="buttonBack">Вернуться в каталог</a>
+                <div class="breadCrumbs">
+                    <a href="#">Главная</a>
+                    <img src="/templates/ru/images/img/marker_breadcrumb.png"   alt="" border="0px" />
+                    <a href="#">Женская одежда</a>
+                    <img src="/templates/ru/images/img/marker_breadcrumb.png"   alt="" border="0px" />
+                    <a href="#">Блузы</a>
+                    <img src="/templates/ru/images/img/marker_breadcrumb.png"   alt="" border="0px" />
+                    <a href="#">С длиным рукавом</a>
+                    <img src="/templates/ru/images/img/marker_breadcrumb.png"   alt="" border="0px" />
+                    <p>Tom Farr</p>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+                <div class="boxGallery">
+                    <div class="mainImg"><span class="zoom" id="ex1"><img width="287" src="{$mainthumb}"><!--<img src="/templates/ru/images/img/img_big_1.jpg" id="main" width="287" height="407"   alt="" border="0px" />--></span></div>
+                    
+					
+					
+					<div class="boxImgSmall">
+						{if !empty($photos)}
+							{foreach from=$photos item=item key=key}								
+								<a href="#" href="{$item.filename}"><img src="{$item.thumb}" width="77" alt="" border="0px" /></a>
+							{/foreach}
+						{/if}                                                
+                    </div>
+                    <div class="clear"></div>
+                </div>	
+                <div class="boxDescriptionProduct">
+                    <h1><strong>Tom Farr</strong> {$name} </h1>
+                    <div class="mainDescription">
+                        <div class="lineDescription">
+							{if !empty($article)}
+								<div class="textLeft"><p>Артикул:</p></div>
+								<div class="textRight"><p>{$article}</p></div>
+								<div class="clear"></div>								
+							{/if}                            
+                        </div>
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Бренд:</p></div>
+                            <div class="textRight"><p>Tom Farr</p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Страна производитель:</p></div>
+                            <div class="textRight"><p>Россия</p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Состав ткани:</p></div>
+                            <div class="textRight"><p>80% хлопок / 20% полиэстер</p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Размерный ряд:</p></div>
+                            <div class="textRight">
+                                <div class="boxSize">
+                                    <ul>
+                                        <li><a href="#">XS</a></li>
+                                        <li><a href="#">L</a></li>
+                                        <li class="none"><a href="#">M</a></li>
+                                        <li class="none"><a href="#">XL</a></li>
+                                        <li><a href="#">S</a></li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                    <a href="#" class="allSize">Тблица размеров</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="boxDescriptionRight">
+                        <div class="descriptionRight">
+                            <div class="discount"></div>
+                            <p>Цена:</p>							
+							{if !empty($price)}
+								<p class="price">{$price} руб.</p>
+								<p class="discountPrice">{$price_old} руб.</p>								
+								<a href="#" onclick='return addToChart("{$id}")' class="inBasket">В корзину</a>
+								<a href="#" class="method">Способы доставки</a>
+							{/if}
+                        </div>
+                        <div class="boxIcons">
+                            <p>Мы в соцсетях:</p>
+                            <a href="#"><img src="/templates/ru/images/img/icon_1.png"   alt="" border="0px" /></a>
+                            <a href="#"><img src="/templates/ru/images/img/icon_2.png"   alt="" border="0px" /></a>
+                            <a href="#"><img src="/templates/ru/images/img/icon_3.png"   alt="" border="0px" /></a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+					
+					{if !empty($description)}
+						<div class="textDescription">
+							<h3>Описание</h3>
+							{$description}
+						</div>
+					{/if}					
+                    
+                    <div class="textDescription">
+                        <h3>Отзывы <a href="#">(15)</a></h3>
+                        <div class="boxOneReview">
+                            <div class="textReview">
+                                <div class="bottomReview"></div>
+                                <p>сначала подумал, что странно они выглядят, но ради интереса заказал вместе с кедами померить. оказалось, что на ноге они смотрятся мега стильно, решил купить!</p>
+                            </div>
+                            <p class="name">Гость</p>
+                            <p class="name">10 Июля 2012, 9:49</p>
+                            <div class="boxMark">							
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="off"></span>
+                                <div class="clear"></div>				
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="boxOneReview">
+                            <div class="textReview">
+                                <div class="bottomReview"></div>
+                                <p>сначала подумал, что странно они выглядят, но ради интереса заказал вместе с кедами померить. оказалось, что на ноге они смотрятся мега стильно, решил купить!</p>
+                            </div>
+                            <p class="name">Гость</p>
+                            <p class="name">10 Июля 2012, 9:49</p>
+                            <div class="boxMark">							
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="off"></span>
+                                <div class="clear"></div>				
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="boxRecomendation">
+                        <h3>Рекомендуем:</h3>
+                        <div class="boxCatalogProducts">				
+                            <div class="oneProduct">
+                                <a href="#"><img src="/templates/ru/images/img/01_img_6.jpg"   alt="" border="0px" /></a>
+                                <p class="nameProduct"><a href="#"><strong>Tom Farr</strong></a><br/><a href="#">Блуза c пуговицами</a></p>
+                                <p class="price">3 700 руб.</p>
+                                <a href="#" class="buttonInBasket">В корзину</a>
+                            </div>
+                            <div class="oneProduct withoutButton">
+                                <div class="action"></div>
+                                <a href="#"><img src="/templates/ru/images/img/01_img_3.jpg"   alt="" border="0px" /></a>
+                                <p class="nameProduct"><a href="#"><strong>Tom Farr</strong></a><br/><a href="#">Рубашка c рукавом ¾</a></p>
+                                <p class="price">1 800 руб.</p>							
+                            </div>
+                            <div class="oneProduct">
+                                <a href="#"><img src="/templates/ru/images/img/01_img_6.jpg"   alt="" border="0px" /></a>
+                                <p class="nameProduct"><a href="#"><strong>Tom Farr</strong></a><br/><a href="#">Блуза c пуговицами</a></p>
+                                <p class="price">3 700 руб.</p>
+                                <a href="#" class="buttonInBasket">В корзину</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>		

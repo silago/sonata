@@ -1,0 +1,59 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/brands/index.php?lang={curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к управлению брендами</a></td>
+    <td><div align="right"><a href="/admin/cfg/brands/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+<br />
+<form action="addGo.php?&id={id}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("submitFormKey", "Пожалуйста, подождите..")'>
+	<table width="100%" border="0" cellpadding="4" cellspacing="0" class="inputTable">
+		<tr>
+			<th colspan="2"><strong>{action} бренда</strong></th>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center"><strong><font color="red">{error}</font></strong></td>
+		</tr>
+
+		<tr>
+			<td align="right"><strong>Название:</strong></td>
+			<td><input type="text" name="title" maxlength="255" style="width: 200px;" value="{title}" /></td>
+		</tr>
+		
+		<tr>
+			<td align="right"><strong>Ссылка:</strong></td>
+			<td><input type="text" name="link" maxlength="255" style="width: 200px;" value="{link}" /></td>
+		</tr>
+		
+		<tr>
+			<td align="right"><strong>Показывать на главной:</strong></td>
+			<td align="left"><input type="checkbox" name="showonmain"{showonmain}/></td>
+		</tr>
+		
+		<tr>
+			<td align="right"><strong>Загрузить лого:</strong></td>			
+			<td><input name="brendlogo" type="file" id="brendlogo" style="width: 200px;"/></td>
+		</tr>
+		
+		{photoForm}
+		
+		<tr>
+			<td align="right"><strong>Загрузить дополнительное фото для больших блоков:</strong></td>			
+			<td><input name="advimage" type="file" id="advimage" style="width: 200px;"/></td>
+		</tr>
+		
+		{advimageForm}
+		
+		<tr>
+			<td colspan="2" align="center">Описание:</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><textarea cols="100" rows="5" name="descript" id="descript">{descript}</textarea></td>
+		</tr>
+				
+		<tr>
+			<td colspan="2" align="center"><input id="submitFormKey" type="submit" class="submit" value="Сохранить" ></td>
+		</tr>		
+	</table>
+</form>
+			

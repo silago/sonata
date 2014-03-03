@@ -1,0 +1,16 @@
+<tr id="node-{id}" class="child-of-node-{parent}">
+	<td valign="middle"><a {hidden} class="text" rel="tooltip" data-original-title="Редактировать группу" href="/admin/catalog/editGroup.php?id={idorig}">{title}</a></td>
+	<td style="text-align:center">
+	<div class="btn-group" style="padding-left:12px;">	
+		<a class="btn btn-primary" rel="tooltip" data-original-title="Редактировать группу" href="/admin/catalog/editGroup.php?id={idorig}"><i class="icon-pencil icon-white"></i></a>
+		<a class="btn btn-primary" rel="tooltip" data-original-title="Добавить подгруппу" href="/admin/catalog/addGroup.php?id={idorig}"><i class="icon-plus icon-white"></i></a>
+		<a class="btn btn-danger" onclick="return confirm('Удалить группу?');" rel="tooltip" data-original-title="Удалить группу" href="/admin/catalog/deleteGroup.php?id={idorig}"><i class="icon-trash icon-white"></i></a>	
+    </div>	
+	</td>
+	<td style="text-align:center">
+		<input type="checkbox" class="ishidden" name="hidden[{idorig}]" value="1" {checked}/>
+	</td>
+	<td style="text-align:center">
+	<input type="text" class="position span1" name="positions[{idorig}]" value="{position}" style="text-align:center" />	
+	</td>
+</tr> 

@@ -1,0 +1,80 @@
+<form action="?lang={curLang}&id={valueId}" method="post">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/news/index.php?lang={curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к управлению новостями</a></td>
+    <td><div align="right"><a href="/admin/cfg/news/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+<br />
+<table width="100%" border="1" cellpadding="4" cellspacing="0" class="inputTable">
+    <tr >
+	  <th  colspan="2">
+	    <strong>{action}  новости</strong>	  </th>
+	</tr>
+	
+	<tr >
+	  <td  colspan="2" align="center">
+	    <strong><font color="red">{error}</font></strong>	  </td>
+	</tr>
+
+    <tr >
+		<td  align="right" width="50%"><strong>Владелец новости:</strong></td>
+      	<td  align="left">{selectOwnerId}</td>
+	</tr>
+
+	<tr >
+		<td  align="right"><strong>Заголовок новости:</strong></td>
+		<td  align="left"><input type="text" name="title" value="{valueTitle}" maxlength="255" style="width: 99%"></td>
+	</tr>
+
+	<tr >
+		<td  align="right"><strong>Новость от:</strong></td>
+		<td  align="left">{selectDay} {selectMonth} {selectYear}</td>
+	</tr>
+	
+	<tr >
+		<td  align="right">Шаблон для новости:</td>
+		<td  align="left"><input type="text" name="template" value="{valueTemplate}" maxlength="255" style="width: 99%"></td>
+	</tr>
+	<tr >
+      <td  align="right">Заголовок страницы (Title):</td>
+	  <td  align="left"><input name="pageTitle" type="text" id="pageTitle" style="width: 99%" value="{valuePageTitle}" maxlength="255" /></td>
+    </tr>
+	
+	<tr >
+		<td  align="right">Показывать ли новость в меню навигации:</td>
+		<td  align="left">[selectNavigationShow="{valueNavigationShow}"]</td>
+	</tr>
+
+	<tr >
+		<td  align="right">Название главной страницы в меню навигации:</td>
+		<td  align="left"><input type="text" name="navigationMainTitle" value="{valueNavigationMainTitle}" maxlength="255" style="width: 99%"></td>
+	</tr>
+
+	<tr ><th  align="center" colspan="2"><strong>Краткое описание новости:</strong></td></tr>
+	<tr ><td align="center" colspan="2">{smallForm}</td></tr>
+
+	<tr ><th  align="center" colspan="2"><strong>Новость полностью:</strong></td></tr>
+	<tr ><td align="center" colspan="2">{fullForm}</td></tr>
+
+
+	<tr >
+		<td  align="right">Краткое описание новости (META):</td>
+		<td  align="left"><input type="text" name="md" value="{valueMd}" maxlength="255" style="width: 99%"></td>
+	</tr>
+
+	<tr >
+		<td  align="right">Ключевые слова (META):</td>
+		<td  align="left"><input type="text" name="mk" value="{valueMk}" maxlength="255" style="width: 99%"></td>
+	</tr>
+	<tr >
+		<td  align="right">Язык новости:</td>
+		<td  align="left">[selectLang="{curLang}"]</td>
+	</tr>
+
+    <tr >
+	  <td  colspan="2" align="center"><input type="submit" value="  СОХРАНИТЬ  "></td>
+	</tr>
+</table>
+<input type="hidden" name="go" value="go">
+</form>

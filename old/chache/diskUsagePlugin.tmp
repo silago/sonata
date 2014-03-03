@@ -1,0 +1,8 @@
+;Disk usage information
+;Using INI format data store
+;(C) Sergey Oskorbin, os.irj.ru
+
+[diskUsage]
+fs=0
+db=1398856
+lastUpdate="Thu, 29 Sep 2011 01:05:31 +0900"

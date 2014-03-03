@@ -1,0 +1,14 @@
+{foreach from=$item.photo key=key item=photo}
+	<li class="span2" style="position:relative;text-align:center;">
+		<div onclick="if(confirm('Удалить фото?'))$(this).parent().remove();return false;" style="position:absolute;top:-10px; right:-10px;z-index:1000;cursor:pointer;">
+			<img title="Удалить фото" src="/include/ext/bootstrap/img/x.png">
+		</div>
+		<a class="thumbnail {if $primary_photo == $photo}act{/if}">
+			<img src="{$item.thumb.$key}">
+		</a>
+		<input type="radio" name="primary" id="primary" value="{$primary_photo}" {if $primary_photo == $item.position.$key}checked{/if}><br/>Главное фото
+		<input type="hidden" value="{$photo}" name="photo[]"/>	
+		<input type="hidden" value="{$item.thumb.$key}" name="thumb[]"/>
+        <input type="hidden" value="{$item.position.$key}" name="position[]"/>
+	</li>
+{/foreach}

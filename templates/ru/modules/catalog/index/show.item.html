@@ -1,0 +1,32 @@
+	<div class="char-container">
+						<div class="char-info">
+							<a href="#"><img src="/userfiles/catalog/1cbitrix/{$photo}" height="184" width="174" alt="" /></a>
+
+							<div class="char-text">
+								<h3>Цветные видео камеры</h3>	
+								<p>
+                                    {$description}
+                                </p>
+                                
+								<div class="summ-box">
+									<p>Цена:</p>	
+									<span>{$price} руб.</span>
+									<a href="#" onclick="addToChart('{$iid}}',1);">В корзину</a>
+								</div>
+							</div>	
+						</div>
+                        {if $arrItemProps}
+						<div class="char-box">
+							<h4>Технические характеристики</h4>
+
+							<div class="chat-block">
+							{foreach from=$arrItemProps item=item key=key}
+                                <div class="box bgs">
+									<p>{$item.propertyName}</p>	
+									<span>{$item.propertyValue}</span>
+								</div>	
+                            {/foreach}
+							</div>
+						</div>	
+                        {/if}
+					</div>

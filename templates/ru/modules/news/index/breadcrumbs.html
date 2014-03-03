@@ -1,0 +1,11 @@
+<div class="breadcrumb">
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li>/</li>
+        {foreach from=$array item=item key=key}
+            <li {if $key == $count}class="active_trail"{/if}>
+                <a href="/{$item.data.url}">{$item.data.title}</a>{if $key != $count} /{/if}
+            </li>
+        {/foreach}
+    </ul>
+</div>

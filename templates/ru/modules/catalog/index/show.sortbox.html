@@ -1,0 +1,54 @@
+                    <form name="sortBoxForm" method="post" action="?" class="sortBoxForm">
+						 
+							<div class="sort">									
+								<select  id="country" name="country" class="se163" tabindex="1" onchange="sortBoxForm.submit ();">
+									<option value="1">Сортировать по популярности</option>	
+									<option  value="2">Сортировать по цене</option>	
+									<option value="3">Сортировать по названию</option>																								
+								</select>
+								<span style="display: none;">{countryselvalue}</span>
+								<script>
+									if ($('div.boxSelect_1 div.lineForm span').text () != '') {
+										if ($('div.boxSelect_1 div.lineForm select[name=country] option[value='+$('div.boxSelect_1 div.lineForm span').text ()+']') != '') {
+											$('div.boxSelect_1 div.lineForm select[name=country] option[value='+$('div.boxSelect_1 div.lineForm span').text ()+']').attr ('selected', 'selected');
+										} else {
+											$('div.boxSelect_1 div.lineForm select[name=country] option:first-child').attr ('selected', 'selected');
+										}
+									} else {
+										$('div.boxSelect_1 div.lineForm select[name=country] option:first-child').attr ('selected', 'selected');
+									}
+								</script>
+							</div>  
+							<div class="limit">		
+                                <b>Товаров на странице</b>						
+								<select  id="country2" name="country2" class="se47" tabindex="2" onchange="sortBoxForm.submit ();">
+									<option value="12" >12</option>	
+									<option value="20" >20</option>																								
+								</select>
+								<span style="display: none;">{country2selvalue}</span>
+								<script>
+									if ($('div.boxSelect_2 div.lineForm span').text () != '') {
+										if ($('div.boxSelect_2 div.lineForm select[name=country2] option[value='+$('div.boxSelect_2 div.lineForm span').text ()+']') != '') {
+											$('div.boxSelect_2 div.lineForm select[name=country2] option[value='+$('div.boxSelect_2 div.lineForm span').text ()+']').attr ('selected', 'selected');
+										} else {
+											$('div.boxSelect_2 div.lineForm select[name=country2] option:first-child').attr ('selected', 'selected');
+										}
+									} else {
+										$('div.boxSelect_2 div.lineForm select[name=country2] option:first-child').attr ('selected', 'selected');
+									}
+								</script>
+							</div> 
+						<input type="submit" style="display: none;" />
+					</form>
+                    <div class="boxPaging">
+                        {sortBoxPagination} 
+                    </div>
+                    <script>
+                    $(document).ready( function()
+                    {	//alert('{countryselvalue}');
+						$('.se163 option').each( function() {  if ($(this).val() == '{countryselvalue}' ) $(this).attr('selected','selected');});  
+						$('.se47 option').each( function()  { if ($(this).val() == '{country2selvalue}' ) $(this).attr('selected','selected');}); 
+						} 
+					);
+                    
+                    </script>

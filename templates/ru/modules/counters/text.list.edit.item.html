@@ -1,0 +1,27 @@
+<form action="editText.php?id={id}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("formSubmit");'>
+  <table border="0" cellpadding="4" cellspacing="0" width="100%" class="inputTable">
+	<tr>
+		<th align="center" colspan="2"><strong>Втавить текст</strong></th>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><font color="#FF0000"><strong>&nbsp;</strong></font></td>
+	</tr>
+    <tr>
+      <td align="right" style="width: 50%;"><b>URL</b></td>
+      <td>http://{host}<input type="text" name="url" value="{url}"></td>
+    </tr>
+    <tr>
+      <td align="right" style="width: 50%;"><b>Позиция</b></td>
+      <td><select name="pos"><option value="0">Не выбрано</option><option value="1">Вверху</option><option value="2">Внизу</option></select></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">{fckFullTextForm}</td>
+    </tr>
+	
+    <tr>
+      <td colspan="2" align="center"><input type="submit" value="  СОХРАНИТЬ  " class="submit" id="formSubmit"></td>
+    </tr>
+
+</table>
+<input name="go" type="hidden" value="go">
+</form>

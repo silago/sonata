@@ -1,0 +1,220 @@
+				<a href="{$backToGroup}" class="buttonBack">Вернуться в каталог</a>
+                <div class="breadCrumbs">213
+					{$c_navigation}                    
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+                <div class="boxGallery">
+					{if !empty($mainthumb)}
+                    <div class="mainImg">
+						<span class="zoom" id="ex1">
+							<img width="287" src="{$mainthumb}" />
+							<!--<img src="/templates/ru/images/img/img_big_1.jpg" id="main" width="287" height="407"   alt="" border="0px" />-->
+						</span>
+					</div>				
+					{/if}					
+					
+					<div class="boxImgSmall">
+						{if !empty($photos)}
+							{foreach from=$photos item=item key=key}								
+								<a class="imagePreZoom" href="" href="{$item.filename}"><img src="{$item.thumb}" width="67" alt="" border="0px" /></a>
+							{/foreach}
+						{/if}                                                
+                    </div>
+					
+					{literal}
+					<script>
+						$(document).ready (function () {
+							$('.imagePreZoom').click (function (e) {
+								e.preventDefault ();
+																
+								$('div.mainImg').html ("<span class='zoom' id='ex1'><img width='287' src='"+$(this).children('img').attr('src')+"' /></span>");
+								
+								$('#ex1').zoom();
+							});
+						});
+					</script>
+					{/literal}
+					
+                    <div class="clear"></div>
+                </div>	
+                <div class="boxDescriptionProduct">
+                    <h1>{$name}</h1>
+                    <div class="mainDescription">
+						{if !empty($article)}
+                        <div class="lineDescription">							
+								<div class="textLeft"><p>Артикул:</p></div>
+								<div class="textRight"><p>{$article}</p></div>
+								<div class="clear"></div>															                
+                        </div>                        
+						{/if}            
+						{if !empty($itemDeveloper)}
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Страна производитель:</p></div>
+                            <div class="textRight"><p>{$itemDeveloper}</p></div>
+                            <div class="clear"></div>
+                        </div>
+						{/if}
+						{if !empty($itemColor)}
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Цвет:</p></div>
+                            <div class="textRight"><p>{$itemColor}</p></div>
+                            <div class="clear"></div>
+                        </div>
+						{/if}
+						{if !empty($itemFabric)}
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Состав ткани:</p></div>
+                            <div class="textRight"><p>{$itemFabric}</p></div>
+                            <div class="clear"></div>
+                        </div>
+						{/if}
+                        <div class="lineDescription">
+                            <div class="textLeft"><p>Размерный ряд:</p></div>
+                            <div class="textRight">
+                                <div class="boxSize">
+                                    {if !empty($priceButtons)}	
+										<ul>
+											{foreach from=$priceButtons item=item key=key}								
+												<li class="pricebutton">
+													<a href="">{$item[0]}</a>
+													<span class="pricebuttons_price" style="display: none;">{$item[2]}</span>
+													<span class="pricebuttons_id" style="display: none;">{$item[3]}</span>
+												</li>
+											{/foreach}
+										</ul>
+									{/if}                                   
+                                    <div class="clear"></div>
+                                    <a href="/tablitsy-razmerov/" class="allSize" target="_blank">Таблица размеров</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="boxDescriptionRight">
+                        <div class="descriptionRight">
+                            <!--<div class="discount"></div>-->
+							{if !empty($price)}
+								<p>Цена:</p>														
+								<p class="price">{$price} руб.</p>								
+								<a href="#" onclick='return addToChart("{$itemid}")' class="inBasket">В корзину</a>
+								<a href="/dostavka-i-oplata/" class="method" target="_blank">Способы доставки</a>
+							{else}
+								<p>На данный товар нет цены</p>
+							{/if}
+                        </div>
+                        <div class="boxIcons">
+                            <p>Мы в соцсетях:</p>
+                            <a href="http://vk.com/nerpamoda" target="_blank"><img src="/templates/ru/images/img/icon_1.png"   alt="" border="0px" /></a>
+                            <a href="http://odnoklassniki.ru/group/52848614113393" target="_blank"><img src="/templates/ru/images/img/icon_2.png"   alt="" border="0px" /></a>
+                            <a href="http://www.facebook.com/nerpamoda" target="_blank"><img src="/templates/ru/images/img/icon_3.png"   alt="" border="0px" /></a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+					
+					{if !empty($description)}
+						<div class="textDescription">
+							<h3>Описание</h3>
+							{$description}									
+						</div>
+					{/if}					
+                    
+					{if !empty($testimonialsContent)}
+						<div class="textDescription">
+                        <h3>Отзывы <a class="testimonialCount" href="">({$testimonialsCount})</a></h3>
+							{foreach from=$testimonialsContent item=item key=key}								
+								<div class="boxOneReview">
+									<div class="textReview">
+										<div class="bottomReview"></div>
+										<p>{$item.text}</p>
+									</div>
+									<p class="name">{$item.username}</p>
+									<p class="name">{$item.date}</p>
+									<!--<div class="boxMark">							
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="on"></span>
+										<span class="off"></span>
+										<div class="clear"></div>				
+									</div>-->
+									<div class="clear"></div>
+								</div>
+							{/foreach}
+							{literal}
+							<script>
+								var displayAllReviews = false;
+								
+								$(document).ready (function () {
+									$('.testimonialCount').click (function (e) {
+										e.preventDefault ();
+										
+										displayAllReviews = !displayAllReviews;
+										
+										if (displayAllReviews) {
+											$('div.boxOneReview').show ();
+										} else {
+											hideExtraReviews ();
+										}
+									});
+								});
+								
+								function hideExtraReviews () {
+									$('div.boxOneReview').each (function (index) {
+										//console.log (index);
+										if (index > 2) {
+											$(this).hide ();
+										}
+									});
+								}
+								
+								hideExtraReviews ();
+								
+							</script>
+							{/literal}
+						</div>
+					{/if}
+					{if $showTestimonialForm == 1}
+						<div class="testimonialSend">
+							<form name="testimonialSend" action="/testimonialsend" method="post">
+								<h3>Ваш отзыв:</h3>
+								<textarea name="testimonialText" class="testimonialText"></textarea>
+								<br />
+								<!--<a href="" onclick="e.preventDefault (); testimonialSend.submit ();" class="inBasket">Отправить</a>-->
+								<input type="submit" value="Отправить" class="inBasket inBasketForInput" />
+								<input type="hidden" name="user_id" value="{$userID}" />
+								<input type="hidden" name="item_id" value="{$itemFullID}" />
+							</form>
+						</div>						
+					{/if}                    
+                    {if !empty($recommendations)}
+					<div class="boxRecomendation">
+                        <h3>Рекомендуем:</h3>
+                        <div class="boxCatalogProducts">	
+							{$recommendations}                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+					{/if}
+                </div>		
+			
+	{literal}
+	<script>
+		$(document).ready (function () {
+			$('li.pricebutton:first-child').addClass ('active');
+			
+			$('li.pricebutton').click (function (e) {
+				e.preventDefault ();
+			
+				var priceid = $(this).children('.pricebuttons_id').text ();
+				var price = $(this).children('.pricebuttons_price').text ();
+				$('.inBasket').attr ('onclick', 'return addToChart("'+priceid+'")');
+				$('div.descriptionRight p.price').text (price+' руб.');
+				
+				$('li.pricebutton').removeClass ('active');
+				$(this).addClass ('active');
+			});
+		});		
+	</script>
+	{/literal}

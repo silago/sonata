@@ -1,0 +1,16 @@
+{foreach from=$pages item=item key=key}
+<tr id="node-{$item.id}" class="child-of-node-{$item.parent}">
+    <td valign="middle"><a class="text" rel="tooltip" data-original-title="Редактировать страницу" href="/admin/page/edit.php?id={$item.id}">{$item.title}</a></td>
+    <td style="text-align:center">
+        <div class="btn-group" style="padding-left:12px;">
+            <a class="btn btn-primary" rel="tooltip" data-original-title="Просмотр страницы" href="/{$item.url}/" target="_blank"><i class="icon-eye-open icon-white"></i></a>
+			<a class="btn btn-primary" rel="tooltip" data-original-title="Редактировать страницу" href="/admin/page/edit.php?id={$item.id}"><i class="icon-pencil icon-white"></i></a>
+            <a class="btn btn-primary" rel="tooltip" data-original-title="Добавить подстраницу" href="/admin/page/add.php?setOwnerId={$item.id}"><i class="icon-plus icon-white"></i></a>
+            <a class="btn btn-danger" onclick="return confirm('Удалить страницу?');" rel="tooltip" data-original-title="Удалить страницу" href="/admin/page/delete.php?id={$item.id}"><i class="icon-trash icon-white"></i></a>
+        </div>
+    </td>
+    <td style="text-align:center">
+        <input type="text" class="position span1 pagePosition" onchange='return pagePosChange("{$item.id}", "{$item.parent}");' id="pos{$item.id}" name="positions[{$item.id}]" value="{$item.position}" style="text-align:center" />
+    </td>
+</tr>
+{/foreach}

@@ -1,0 +1,27 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/tags/index.php?lang={curLang}"><img src="/templates/ru/images/api/back.jpg" width="20" height="20" border="0" align="absmiddle" /> Назад к управлению брендами</a></td> 
+  </tr>
+</table>
+<br />
+<form action="addGo.php?&id={id}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("submitFormKey", "Пожалуйста, подождите..")'>
+	<table width="100%" border="0" cellpadding="4" cellspacing="0" class="inputTable">
+		<tr>
+			<th colspan="2"><strong>{action} бренда</strong></th>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center"><strong><font color="red">{error}</font></strong></td>
+		</tr>
+
+		<tr>
+			<td align="right"><strong>Название:</strong></td>
+			<td><input type="text" name="name" maxlength="255" style="width: 200px;" value="{name}" /></td>
+		</tr>
+		  
+		<tr>
+			<td colspan="2" align="center"><input id="submitFormKey" type="submit" class="submit" value="Сохранить" ></td>
+		</tr>		
+	</table>
+</form>
+			

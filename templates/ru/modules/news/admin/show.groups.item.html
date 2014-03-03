@@ -1,0 +1,12 @@
+{foreach from=$tree item=item key=key}
+<tr id="node-{$item.id}" class="child-of-node-{$item.parent}">
+    <td valign="middle"><a class="text" rel="tooltip" data-original-title="Редактировать группу" href="/admin/news/editGroup.php?id={$item.id}&ownerId={$item.parent}">{$item.title}</a></td>
+    <td style="text-align:center">
+        <div class="btn-group" style="padding-left:12px;">
+            <a class="btn btn-primary" rel="tooltip" data-original-title="Редактировать группу" href="/admin/news/editGroup.php?id={$item.id}"><i class="icon-pencil icon-white"></i></a>
+            <a class="btn btn-primary" rel="tooltip" data-original-title="Добавить подгруппу" href="/admin/news/addGroup.php?ownerId={$item.id}"><i class="icon-plus icon-white"></i></a>
+            <a class="btn btn-danger" onclick="return confirm('Удалить группу?');" rel="tooltip" data-original-title="Удалить группу" href="/admin/news/deleteGroup.php?id={$item.id}"><i class="icon-trash icon-white"></i></a>
+        </div>
+    </td>
+</tr>
+{/foreach}

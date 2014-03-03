@@ -1,0 +1,38 @@
+<ul class="breadcrumb">
+	<li><a href="#">Управление магазином</a><span class="divider">/</span></li>
+	<li><a href="/admin/catalog/groupList.php">Каталог</a><span class="divider">/</span></li>	
+	<li class="active"><a href="/admin/catalog/listItems.php">Список товаров</a><span class="divider">/</span></li>
+</ul>
+
+<a class="btn btn-success" href="/admin/catalog/addItem.php"><i class="icon-plus icon-white"></i> Добавить новый товар</a>
+
+<!-- <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="/admin/catalog/addItem.php?lang={curLang}"><img src="/templates/ru/images/api/add.gif" alt="Добавить группу" width="15" height="15" border="0" align="absmiddle" /> Добавить новый товар </a></td>
+    <td><div align="right"><a href="/admin/cfg/catalog/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table> -->
+
+<br />
+<div align="right">
+	<form action="listItems.php?" method="GET">
+		Фильтр: <input type="text" name="filterString" size="50" maxlength="255"> по <select name="filterType"><option value="all">Всем полям</option><option value="groupTitle">Названию родительской группы</option><option value="itemTitle">Названию товара/услуги</option></select> <input type="submit" value="OK">
+	</form>
+</div>
+<div align="left"><b>{filter}</b></div><br>
+
+<table border="0" cellpadding="4" cellspacing="0" width="100%" class="inputTable">
+	<tr>
+		<th colspan="2" align="center" ><strong>Управление товарами</strong></th>
+	</tr>
+	<tr>
+	  <td align="center" >Список товаров</td>
+      <td align="center" width="15%">Позиция</td>
+  </tr>
+	
+	{body}
+</table>
+
+<center>
+  <p>{pages}</p>
+</center>

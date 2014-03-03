@@ -1,0 +1,9 @@
+<p class="upOffice caps"><a href="/cabinet">Личный кабнет</a></p>
+<p class="upPassword caps"><strong>{if $surname}{$surname}{/if} {if $name}{$name}{/if} {if $patronymic}{$patronymic}{/if}</strong>    <a href="/logout">Выход</a></p>
+<p class="upBasket"><a href="/basket/">Корзина:</a>
+    {if $count ==0}
+        Ваша корзина <b>пуста</b>
+    {else}
+        Товаров в корзине  - <b>{$count}</b>
+    {/if}
+</p>

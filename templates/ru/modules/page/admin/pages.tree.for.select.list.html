@@ -1,0 +1,6 @@
+<select name="ownerId">
+    <option value="0" {if $defaultValue == '0'}selected{/if}>--- НЕТ ---</option>
+{foreach from=$pages item=item key=key}
+    <option value="{$item.id}" {if $defaultValue == $item.id}selected{/if}>{$item.del} {$item.title}</option>
+{/foreach}
+</select>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> <!-- catalog -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{pageTitle} | Белая нерпа</title>
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/nivo.css" />
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/cusel.css" />
+        <link rel="stylesheet" type="text/css" href="/templates/ru/css/niceforms-default.css" />
+        <script type="text/javascript" src="/templates/ru/js/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/jquery.easing.1.3.js" ></script>	
+        <!--<script type="text/javascript" src="/templates/ru/js/custom.js" ></script>-->        
+        <script type="text/javascript" src="/templates/ru/js/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/cusel.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/jScrollPane.js"></script>
+        <script type="text/javascript" src="/templates/ru/js/jquery.mousewheel.js"></script>	
+        <script type="text/javascript" src="/templates/ru/js/jquery.radio.min.js"></script>	
+        <script type="text/javascript" src="/templates/ru/js/organictabs.jquery.js"></script>		
+		<script>			
+		</script>
+    </head>
+    <body>
+
+
+        <!-- BEGIN BODY -->
+
+
+
+        <!-- BEGIN HEADER -->
+
+        <div class="boxHeader">
+            <div class="headerTopWrapper">
+               	{%% topLoginForm () %%}
+            </div>
+        </div>
+        <div id="header">
+            <div class="logo"><a href="/"><img src="/templates/ru/images/img/logo.png"   alt="" border="0" /></a></div>
+            <div class="slogan">— Найди свой стиль!</div>
+            <div class="boxTel"><span>8 (3952) <span>75-75-37</span></span><br />C 9.00 до 19.00</div>
+            <form action="" name="Search" method="post">
+                <div class="inputSearch"><input type="text" name="search" value="я ищу" onfocus="this.value=''" onblur="this.value='я ищу'" /></div>
+                <input type="submit" value=""  class="button_search" />
+            </form>
+            <div class="boxNav">                
+				{%% showMenu (menuid: 1;) %%}
+            </div>
+        </div>
+
+        <!-- HEADER EOF   -->	
+
+        <!-- BEGIN CONTENT -->
+
+        <div id="content">
+            <div class="contentLeft">
+                <div class="subnav">                    
+					{%% catalogLeftMenu () %%}
+                </div>
+				<form action="" method="get" name="filterform">
+					<div class="boxFilter">
+						<p class="title">Размер</p>
+						<div class="blockCheckbox">
+							<div class="lineCheckbox"><input type="checkbox" id="check_7" name="fsize[7]" value="40" /><label for="check_7">40</label><div class="clear"></div></div>
+							<div class="lineCheckbox"><input type="checkbox" id="check_6" name="fsize[6]" value="42" /><label for="check_6">42</label><div class="clear"></div></div>
+							<div class="lineCheckbox"><input type="checkbox" id="check_5" name="fsize[5]" value="44" /><label for="check_5">44</label><div class="clear"></div></div>
+							<div class="lineCheckbox"><input type="checkbox" id="check_4" name="fsize[4]" value="46" /><label for="check_4">46</label><div class="clear"></div></div>                        
+							<div class="lineCheckbox"><input type="checkbox" id="check_3" name="fsize[3]" value="48" /><label for="check_3">48</label><div class="clear"></div></div>
+							<div class="lineCheckbox"><input type="checkbox" id="check_2" name="fsize[2]" value="50" /><label for="check_2">50</label><div class="clear"></div></div>
+							<div class="lineCheckbox"><input type="checkbox" id="check_1" name="fsize[1]" value="52" /><label for="check_1">52</label><div class="clear"></div></div>							
+						</div>
+					</div>					
+					<div class="boxFilter">
+						<p class="title">Цена</p>
+						<div class="blockCheckbox">
+							<div class="lineCheckbox"><input type="checkbox" id="check2_1" name="fprice[1]" value="1" /><label for="check2_1">0 - 4 000 руб.</label><div class="clear"></div></div>
+							<div class="lineCheckbox"><input type="checkbox" id="check2_2" name="fprice[2]" value="1" /><label for="check2_2">4 000 руб. - 8 000 руб. </label><div class="clear"></div></div>
+							<div class="lineCheckbox"><input type="checkbox" id="check2_3" name="fprice[3]" value="1" /><label for="check2_3">8 000 руб. - 99 000 руб.</label><div class="clear"></div></div>					
+						</div>
+					</div>
+					{filterItemsChecked}
+					<input type="submit" value="Применить" />
+				</form>
+				<script>
+					var builtLink = '';
+					var tempVar = '';
+					//var get = location.search;
+				
+					$(document).ready (function () {						
+						//alert (get);
+					
+						$('form[name=filterform] .lineCheckbox input[type=checkbox]').change (function () {
+							buildLink ();
+						});
+						
+						$('span.autoFilterCheck').each (function () {
+							$('input[id='+$(this).text()+']').attr('checked', 'checked');
+						});
+						buildLink ();
+					});			
+
+					function buildLink () {
+							builtLink = '';
+							
+							$('form[name=filterform] .lineCheckbox input[type=checkbox]').each (function () {
+								if ($(this).attr ('checked') == "checked") {
+									//alert ($(this).attr ('id'));
+									builtLink += builtLink.length ? "" : "?";
+									tempVar = $(this).attr('name') + "=" + $(this).attr('value');
+									builtLink += builtLink == "?" ? tempVar : "&" + tempVar;
+								}
+							});							
+							
+							$('form[name=filterform]').attr ('action', builtLink);
+					}
+				</script>
+            </div>
+            <div class="contentRight">
+                <div class="breadCrumbs">                    
+					{navigation}
+                    <div class="clear"></div>
+                </div>
+                <div class="boxBanner">
+                    <!--<a href="#"><img src="/templates/ru/images/img/banner_1.jpg"   alt="" border="0" /></a>-->
+					{groupImage}
+                    <!--<h3>Женская коллекция</h3>-->
+                </div>
+                <div class="boxSort">
+					{sortBox}                    
+                    <div class="clear"></div>
+                </div>
+                <div class="boxCatalogProducts">				
+                    {content}                    
+                    <div class="clear"></div>
+                </div>
+                <div class="boxSort pad">				
+                    <div class="boxPaging">
+                        {bottomPagination}						
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>	
+        </div>	
+
+        <!-- CONTENT EOF   -->
+
+        <!-- BEGIN FOOTER -->	
+
+        <div class="boxFooter">
+            <div id="footer">
+                <div class="footerBlock1">
+                    <p class="titleBlock">Мой профиль</p>
+                    <!--<ul>
+                        <li><a href="#">Авторизация</a></li>
+                        <li><a href="#">Создать учетную запись</a></li>
+                    </ul>-->
+					{%% showMenu (menuid: 4;) %%}
+                </div>
+                <div class="footerBlock1">
+                    <p class="titleBlock">Белая нерпа</p>
+                    <!--<ul>
+                        <li><a href="/novosti/">Новости</a></li>
+                        <li><a href="#">О магазине</a></li>
+                        <li><a href="#">Наша продукция</a></li>
+                        <li><a href="#">О «Золотой нерпе»</a></li>
+                        <li><a href="/kontakty/">Контакты</a></li>
+                        <li><a href="#">Подарочные сертификаты</a></li>
+                        <li><a href="/aktsii/">Акции</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                    </ul>-->
+					{%% showMenu (menuid: 3;) %%}
+                </div>
+                <div class="footerBlock1">
+                    <p class="titleBlock">Покупателям</p>
+                    <!--<ul>
+                        <li><a href="/tablitsy-razmerov/">Ваш размер</a></li>
+                        <li><a href="/dostavka-i-oplata/#dostavka">Доставка</a></li>					
+                        <li><a href="/dostavka-i-oplata/">Оплата</a></li>
+                        <li><a href="#">Возврат и обмен</a></li>
+                        <li><a href="#">Полезные статьи</a></li>					
+                    </ul>-->
+					{%% showMenu (menuid: 2;) %%}
+                </div>
+                <div class="footerBlock2">
+                    <p class="titleBlock">Контакты</p>
+                    <p><span><span>8 (3952)</span> 75-75-37</span><br/>C 9.00 до 19.00</p>
+                    <p>г. Иркутск, ул.Советская, 25, пав. 24</p>
+                </div>
+                <div class="footerBlock2">
+                    <p class="titleBlock">ПРИСОЕДИНЯЙТЕСЬ</p>
+                    <a href="http://vk.com/nerpamoda" class="iconFooter1" target="_blank">Вконтакте</a>
+                    <a href="http://www.facebook.com/nerpamoda" class="iconFooter2" target="_blank">Facebook</a>
+                    <a href="http://odnoklassniki.ru/group/52848614113393" class="iconFooter3" target="_blank">Однокласники</a>
+                </div>
+                <div class="clear"></div>
+                <p class="mainFooterText">© 2013 Белая нерпа — розничная торговля белых блуз, рубашек для работы и отдыха</p>	
+            </div>
+        </div>
+
+
+
+        <!-- FOOTER EOF   -->			
+
+
+    </body>
+</html>
