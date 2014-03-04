@@ -192,50 +192,21 @@ class SecurityModule
             $val = explode('=', $value);
             $data1[$val['0']] = htmlspecialchars(urldecode($val['1']));
         }
-
-		
-		#if(empty($data1['surname']) && !preg_match('/^[a-zа-я]+$/ui', $data1['surname'])){
-			#$err[] = 'Неверно заполнено поле Фамилия';
-			#$err[0] = ' <strong> Ошибка регистрации </strong>';
-		#	$err[] = 'Неверно заполнено поле Фамилия	';
-			
-		#}
 		
 		if(empty($data1['name']) && !preg_match('/^[a-zа-я]+$/ui', $data1['name'])){
-			#$err[] = 'Неверно заполнено поле Имя';
-			#$err[0] = ' <strong> Ошибка регистрации </strong>';
 			$err[] = 'Неверно заполнено поле Имя';
-			
-			#$err[] = 'Неверно заполнено поле Имя';
 		}
-		
-		#if(empty($data1['patronymic']) && !preg_match('/^[a-zа-я]+$/ui', $data1['patronymic'])){
-		#	#$err[] = 'Неверно заполнено поле Отчество';
-		#	$err[0] = ' <strong> Ошибка регистрации </strong>';
-		#	$err['patronymic'] = 'Неверно заполнено поле Отчество';
-		#	
-		#	#$err[] = 'Неверно заполнено поле Отчество';
-		#}
 		
 		if(empty($data1['phone']) || !preg_match("/^[0-9]{4,13}+$/", $data1['phone'])){
-			#$err[0] = ' <strong> Ошибка регистрации </strong>';
 			$err[] = 'Неверно заполнено поле телефон';
 		}
-		//	echo $data1['phone']; 
 		
 		if(empty($data1['email']) || !preg_match('/^[a-z]{1,}[a-zа-я0-9\.\-\_]+@[a-zа-я0-9\-]{2,}+\.[a-zа-я]{2,5}$/ui', $data1['email'])){
-			#$err[] = 'Неверно заполнено поле Ваш E-mail адрес';
-			#$err[0] = ' <strong> Ошибка регистрации </strong>';
 			$err[] = 'Неверно заполнено поле Ваш E-mail адрес';
-			
-			#$err[] = 'Неверно заполнено поле Ваш E-mail адрес';
 		}else{
-			
 			$sql->query("SELECT `id` FROM `#__#shop_users` WHERE `email` ='" . $data1['email'] . "'", true);
 			
 			if($sql->num_rows()>0){
-				#$err[0] = ' Ошибка ';
-				#$err[] = 'Введеный E-mail адрес уже используется';	
 				$err[] = 'Введеный E-mail адрес уже используется';
 				
 			}			
@@ -243,20 +214,16 @@ class SecurityModule
 		}
 		
 		if(!preg_match(SecurityModule::$passCheck, $data1['pass'])){
-			#$err[0] = ' Ошибка ';
 			$err[] = 'Поле Пароль содержит недопустимые символы';
-			#$err['pass'] = 'Введеный E-mail адрес уже используется';
 			
 		}
 		
 		if(strlen($data1['pass']) < SecurityModule::$passLength){
-			#$err[0] = ' Ошибка ';
 			$err[] = 'Длинна пароля меньше допустимого количества символов';
 			
 		}
         
         if($data1['pass'] !== $data1['pass2']){
-			#$err[0] = ' Ошибка ';
 			$err[] = 'Не совпадают значения полей Пароль и Подтверждение пароля';
 			
 		}       
@@ -295,7 +262,7 @@ class SecurityModule
 			$_SESSION['info'] = array("area" => 'public', "title" => 'Вы успешно зарегистрировались', "desc" => '', "uri" => '', "class" => 'alert-success',);
 
             $sql->query("INSERT INTO `#__#shop_users` (`email`, `password`, `name`, `surname`, `patronymic`, `reg_date`, `org`, `state`, `data`, `phone`)					                                VALUES
-			('" . $data1['email'] . "', '" . md5($data1['pass']) . "', '" . $data1['name'] . "', '" . $data1['surname'] . "', '" . $data1['patronymic'] . "', NOW(), '0', '0', '".addslashes($dataArray)."', '".$data1['phone']."')");
+			('" . $data1['email'] . "', '" . md5($data1['pass']) . "', '" . $data1['name'] . "', '" . $data1['surname'] . "', '" . $data1['patronymic'] . "', NOW(), '".$data1['org']."', '0', '".addslashes($dataArray)."', '".$data1['phone']."')");
 
             /* Добавить услове если в настройках разрешена авторизация сразу после регистрации */
             $sql->query("SELECT `id` as 'id' FROM `#__#shop_users` WHERE `email` = '" . $data1['email'] . "' && `password` ='" . md5($data1['pass']) . "'", true);
@@ -412,7 +379,7 @@ class SecurityModule
 			else $url_tmp  = '';
 		
 		$this->data = $this->postArray;
-        $sql->query("SELECT `id` as 'id', `password` as 'password', `name`, `phone` FROM `#__#shop_users` WHERE `email` = '" . $this->postArray['email'] . "'", true);
+        $sql->query("SELECT `id` as 'id', `password` as 'password', `name`, `phone`, `org` FROM `#__#shop_users` WHERE `email` = '" . $this->postArray['email'] . "'", true);
 
         if($sql->num_rows() == 1){
             if($sql->result['password'] != md5($this->postArray['pass'])){

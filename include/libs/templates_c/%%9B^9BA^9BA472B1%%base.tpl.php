@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-03 17:45:20
+<?php /* Smarty version 2.6.16, created on 2014-03-04 17:48:08
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 27, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 67, false),array('block', 'block', 'ru/base.tpl', 73, false),)), $this); ?>
@@ -11,16 +11,16 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 <link rel="stylesheet" type="text/css" href="/css/main.css" />
 <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript" src="/js/js.js"></script>
-<script type="text/javascript" src="/js/jquery.notification.js"></script>
 <link href="/css/notification.css" rel="stylesheet" type="text/css"/>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript" src="/js/jquery.selectBox.js"></script>
 <script type="text/javascript" src="/js/niceRadio.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
+<script type="text/javascript" src="/js/js.js"></script>
+<script type="text/javascript" src="/js/jquery.notification.js"></script>
 
 
 </head>
@@ -47,7 +47,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 	<div class="header">
 		<div class="wrap">
 			<div class="logo">
-				<a href="#"><img src="/images/logo.png" height="69" width="256" alt="" /></a>	
+				<a href="/"><img src="/images/logo.png" height="69" width="256" alt="" /></a>	
 			</div>	
 
 			<div class="search">

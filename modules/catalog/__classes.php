@@ -132,19 +132,32 @@ class catalog extends mysql {
     {
     global $API, $sql, $smarty;
     $template = clone $smarty;
+    
+    
+    $sql->query("select count(id) as c from shop_items where parent_group_id = '{$id}'",true);    $count = $sql->result['c'];
+    
+    $page       = ( isset($_GET['page']) ? $_GET['page'] : 1);
+    $order_by   = ( isset($_GET['order_by']) ? $_GET['order_by'] : 'name');
+    $per_page   = ( isset($_GET['per_page']) ? $_GET['per_page'] : 10);
+    $pagination = array('total'=>$count,'page'=>$page,'per_page'=>$per_page,'order_by'=>$order_by);
+    
+
     $query =  "select shop_items.*, shop_itemimages.filename, shop_prices.value,
             concat(shop_groups.uri,'/',shop_items.uri) as uri
     from shop_items
     left join shop_itemimages on shop_items.item_id = shop_itemimages.item_id
     left join shop_groups on shop_items.parent_group_id = shop_groups.group_id
     left join shop_prices on shop_items.item_id = shop_itemimages.item_id
-    where 1 and shop_items.parent_group_id = '{$id}' ";
+    where 1 and shop_items.parent_group_id = '{$id}' group by shop_items.id 
+    order by shop_items.{$order_by} limit ".(($page-1)*$per_page).", {$per_page}
+    
+    ";
     $sql->query($query);
     $data = $sql->getList();
     
 
 
-    return $data;
+    return array($data,@$pagination);
     }
 
     # нужно использовать эту функцию и улучшать. в других адъ.
@@ -155,14 +168,16 @@ class catalog extends mysql {
     $template = clone $smarty;
     if ($uri) 
     {
+    $smarty->assign("uri",$uri);
     $sql->query("select * from shop_groups where uri = '".$uri."'", true);
     $group_id  = $sql->result['group_id'];
+    $this->data['pageTitle']=$sql->result['name'];
+
     $params['parent_group_id']=$group_id;
      $this->breadcrumbsArray = array(
             array('id' => 'new', 'parent' => 'new', 'data' => array('title' => 'Новинки', 'url' => 'new')),
         );
 
-	$smarty->assign ('c_navigation', $this->showBreadcrumbs($this->breadcrumbsArray));
     
     }
         $sql_ = clone $sql;
@@ -178,18 +193,18 @@ class catalog extends mysql {
         if ($uri):
             $sql_->query("select * from shop_groups where uri = '{$uri}'",true);
             $template->assign("group",$sql_->result);
+            $template->assign("uri",$sql_->result['uri']);
         endif;
-        
         if (!$data) 
             {
-            #echo "ff";
-            //$sql_->query("select * from shop_items where parent_group_id = '".$group_id."'");
-            $data = $this->get_items($group_id); 
-            //$sql_->getList();
-            #var_dump($data);
-            #die();
+            $data = $this->get_items($group_id)[0]; 
+            echo "1";
+            $pagination = $this->get_items($group_id)[1]; 
             $tfile = "groups.items.tpl";
+            $template->assign('p',$pagination);
             }
+
+        $template->assign("pageTitle",@$this->data['pageTitle']);
         $template->assign("items",$data);
         $result = $template->fetch(api::setTemplate($this->tDir . $tfile));
         return $result;

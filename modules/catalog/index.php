@@ -130,7 +130,6 @@ switch ($ret['table']) {
 }
 
 $smarty->assign("content",$catalog->data['content']);
-
 $md = api::getConfig("modules", "vote", "md");
 $mk = api::getConfig("modules", "vote", "mk");
 

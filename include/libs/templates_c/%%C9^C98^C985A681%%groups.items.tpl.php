@@ -1,26 +1,76 @@
-<?php /* Smarty version 2.6.16, created on 2014-02-27 17:17:32
+<?php /* Smarty version 2.6.16, created on 2014-03-04 12:52:31
          compiled from ru/modules/catalog/groups.items.tpl */ ?>
+<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 24, false),)), $this); ?>
 					<div class="product">
-						<h2>4-ёх канальные</h2>	
+						<h2><?php echo $this->_tpl_vars['pageTitle']; ?>
+</h2>	
 						
 						<div class="sorting-box">
 							<ul>
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li>...</li>
-								<li><a href="#">10</a></li>
-							</ul>
+                                <?php if ($this->_tpl_vars['p']['page'] < 3): ?>
+<li <?php if ($this->_tpl_vars['pagination']['page'] == 1): ?> class="active"<?php endif; ?>><a href="<?php echo $this->_tpl_vars['uri']; ?>
+?page=1&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
+&order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+">1</a></li>
+<?php if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > 1): ?>
+<li <?php if ($this->_tpl_vars['pagination']['page'] == 2): ?> class="active"<?php endif; ?>><a href="<?php echo $this->_tpl_vars['uri']; ?>
+?page=2&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
+&order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+"">2</a></li>
+<?php endif;  if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > 1): ?>
+<li <?php if ($this->_tpl_vars['pagination']['page'] == 3): ?> class="active"<?php endif; ?>><a href="<?php echo $this->_tpl_vars['uri']; ?>
+?page=3&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
+&order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+"">3</a></li>
+<?php endif;  else: ?>
+<li >               <a href="<?php echo $this->_tpl_vars['uri']; ?>
+?page=<?php echo $this->_tpl_vars['p']['page']-1; ?>
+&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
+&order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+""><?php echo $this->_tpl_vars['p']['page']-1; ?>
+</a></li>
+<li class="active" ><a href="<?php echo $this->_tpl_vars['uri']; ?>
+?page=<?php echo $this->_tpl_vars['p']['page']; ?>
+&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
+&order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+""><?php echo $this->_tpl_vars['p']['page']; ?>
+</a></li>
+<li >               <a href="<?php echo $this->_tpl_vars['uri']; ?>
+?page=<?php echo $this->_tpl_vars['p']['page']+1; ?>
+&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
+&order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+""><?php echo $this->_tpl_vars['p']['page']+1; ?>
+</a></li>
+								<?php endif; ?>
 
-							<p>Сортировать по: <a href="#">цене</a> <a href="#">алфавиту</a></p>	
+
+                                
+                                <?php if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > 3): ?>
+                                <li>...</li>
+								<li><a href="/<?php echo $this->_tpl_vars['uri']; ?>
+?page=<?php echo ((is_array($_tmp=$this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'])) ? $this->_run_mod_handler('ceil', true, $_tmp) : ceil($_tmp)); ?>
+&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
+&order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+""><?php echo ((is_array($_tmp=$this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'])) ? $this->_run_mod_handler('ceil', true, $_tmp) : ceil($_tmp)); ?>
+</a></li>
+							    <?php endif; ?>
+                            </ul>
+
+							<p>Сортировать по: <a href="/<?php echo $this->_tpl_vars['uri']; ?>
+?order_by=price">цене</a>
+                            <a href="/<?php echo $this->_tpl_vars['uri']; ?>
+?order_by=name">алфавиту</a></p>	
 
 							<div class="views">
 								<span>Показывать по:</span>	
-								<select>
-								     <option>10</option>
-								     <option>20</option>
-								     <option>50</option>
-								     <option>100</option>
+								<select onchange="document.location='/<?php echo $this->_tpl_vars['uri']; ?>
+?per_page='+<?php echo '$(this).val();'; ?>
+ ">
+								     <option value=10>10</option>
+								     <option <?php if ($this->_tpl_vars['p']['per_page'] == 20): ?> selected=selected <?php endif; ?> value=20>20</option>
+								     <option <?php if ($this->_tpl_vars['p']['per_page'] == 50): ?> selected=selected <?php endif; ?> value=50>50</option>
+								     <option <?php if ($this->_tpl_vars['p']['per_page'] == 100): ?> selected=selected <?php endif; ?> value=100>100</option>
 								 </select>
 							</div>
 						</div>

@@ -817,9 +817,10 @@ class Orders
 		
 		
 		if(Security::$auth==false){
-			
-				
-				
+			    
+
+				header('location: /login/');
+                				
 				if (isset($_POST['discountType'])) 
 					$_SESSION['discountType']=$_POST['discountType'];
 				if (isset($_POST['discountValue'])) 
@@ -966,7 +967,8 @@ class Orders
 			$this->content = $smarty->fetch(api::setTemplate('modules/orders/index/checkout.tpl'));		
 		}
 		
-        
+        $smarty->assign('userdata',security::$userData);
+
         $this->pageTitle = 'Оформление заказа';
     }
 	

@@ -1,24 +1,40 @@
 					<div class="product">
-						<h2>4-ёх канальные</h2>	
+						<h2>{$pageTitle}</h2>	
 						
 						<div class="sorting-box">
 							<ul>
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li>...</li>
-								<li><a href="#">10</a></li>
-							</ul>
+                                {if $p.page<3}
+<li {if $pagination.page == 1} class="active"{/if}><a href="{$uri}?page=1&per_page={$p.per_page}&order_by={$p.order_by}">1</a></li>
+{if $p.total/$p.per_page > 1}
+<li {if $pagination.page == 2} class="active"{/if}><a href="{$uri}?page=2&per_page={$p.per_page}&order_by={$p.order_by}"">2</a></li>
+{/if}
+{if $p.total/$p.per_page > 1}
+<li {if $pagination.page == 3} class="active"{/if}><a href="{$uri}?page=3&per_page={$p.per_page}&order_by={$p.order_by}"">3</a></li>
+{/if}
+{else}
+<li >               <a href="{$uri}?page={$p.page-1}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page-1}</a></li>
+<li class="active" ><a href="{$uri}?page={$p.page}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page}</a></li>
+<li >               <a href="{$uri}?page={$p.page+1}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page+1}</a></li>
+								{/if}
 
-							<p>Сортировать по: <a href="#">цене</a> <a href="#">алфавиту</a></p>	
+
+                                
+                                {if $p.total/$p.per_page > 3}
+                                <li>...</li>
+								<li><a href="/{$uri}?page={$p.total/$p.per_page|ceil}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.total/$p.per_page|ceil}</a></li>
+							    {/if}
+                            </ul>
+
+							<p>Сортировать по: <a href="/{$uri}?order_by=price">цене</a>
+                            <a href="/{$uri}?order_by=name">алфавиту</a></p>	
 
 							<div class="views">
 								<span>Показывать по:</span>	
-								<select>
-								     <option>10</option>
-								     <option>20</option>
-								     <option>50</option>
-								     <option>100</option>
+								<select onchange="document.location='/{$uri}?per_page='+{literal}$(this).val();{/literal} ">
+								     <option value=10>10</option>
+								     <option {if $p.per_page == 20} selected=selected {/if} value=20>20</option>
+								     <option {if $p.per_page == 50} selected=selected {/if} value=50>50</option>
+								     <option {if $p.per_page == 100} selected=selected {/if} value=100>100</option>
 								 </select>
 							</div>
 						</div>

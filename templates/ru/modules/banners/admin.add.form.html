@@ -1,0 +1,39 @@
+<a class="jump_back" href="/admin/banners/">Назад</a>
+<br />
+<form action="addGo.php?&id={id}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("submitFormKey", "Пожалуйста, подождите..")'>
+	<table width="100%" border="0" cellpadding="4" cellspacing="0" class="category_list">
+		<tr>
+			<td colspan="2" align="center">{error}</td>
+		</tr>
+		<tr>
+			<td align="right"><strong>Название:</strong></td>
+			<td><input type="text" name="title" maxlength="255" style="width: 200px;" value="{title}" /></td>
+		</tr>
+		
+		<tr>
+			<th colspan="2" align="center"><strong>Текст:</strong></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center">{wwgForm}</td>
+		</tr>
+
+		<tr>
+			<td >Ссылка</td>
+			<td align="">
+				<input type="text" name="section" value="{section}"/>
+				
+			</td>
+		</tr>
+			<td>Расположение элемента</td>
+			<td>
+				
+				<input type="text" name="place" maxlength="255" style="width: 200px;" value="{place}" /></td>
+		</tr>
+				
+		<tr>
+			<td colspan="2" align="center"><input id="submitFormKey" type="submit" class="submit" value="Сохранить" ></td>
+		</tr>		
+	</table>
+</form>
+			

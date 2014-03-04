@@ -53,8 +53,8 @@
 							</div>
 
 							<div class="radio-block">
-								<label><input class="niceRadio" name="sname" value="1" type="radio" /> Доставка</label>
-								<label><input class="niceRadio" name="sname" value="2" type="radio" /> Самовывоз</label>	
+								<label><input onclick="$('.s2').hide(); $('.s1').show();"  class="niceRadio" name="sname" value="1" type="radio" /> Доставка</label>
+								<label><input onclick="$('.s2').hide(); $('.s1').show();" class="niceRadio" name="sname" value="2" type="radio" /> Самовывоз</label>	
 							</div>
 
 							<div class="block">
@@ -109,14 +109,15 @@
 							</div>
 
 							<div class="pay-serv">
-								<p>Оплата <strong>NNNNNN</strong> руб.</p>	
-
-								<label><input class="niceRadio" type="radio" name="pname" /> Оплатить онлайн банковской картой</label>
-								<label><input class="niceRadio" type="radio" value="cashpayment" checked=checked name="pname" /> Выписать счет для оплаты</label>	
-								<label><input class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при доставке</label>
-								<label><input class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при доставке</label>
-
-								<input type="submit" value="Продолжить" />	
+								<p>Оплата <strong>{$total}</strong> руб.</p>	
+                                 
+								<label class="s1"><input value="Наличными. Курьеру при доставке" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при доставке</label>
+								<label class="s1"><input value="Банковкой картой, курьеру при доставке" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при доставке</label>
+                        
+                                <label class="s2" style="display:none;"><input value="Наличными. Курьеру при самовывозе" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при самовывозе</label>
+								<label class="s2" style="display:none;"><input value="Банковкой картой, курьеру при самовывозе" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при самовывозе</label>
+								
+                                <input type="submit" value="Продолжить" />	
 
 								<div class="help-text">
 									Подробное описание способа оплаты. Выписывая счет, вы имеете возможность оплатить свой заказ одним из способов, предложенных в данной форме. Выписывая счет, вы имеете возможность оплатить свой заказ одним из способов, предложенных в данной форме.

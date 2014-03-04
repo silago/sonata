@@ -7,16 +7,16 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css" />
 <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript" src="/js/js.js"></script>
-<script type="text/javascript" src="/js/jquery.notification.js"></script>
 <link href="/css/notification.css" rel="stylesheet" type="text/css"/>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript" src="/js/jquery.selectBox.js"></script>
 <script type="text/javascript" src="/js/niceRadio.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
+<script type="text/javascript" src="/js/js.js"></script>
+<script type="text/javascript" src="/js/jquery.notification.js"></script>
 
 
 </head>

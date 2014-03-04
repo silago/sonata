@@ -11,7 +11,6 @@
 					
                     <div class="nav">
                     {$navigation}	
-                    {$c_navigation}	
                     <!--
                         <a href="#">Главная</a>
 						<a href="#">Каталог</a>

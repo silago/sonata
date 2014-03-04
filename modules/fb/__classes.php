@@ -18,10 +18,7 @@ class fb {
 
 
 	function showFbForm() {
-
-
-echo $this->sendFb();
-die();
+        $this->sendFb();
 		# global $smarty;
 
 
@@ -89,7 +86,7 @@ die();
 	}
 
 	function sendFb() {
-		global $_POST;
+		global $_POST, $smarty;
 
 		// check post data
 		$postArray = slashArray($_POST);
@@ -97,10 +94,19 @@ die();
 		$messageBody = "";
 		$checkEmail = "";
 
-						if (empty($postArray))  return "what are you doing?";
+						if (empty($postArray))
+                        {
+                        
+                            $template = clone $smarty;
+    	$this->data['content'] = $template->fetch(api::setTemplate('modules/fb/index.form.body.html'));		
 
 
-						$from = 'tehnodom';
+                        
+                        }
+        else 
+        {
+
+						$from = 'admin';
 						$cname = $_POST['cname'];
 						if(empty($cname)) return "поле 'имя' не может быть пустым";
 						$fname = $_POST['fname'];
@@ -108,26 +114,35 @@ die();
 						if(empty($email)) return "поле 'email' не может быть пустым";
 						$message = $_POST['message'];
 						if(empty($message)) return "поле 'сообщение' не может быть пустым";
-						$theme = $_POST['theme'];
+						$theme = @$_POST['theme'];
+        
+        foreach($postArray as $row):
+            $message.="\r\n";
+            $message.=$key.': ';
+            $html.=(gettype($row)=='array') ? implode(',',$row) : $row;
+        endforeach;
 
 		$header  = "From: ".$from."\n";
 		$header .= "MIME-Version: 1.0\n";
 		$header .= "Content-Type: text/plain; charset=utf-8;\n";
 		//$header .= "Content-Transfer-Encoding: base64;\n";
+        
 
-
+    
 
 		//$body = base64_encode($messageBody);
 		foreach ($this->toArray as $row)
 			mail($row, "Письмо с сайта ".$from, $cname."\n".$message.' '.$email, $header);
-
-			return "Письмо успешно отправлено";
+        
+    	$this->data['content'] = "Письмо успешно отправлено";		
+			#return "Письмо успешно отправлено";
 
 		#message($this->lang['ok'], $this->lang['okDesc'], "index.php");
 
 
 		#return true;
-	}
+	    }
+    }
 
 
 	function __construct() {

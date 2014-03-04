@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-04 04:24:49
+<?php /* Smarty version 2.6.16, created on 2014-03-04 11:34:28
          compiled from ru//modules/catalog/catalog.base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru//modules/catalog/catalog.base.tpl', 1, false),array('block', 'block', 'ru//modules/catalog/catalog.base.tpl', 2, false),array('function', 'show_menu', 'ru//modules/catalog/catalog.base.tpl', 6, false),)), $this); ?>
@@ -16,8 +16,6 @@ smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru/
 					
                     <div class="nav">
                     <?php echo $this->_tpl_vars['navigation']; ?>
-	
-                    <?php echo $this->_tpl_vars['c_navigation']; ?>
 	
                     <!--
                         <a href="#">Главная</a>

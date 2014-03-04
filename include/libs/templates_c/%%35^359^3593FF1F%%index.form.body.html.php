@@ -1,3 +1,5 @@
+<?php /* Smarty version 2.6.16, created on 2014-03-04 17:30:25
+         compiled from ru/modules/fb/index.form.body.html */ ?>
 	<h2>Калькулятор</h2>
                 <form action="?" method="post">
 				<div class="box-cont">
