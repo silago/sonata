@@ -158,7 +158,12 @@ class catalog extends mysql {
     $sql->query("select * from shop_groups where uri = '".$uri."'", true);
     $group_id  = $sql->result['group_id'];
     $params['parent_group_id']=$group_id;
+     $this->breadcrumbsArray = array(
+            array('id' => 'new', 'parent' => 'new', 'data' => array('title' => 'Новинки', 'url' => 'new')),
+        );
 
+	$smarty->assign ('c_navigation', $this->showBreadcrumbs($this->breadcrumbsArray));
+    
     }
         $sql_ = clone $sql;
         $query_params = '';
@@ -193,8 +198,8 @@ class catalog extends mysql {
          * 2) записи по условию
          * 3) все записи
          */
-
-     }
+        
+   }
     
     public function get_pages()
     {

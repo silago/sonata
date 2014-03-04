@@ -1,4 +1,9 @@
 /* reset */
+
+
+
+.menu-left ul ul {display:none!important;}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	background-position: 0 0;
 	background-repeat: no-repeat;
@@ -75,7 +80,7 @@ body {
 			.menu .active p {border: none;}
 			.menu p {border-bottom: 2px solid #f18400;}
 
-		.menu ul ul {position: absolute; top: 58px; left: 5px; background: #fff; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; width: 160px; z-index: 100; box-shadow: 0 2px 5px #8da9cf; display: none;}
+		.menu ul ul {position: absolute; top: 58px; left: 5px; background: #fff; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; width: 160px; z-index: 100; box-shadow: 0 2px 5px #8da9cf; display: none!important;}
 			.menu ul ul li {float: none; background: none; padding: 5px 0 5px 15px; border-bottom: 1px solid #d8d8d8;}
 			.menu ul ul li:last-child {border: none; border-radius: 0;}
 			.menu ul ul li:first-child {border-radius: 0 !important;}

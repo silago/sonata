@@ -569,7 +569,6 @@ class news {
 
     public function show($uri) {
         global $sql, $smarty;
-
         $sql->query("SELECT `title`, `template`, `fullText`, `md`, `mk`, DATE_FORMAT(`date`, '%d.%m.%Y'), `pageTitle`, `ownerId` FROM `#__#news` WHERE `uri` = '" . $uri . "' && status='1'", true);
 
         if ($sql->num_rows() !== 1) {
@@ -590,6 +589,7 @@ class news {
         $this->data['pageTitle'] = $sql->result[6];
         $this->data['template'] = '';
         $this->data['template'] = (isset ($template) && !empty($template) ? $template : $this->data['template']);
+        $smarty->assign('title', $sql->result[0]);
         $smarty->assign('date', $sql->result[5]);
         $smarty->assign('fullText', $sql->result[2]);
 

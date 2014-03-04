@@ -1,9 +1,11 @@
+<div class="news-container">
+<h2>Новости</h2>
 {if $news}
 	{foreach from=$news item=item key=key}
-		<div class="new-tover-cont">
-			<div class="date">{$item.date}</div>
-			<p><a href="/{$grpUri}/{$item.uri}/">{$item.title}</a></p>
-			{$item.smallText}
+		<div class="news-block">
+			<span>{$item.date}</span>
+			<a href="/{$grpUri}/{$item.uri}/">{$item.title}</a>
+            <p>{$item.smallText}</p>
 		</div>
 	{/foreach}
 {/if}
@@ -11,3 +13,4 @@
 {if $empty}
 	<p>В выбранной группе нет новостей.</p>
 {/if}
+</div>

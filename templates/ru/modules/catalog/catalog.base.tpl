@@ -8,12 +8,17 @@
 				</div>
 
 				<div class="content">
-					<div class="nav">
-						<a href="#">Главная</a>
+					
+                    <div class="nav">
+                    {$navigation}	
+                    {$c_navigation}	
+                    <!--
+                        <a href="#">Главная</a>
 						<a href="#">Каталог</a>
 						<a href="#">Видеонаблюдение</a>
 						<a href="#">Видео регистраторы</a>	
-					</div>
+					-->
+                    </div>
                     {$content}
 								</div>	
 			</div>	
