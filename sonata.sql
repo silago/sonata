@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 28, 2014 at 05:26 PM
+-- Generation Time: Mar 05, 2014 at 10:37 AM
 -- Server version: 5.5.35-MariaDB-log
 -- PHP Version: 5.5.9
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `sonata`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banners`
+--
+
+CREATE TABLE IF NOT EXISTS `banners` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(150) NOT NULL,
+  `text` text NOT NULL,
+  `place` int(2) unsigned NOT NULL,
+  `section` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `banners`
+--
+
+INSERT INTO `banners` (`id`, `title`, `text`, `place`, `section`) VALUES
+(13, 'atata', '<p><img src="/upload/about_3.jpg" alt="" width="215" height="111" /></p>', 1, '#');
 
 -- --------------------------------------------------------
 
@@ -568,7 +590,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `menu`
@@ -578,7 +600,8 @@ INSERT INTO `menu` (`id`, `title`) VALUES
 (1, 'Горизонтальное меню'),
 (2, 'Покупателям'),
 (4, 'Мой профиль'),
-(5, 'Left');
+(5, 'Left'),
+(6, 'Услуги');
 
 -- --------------------------------------------------------
 
@@ -595,7 +618,7 @@ CREATE TABLE IF NOT EXISTS `menu_items` (
   `title` text NOT NULL,
   `uri` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=343 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=344 ;
 
 --
 -- Dumping data for table `menu_items`
@@ -640,7 +663,8 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `item_id`, `parent_id`, `order`, `tit
 (339, 5, 24, 21, 2, 'PHILIPS', '/group30'),
 (340, 5, 25, 21, 3, 'PHILIPS', '/group31'),
 (341, 5, 26, 21, 4, 'SUPRA', '/group32'),
-(342, 5, 27, 21, 5, 'VITEK		', '/group33');
+(342, 5, 27, 21, 5, 'VITEK		', '/group33'),
+(343, 6, 1, 0, 0, 'test', '/test/');
 
 -- --------------------------------------------------------
 
@@ -760,7 +784,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `image` varchar(255) DEFAULT NULL,
   `onmain` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `pages`
@@ -773,7 +797,9 @@ INSERT INTO `pages` (`id`, `ownerId`, `title`, `uri`, `template`, `navigationSho
 (5, 0, 'Контакты', 'kontakty', '', 'y', NULL, '', '<p><strong> <span style="text-decoration: underline;"> Адрес: </span> </strong></p>\r\n<p>664007 г. Иркутск, Октябрьской Революции 1, ТЦ &laquo;Электрон&raquo; пав №46</p>\r\n<p><strong> <span style="text-decoration: underline;"> Схема проезда: </span> </strong></p>\r\n<p><a id="firmsonmap_biglink" href="http://maps.2gis.ru/#/?history=project/irkutsk/center/104.29553772716,52.293905909699/zoom/16/state/widget/id/1548640653056357/firms/1548640653056357"> Перейти к большой карте </a></p>\r\n<script charset="utf-8" type="text/javascript" src="http://firmsonmap.api.2gis.ru/js/DGWidgetLoader.js">// <![CDATA[\r\n\r\n// ]]></script>\r\n<script charset="utf-8" type="text/javascript">// <![CDATA[\r\nnew DGWidgetLoader({\r\n        "borderColor": "#a3a3a3",\r\n        "width": "735",\r\n        "height": "500",\r\n        "wid": "2878300aea9ddc020840dbfdb10a1d7a",\r\n        "pos": {\r\n            "lon": "104.29553772716",\r\n            "lat": "52.293905909699",\r\n            "zoom": "16"\r\n        },\r\n        "opt": {\r\n            "ref": "hidden",\r\n            "card": ["name", "contacts", "schedule", "payings"],\r\n            "city": "irkutsk"\r\n        },\r\n        "org": [{\r\n            "id": "1548640653056357"\r\n        }]\r\n    });\r\n// ]]></script>\r\n<noscript style="color: #c00; font-size: 16px; font-weight: bold;">\r\n    Виджет карты использует JavaScript. Включите его в настройках вашего браузера.\r\n</noscript>', '', '', NULL, '', 5, NULL, NULL, 0),
 (16, 0, 'Гарантия', 'garantija', '', 'y', NULL, '', '', '', '', NULL, '', 4, NULL, NULL, 0),
 (17, 0, 'Вакансии', 'vakansii', '', 'y', NULL, '', '', '', '', NULL, '', 5, NULL, NULL, 0),
-(14, 9, 'Такие разные белые блузки', 'takie-raznye-belye-bluzki', '', 'y', NULL, '', '<h1>Такие разные белые блузки</h1>\r\n<p style="font-weight: bold;">В год Белого зайца дизайнеры уделили особое внимание палочке-выручалочке в гардеробе современных женщин &ndash; белой блузке. Актуальные сегодня модели отличаются необычным кроем, интересными деталями и декоративными элементами.</p>\r\n<p style="font-weight: bold;">Неслучайно белая блузка год от года вдохновляет мир моды. Она не требует от владелицы ни определенного возраста (хотя, несомненно, делает женщину визуально моложе!), ни точеной фигуры. Такую блузку можно носить как с джинсами и леггинсами, так и с деловым костюмом, надевать в офис или на свидание. А главное &ndash; всего несколько аксессуаров способны превратить дневной вариант в вечерний. Предлагаю совершить экскурсию в мир белой блузки. Европейская мода предлагает множество моделей на выбор, узнайте среди них те, что подходят именно вам!</p>\r\n<p>В сезоне весна-лето 2011 актуальным становится <strong> большой круглый вырез и рукава три четверти. </strong> Кромка рукавов и низа также слегка закруглена. Ансамбль хорошо дополнить броским аксессуаром &ndash; ремнем на бедрах. И больше никаких излишних деталей!</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/1.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Прекрасный вариант для романтической прогулки - <strong> удлиненная приталенная блузка </strong> с акцентом на слегка расширенный рукав три четверти, сборки чуть ниже лифа и фантазийный вырез. Дополнят образ серебряные аксессуары.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/2.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>И снова в центре внимания &ndash; манжеты и пуговицы на планке. Но эта модель носит более игривый характер благодаря <strong> рюшам на воротнике. </strong></p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/3.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Такую блузку можно смело носить с обычными прямыми брюками, а вашу женственность подчеркнет сочетание <strong> отрезной кокетки, воротника-стойки и воланов </strong> по обе стороны от воротника и планки.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/4.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Для торжественного случая подойдет эта <strong> приталенная блузка с романтичной отделкой </strong> вдоль застежки и стоячего воротника.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/5.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Не забывайте об аксессуарах! Блузка со <strong> слегка закругленным низом, с небольшой драпировкой в виде складок </strong> вдоль планки до талии нуждается в ремне и бусах, чтобы подчеркнуть вашу индивидуальность.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/6.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Роскошным женщинам иногда достаточно лишь небольшой детали, чтобы оттенить свою красоту. Здесь таким акцентом служит <strong> вставка в виде небольших горизонтальных складок </strong> вдоль планки.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/7.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Полоска может быть очень дразнящей в сочетании <strong> &laquo;белая блузка - вставки из слегка прозрачной ткани&raquo;. </strong> Бусы лишь усилят эффект.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/8.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Белая блузка в прозрачную полоску может иметь и вполне деловой вид, если скроена <strong> в стиле мужской рубашки. </strong> А неформальность ей всегда можно придать с помощью бижутерии.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/9.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Оригинально <strong> расположенные вокруг планки воланы </strong> придадут вам праздничный вид во время офисных будней. А правильно подобранные аксессуары не оставят вас незамеченной даже для самой взыскательной публики.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/10.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>В этой уникальной блузке с акцентом на <strong> необычные рукава </strong> вы будете неотразимы! Главное правило: при таком объемном верхе низ должен быть максимально облегающим.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/11.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p><strong> Отделка из сатина </strong> на внутренней стороне воротника и манжетах придаст белой блузке особую элегантность, особенно если вы подберете пояс в тон.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/12.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Пример тонко выверенного контраста: двухслойный <strong> волан, отделанный черной сатиновой узкой лентой и черные маленькие пуговицы </strong> по-новому подчеркнут белую блузку и ее обладательницу.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/13.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p><strong> Вышивка с цветочными мотивами, открытый рубашечный воротник, отделка </strong> слегка закругленного нижнего края, манжет, воротника и плеч придают блузке женственный шарм. Если дополнить ее белыми брюками и дорогими аксессуарами, получится новое воплощение морского стиля.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/14.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Акцент в этой белой блузке сделан на <strong> трехъярусный воротник и манжеты с контрастной строчкой. </strong> Джеки О она бы понравилась!</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/15.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Пример удачной игры на контрасте &ndash; <strong> стильный рисунок и необычно расположенные пуговицы </strong> на планке. Можно дополнить это уравнение и другими черными акцентами.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/16.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p><strong> Мода 80-х с отделкой </strong> в виде воротников, манжет, жабо, кокилье обретает второе рождение в этой блузке. Пусть ей составят компанию аксессуары &ndash; контрастный пояс и бижутерия.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/17.jpg" alt="image" /></h3>', '', '', NULL, '', 0, NULL, NULL, 0);
+(14, 9, 'Такие разные белые блузки', 'takie-raznye-belye-bluzki', '', 'y', NULL, '', '<h1>Такие разные белые блузки</h1>\r\n<p style="font-weight: bold;">В год Белого зайца дизайнеры уделили особое внимание палочке-выручалочке в гардеробе современных женщин &ndash; белой блузке. Актуальные сегодня модели отличаются необычным кроем, интересными деталями и декоративными элементами.</p>\r\n<p style="font-weight: bold;">Неслучайно белая блузка год от года вдохновляет мир моды. Она не требует от владелицы ни определенного возраста (хотя, несомненно, делает женщину визуально моложе!), ни точеной фигуры. Такую блузку можно носить как с джинсами и леггинсами, так и с деловым костюмом, надевать в офис или на свидание. А главное &ndash; всего несколько аксессуаров способны превратить дневной вариант в вечерний. Предлагаю совершить экскурсию в мир белой блузки. Европейская мода предлагает множество моделей на выбор, узнайте среди них те, что подходят именно вам!</p>\r\n<p>В сезоне весна-лето 2011 актуальным становится <strong> большой круглый вырез и рукава три четверти. </strong> Кромка рукавов и низа также слегка закруглена. Ансамбль хорошо дополнить броским аксессуаром &ndash; ремнем на бедрах. И больше никаких излишних деталей!</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/1.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Прекрасный вариант для романтической прогулки - <strong> удлиненная приталенная блузка </strong> с акцентом на слегка расширенный рукав три четверти, сборки чуть ниже лифа и фантазийный вырез. Дополнят образ серебряные аксессуары.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/2.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>И снова в центре внимания &ndash; манжеты и пуговицы на планке. Но эта модель носит более игривый характер благодаря <strong> рюшам на воротнике. </strong></p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/3.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Такую блузку можно смело носить с обычными прямыми брюками, а вашу женственность подчеркнет сочетание <strong> отрезной кокетки, воротника-стойки и воланов </strong> по обе стороны от воротника и планки.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/4.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Для торжественного случая подойдет эта <strong> приталенная блузка с романтичной отделкой </strong> вдоль застежки и стоячего воротника.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/5.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Не забывайте об аксессуарах! Блузка со <strong> слегка закругленным низом, с небольшой драпировкой в виде складок </strong> вдоль планки до талии нуждается в ремне и бусах, чтобы подчеркнуть вашу индивидуальность.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/6.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Роскошным женщинам иногда достаточно лишь небольшой детали, чтобы оттенить свою красоту. Здесь таким акцентом служит <strong> вставка в виде небольших горизонтальных складок </strong> вдоль планки.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/7.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Полоска может быть очень дразнящей в сочетании <strong> &laquo;белая блузка - вставки из слегка прозрачной ткани&raquo;. </strong> Бусы лишь усилят эффект.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/8.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Белая блузка в прозрачную полоску может иметь и вполне деловой вид, если скроена <strong> в стиле мужской рубашки. </strong> А неформальность ей всегда можно придать с помощью бижутерии.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/9.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Оригинально <strong> расположенные вокруг планки воланы </strong> придадут вам праздничный вид во время офисных будней. А правильно подобранные аксессуары не оставят вас незамеченной даже для самой взыскательной публики.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/10.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>В этой уникальной блузке с акцентом на <strong> необычные рукава </strong> вы будете неотразимы! Главное правило: при таком объемном верхе низ должен быть максимально облегающим.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/11.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p><strong> Отделка из сатина </strong> на внутренней стороне воротника и манжетах придаст белой блузке особую элегантность, особенно если вы подберете пояс в тон.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/12.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Пример тонко выверенного контраста: двухслойный <strong> волан, отделанный черной сатиновой узкой лентой и черные маленькие пуговицы </strong> по-новому подчеркнут белую блузку и ее обладательницу.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/13.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p><strong> Вышивка с цветочными мотивами, открытый рубашечный воротник, отделка </strong> слегка закругленного нижнего края, манжет, воротника и плеч придают блузке женственный шарм. Если дополнить ее белыми брюками и дорогими аксессуарами, получится новое воплощение морского стиля.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/14.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Акцент в этой белой блузке сделан на <strong> трехъярусный воротник и манжеты с контрастной строчкой. </strong> Джеки О она бы понравилась!</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/15.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p>Пример удачной игры на контрасте &ndash; <strong> стильный рисунок и необычно расположенные пуговицы </strong> на планке. Можно дополнить это уравнение и другими черными акцентами.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/16.jpg" alt="image" /></h3>\r\n<p>&nbsp;</p>\r\n<p><strong> Мода 80-х с отделкой </strong> в виде воротников, манжет, жабо, кокилье обретает второе рождение в этой блузке. Пусть ей составят компанию аксессуары &ndash; контрастный пояс и бижутерия.</p>\r\n<h3><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/articles/17.jpg" alt="image" /></h3>', '', '', NULL, '', 0, NULL, NULL, 0),
+(22, 16, 'test', 'test', 'inner.html', 'y', NULL, '', '<p>Современные системы безопасности смогут своевременно информировать вас о проникновении посторонних лиц на территорию, находящуюся под охраной. Система охранной сигнализации делает возможным осуществление круглосуточного контроля над любым объектом независимо от его площади, и что не маловажно &ndash; охранно-пожарная сигнализация позволяет уберечь ваше имущество от пожара в случае внезапного возгорания в помещении.</p>', '', '', NULL, '', 0, NULL, '1393830199_bdc3ax.jpg', 0),
+(23, 0, 'ffff', 'ffff', '', 'y', NULL, '', '<p>ffff</p>', '', '', NULL, '', 6, NULL, '', 0);
 
 -- --------------------------------------------------------
 
@@ -810,7 +836,7 @@ CREATE TABLE IF NOT EXISTS `shop_basket` (
   `uri` tinytext NOT NULL,
   `thumb` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `shop_basket`
@@ -820,7 +846,10 @@ INSERT INTO `shop_basket` (`id`, `item_id`, `user_id`, `session_id`, `parent_gro
 (13, '913593fe-266a-11e3-805a-3085a9ad2002', 23, '', '71430fc4-2673-11e3-805a-3085a9ad2002', 'Телевизор LG -28LN450U', '0.00', '5000.00', 2, 0, 0, 'item545', ''),
 (14, '913593fe-266a-11e3-805a-3085a9ad2002', 18, '', '71430fc4-2673-11e3-805a-3085a9ad2002', 'Телевизор LG -28LN450U', '0.00', '5000.00', 1, 0, 0, 'item545', ''),
 (11, '913593fe-266a-11e3-805a-3085a9ad2002', 22, '', '71430fc4-2673-11e3-805a-3085a9ad2002', 'Телевизор LG -28LN450U', '0.00', '5000.00', 1, 0, 0, 'item545', ''),
-(22, '9ef1d6ef-2bda-11e3-805a-3085a9ad2002', 24, '', 'd75de78c-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Philips - BDP 5100/51', '0.00', '1000.00', 1, 0, 0, 'item38', '');
+(27, '32f8a557-2be6-11e3-805a-3085a9ad2002', 28, '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4430Р	', '0.00', '1000.00', 1, 0, 0, 'item62', ''),
+(26, '9ef1d6d1-2bda-11e3-805a-3085a9ad2002', 25, '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 727U', '0.00', '1000.00', 1, 0, 0, 'item29', ''),
+(25, '9ef1d6ce-2bda-11e3-805a-3085a9ad2002', 25, '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 726U', '0.00', '1000.00', 1, 0, 0, 'item28', ''),
+(24, '9ef1d6ca-2bda-11e3-805a-3085a9ad2002', 25, '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 621U', '0.00', '1000.00', 2, 0, 0, 'item27', '');
 
 -- --------------------------------------------------------
 
@@ -1284,7 +1313,7 @@ INSERT INTO `shop_items` (`id`, `item_id`, `owner_id`, `article`, `parent_group_
 (8, 'f0caf53f-2b2f-11e3-8ef3-3085a9ad2002', '0', '', 'f0caf541-2b2f-11e3-8ef3-3085a9ad2002', 'DVD Bbk DVP - 157SI', '', '', '0.00', 4, 0, 0, 'item8', '', '', '', 0),
 (9, 'f7d8ffb8-2bca-11e3-805a-3085a9ad2002', '0', '', 'f0caf541-2b2f-11e3-8ef3-3085a9ad2002', 'DVD Bbk DVP - 159SI', '', '', '0.00', 1, 0, 0, 'item9', '', '', '', 0),
 (10, 'f7d8ffbb-2bca-11e3-805a-3085a9ad2002', '0', '', 'f0caf541-2b2f-11e3-8ef3-3085a9ad2002', 'DVD Bbk DVP - 457SI', '', '', '0.00', 4, 0, 0, 'item10', '', '', '', 0),
-(11, 'f7d8ffc3-2bca-11e3-805a-3085a9ad2002', '0', '', 'd75de788-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Erisson-DVD1115', '', '', '0.00', 3, 0, 0, 'item11', '', '', '', 0),
+(11, 'f7d8ffc3-2bca-11e3-805a-3085a9ad2002', '0', '', 'd75de788-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Erisson-DVD1115', '', '', '0.00', 2, 0, 0, 'item11', '', '', '', 0),
 (12, 'f7d8ffc6-2bca-11e3-805a-3085a9ad2002', '0', '', 'd75de788-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Erisson-DVD1140', '', '', '0.00', 3, 0, 0, 'item12', '', '', '', 0),
 (13, 'f7d8ffc9-2bca-11e3-805a-3085a9ad2002', '0', '', 'd75de789-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Fusion FD-U148X', '', '', '0.00', 4, 0, 0, 'item13', '', '', '', 0),
 (14, 'f7d8ffcc-2bca-11e3-805a-3085a9ad2002', '0', '', 'd75de789-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Fusion FD-U157X', '', '', '0.00', 2, 0, 0, 'item14', '', '', '', 0),
@@ -1300,9 +1329,9 @@ INSERT INTO `shop_items` (`id`, `item_id`, `owner_id`, `article`, `parent_group_
 (24, '9ef1d6c1-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78a-2b3d-11e3-8ef3-3085a9ad2002', 'DVD LG DKS9500H DVD+Караоке', '', '', '0.00', 3, 0, 0, 'item24', '', '', '', 0),
 (25, '9ef1d6c4-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78a-2b3d-11e3-8ef3-3085a9ad2002', 'DVD LG DP - 122', '', '', '0.00', 3, 0, 0, 'item25', '', '', '', 0),
 (26, '9ef1d6c7-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78a-2b3d-11e3-8ef3-3085a9ad2002', 'DVD LG DVX - 632K', '', '', '0.00', 4, 0, 0, 'item26', '', '', '', 0),
-(27, '9ef1d6ca-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 621U', '', '', '0.00', 3, 0, 0, 'item27', '', '', '', 0),
-(28, '9ef1d6ce-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 726U', '', '', '0.00', 3, 0, 0, 'item28', '', '', '', 0),
-(29, '9ef1d6d1-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 727U', '', '', '0.00', 3, 0, 0, 'item29', '', '', '', 0),
+(27, '9ef1d6ca-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 621U', '', '', '0.00', 1, 0, 0, 'item27', '', '', '', 0),
+(28, '9ef1d6ce-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 726U', '', '', '0.00', 2, 0, 0, 'item28', '', '', '', 0),
+(29, '9ef1d6d1-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 727U', '', '', '0.00', 2, 0, 0, 'item29', '', '', '', 0),
 (30, '9ef1d6d4-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 728U', '', '', '0.00', 2, 0, 0, 'item30', '', '', '', 0),
 (31, '9ef1d6d7-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 729U', '', '', '0.00', 4, 0, 0, 'item31', '', '', '', 0),
 (32, '9ef1d6da-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 729U', '', '', '0.00', 3, 0, 0, 'item32', '', '', '', 0),
@@ -1325,8 +1354,8 @@ INSERT INTO `shop_items` (`id`, `item_id`, `owner_id`, `article`, `parent_group_
 (49, '32f8a542-2be6-11e3-805a-3085a9ad2002', '0', '', '32f8a546-2be6-11e3-805a-3085a9ad2002', 'DVD Soni BDP - S350', '', '', '0.00', 3, 0, 0, 'item49', '', '', '', 0),
 (50, '32f8a53c-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de78f-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Soni DVP - SR120', '', '', '0.00', 3, 0, 0, 'item50', '', '', '', 0),
 (51, '32f8a53f-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de78f-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Soni DVP - SR450', '', '', '0.00', 3, 0, 0, 'item51', '', '', '', 0),
-(52, '32f8a547-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de790-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Supra DVS-013X', '', '', '0.00', 2, 0, 0, 'item52', '', '', '', 0),
-(53, '32f8a54a-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de790-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Supra DVS-055XK', '', '', '0.00', 3, 0, 0, 'item53', '', '', '', 0),
+(52, '32f8a547-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de790-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Supra DVS-013X', '', '', '0.00', 1, 0, 0, 'item52', '', '', '', 0),
+(53, '32f8a54a-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de790-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Supra DVS-055XK', '', '', '0.00', 1, 0, 0, 'item53', '', '', '', 0),
 (54, '32f8a54d-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de790-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Supra DVS-065XK', '', '', '0.00', 3, 0, 0, 'item54', '', '', '', 0),
 (55, '32f8a550-2be6-11e3-805a-3085a9ad2002', '0', '', 'd75de790-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Supra DVS-102X', '', '', '0.00', 3, 0, 0, 'item55', '', '', '', 0),
 (56, '9ef1d6e2-2bda-11e3-805a-3085a9ad2002', '0', '', 'd75de791-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Toshiba - BDX2000', '', '', '0.00', 4, 0, 0, 'item56', '', '', '', 0),
@@ -1335,7 +1364,7 @@ INSERT INTO `shop_items` (`id`, `item_id`, `owner_id`, `article`, `parent_group_
 (59, '2af4bd2f-2bfc-11e3-805a-3085a9ad2002', '0', '', '32f8a555-2be6-11e3-805a-3085a9ad2002', 'Дом.кинотеатр  Samsung HT-E3550	', '', '', '0.00', 3, 0, 0, 'item59', '', '', '', 0),
 (60, '2af4bd36-2bfc-11e3-805a-3085a9ad2002', '0', '', '32f8a555-2be6-11e3-805a-3085a9ad2002', 'Дом.кинотеатр  Samsung HT-E6750WK	', '', '', '0.00', 3, 0, 0, 'item60', '', '', '', 0),
 (61, '2af4bd33-2bfc-11e3-805a-3085a9ad2002', '0', '', '32f8a555-2be6-11e3-805a-3085a9ad2002', 'Дом.кинотеатр  Samsung HT-E8000	', '', '', '0.00', 3, 0, 0, 'item61', '', '', '', 0),
-(62, '32f8a557-2be6-11e3-805a-3085a9ad2002', '0', '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4430Р	', '', '', '0.00', 3, 0, 0, 'item62', '', '', '', 0),
+(62, '32f8a557-2be6-11e3-805a-3085a9ad2002', '0', '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4430Р	', '', '', '0.00', 2, 0, 0, 'item62', '', '', '', 0),
 (63, '32f8a560-2be6-11e3-805a-3085a9ad2002', '0', '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4530Т	', '', '', '0.00', 4, 0, 0, 'item63', '', '', '', 0),
 (64, '44927af5-315d-11e3-a2d2-3085a9ad2002', '0', '', '44927af8-315d-11e3-a2d2-3085a9ad2002', 'Массажер  Ves 3000', '', '', '0.00', 0, 0, 0, 'item64', '', '', '', 0),
 (65, '3696657e-314e-11e3-a2d2-3085a9ad2002', '0', '', '3696657d-314e-11e3-a2d2-3085a9ad2002', 'Массажер Scarlet 201	', '', '', '0.00', 0, 0, 0, 'item65', '', '', '', 0),
@@ -1391,7 +1420,7 @@ CREATE TABLE IF NOT EXISTS `shop_orders` (
   `data` longtext NOT NULL,
   `order_data` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `shop_orders`
@@ -1405,7 +1434,10 @@ INSERT INTO `shop_orders` (`id`, `email`, `name`, `surname`, `patronymic`, `user
 (5, 'yorkshp@gmail.com', 'Юрий', 'Шпынёв', 'Борисович', 19, 1, 0, 1, 'cashpayment', '0.00', 0, '2013-07-05 11:14:26', '{"discountType":"","discountValue":"","sname":"1","town2":"","ddate2":"","adrr":"","ddate":"","pname":"cashpayment","comment":"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t"}', '{"sprice":"0.00","total":"0.00","cost":"0.00"}'),
 (6, 'yorkshp@gmail.com', 'Юрий', 'Шпынёв', 'Борисович', 19, 1, 0, 1, 'cashpayment', '0.00', 0, '2013-07-05 11:14:27', '{"discountType":"","discountValue":"","sname":"1","town2":"","ddate2":"","adrr":"","ddate":"","pname":"cashpayment","comment":"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t"}', '{"sprice":"0.00","total":"0.00","cost":"0.00"}'),
 (7, 'd123@123d.ru', 'ww', 'qqq', 'eee', 21, 0, 0, 1, 'billpayment', '0.00', 0, '2013-10-23 16:05:22', '{"discountType":"","discountValue":"","sname":"1","town2":"","ddate2":"","adrr":"","ddate":"","pname":"billpayment","comment":"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t"}', '{"0":{"item_id":"913593fe-266a-11e3-805a-3085a9ad2002","parent_group_id":"71430fc4-2673-11e3-805a-3085a9ad2002","name":"\\u0422\\u0435\\u043b\\u0435\\u0432\\u0438\\u0437\\u043e\\u0440 LG -28LN450U","price":"5000.00","quantity":"1","uri":"item545","thumb":"","total":"5 000.00"},"sprice":"0.00","total":"5 000.00","cost":"5 000.00"}'),
-(8, 'd123@123d.ru', 'ww', 'qqq', 'eee', 21, 1, 0, 1, 'billpayment', '0.00', 0, '2013-10-23 16:41:59', '{"discountType":"","discountValue":"","sname":"1","town2":"","ddate2":"","adrr":"","ddate":"","pname":"billpayment","comment":"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t"}', '{"0":{"item_id":"913593fe-266a-11e3-805a-3085a9ad2002","parent_group_id":"71430fc4-2673-11e3-805a-3085a9ad2002","name":"\\u0422\\u0435\\u043b\\u0435\\u0432\\u0438\\u0437\\u043e\\u0440 LG -28LN450U","price":"5000.00","quantity":"35","uri":"item545","thumb":"","total":"175 000.00"},"sprice":"0.00","total":"175 000.00","cost":"175 000.00"}');
+(8, 'd123@123d.ru', 'ww', 'qqq', 'eee', 21, 1, 0, 1, 'billpayment', '0.00', 0, '2013-10-23 16:41:59', '{"discountType":"","discountValue":"","sname":"1","town2":"","ddate2":"","adrr":"","ddate":"","pname":"billpayment","comment":"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t"}', '{"0":{"item_id":"913593fe-266a-11e3-805a-3085a9ad2002","parent_group_id":"71430fc4-2673-11e3-805a-3085a9ad2002","name":"\\u0422\\u0435\\u043b\\u0435\\u0432\\u0438\\u0437\\u043e\\u0440 LG -28LN450U","price":"5000.00","quantity":"35","uri":"item545","thumb":"","total":"175 000.00"},"sprice":"0.00","total":"175 000.00","cost":"175 000.00"}'),
+(9, 'silago.nevermind@gmail.com', 'asdasdasd', 'asdasdasd', 'asdasdasd', 24, 0, 0, 1, 'cashpayment', '0.00', 0, '2014-03-03 13:30:42', '{"order_name":"silago nevermind","order_phone":"222333444","sname":"1","order_street":"st","order_house":"2","order_corp":"3","order_office":"4","order_date":"29 \\u042f\\u043d\\u0432 2014","order_time":"00:00","pname":"cashpayment"}', '{"0":{"item_id":"9ef1d6ef-2bda-11e3-805a-3085a9ad2002","parent_group_id":"d75de78c-2b3d-11e3-8ef3-3085a9ad2002","name":"DVD Philips - BDP 5100\\/51","price":"1000.00","quantity":"1","uri":"item38","thumb":"","total":"1 000.00"},"sprice":"0.00","total":"1 000.00","cost":"1 000.00"}'),
+(10, 'silago.nevermind@gmail.com', 'asdasdasd', 'asdasdasd', 'asdasdasd', 24, 1, 0, 1, 'cashpayment', '0.00', 0, '2014-03-03 13:32:23', '{"order_name":"silago nevermind","order_phone":"222333444","sname":"1","order_street":"st","order_house":"2","order_corp":"3","order_office":"4","order_date":"29 \\u042f\\u043d\\u0432 2014","order_time":"00:00","pname":"cashpayment"}', '{"sprice":"0.00","total":"0.00","cost":"0.00"}'),
+(11, 'silago.nevermind@gmail.com', 'asdasdasd', 'asdasdasd', 'asdasdasd', 24, 1, 0, 1, 'cashpayment', '0.00', 0, '2014-03-03 13:33:46', '{"order_name":"silago nevermind","order_phone":"222333444","sname":"1","order_street":"st","order_house":"2","order_corp":"123","order_office":"4","order_date":"23 \\u042f\\u043d\\u0432 2014","order_time":"00:00","pname":"cashpayment"}', '{"0":{"item_id":"f7d8ffc3-2bca-11e3-805a-3085a9ad2002","parent_group_id":"d75de788-2b3d-11e3-8ef3-3085a9ad2002","name":"DVD Erisson-DVD1115","price":"1000.00","quantity":"1","uri":"item11","thumb":"","total":"1 000.00"},"sprice":"0.00","total":"1 000.00","cost":"1 000.00"}');
 
 -- --------------------------------------------------------
 
@@ -2026,7 +2058,7 @@ CREATE TABLE IF NOT EXISTS `shop_users` (
   `addr` varchar(255) DEFAULT NULL,
   `discount` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `shop_users`
@@ -2041,13 +2073,15 @@ INSERT INTO `shop_users` (`id`, `email`, `password`, `name`, `surname`, `patrony
 (13, 'nerpa_irk@mail.ru', '9d518815947a9addd509731a831d6137', 'Наталья', 'Сендецкая', 'Юрьевна', '2013-04-15 23:05:19', 1, 0, 0, '{"sname":"1","town2":"\\u0433. \\u0418\\u0440\\u043a\\u0443\\u0442\\u0441\\u043a \\u0443\\u043b.\\u0421\\u043e\\u0432\\u0435\\u0442\\u0441\\u043a\\u0430\\u044f,27","ddate2":"17 \\u0410\\u043f\\u0440 2013","adrr":"","ddate":"","pname":"cashpayment"}', '2f4fdecb1f03f5825f0acb01cd94322a', '', NULL, ''),
 (16, 'andrey2@in-site.ru', '911cdc7f4873627d959cf8d65003efa7', 'Андрей', 'Бер', 'Геннадьевич', '2013-04-22 14:21:03', 0, 0, 0, '[]', 'f9d9eeed096b7d0ea1200ba2036c848b', '89025765100', NULL, ''),
 (17, 'test@in-site.ru', '098f6bcd4621d373cade4e832627b4f6', 'test', 'test', 'test', '2013-04-22 14:37:04', 0, 0, 0, '', '', 'test', NULL, ''),
-(25, 'silago@inbox.ru', 'e10adc3949ba59abbe56e057f20f883e', 'Сигизмунд', 'Иванов', 'Лазаревич', '2013-10-30 14:29:04', 0, 0, 0, '[]', 'ddc53c32ca82f5fe0b35fb6dba2e7ff6', '23145', NULL, ''),
+(25, 'silago@inbox.ru', 'e10adc3949ba59abbe56e057f20f883e', 'Сигизмунд', 'Иванов', 'Лазаревич', '2013-10-30 14:29:04', 0, 0, 0, '[]', '', '23145', NULL, ''),
 (26, 'aran.Noldor@yandex.ru', '4297f44b13955235245b2497399d7a93', '123', '123', '123', '2013-12-02 13:58:00', 0, 0, 0, '[]', '0a6ece8964cb1b9b30cb07dafbf7a564', '12312311231', NULL, ''),
 (19, 'yorkshp@gmail.com', 'ed855309f887fda2c7d40b1dcec548a8', 'Юрий', 'Шпынёв', 'Борисович', '2013-07-05 09:31:03', 1, 0, 0, '{"discountType":"","discountValue":"","sname":"1","town2":"","ddate2":"","adrr":"","ddate":"","pname":"cashpayment","comment":"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t"}', '731733103d84a9253b788dda788c597a', '79041415353', NULL, ''),
 (20, 'dsdfg@fd.rt', 'd9aeba5e7bcdacec33d2504cfcbfc33b', 'авы', 'авы', 'ыва', '2013-09-09 12:10:02', 0, 0, 0, '[]', '3fa2b83b3c0580f16e0894556c90640c', '43242', NULL, ''),
 (21, 'd123@123d.ru', '4297f44b13955235245b2497399d7a93', 'ww', 'qqq', 'eee', '2013-10-21 17:00:57', 1, 0, 0, '{"discountType":"","discountValue":"","sname":"1","town2":"","ddate2":"","adrr":"","ddate":"","pname":"billpayment","comment":"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t"}', '', '321321', NULL, ''),
-(24, 'silago.nevermind@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'asdasdasd', 'asdasdasd', 'asdasdasd', '2013-10-30 14:19:34', 0, 0, 0, '[]', '7914023c45e956e3351f635b5ba95e7a', '223344', NULL, ''),
-(23, 'test@test.te', '36a65c76ba6fd7ea70f8ffb3d8d9984c', 'Сигизмунд', 'Иванов', 'Лазаревич', '2013-10-23 16:22:19', 0, 0, 0, '[]', '', NULL, NULL, '');
+(24, 'silago.nevermind@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'asdasdasd', 'asdasdasd', 'asdasdasd', '2013-10-30 14:19:34', 1, 0, 0, '{"order_name":"silago nevermind","order_phone":"222333444","sname":"1","order_street":"st","order_house":"2","order_corp":"3","order_office":"4","order_date":"29 \\u042f\\u043d\\u0432 2014","order_time":"00:00","pname":"cashpayment"}', '7914023c45e956e3351f635b5ba95e7a', '223344', NULL, ''),
+(23, 'test@test.te', '36a65c76ba6fd7ea70f8ffb3d8d9984c', 'Сигизмунд', 'Иванов', 'Лазаревич', '2013-10-23 16:22:19', 0, 0, 0, '[]', '', NULL, NULL, ''),
+(27, 'silago@inbox.au', '494380e01e45ecd28b615ccfc078445c', 'Василий', 'Иванов', 'Васильевич', '2014-03-04 14:44:28', 0, 0, 0, '[]', '', '223344', NULL, ''),
+(28, 'silago@inbox.bu', 'e10adc3949ba59abbe56e057f20f883e', 'Василий', 'Иванов', 'Васильевич', '2014-03-04 15:26:57', 1, 0, 0, '[]', '34e5a142ad21c6cf15d19ddeba08c463', '223344', NULL, '');
 
 -- --------------------------------------------------------
 

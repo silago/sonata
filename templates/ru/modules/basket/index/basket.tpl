@@ -24,12 +24,12 @@
 								</td>
 								<td class="ed">{$item.price} руб.</td>
 								<td class="kv">
-									<a href="#"><img src="/images/prev-kv.png" height="8" width="4" alt="" /></a>
-									<input type="text" placeholder="{$item.quantity}" />
-									<a href="#"><img src="/images/next-kv.png" height="8" width="4" alt="" /></a>
+									<a  onclick='minus(this, "{$item.item_id}"); return false;' href="#"><img src="/images/prev-kv.png" height="8" width="4" alt="" /></a>
+									<input   class="qq q-{$item.item_id}" onfocusout="changeQty('{$item.item_id}');" type="text" placeholder="{$item.quantity}" />
+									<a  onclick='plus(this, "{$item.item_id}"); return false;' href="#"><img src="/images/next-kv.png" height="8" width="4" alt="" /></a>
 								</td>
 								<td class="summ"><span>{$item.total} руб.</span></td>
-								<td class="delete"><a href="deleteFromCart('{$item.item_id}'); "><img src="/images/delete.png" height="10" width="10" alt="" /></a></td>
+								<td class="delete"><a href="#" onclick="deleteFromCart('{$item.item_id}'); "><img src="/images/delete.png" height="10" width="10" alt="" /></a></td>
 							</tr>
                         
                         {/foreach}

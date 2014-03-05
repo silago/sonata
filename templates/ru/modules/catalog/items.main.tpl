@@ -9,3 +9,5 @@
 
     </div>
 {/foreach}
+
+{show_banner section=maingoods}

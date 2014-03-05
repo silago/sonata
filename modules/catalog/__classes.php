@@ -128,6 +128,8 @@ class catalog extends mysql {
     
     }
 
+
+
     public function get_items($id)
     {
     global $API, $sql, $smarty;
@@ -165,6 +167,9 @@ class catalog extends mysql {
     {
      
     global $API, $sql, $smarty;
+
+    
+
     $template = clone $smarty;
     if ($uri) 
     {
@@ -174,9 +179,24 @@ class catalog extends mysql {
     $this->data['pageTitle']=$sql->result['name'];
 
     $params['parent_group_id']=$group_id;
-     $this->breadcrumbsArray = array(
-            array('id' => 'new', 'parent' => 'new', 'data' => array('title' => 'Новинки', 'url' => 'new')),
-        );
+     
+     $parent_group_id = $group_id;
+     $b_array = array();
+     $this->breadcrumbsArray = array();
+     while ($parent_group_id != '0'):
+        $sql_ = clone $sql;
+        $sql_->query('select * from shop_groups where group_id = "'.$parent_group_id.'"',true);
+        $b_array[] = array('title'=>$sql_->result['name'],'uri'=>$sql_->result['uri']);
+        $parent_group_id = $sql_->result['parent_group_id'];
+     endwhile;
+
+     $b_array[]=array('title'=>'Каталог','uri'=>'/catalog');
+     $smarty->assign('b_array',array_reverse($b_array));
+
+
+     #$this->breadcrumbsArray = array(
+     #       array('id' => 'new', 'parent' => 'new','data' => array('title' => 'Новинки', 'url' => 'new')),
+     #   );
 
     
     }

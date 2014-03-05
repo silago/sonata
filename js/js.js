@@ -7,6 +7,34 @@ $('document').ready( function()
 });
 
 
+function deleteFromCart(id) {
+            if (confirm('удалить элемент?')) {
+                jQuery.ajax({
+                    type: 'POST',
+                    url: '/delformcart/',
+                    dataType: 'json',
+                    data: {id: id},
+                    success: function(data) {
+                        if (data.amount > 0) {
+                            jQuery('.upBasket').find('b').html(data.amount);
+                        } else {
+                        document.location='/';
+                        }
+						$('.q-'+id).closest('tr').hide(300);
+						//console.log(id);
+						$.createNotification({content:'позиция удалена'})
+						
+						gettotal();
+						gettotalitems();
+                      //  jQuery('div#basket').empty();
+                     //   jQuery('div#basket').html(data.content);
+                    //    document.location.reload(true);
+                    }
+
+                });
+            }
+            return false;
+        }	
 function addToChart(id,q){
                 var quantity = q;
                 $.ajax({
@@ -98,4 +126,75 @@ function registergo(id){//alert(1);
             }
         })
         return false;
-}   
+}
+
+
+
+         
+        function minus(obj,id)
+        {	
+			v = $(obj).parent().children('input').val();
+			v = parseInt(v);
+			//v = v-1;
+		//	alert(v);
+			
+			//	v = 1;
+			if (v>1)
+			{
+			$(obj).parent().children('input').val(v-1);
+			if (!changeQty(id))		
+				$(obj).parent().children('input').val(v);
+			}
+			
+			
+		}
+		
+		function plus(obj,id)
+        {	
+			v = $(obj).parent().children('input').val();
+			v = parseInt(v);
+			//v = v+1;
+			//alert(v);
+			$(obj).parent().children('input').val(v+1);
+			if (!changeQty(id))
+				$(obj).parent().children('input').val(v);
+			
+		}       
+function changeQty(id){
+	//alert('s');
+		var qty = $('.q-'+id).val();
+
+            jQuery.ajax({
+				
+                type: 'POST',
+                url: '/updamount/',
+                dataType: 'json',
+                async: false,
+                 async: false,  
+                  async: false,  
+                data: {id:id, quantity:qty},                
+				success: function(data){	
+				
+					if (data.error != undefined)
+						{
+						$.createNotification({content:data.error})
+						result =  false;
+						}
+					else
+					{
+							 qtyItem = $('.q-'+id);
+							 price =$(qtyItem).parent().parent().children('td:nth-child(3)').children('p').html();
+							price = parseFloat(price)*qty;
+							$(qtyItem).parent().parent().children('td:nth-child(5)').children('p').html(price+' ббаБ.');
+							
+							$.createNotification({content:'ааОаЛаИбаЕббаВаО баОаВаАбаОаВ аОаБаНаОаВаЛаЕаНаО'})
+							 gettotal();
+							 gettotalitems();
+							 result =  true;
+				
+					}
+                }
+				
+            });
+          return result;
+        }

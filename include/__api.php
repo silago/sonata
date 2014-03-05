@@ -76,7 +76,9 @@ $_template = "base.tpl";
 define('SMARTY_DIR', 'include/libs/');
 require(SMARTY_DIR . 'Smarty.class.php');
 require(SMARTY_DIR . 'mySmarty.class.php');
+
 $smarty = new mySmarty();
+$smarty->plugins_dir[]="custom_plugins";
 
 // checkInstall MainAPI
 $defaultLang = $API['config']['defaultlang'];
@@ -344,7 +346,6 @@ if (isset ($API['groupImage'])) {
 #заменяем стандартный шаблонизатор на smarty
 #$mainTemplate->out();
 #echo api::setTemplate("base.tpl");
-$smarty->plugins_dir[]="custom_plugins";
 //echo var_dump(api::setTemplate($_template));
 //die();
 

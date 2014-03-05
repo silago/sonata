@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-04 11:34:28
+<?php /* Smarty version 2.6.16, created on 2014-03-05 14:14:01
          compiled from ru//modules/catalog/catalog.base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru//modules/catalog/catalog.base.tpl', 1, false),array('block', 'block', 'ru//modules/catalog/catalog.base.tpl', 2, false),array('function', 'show_menu', 'ru//modules/catalog/catalog.base.tpl', 6, false),)), $this); ?>
@@ -13,10 +13,16 @@ smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru/
 				</div>
 
 				<div class="content">
-					
+                    
                     <div class="nav">
-                    <?php echo $this->_tpl_vars['navigation']; ?>
-	
+				    <?php $_from = $this->_tpl_vars['b_array']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['item']):
+?>
+                        <a href="/<?php echo $this->_tpl_vars['item']['uri']; ?>
+"><?php echo $this->_tpl_vars['item']['title']; ?>
+</a>
+                    <?php endforeach; endif; unset($_from); ?>
+
                     <!--
                         <a href="#">Главная</a>
 						<a href="#">Каталог</a>

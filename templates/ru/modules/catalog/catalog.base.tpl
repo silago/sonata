@@ -8,9 +8,12 @@
 				</div>
 
 				<div class="content">
-					
+                    
                     <div class="nav">
-                    {$navigation}	
+				    {foreach from=$b_array item=item}
+                        <a href="/{$item.uri}">{$item.title}</a>
+                    {/foreach}
+
                     <!--
                         <a href="#">Главная</a>
 						<a href="#">Каталог</a>

@@ -75,8 +75,6 @@ switch ($ret['table']) {
         $catalog->data['template'] = 'catalog.html';
 
         $catalog->data['content']=$catalog->get_groups($ret['uriGroup'],array(),'index/show.group.body.html');
-        //die("s");
-
         $_template = "/modules/catalog/catalog.base.tpl";
     break;
 	

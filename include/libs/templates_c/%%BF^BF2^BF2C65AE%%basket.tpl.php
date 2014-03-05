@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-02-28 15:57:02
+<?php /* Smarty version 2.6.16, created on 2014-03-05 13:26:36
          compiled from ru/modules/basket/index/basket.tpl */ ?>
 	<div class="box-container">
 				<h2>Корзина</h2>
@@ -41,7 +41,7 @@
 								</td>
 								<td class="summ"><span><?php echo $this->_tpl_vars['item']['total']; ?>
  руб.</span></td>
-								<td class="delete"><a href="deleteFromCart('<?php echo $this->_tpl_vars['item']['item_id']; ?>
+								<td class="delete"><a href="#" onclick="deleteFromCart('<?php echo $this->_tpl_vars['item']['item_id']; ?>
 '); "><img src="/images/delete.png" height="10" width="10" alt="" /></a></td>
 							</tr>
                         
