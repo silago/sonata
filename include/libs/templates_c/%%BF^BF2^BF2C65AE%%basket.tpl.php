@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-05 13:26:36
+<?php /* Smarty version 2.6.16, created on 2014-03-05 14:43:40
          compiled from ru/modules/basket/index/basket.tpl */ ?>
 	<div class="box-container">
 				<h2>Корзина</h2>
@@ -34,10 +34,15 @@
 								<td class="ed"><?php echo $this->_tpl_vars['item']['price']; ?>
  руб.</td>
 								<td class="kv">
-									<a href="#"><img src="/images/prev-kv.png" height="8" width="4" alt="" /></a>
-									<input type="text" placeholder="<?php echo $this->_tpl_vars['item']['quantity']; ?>
+									<a  onclick='minus(this, "<?php echo $this->_tpl_vars['item']['item_id']; ?>
+"); return false;' href="#"><img src="/images/prev-kv.png" height="8" width="4" alt="" /></a>
+									<input   class="qq q-<?php echo $this->_tpl_vars['item']['item_id']; ?>
+" value="<?php echo $this->_tpl_vars['item']['quantity']; ?>
+" onfocusout="changeQty('<?php echo $this->_tpl_vars['item']['item_id']; ?>
+');" type="text" placeholder="<?php echo $this->_tpl_vars['item']['quantity']; ?>
 " />
-									<a href="#"><img src="/images/next-kv.png" height="8" width="4" alt="" /></a>
+									<a  onclick='plus(this, "<?php echo $this->_tpl_vars['item']['item_id']; ?>
+"); return false;' href="#"><img src="/images/next-kv.png" height="8" width="4" alt="" /></a>
 								</td>
 								<td class="summ"><span><?php echo $this->_tpl_vars['item']['total']; ?>
  руб.</span></td>
@@ -47,8 +52,12 @@
                         
                         <?php endforeach; endif; unset($_from); ?>
 						</table>
-
-						<div class="done-box">
+                        <br/>
+						<div style="clear:both; float:right; margin-right:20px;" class="">
+						    <a style="color:#EE6F02;" href="?">Пересчитать</a>
+                        </div>
+                        <br/>
+                        <div class="done-box">
 							<p>Итого <?php echo $this->_tpl_vars['totalictemscount']; ?>
  товаров на сумму <?php echo $this->_tpl_vars['total']; ?>
  руб.</p>	

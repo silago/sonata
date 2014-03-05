@@ -133,8 +133,8 @@ function registergo(id){//alert(1);
          
         function minus(obj,id)
         {	
-			v = $(obj).parent().children('input').val();
-			v = parseInt(v);
+			v = $('.q-'+id).val();
+            v = parseInt(v);
 			//v = v-1;
 		//	alert(v);
 			
@@ -150,8 +150,9 @@ function registergo(id){//alert(1);
 		}
 		
 		function plus(obj,id)
-        {	
-			v = $(obj).parent().children('input').val();
+        {   
+            console.log(id);
+			v = $('.q-'+id).val();
 			v = parseInt(v);
 			//v = v+1;
 			//alert(v);
@@ -187,7 +188,7 @@ function changeQty(id){
 							price = parseFloat(price)*qty;
 							$(qtyItem).parent().parent().children('td:nth-child(5)').children('p').html(price+' ббаБ.');
 							
-							$.createNotification({content:'ааОаЛаИбаЕббаВаО баОаВаАбаОаВ аОаБаНаОаВаЛаЕаНаО'})
+							$.createNotification({content:'Количество товаров обновлено'})
 							 gettotal();
 							 gettotalitems();
 							 result =  true;

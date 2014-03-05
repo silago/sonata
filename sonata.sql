@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 05, 2014 at 10:37 AM
+-- Generation Time: Mar 05, 2014 at 02:33 PM
 -- Server version: 5.5.35-MariaDB-log
 -- PHP Version: 5.5.9
 
@@ -33,14 +33,15 @@ CREATE TABLE IF NOT EXISTS `banners` (
   `place` int(2) unsigned NOT NULL,
   `section` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `banners`
 --
 
 INSERT INTO `banners` (`id`, `title`, `text`, `place`, `section`) VALUES
-(13, 'atata', '<p><img src="/upload/about_3.jpg" alt="" width="215" height="111" /></p>', 1, '#');
+(14, 'Главная Товары', '<div class="serv-box">\r\n<p>Басплатная<br /> доставка<br /> по г. Иркутск<br /> при покупке от</p>\r\n<span>3 000 руб.</span> <a href="#">Условия доставки</a></div>', 0, 'maingoods'),
+(15, 'Главная Услуги', '<div class="serv-box">\r\n<p>Выезд мастера для<br /> замеров в удобное <br /> для Вас время</p>\r\n<span>БЕСПЛАТНО</span> <a href="#">Узнать больше</a></div>', 0, 'mainservice');
 
 -- --------------------------------------------------------
 
@@ -846,7 +847,6 @@ INSERT INTO `shop_basket` (`id`, `item_id`, `user_id`, `session_id`, `parent_gro
 (13, '913593fe-266a-11e3-805a-3085a9ad2002', 23, '', '71430fc4-2673-11e3-805a-3085a9ad2002', 'Телевизор LG -28LN450U', '0.00', '5000.00', 2, 0, 0, 'item545', ''),
 (14, '913593fe-266a-11e3-805a-3085a9ad2002', 18, '', '71430fc4-2673-11e3-805a-3085a9ad2002', 'Телевизор LG -28LN450U', '0.00', '5000.00', 1, 0, 0, 'item545', ''),
 (11, '913593fe-266a-11e3-805a-3085a9ad2002', 22, '', '71430fc4-2673-11e3-805a-3085a9ad2002', 'Телевизор LG -28LN450U', '0.00', '5000.00', 1, 0, 0, 'item545', ''),
-(27, '32f8a557-2be6-11e3-805a-3085a9ad2002', 28, '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4430Р	', '0.00', '1000.00', 1, 0, 0, 'item62', ''),
 (26, '9ef1d6d1-2bda-11e3-805a-3085a9ad2002', 25, '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 727U', '0.00', '1000.00', 1, 0, 0, 'item29', ''),
 (25, '9ef1d6ce-2bda-11e3-805a-3085a9ad2002', 25, '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 726U', '0.00', '1000.00', 1, 0, 0, 'item28', ''),
 (24, '9ef1d6ca-2bda-11e3-805a-3085a9ad2002', 25, '', 'd75de78b-2b3d-11e3-8ef3-3085a9ad2002', 'DVD Mystery MDV - 621U', '0.00', '1000.00', 2, 0, 0, 'item27', '');
@@ -1364,7 +1364,7 @@ INSERT INTO `shop_items` (`id`, `item_id`, `owner_id`, `article`, `parent_group_
 (59, '2af4bd2f-2bfc-11e3-805a-3085a9ad2002', '0', '', '32f8a555-2be6-11e3-805a-3085a9ad2002', 'Дом.кинотеатр  Samsung HT-E3550	', '', '', '0.00', 3, 0, 0, 'item59', '', '', '', 0),
 (60, '2af4bd36-2bfc-11e3-805a-3085a9ad2002', '0', '', '32f8a555-2be6-11e3-805a-3085a9ad2002', 'Дом.кинотеатр  Samsung HT-E6750WK	', '', '', '0.00', 3, 0, 0, 'item60', '', '', '', 0),
 (61, '2af4bd33-2bfc-11e3-805a-3085a9ad2002', '0', '', '32f8a555-2be6-11e3-805a-3085a9ad2002', 'Дом.кинотеатр  Samsung HT-E8000	', '', '', '0.00', 3, 0, 0, 'item61', '', '', '', 0),
-(62, '32f8a557-2be6-11e3-805a-3085a9ad2002', '0', '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4430Р	', '', '', '0.00', 2, 0, 0, 'item62', '', '', '', 0),
+(62, '32f8a557-2be6-11e3-805a-3085a9ad2002', '0', '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4430Р	', '', '', '0.00', 3, 0, 0, 'item62', '', '', '', 0),
 (63, '32f8a560-2be6-11e3-805a-3085a9ad2002', '0', '', '32f8a554-2be6-11e3-805a-3085a9ad2002', 'Домашний кинотеатр LG ВН-4530Т	', '', '', '0.00', 4, 0, 0, 'item63', '', '', '', 0),
 (64, '44927af5-315d-11e3-a2d2-3085a9ad2002', '0', '', '44927af8-315d-11e3-a2d2-3085a9ad2002', 'Массажер  Ves 3000', '', '', '0.00', 0, 0, 0, 'item64', '', '', '', 0),
 (65, '3696657e-314e-11e3-a2d2-3085a9ad2002', '0', '', '3696657d-314e-11e3-a2d2-3085a9ad2002', 'Массажер Scarlet 201	', '', '', '0.00', 0, 0, 0, 'item65', '', '', '', 0),

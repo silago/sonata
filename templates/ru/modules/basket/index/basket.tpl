@@ -25,7 +25,7 @@
 								<td class="ed">{$item.price} руб.</td>
 								<td class="kv">
 									<a  onclick='minus(this, "{$item.item_id}"); return false;' href="#"><img src="/images/prev-kv.png" height="8" width="4" alt="" /></a>
-									<input   class="qq q-{$item.item_id}" onfocusout="changeQty('{$item.item_id}');" type="text" placeholder="{$item.quantity}" />
+									<input   class="qq q-{$item.item_id}" value="{$item.quantity}" onfocusout="changeQty('{$item.item_id}');" type="text" placeholder="{$item.quantity}" />
 									<a  onclick='plus(this, "{$item.item_id}"); return false;' href="#"><img src="/images/next-kv.png" height="8" width="4" alt="" /></a>
 								</td>
 								<td class="summ"><span>{$item.total} руб.</span></td>
@@ -34,8 +34,12 @@
                         
                         {/foreach}
 						</table>
-
-						<div class="done-box">
+                        <br/>
+						<div style="clear:both; float:right; margin-right:20px;" class="">
+						    <a style="color:#EE6F02;" href="?">Пересчитать</a>
+                        </div>
+                        <br/>
+                        <div class="done-box">
 							<p>Итого {$totalictemscount} товаров на сумму {$total} руб.</p>	
 							<a class="order-button" href="/checkout">Оформить заказ</a>	
 							<!--<a class="clear-order" href="#">Очистить корзну</a>-->
