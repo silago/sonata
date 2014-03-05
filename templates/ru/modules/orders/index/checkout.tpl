@@ -48,21 +48,23 @@
 
 							<div class="block">
 								<span>E-Mail <strong>*</strong></span>
-								<input type="text" placeholder="info@antinich.ru" class="alert-input" />	
-								<p order="order_email" class="alert-text">Не корректно указан адрес электронной почты! <img src="images/ln.png" height="10" width="3" alt="" /></p>
-							</div>
+								<input name="email" type="text" value="" class="alert-input" />	
+								<!--
+                                    <p order="order_email" class="alert-text">Не корректно указан адрес электронной почты! <img src="images/ln.png" height="10" width="3" alt="" /></p>
+							     -->
+                            </div>
 
 							<div class="radio-block">
 								<label><input onclick="$('.s2').hide(); $('.s1').show();"  class="niceRadio" name="sname" value="1" type="radio" /> Доставка</label>
-								<label><input onclick="$('.s2').hide(); $('.s1').show();" class="niceRadio" name="sname" value="2" type="radio" /> Самовывоз</label>	
+								<label><input onclick="$('.s1').hide(); $('.s2').show();" class="niceRadio" name="sname" value="2" type="radio" /> Самовывоз</label>	
 							</div>
 
-							<div class="block">
+							<div class="s1 block">
 								<span>Улица <strong>*</strong></span>
 								<input type="text" placeholder="" name="order_street" />	
 							</div>
 
-							<div class="block">
+							<div class="s1 block">
 								<div class="bl-box">
 											<div class="adr">
 												<span>Дом </span>
@@ -81,29 +83,34 @@
 										</div>	
 							</div>
 
-							<div class="block">
+							<div class="s1 block">
 								<span>Желаемая дата<br /> доставки </span>
 								<input type="text" id="datepicker" name="order_date" class="cl" />
 
 								<div class="time-block">
 									<span class="span-text">Время</span>	
-                                    <input name="order_time" value="00:00" type="hidden" />
-									<select>
-										<option>00</option>
-										<option>01</option>
-										<option>02</option>
-										<option>03</option>
-										<option>04</option>
+									<select name="order_time1">
+										<option>09</option>
+										<option>10</option>
+										<option>11</option>
+										<option>12</option>
+										<option>13</option>
+										<option>14</option>
+										<option>15</option>
+										<option>16</option>
+										<option>17</option>
+										<option>18</option>
+										<option>19</option>
+										<option>20</option>
 									</select>
 
 									:
 
-									<select>
+									<select name="order_time2">
 										<option>00</option>
-										<option>01</option>
-										<option>02</option>
-										<option>03</option>
-										<option>04</option>
+										<option>15</option>
+										<option>30</option>
+										<option>45</option>
 									</select>
 								</div>	
 							</div>
@@ -111,11 +118,11 @@
 							<div class="pay-serv">
 								<p>Оплата <strong>{$total}</strong> руб.</p>	
                                  
-								<label class="s1"><input value="Наличными. Курьеру при доставке" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при доставке</label>
-								<label class="s1"><input value="Банковкой картой, курьеру при доставке" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при доставке</label>
+								<label class="s1"><input value="cashpayment" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при доставке</label>
+								<label class="s1"><input value="billpayment" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при доставке</label>
                         
-                                <label class="s2" style="display:none;"><input value="Наличными. Курьеру при самовывозе" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при самовывозе</label>
-								<label class="s2" style="display:none;"><input value="Банковкой картой, курьеру при самовывозе" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при самовывозе</label>
+                                <label class="s2" style="display:none;"><input value="cashpayment" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при самовывозе</label>
+								<label class="s2" style="display:none;"><input value="billpayment" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при самовывозе</label>
 								
                                 <input type="submit" value="Продолжить" />	
 

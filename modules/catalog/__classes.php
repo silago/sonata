@@ -151,7 +151,7 @@ class catalog extends mysql {
     left join shop_groups on shop_items.parent_group_id = shop_groups.group_id
     left join shop_prices on shop_items.item_id = shop_itemimages.item_id
     where 1 and shop_items.parent_group_id = '{$id}' group by shop_items.id 
-    order by shop_items.{$order_by} limit ".(($page-1)*$per_page).", {$per_page}
+    order by {$order_by} limit ".(($page-1)*$per_page).", {$per_page}
     
     ";
     $sql->query($query);

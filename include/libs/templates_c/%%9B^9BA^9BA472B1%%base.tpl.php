@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-04 17:48:08
+<?php /* Smarty version 2.6.16, created on 2014-03-05 15:56:22
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 27, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 67, false),array('block', 'block', 'ru/base.tpl', 73, false),)), $this); ?>
@@ -38,7 +38,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 
 			<div class="basket-box">
 				<span>В вашей корзине</span>
-				<a class="countOfItems" href="/basket/"><span>0</span> товаров</a>
+				<a class="countOfItems" href="/basket/"><i>0</i> товаров</a>
 				<a class="bs-button" href="/basket/">Заказать</a>
 			</div>
 		</div>	

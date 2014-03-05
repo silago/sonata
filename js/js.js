@@ -4,6 +4,27 @@
 $('document').ready( function()
 {
     gettotalitems();
+
+
+    $('ul.main-menu li').not('.active').children('ul').hide();
+    url = window.location.href.toString().split(window.location.host)[1];
+   url2 = '/'+window.location.href.toString().split(window.location.host)[1].split('/')[1];
+  //url2='123123123312';
+    $('ul.main-menu').find('a').each( function()
+    {
+    
+
+
+        if (($(this).attr('href')==url) || ($(this).attr('href')==url2 ))
+        {  
+            $(this).parent().children('ul').show();
+            $(this).closest('div > ul.main-menu > li').addClass('active').children('a').addClass('active-a');
+            $(this).parents('ul').show();
+        }
+       
+    });
+
+
 });
 
 
@@ -67,7 +88,7 @@ function gettotalitems(){
                 url: '/totalitems/',
             
                 success: function(data){
-				$('.countOfItems span').html(data);
+				$('.countOfItems i').html(data);
                 }
             });
         return false;

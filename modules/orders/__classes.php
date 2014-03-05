@@ -1244,6 +1244,7 @@ class Orders
 			
 			$data = addslashes(json_encode($post));		
 			
+            #echo $user_id;
 			$sql->query("SELECT `item_id`, `parent_group_id`, `name`, `price`, `quantity`, `uri`, `thumb` FROM `shop_basket` WHERE `user_id` = '".$user_id."'");		
 			while($sql->next_row_assoc()){								
 				$row[] = $sql->result;					
@@ -1479,7 +1480,8 @@ class Orders
 		foreach($this->payments as $key => $value){
 			if($value['title'] == $pid) $pname = $value['name'];
 		}		
-		return $pname;
+		return $pid;
+        #return $pname;
 	}
 	
 	private function getPaymentButton($pid){

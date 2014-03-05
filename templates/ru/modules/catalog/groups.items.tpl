@@ -1,6 +1,6 @@
 					<div class="product">
 						<h2>{$pageTitle}</h2>	
-						
+						{if $p.total/$p.per_page>1}
 						<div class="sorting-box">
 							<ul>
                                 {if $p.page<3}
@@ -25,7 +25,7 @@
 							    {/if}
                             </ul>
 
-							<p>Сортировать по: <a href="/{$uri}?order_by=price">цене</a>
+							<p>Сортировать по: <a href="/{$uri}?order_by=value">цене</a>
                             <a href="/{$uri}?order_by=name">алфавиту</a></p>	
 
 							<div class="views">
@@ -35,9 +35,11 @@
 								     <option {if $p.per_page == 20} selected=selected {/if} value=20>20</option>
 								     <option {if $p.per_page == 50} selected=selected {/if} value=50>50</option>
 								     <option {if $p.per_page == 100} selected=selected {/if} value=100>100</option>
+								     <option {if $p.per_page == 1000} selected=selected {/if} value=1000>Все</option>
 								 </select>
 							</div>
 						</div>
+                        {/if}
                         {foreach from=$items item=item key=key} 
 						<div class="pr-box">
 							<a href="/{$item.uri}"><img src="/userfiles/catalog/1cbitrix/{$item.filename} " height="116" width="116" alt="" /></a>
@@ -51,7 +53,7 @@
 								<div class="pr-summ">
                                     <p>Цена:</p>
 									<span>{$item.value} руб.</span>	
-									<a href="#" onclick="addToChart({$item.id},1); return false;" >В корзину</a>
+									<a href="#" onclick="addToChart({$item.id},1); $(this).addClass('no-active').attr('disabled','disabled'); return false;" >В корзину</a>
                                 </div>	
 							</div>	
 						</div>

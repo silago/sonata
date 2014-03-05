@@ -33,7 +33,7 @@
 
 			<div class="basket-box">
 				<span>В вашей корзине</span>
-				<a class="countOfItems" href="/basket/"><span>0</span> товаров</a>
+				<a class="countOfItems" href="/basket/"><i>0</i> товаров</a>
 				<a class="bs-button" href="/basket/">Заказать</a>
 			</div>
 		</div>	

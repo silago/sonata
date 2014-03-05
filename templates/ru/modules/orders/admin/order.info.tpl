@@ -49,7 +49,17 @@
 			Комментарий к заказу: {$datadata.comment}.
 			{/if}
 			</tr>
-    
+            <tr><td>Имя:</td>           <td colspan=4>           {$datadata.order_name}</td></tr>
+            <tr><td>Телефон:</td>       <td colspan=4>       {$datadata.order_phone}</td></tr>
+            <tr><td>Email:</td>         <td colspan=4>         {$datadata.order_email}</td></tr>
+            <tr><td>Улица:</td>         <td colspan=4>         {$datadata.order_street}</td></tr>
+            <tr><td>Дом:</td>           <td colspan=4>           {$datadata.order_house}</td></tr>
+            <tr><td>Корпус:</td>        <td colspan=4>        {$datadata.order_corp}</td></tr>
+            <tr><td>Офис:</td>          <td colspan=4>          {$datadata.order_office}</td></tr>
+            <tr><td>Дата доставки:</td> <td colspan=4> {$datadata.order_date}</td></tr>
+            <tr><td>Время доставки:</td><td colspan=4>{$datadata.order_time1}</td></tr>
+            <tr><td>Время доставки:</td><td colspan=4>{$datadata.order_time2}</td></tr>
+            <tr><td>Тип оплаты:</td>    <td colspan=4>    {$datadata.pname}</td></tr>
     
 			{if $orderData.sprice!='0.00'}
 			<tr>

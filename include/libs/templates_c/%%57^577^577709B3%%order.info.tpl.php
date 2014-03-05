@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-03 13:34:39
+<?php /* Smarty version 2.6.16, created on 2014-03-05 15:48:11
          compiled from ru/modules/orders/admin/order.info.tpl */ ?>
 <div id="order-info"></div>
 <table class="table table-condensed table-striped table-bordered">
@@ -67,7 +67,28 @@
 .
 			<?php endif; ?>
 			</tr>
-    
+            <tr><td>Имя:</td>           <td colspan=4>           <?php echo $this->_tpl_vars['datadata']['order_name']; ?>
+</td></tr>
+            <tr><td>Телефон:</td>       <td colspan=4>       <?php echo $this->_tpl_vars['datadata']['order_phone']; ?>
+</td></tr>
+            <tr><td>Email:</td>         <td colspan=4>         <?php echo $this->_tpl_vars['datadata']['order_email']; ?>
+</td></tr>
+            <tr><td>Улица:</td>         <td colspan=4>         <?php echo $this->_tpl_vars['datadata']['order_street']; ?>
+</td></tr>
+            <tr><td>Дом:</td>           <td colspan=4>           <?php echo $this->_tpl_vars['datadata']['order_house']; ?>
+</td></tr>
+            <tr><td>Корпус:</td>        <td colspan=4>        <?php echo $this->_tpl_vars['datadata']['order_corp']; ?>
+</td></tr>
+            <tr><td>Офис:</td>          <td colspan=4>          <?php echo $this->_tpl_vars['datadata']['order_office']; ?>
+</td></tr>
+            <tr><td>Дата доставки:</td> <td colspan=4> <?php echo $this->_tpl_vars['datadata']['order_date']; ?>
+</td></tr>
+            <tr><td>Время доставки:</td><td colspan=4><?php echo $this->_tpl_vars['datadata']['order_time1']; ?>
+</td></tr>
+            <tr><td>Время доставки:</td><td colspan=4><?php echo $this->_tpl_vars['datadata']['order_time2']; ?>
+</td></tr>
+            <tr><td>Тип оплаты:</td>    <td colspan=4>    <?php echo $this->_tpl_vars['datadata']['pname']; ?>
+</td></tr>
     
 			<?php if ($this->_tpl_vars['orderData']['sprice'] != '0.00'): ?>
 			<tr>

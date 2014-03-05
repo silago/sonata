@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-04 12:52:31
+<?php /* Smarty version 2.6.16, created on 2014-03-05 17:22:00
          compiled from ru/modules/catalog/groups.items.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 24, false),)), $this); ?>
 					<div class="product">
 						<h2><?php echo $this->_tpl_vars['pageTitle']; ?>
 </h2>	
-						
+						<?php if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page']>1): ?>
 						<div class="sorting-box">
 							<ul>
                                 <?php if ($this->_tpl_vars['p']['page'] < 3): ?>
@@ -58,7 +58,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
                             </ul>
 
 							<p>Сортировать по: <a href="/<?php echo $this->_tpl_vars['uri']; ?>
-?order_by=price">цене</a>
+?order_by=value">цене</a>
                             <a href="/<?php echo $this->_tpl_vars['uri']; ?>
 ?order_by=name">алфавиту</a></p>	
 
@@ -74,6 +74,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 								 </select>
 							</div>
 						</div>
+                        <?php endif; ?>
                         <?php $_from = $this->_tpl_vars['items']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
 ?> 
@@ -96,7 +97,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 									<span><?php echo $this->_tpl_vars['item']['value']; ?>
  руб.</span>	
 									<a href="#" onclick="addToChart(<?php echo $this->_tpl_vars['item']['id']; ?>
-,1); return false;" >В корзину</a>
+,1); $(this).addClass('no-active').attr('disabled','disabled'); return false;" >В корзину</a>
                                 </div>	
 							</div>	
 						</div>
