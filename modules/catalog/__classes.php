@@ -217,9 +217,10 @@ class catalog extends mysql {
         endif;
         if (!$data) 
             {
-            $data = $this->get_items($group_id)[0]; 
-            echo "1";
-            $pagination = $this->get_items($group_id)[1]; 
+            $data_tmp = $this->get_items($group_id); 
+            #echo "1";
+            $data = $data_tmp[0];
+            $pagination = $data_tmp[1]; 
             $tfile = "groups.items.tpl";
             $template->assign('p',$pagination);
             }
