@@ -98,6 +98,7 @@ function registergo(id){//alert(1);
         var ser = jQuery('form#'+id).serialize();
         $('div#error').hide();
         $('#register input[type=submit]').attr('disabled','disabled');
+        $('.alert-input').removeClass('alert-input');
         jQuery.ajax({
             type: 'POST',
             url: '/registergo/',
@@ -110,11 +111,17 @@ function registergo(id){//alert(1);
                     jQuery('div#error').html('');
                     jQuery('div#error').addClass('alert').addClass('alert-error');
                     jQuery('div#error').show();
-					for (var key in data) {
+					
+                    html1 = '<p class="alert-text">';
+                    html2 = '<img width="3" height="10" alt="" src="/images/ln.png"></p>';
+                    for (var key in data) {
 									var val = data [key];
+
+                                    html = html1+val+html2;
+                                    $('input[name='+key+']').addClass('alert-input').after(html);
 									//$('input[name='+key+']').val(val);
-									$('div.err'+key).html(val);
-									$('div.err'+key).show();
+									//$('div.err'+key).html(val);
+									//$('div.err'+key).show();
 									//alert (key+' = '+val);
 								}
 
@@ -137,7 +144,8 @@ function registergo(id){//alert(1);
                 
                 }
                 else
-					document.location='/';
+                {}
+					//document.location='/';
                // alert(data);
                 console.log(data.length)
                 console.log(data);                  

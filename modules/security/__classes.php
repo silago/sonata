@@ -187,61 +187,61 @@ class SecurityModule
         global $sql, $orders, $smarty;
 		$dataArray=array();
         $data = explode('&', $_POST['value']);
-
+        $err  = array();
         foreach ($data as $key => $value) {
             $val = explode('=', $value);
             $data1[$val['0']] = htmlspecialchars(urldecode($val['1']));
         }
-		
+			
+		if(empty($data1['surname']) && !preg_match('/^[a-zа-я]+$/ui', $data1['surname'])){
+			$err['surname'] = 'Неверно заполнено поле Фамилия';
+		}	
 		if(empty($data1['name']) && !preg_match('/^[a-zа-я]+$/ui', $data1['name'])){
-			$err[] = 'Неверно заполнено поле Имя';
+			$err['name'] = 'Неверно заполнено поле Имя';
 		}
 		
 		if(empty($data1['phone']) || !preg_match("/^[0-9]{4,13}+$/", $data1['phone'])){
-			$err[] = 'Неверно заполнено поле телефон';
+			$err['phone'] = 'Неверно заполнено поле телефон';
 		}
 		
 		if(empty($data1['email']) || !preg_match('/^[a-z]{1,}[a-zа-я0-9\.\-\_]+@[a-zа-я0-9\-]{2,}+\.[a-zа-я]{2,5}$/ui', $data1['email'])){
-			$err[] = 'Неверно заполнено поле Ваш E-mail адрес';
+			$err['email'] = 'Неверно заполнено поле Ваш E-mail адрес';
 		}else{
 			$sql->query("SELECT `id` FROM `#__#shop_users` WHERE `email` ='" . $data1['email'] . "'", true);
 			
 			if($sql->num_rows()>0){
-				$err[] = 'Введеный E-mail адрес уже используется';
+				$err['email'] = 'Введеный E-mail адрес уже используется';
 				
 			}			
 			
 		}
 		
 		if(!preg_match(SecurityModule::$passCheck, $data1['pass'])){
-			$err[] = 'Поле Пароль содержит недопустимые символы';
+			$err['pass'] = 'Поле Пароль содержит недопустимые символы';
 			
 		}
 		
 		if(strlen($data1['pass']) < SecurityModule::$passLength){
-			$err[] = 'Длинна пароля меньше допустимого количества символов';
+			$err['pass'] = 'Длинна пароля меньше допустимого количества символов';
 			
 		}
         
         if($data1['pass'] !== $data1['pass2']){
-			$err[] = 'Не совпадают значения полей Пароль и Подтверждение пароля';
+			$err['pass2'] = 'Не совпадают значения полей Пароль и Подтверждение пароля';
 			
 		}       
         
-        $err['redirect'] = $this->redirectAfterRegister;				
-        $err['success'] = true;
 		
 		$checkFieldsResult = $this->checkFields($data1);
 		$err = array_merge($err, $checkFieldsResult);
         
-		
-		foreach ($err as $key => $value) {
-            if (is_int($key)) {
-                if (strlen($value)) {
-                    $err['success'] = false;
-                }
+        if (!empty($err))
+            {
+                $err['success']=false;
+	            echo    json_encode($err);
+                die();
             }
-        }	
+        else $err['success']=true;
 		
 		$err['count'] = count($err);		
         if ($err['success'] == true) {

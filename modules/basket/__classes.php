@@ -226,7 +226,6 @@ class Basket
 		
 		foreach ($array as $key => $i)
 		{	
-			#print_r
 			if(isset($i['item_id'])) 
 			$sql->query("SELECT
 			
@@ -238,13 +237,9 @@ class Basket
 			
 			left join shop_groups
 			on 	shop_items.parent_group_id = shop_groups.group_id
-
 			
-			
-			where
+            where
 			shop_items.`item_id` = '".$i['item_id']."'",true);
-		#	print_r($sql->result);
-		#	die($sql->result);
 			$array[$key]['inf'] = $sql->result;
 		}
 		#print_r($array);
@@ -252,9 +247,6 @@ class Basket
 		$total = 0;
 		
         foreach($array as $key => $value){
-            
-             
-          #if($key == '')                continue;  
 		  if (1)
 		  {
           $groupUri = $catalog->getParentGroupUri($array[$key]['parent_group_id']);

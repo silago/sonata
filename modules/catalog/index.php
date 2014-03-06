@@ -9,14 +9,6 @@ $basket = new Basket();
 
 $catalog = new catalog();
 
-/*if (isset ($_GET['icount']) && intval ($_GET['icount']) != 0) {
-	$catalog->countOfItems = intval($_GET['icount']);
-	$_SESSION['icount'] = intval($_GET['icount':spli    ]);
-} else {
-	$catalog->countOfItems = 20;
-	$_SESSION['icount'] = 20;
-}*/
-
 // Количество товаров на странице
 if (isset ($_POST['country2']) && intval ($_POST['country2']) > 0) {
 	$catalog->countOfItems = intval($_POST['country2']);
@@ -96,7 +88,7 @@ switch ($ret['table']) {
         $pages = new Page();
         $catalog->data['content']=$catalog->get_groups(false, array('parent_group_id'=>'0'));
         $catalog->data['content'].=$pages->get_pages(false, array('onmain'=>'1'));
-
+   $_template = "index.html";
 
     break;
 

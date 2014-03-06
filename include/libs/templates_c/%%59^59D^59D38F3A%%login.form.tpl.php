@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-04 14:56:51
+<?php /* Smarty version 2.6.16, created on 2014-03-06 15:27:30
          compiled from ru/modules/security/index/login.form.tpl */ ?>
 	<div class="autorize">
 				<h2>Регистрация / Авторизация</h2>	
@@ -27,7 +27,7 @@
 							<p><a href="/restorepass">Забыли пароль?</a></p>	
 						</div>
                         <input type="hidden" name="remember"/>
-						<input type="submit" name="go" value="Регистрация" class="reg-submit" />
+						<input type="submit" name="go" value="Вход" class="reg-submit" />
 					</form>
 
 					<form action="/register/">

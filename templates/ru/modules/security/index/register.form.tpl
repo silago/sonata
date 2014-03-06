@@ -46,16 +46,16 @@
 							</div>
 
 							<div class="radio-block">
-								<label><input name="org" value="0" class="niceRadio" type="radio" checked=checked/> Физическое лицо</label>
-								<label><input name="org" value="1" class="niceRadio" type="radio" /> Юридическое лицо</label>	
+								<label><input name="org" onclick="$('.ur').hide();"   value="0" class="niceRadio" type="radio" /> Физическое лицо</label>
+								<label><input name="org" onclick="$('.ur').show();"  value="1" class="niceRadio" type="radio" checked=checked /> Юридическое лицо</label>	
 							</div>
 
-							<div class="block">
+							<div class="ur block">
 								<span>Название органиции</span>
 								<input name="organizaion_name" type="text" placeholder="" />	
 							</div>
 
-							<div class="block">
+							<div  class="ur block">
 								<span>ИНН</span>
 								<input name="inn" type="text" placeholder="" />	
 							</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-04 14:50:58
+<?php /* Smarty version 2.6.16, created on 2014-03-06 15:21:13
          compiled from ru/modules/security/index/register.form.tpl */ ?>
 		<div class="box-cont">
 					<div class="rg-box">
