@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 13:28:55
+<?php /* Smarty version 2.6.16, created on 2014-03-06 16:11:36
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 27, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 67, false),array('block', 'block', 'ru/base.tpl', 73, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 42, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 82, false),array('block', 'block', 'ru/base.tpl', 88, false),)), $this); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,6 +22,22 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 <script type="text/javascript" src="/js/js.js"></script>
 <script type="text/javascript" src="/js/jquery.notification.js"></script>
 
+<?php echo '
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "images/calendare.png",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+  <script type="text/javascript">
+ $(document).ready(function() {
+     $("select").selectBox();
+ });
+ </script>
+'; ?>
 
 </head>
 <body>

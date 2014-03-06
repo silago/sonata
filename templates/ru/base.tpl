@@ -18,7 +18,22 @@
 <script type="text/javascript" src="/js/js.js"></script>
 <script type="text/javascript" src="/js/jquery.notification.js"></script>
 
-
+{literal}
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "images/calendare.png",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+  <script type="text/javascript">
+ $(document).ready(function() {
+     $("select").selectBox();
+ });
+ </script>
+{/literal}
 </head>
 <body>
 	<div class="top-head"margin-left:-15px; margin-bottom:-20px; >

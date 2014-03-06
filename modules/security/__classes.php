@@ -221,8 +221,8 @@ class SecurityModule
 			
 		}
 		
-		if(strlen($data1['pass']) < SecurityModule::$passLength){
-			$err['pass'] = 'Длинна пароля меньше допустимого количества символов';
+		if(strlen($data1['pass']) < 6){
+			$err['pass'] = 'Длина пароля меньше допустимого количества символов';
 			
 		}
         

@@ -36,8 +36,9 @@
 							</div>
 
 							<div class="block">
-								<span>Пароль</span>
-								<input name="pass" type="password" placeholder="" />	
+								<span>Пароль <br/> <small style="font-size:10px; margin-top:5px; color:#343434;" >Минимальная длина пароля - 6 символов.</small></span>
+
+								<input name="pass" type="password" placeholder="" />
 							</div>
 
 							<div class="block">
