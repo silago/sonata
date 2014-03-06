@@ -4,7 +4,9 @@
 				<div class="aside">
 					<div class="nav-menu">
                         {show_menu menuid=5}
-					</div>	
+					</div>
+
+                        {show_banner section=catalogmenu}
 				</div>
 
 				<div class="content">

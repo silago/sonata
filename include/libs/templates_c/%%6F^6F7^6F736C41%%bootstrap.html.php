@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-02-25 14:40:08
+<?php /* Smarty version 2.6.16, created on 2014-03-06 02:50:33
          compiled from ru/bootstrap.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'api_func', 'ru/bootstrap.html', 736, false),)), $this); ?>
@@ -746,6 +746,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'api_func', 
 									<ul class="dropdown-menu">
 									<?php echo smarty_function_api_func(array('name' => 'getCMSNavigation'), $this);?>
 
+                                    <li>
+                                        <a href="/admin/banners/">Баннеры</a>
                                     </ul>
 								</li>
 								<li class="divider-vertical"></li>
