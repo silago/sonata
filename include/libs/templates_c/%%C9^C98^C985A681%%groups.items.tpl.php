@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-05 17:22:00
+<?php /* Smarty version 2.6.16, created on 2014-03-06 11:29:31
          compiled from ru/modules/catalog/groups.items.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 24, false),)), $this); ?>
@@ -71,6 +71,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 								     <option <?php if ($this->_tpl_vars['p']['per_page'] == 20): ?> selected=selected <?php endif; ?> value=20>20</option>
 								     <option <?php if ($this->_tpl_vars['p']['per_page'] == 50): ?> selected=selected <?php endif; ?> value=50>50</option>
 								     <option <?php if ($this->_tpl_vars['p']['per_page'] == 100): ?> selected=selected <?php endif; ?> value=100>100</option>
+								     <option <?php if ($this->_tpl_vars['p']['per_page'] == 1000): ?> selected=selected <?php endif; ?> value=1000>Все</option>
 								 </select>
 							</div>
 						</div>

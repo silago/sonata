@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-05 14:43:40
+<?php /* Smarty version 2.6.16, created on 2014-03-06 11:35:46
          compiled from ru/modules/basket/index/basket.tpl */ ?>
 	<div class="box-container">
 				<h2>Корзина</h2>

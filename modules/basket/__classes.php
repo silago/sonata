@@ -134,12 +134,13 @@ class Basket
 
     private function addAuth($array, $postQuantity, $item_id){
         global $sql;
-
         $sql->query("SELECT `quantity` FROM `#__#shop_basket` WHERE `item_id` = '".$item_id."' AND `user_id` = '".$_SESSION['sec_id']."'", true);
-        if($sql->num_rows() > 0){
+        if($sql->result){
+           # die('yes');
             $qty = $sql->result['quantity'] + $postQuantity;
             $sql->query("UPDATE `#__#shop_basket` SET `quantity` = '".$qty."' WHERE `item_id` = '".$item_id."' AND `user_id` = '".$_SESSION['sec_id']."'");
         }else{
+           # die('no');
             $sql->query("INSERT INTO `#__#shop_basket` (`item_id`, `user_id`, `parent_group_id`, `name`, `price_old`, `price`, `quantity`, `is_hit`, `is_new`, `uri`, `thumb`) VALUES ( '".$array['item_id']."', '".$_SESSION['sec_id']."', '".$array['parent_group_id']."', '".$array['name']."', '".$array['price_old']."', '".$array['price']."', '".$postQuantity."', '".$array['is_hit']."', '".$array['is_new']."', '".$array['uri']."', '".$array['thumb']."')");
         }
 
@@ -189,32 +190,33 @@ class Basket
           
          
           $array = $sql->getList();
-          
+         
+
            # while($row = $sql->next_row()){
            #     array_push($array, $row);
            # }
            # die(Security::$userData['id']);
         }else{
-			
             $array = ((isset($_SESSION['basket'])) ? $_SESSION['basket'] : array());
         } 
-		
+	    
+
         $w = 0;
-		foreach ($array as &$i)
+		foreach ($array as &$z)
 		{
-			if(!isset($i['item_id'])){
-                unset($array[$w]);
-                $i++;
+			if(!isset($z['item_id'])){
+                unset($array[$z]);
+                $w++;
                 continue;
             }
 			$sql->query("SELECT shop_itemimages.* FROM `shop_itemimages` 
 			 
 			
 			where
-			`item_id` = '".$i['item_id']."'",true);
+			`item_id` = '".$z['item_id']."'",true);
 			#echo ("SELECT * FROM `shop_itemimages` WHERE `item_id` = '".$i['item_id']."'");
 			#echo '<br>';
-			$i['images'] = $sql->result;
+			$z['images'] = $sql->result;
             $w++;
 		}		
 		
@@ -407,6 +409,7 @@ class Basket
     function __construct($file = '')
     {
         global $config;
+        
 
         $this->useCountOfItems = $config->getValue('basket', 'confArray', 'useCountOfItems');
 
