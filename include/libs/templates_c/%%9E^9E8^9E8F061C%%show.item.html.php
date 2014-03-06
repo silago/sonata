@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-02-28 14:37:36
+<?php /* Smarty version 2.6.16, created on 2014-03-06 17:35:29
          compiled from ru/modules/catalog/index/show.item.html */ ?>
 	<div class="char-container">
 						<div class="char-info">
@@ -6,7 +6,8 @@
 " height="184" width="174" alt="" /></a>
 
 							<div class="char-text">
-								<h3>Цветные видео камеры</h3>	
+								<h3><?php echo $this->_tpl_vars['name']; ?>
+</h3>	
 								<p>
                                     <?php echo $this->_tpl_vars['description']; ?>
 

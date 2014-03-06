@@ -8,14 +8,24 @@
 {if $p.total/$p.per_page > 1}
 <li {if $pagination.page == 2} class="active"{/if}><a href="{$uri}?page=2&per_page={$p.per_page}&order_by={$p.order_by}"">2</a></li>
 {/if}
-{if $p.total/$p.per_page > 1}
+{if $p.total/$p.per_page > 2}
 <li {if $pagination.page == 3} class="active"{/if}><a href="{$uri}?page=3&per_page={$p.per_page}&order_by={$p.order_by}"">3</a></li>
 {/if}
 {else}
+
 <li >               <a href="{$uri}?page={$p.page-1}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page-1}</a></li>
+
+
 <li class="active" ><a href="{$uri}?page={$p.page}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page}</a></li>
+
+
+
+{if $p.total/$p.per_page > $p.page}
 <li >               <a href="{$uri}?page={$p.page+1}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page+1}</a></li>
-								{/if}
+{/if}
+
+
+{/if}
 
 
                                 

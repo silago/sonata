@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 11:29:31
+<?php /* Smarty version 2.6.16, created on 2014-03-06 17:34:53
          compiled from ru/modules/catalog/groups.items.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 24, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 34, false),)), $this); ?>
 					<div class="product">
 						<h2><?php echo $this->_tpl_vars['pageTitle']; ?>
 </h2>	
@@ -18,31 +18,41 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 ?page=2&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
 "">2</a></li>
-<?php endif;  if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > 1): ?>
+<?php endif;  if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > 2): ?>
 <li <?php if ($this->_tpl_vars['pagination']['page'] == 3): ?> class="active"<?php endif; ?>><a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=3&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
 "">3</a></li>
 <?php endif;  else: ?>
+
 <li >               <a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=<?php echo $this->_tpl_vars['p']['page']-1; ?>
 &per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
 ""><?php echo $this->_tpl_vars['p']['page']-1; ?>
 </a></li>
+
+
 <li class="active" ><a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=<?php echo $this->_tpl_vars['p']['page']; ?>
 &per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
 ""><?php echo $this->_tpl_vars['p']['page']; ?>
 </a></li>
+
+
+
+<?php if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > $this->_tpl_vars['p']['page']): ?>
 <li >               <a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=<?php echo $this->_tpl_vars['p']['page']+1; ?>
 &per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
 ""><?php echo $this->_tpl_vars['p']['page']+1; ?>
 </a></li>
-								<?php endif; ?>
+<?php endif; ?>
+
+
+<?php endif; ?>
 
 
                                 
