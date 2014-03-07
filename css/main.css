@@ -211,7 +211,7 @@ body {
 				.nav-menu ul ul ul {padding: 0 0px 0 18px;}
 				
 					.nav-menu .active { background: url(../images/li-active.png) no-repeat 100% 18px;}
-						.active-a {color: #2b63a9 !important; border-left: 5px solid #ee7e09; padding-left: 15px !important; margin-left: -18px;}
+						ul ul li .active-a {color: #2b63a9 !important; border-left: 5px solid #ee7e09; padding-left: 15px !important; margin-left: -18px;}
 						.active-sub {color: #2b63a9 !important; border-left: 5px solid #ee7e09; padding-left: 30px !important; margin-left: -18px; background: url(../images/lia.png) no-repeat 13px 17px !important; font-family: 'open_sansbold';}
 
 	.content {overflow: hidden; padding: 0 0 5px 30px;}

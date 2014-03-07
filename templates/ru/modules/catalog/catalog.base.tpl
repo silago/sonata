@@ -7,6 +7,7 @@
 					</div>
 
                         {show_banner section=catalogmenu}
+                        {show_sale}
 				</div>
 
 				<div class="content">
