@@ -3,7 +3,7 @@
 {foreach from=$items item=i}
     <div class="serv-block">
         <p>
-            <img src="{$i.thumb}" height="70" width="70" alt=""/>
+            <img src="{$i.thumb}" height="58" width="68" alt=""/>
         </p>
         <a href="/{$i.uri}">{$i.name}</a>
 
