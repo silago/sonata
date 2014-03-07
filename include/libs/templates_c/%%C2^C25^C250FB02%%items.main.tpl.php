@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-05 12:10:34
+<?php /* Smarty version 2.6.16, created on 2014-03-07 15:43:55
          compiled from ru/modules/page/items.main.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'show_banner', 'ru/modules/page/items.main.tpl', 12, false),)), $this); ?>
@@ -10,7 +10,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'show_banner
     <div class="serv-block">
         <p>
             <img src="/userfiles/<?php echo $this->_tpl_vars['i']['image']; ?>
-" height="70" width="70" alt=""/>
+" height="58" width="68" alt=""/>
         </p>
         <a href="/<?php echo $this->_tpl_vars['i']['uri']; ?>
 "><?php echo $this->_tpl_vars['i']['title']; ?>
