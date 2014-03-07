@@ -38,17 +38,17 @@
 					<div class="serv-form">
 						<div class="block">
 								<span>Имя <strong>*</strong></span>
-								<input type="text" name="order_name" placeholder="Антон Антоныч" />	
+								<input type="text" value="{$userdata.name} {$userdata.surname}" name="order_name" placeholder="Антон Антоныч" />	
 							</div>	
 
 							<div class="block">
 								<span>Телефон <strong>*</strong></span>
-								<input name="order_phone" type="text" placeholder="+7 (495) 456-24-23" />	
+								<input name="order_phone" type="text" value="{$userdata.phone}" placeholder="+7 (495) 456-24-23" />	
 							</div>
 
 							<div class="block">
 								<span>E-Mail <strong>*</strong></span>
-								<input name="email" type="text" value="" class="alert-input" />	
+								<input name="email" type="text" value="{$userdata.email}" class="" />	
 								<!--
                                     <p order="order_email" class="alert-text">Не корректно указан адрес электронной почты! <img src="images/ln.png" height="10" width="3" alt="" /></p>
 							     -->

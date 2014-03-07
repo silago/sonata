@@ -964,10 +964,11 @@ class Orders
 
             $smarty->assign('shipList', $shipList);
             $smarty->assign('towns', $towns);
-			$this->content = $smarty->fetch(api::setTemplate('modules/orders/index/checkout.tpl'));		
+            
+        $smarty->assign('userdata',security::$userData);
+            $this->content = $smarty->fetch(api::setTemplate('modules/orders/index/checkout.tpl'));		
 		}
 		
-        $smarty->assign('userdata',security::$userData);
 
         $this->pageTitle = 'Оформление заказа';
     }

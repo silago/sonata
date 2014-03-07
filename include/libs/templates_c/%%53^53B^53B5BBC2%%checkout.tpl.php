@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-05 16:05:21
+<?php /* Smarty version 2.6.16, created on 2014-03-07 20:42:25
          compiled from ru/modules/orders/index/checkout.tpl */ ?>
 <?php echo '
 <script>
@@ -41,17 +41,21 @@
 					<div class="serv-form">
 						<div class="block">
 								<span>Имя <strong>*</strong></span>
-								<input type="text" name="order_name" placeholder="Антон Антоныч" />	
+								<input type="text" value="<?php echo $this->_tpl_vars['userdata']['name']; ?>
+ <?php echo $this->_tpl_vars['userdata']['surname']; ?>
+" name="order_name" placeholder="Антон Антоныч" />	
 							</div>	
 
 							<div class="block">
 								<span>Телефон <strong>*</strong></span>
-								<input name="order_phone" type="text" placeholder="+7 (495) 456-24-23" />	
+								<input name="order_phone" type="text" value="<?php echo $this->_tpl_vars['userdata']['phone']; ?>
+" placeholder="+7 (495) 456-24-23" />	
 							</div>
 
 							<div class="block">
 								<span>E-Mail <strong>*</strong></span>
-								<input name="email" type="text" value="" class="alert-input" />	
+								<input name="email" type="text" value="<?php echo $this->_tpl_vars['userdata']['email']; ?>
+" class="" />	
 								<!--
                                     <p order="order_email" class="alert-text">Не корректно указан адрес электронной почты! <img src="images/ln.png" height="10" width="3" alt="" /></p>
 							     -->
