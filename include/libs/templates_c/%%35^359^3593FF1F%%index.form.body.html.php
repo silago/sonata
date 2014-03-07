@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-04 17:30:25
+<?php /* Smarty version 2.6.16, created on 2014-03-06 17:03:42
          compiled from ru/modules/fb/index.form.body.html */ ?>
 	<h2>Калькулятор</h2>
                 <form action="?" method="post">
@@ -21,7 +21,6 @@
 							<div class="block">
 								<span>E-Mail <strong>*</strong></span>
 								<input name="email" type="text" placeholder="info@antinich.ru" class="alert-input" />	
-								<p class="alert-text">Не корректно указан адрес электронной почты! <img src="/images/ln.png" height="10" width="3" alt="" /></p>
 							</div>
 
 							<div class="block">

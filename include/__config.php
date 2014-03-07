@@ -1,9 +1,9 @@
 <?
 // Main config file;
 $API['config']['mysql']['server']		= "localhost";
-$API['config']['mysql']['username']		= "root";
-$API['config']['mysql']['password']		= "";
-$API['config']['mysql']['db']			= "sonata";
+$API['config']['mysql']['username']		= "insite_soneta";
+$API['config']['mysql']['password']		= "insite_soneta";
+$API['config']['mysql']['db']			= "insite_soneta";
 $API['config']['mysql']['prefix']		= "";
 
 $API['config']['admin']['login']        = "insite";

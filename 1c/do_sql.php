@@ -66,6 +66,7 @@ if (true)
                	$gr_array .= "('".mysql_real_escape_string($catgroup[id])."','".mysql_real_escape_string($catgroup[ownerId])."','".mysql_real_escape_string($catgroup[title])."','".mysql_real_escape_string($catgroup[position])."'),";
 			  }
 			  $gr_array = substr($gr_array,0,-1);
+			 // echo $gr_array;
 			  if ($isupdate<>'true')
 			 	{
 			  		$query = mysql_query("INSERT INTO shop_groups_temp (`group_id`,`parent_group_id`,`name`,`position`) VALUES ".$gr_array."
@@ -74,7 +75,7 @@ if (true)
      				$query = mysql_query("INSERT INTO shop_groups (`group_id`,`parent_group_id`,`name`,`position`) VALUES ".$gr_array."
      					ON DUPLICATE KEY UPDATE `group_id`= VALUES(group_id),`parent_group_id`= VALUES(parent_group_id), `name`= VALUES(name),`position`= VALUES(position)");
      			}
-
+             // echo mysql_error();
 			  if ($isupdate<>'true')
 			 	{
 			  		$query = mysql_query("INSERT INTO shop_groups2 (group_id, parent_group_id, name, image, thumb, description, hidden, position, md, mk, title)

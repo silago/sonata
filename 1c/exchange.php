@@ -1,5 +1,6 @@
 <?php
-//error_reporting(0);
+//error_reporting(E_ALL ^ E_DEPRECATED);
+error_reporting(NONE);
 set_time_limit(0);
 foreach ($_GET as $arrkey=>$data ) // отслеживание запросов к скрипту
 	{

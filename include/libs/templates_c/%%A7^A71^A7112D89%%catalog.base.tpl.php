@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 02:52:33
+<?php /* Smarty version 2.6.16, created on 2014-03-07 15:40:01
          compiled from ru//modules/catalog/catalog.base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru//modules/catalog/catalog.base.tpl', 1, false),array('block', 'block', 'ru//modules/catalog/catalog.base.tpl', 2, false),array('function', 'show_menu', 'ru//modules/catalog/catalog.base.tpl', 6, false),array('function', 'show_banner', 'ru//modules/catalog/catalog.base.tpl', 9, false),)), $this); ?>

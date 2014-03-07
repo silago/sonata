@@ -190,7 +190,7 @@ class catalog extends mysql {
         $parent_group_id = $sql_->result['parent_group_id'];
      endwhile;
 
-     $b_array[]=array('title'=>'Каталог','uri'=>'/catalog');
+     $b_array[]=array('title'=>'Каталог','uri'=>'catalog');
      $smarty->assign('b_array',array_reverse($b_array));
 
 
@@ -1962,7 +1962,6 @@ class catalog extends mysql {
 
     public function showItemInfo($uri) {
         global $sql, $smarty, $ret;
-
         $sqlItemCheck = clone $sql;
         $sqlPrice = clone $sql;
         $sqlImages = clone $sql;

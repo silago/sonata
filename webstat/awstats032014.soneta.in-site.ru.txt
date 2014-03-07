@@ -1,0 +1,373 @@
+AWSTATS DATA FILE 6.95 (build 1.943)
+# If you remove this file, all statistics for date 201403 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.soneta.in-site.ru.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1963                
+POS_TIME 2650                
+POS_VISITOR 6229                
+POS_DAY 6550                
+POS_DOMAIN 3271                
+POS_LOGIN 3504                
+POS_ROBOT 3659                
+POS_WORMS 3791                
+POS_EMAILSENDER 3922                
+POS_EMAILRECEIVER 4065                
+POS_SESSION 6688                
+POS_SIDER 6871                
+POS_FILETYPES 4200                
+POS_OS 4468                
+POS_BROWSER 4565                
+POS_SCREENSIZE 4698                
+POS_UNKNOWNREFERER 4772                
+POS_UNKNOWNREFERERBROWSER 4859                
+POS_ORIGIN 4941                
+POS_SEREFERRALS 5079                
+POS_PAGEREFS 5223                
+POS_SEARCHWORDS 5371                
+POS_KEYWORDS 5523                
+POS_MISC 2314                
+POS_ERRORS 5582                
+POS_CLUSTER 3360                
+POS_SIDER_404 5722                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20140306223707 5472 1330233 14186715454189
+FirstTime 20140304103757
+LastTime 20140306223707
+LastUpdate 20140307003802 3202 0 3202 0 0
+TotalVisits 13                  
+TotalUnique 5                   
+MonthHostsKnown 0                   
+MonthHostsUnknown 5                   
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 8 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 0 0 0 0 0 0
+1 0 0 0 0 0 0
+2 0 0 0 0 0 0
+3 0 0 0 0 0 0
+4 0 0 0 0 0 0
+5 0 0 0 0 0 0
+6 0 0 0 0 0 0
+7 0 0 0 0 0 0
+8 0 0 0 0 0 0
+9 0 0 0 0 0 0
+10 41 106 1483810 22 25 30960
+11 46 79 1141390 11 12 5826
+12 146 343 4722978 21 32 29699
+13 303 716 5490711 73 74 30143
+14 525 1003 9979171 67 78 62104
+15 407 1438 7402579 83 92 81561
+16 127 475 1572809 26 29 10763
+17 253 684 6099699 76 92 31180
+18 31 94 42116 9 9 3630
+19 0 0 0 0 0 0
+20 0 0 0 0 0 0
+21 0 0 0 0 0 0
+22 29 86 985238 2 5 917
+23 0 0 0 0 0 0
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 1908 5024 38920501
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 11
+css 279 354180 0 0
+png 1580 14245041 0 0
+ttf 1 84205 0 0
+woff 145 4341477 0 0
+php 277 5704504 0 0
+html 1179 1431748 0 0
+js 910 5132548 0 0
+jpg 34 426541 0 0
+jpeg 302 5728590 0 0
+Unknown 306 1425516 0 0
+gif 11 46151 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 5
+macosx 55
+winxp 1858
+winvista 147
+linux 1441
+win2008 1523
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 4
+chrome33.0.1750.146 1991
+chrome30.0.1599.13014 198
+safari6.1.1 55
+firefox27.0 2780
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 88 88
+From1 0 0
+From2 0 0
+From3 0 0
+From4 1820 4936
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+403 154 62682
+302 195 108971
+500 34 24228
+404 8 7046
+301 12 5434
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 4
+/ 2 -
+/images/sale.png 2 http://www.soneta.in-site.ru/admin/page/edit.php
+/restorepass 3 http://www.soneta.in-site.ru/login/
+/admin/page/edit.php 1 http://www.soneta.in-site.ru/admin/page/index.php
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 5
+109.194.20.117 1297 3080 28915547 20140306175411
+94.180.141.230 539 1660 8498693 20140306170433
+90.188.244.46 43 198 521023 20140305172014
+5.167.89.212 22 55 622283 20140306223707 20140306223450 /totalitems/
+37.49.185.251 7 31 362955 20140305223743
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 3
+20140304 6 39 434687 1
+20140305 662 2033 11251346 5
+20140306 1240 2952 27234468 7
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 5
+1h+ 4
+5mn-15mn 1
+2mn-5mn 1
+0s-30s 5
+30mn-1h 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 118
+/totalitems/ 686 259308 0 5
+/catalog/ 156 428004 7 3
+/basket/ 67 275018 1 0
+/addgood/ 62 29996 0 0
+/group1 47 201352 1 0
+/group2 42 247957 0 0
+/admin/page/index.php 37 274884 0 0
+/myadmin/index.php 32 101576 0 0
+/fonts/opensans-italic-webfont.woff 28 917864 0 0
+/fonts/opensans-semibolditalic-webfont.woff 28 928268 0 0
+/myadmin/server_sql.php 1 675 0 0
+/ 20 31577 2 1
+/group24/item12 1 5677 0 0
+/group2/item108 5 21605 0 0
+/group19/item52 1 3631 0 0
+/admin/catalog/setItemNew.php 6 42324 0 0
+/myadmin/import.php 3 15226 0 0
+/group24/item8 1 5674 0 0
+/group18 1 6437 0 0
+/fb/ 11 33085 0 0
+/myadmin/js/get_image.js.php 6 12690 0 0
+/group17/item606 1 5993 0 0
+/myadmin/tbl_replace.php 1 3613 0 0
+/group24/item7 2 11360 0 0
+/admin/security/showUserList.php 1 8520 0 0
+/myadmin/version_check.php 4 1524 0 0
+/group4/item101 1 6105 0 0
+/admin/menu/index.php 10 75162 0 0
+/dostavka-i-oplata.html 6 14867 0 0
+/group8 12 46305 0 0
+/cabinet 1 3556 0 0
+/myadmin/js/get_scripts.js.php 21 1897100 0 0
+/logingo/ 9 24965 0 0
+/group7 2 14044 0 0
+/pomosch.html 5 11981 0 0
+/assets/8289ed85/fonts/opensans-italic-webfont.woff 1 54025 0 0
+/1c/exchange.php 15 73013 1 0
+/admin/catalog/setItemHit.php 12 84648 0 0
+/catalog.html 2 5585 0 0
+/group17/item603 3 18186 0 0
+/admin/page/uriCheck.php 8 3691 0 0
+/myadmin/db_structure.php 17 1008165 0 0
+/myadmin/js/messages.php 17 288916 0 0
+/group5 2 10963 0 0
+/garantija.html 2 5833 0 0
+/group17/item607 1 5996 0 0
+/group20 15 91841 0 0
+/group6 1 3659 0 0
+/group71/item65 1 3655 0 0
+/group12 8 57508 0 0
+/myadmin/ 4 14165 1 0
+/group11/item17 1 5710 0 0
+/include/ext/elfinder/php/connector.php 3 2073 0 0
+/login/ 11 30028 0 0
+/admin/catalog/listItems.php 8 63388 0 1
+/admin/page/add.php 7 59828 0 0
+/admin/banners/ 1 7288 0 0
+/login 18 47448 0 0
+/group34 1 3263 0 0
+/register/ 11 31606 0 0
+/catalog 18 50779 0 0
+/assets/8289ed85/fonts/opensans-bold-webfont.woff 1 43989 0 1
+/admin/page/edit.php 7 60872 0 0
+/admin/orders/showList.php 1 8136 0 0
+/fonts/opensans-regular-webfont.woff 28 751536 0 0
+/group10 24 100661 0 0
+/assets/8289ed85/fonts/opensans-semibold-webfont.woff 1 44457 0 0
+/group30 1 3381 0 0
+/myadmin/db_sql.php 2 11488 0 0
+/myadmin/navigation.php 9 144870 0 0
+/admin/catalog/editItem.php 1 10654 0 0
+/group29 17 66620 0 0
+/assets/8289ed85/fonts/opensans-regular-webfont.woff 1 44241 0 0
+/myadmin/tbl_structure.php 3 74639 0 0
+/checkout 11 50306 0 0
+/glavnaja.html 27 65733 0 0
+/group19 10 34599 0 0
+/fonts/opensans-semibold-webfont.woff 28 755208 0 0
+/group17 7 49263 0 0
+/admin/news/showGroups.php 1 7516 0 0
+/delformcart/ 7 18399 0 0
+/fonts/opensans-bold-webfont.woff 28 747252 0 1
+/myadmin/sql.php 16 846447 0 0
+/admin/slider/list.php 1 7692 0 0
+/group4 5 34824 0 0
+/myadmin/phpmyadmin.css.php 13 223449 0 0
+/group22 3 11568 0 0
+/admin/menu/editMenu.php 7 229554 0 0
+/gotovye-reshenija.html 18 41807 0 0
+/magazin.html 2 4933 0 0
+/myadmin/db_import.php 3 44369 0 0
+/confirmorder/ 10 4470 0 0
+/group3 3 16482 0 0
+/kontakty.html 7 17291 0 0
+/assets/8289ed85/fonts/opensans-semibolditalic-webfont.woff 1 54637 0 0
+/group11/item23 1 5701 0 0
+/uslugi.html 10 23982 0 0
+/ffff.html 2 4956 0 0
+/group2/item110 2 9867 0 0
+/group9 13 49583 0 0
+/group11 3 19248 0 0
+/group4/item36 1 3710 0 0
+/group23 2 8875 0 0
+/o-kompanii.html 15 31573 0 0
+/group20/item27 1 3383 0 0
+/fonts/opensans-regular-webfont.ttf 1 84205 0 0
+/group69 1 3315 0 0
+/group71 1 3886 0 0
+/group25 1 3386 0 0
+/admin/catalog/groupList.php 1 7678 0 0
+/vakansii.html 1 2478 0 0
+/myadmin/tbl_sql.php 3 10124 0 0
+/group16 8 39860 0 0
+/updamount/ 20 9036 0 0
+/group29/item260 1 3343 0 0
+/group12/item506 1 6753 0 0
+/group24 3 18198 0 0
+/registergo/ 7 3784 0 0
+END_SIDER
