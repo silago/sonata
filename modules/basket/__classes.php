@@ -89,7 +89,7 @@ class Basket
         $sql->query("SELECT `value` FROM `#__#shop_prices` WHERE `item_id` = '".$item_id."'", true);
         $array['price'] = $sql->result['value'];
         
-		if(!($array['remains']>=$postQuantity)) die(json_encode(array('error'=>'Данный товар отсутствует на складе')));
+		#if(!($array['remains']>=$postQuantity)) die(json_encode(array('error'=>'Данный товар отсутствует на складе')));
 		if(!($array['price']>0)) 				die(json_encode(array('error'=>'Невозможно добавить товар: отсутствует цена')));
 		
 		
@@ -115,7 +115,7 @@ class Basket
 		$array['total'] = "Товаров: {$count}  - <strong>{$tot} руб.</strong>";
         
         
-        $sql->query("update  shop_items set remains = remains - ".$postQuantity." WHERE `item_id` = '".$item_id."'");        
+        #$sql->query("update  shop_items set remains = remains - ".$postQuantity." WHERE `item_id` = '".$item_id."'");        
 		echo json_encode ($array); 
         
         

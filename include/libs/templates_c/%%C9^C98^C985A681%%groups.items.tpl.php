@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 17:34:53
+<?php /* Smarty version 2.6.16, created on 2014-03-07 05:49:21
          compiled from ru/modules/catalog/groups.items.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 34, false),)), $this); ?>
@@ -91,8 +91,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 ?> 
 						<div class="pr-box">
 							<a href="/<?php echo $this->_tpl_vars['item']['uri']; ?>
-"><img src="/userfiles/catalog/1cbitrix/<?php echo $this->_tpl_vars['item']['filename']; ?>
- " height="116" width="116" alt="" /></a>
+">
+                                <img src="<?php if ($this->_tpl_vars['item']['filename']): ?>/userfiles/catalog/1cbitrix/<?php echo $this->_tpl_vars['item']['filename'];  else: ?>/images/nophoto.png<?php endif; ?>" height="116" width="116" alt="" /></a>
 
 							<div class="pr-info">
 								<div class="pr-text">

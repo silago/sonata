@@ -1,9 +1,9 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 17:35:29
+<?php /* Smarty version 2.6.16, created on 2014-03-07 05:40:53
          compiled from ru/modules/catalog/index/show.item.html */ ?>
 	<div class="char-container">
 						<div class="char-info">
-							<a href="#"><img src="/userfiles/catalog/1cbitrix/<?php echo $this->_tpl_vars['photo']; ?>
-" height="184" width="174" alt="" /></a>
+							
+                            <a href="#"><img src="<?php if ($this->_tpl_vars['item']['filename']): ?>//userfiles/catalog/1cbitrix/<?php echo $this->_tpl_vars['photo'];  else: ?>/images/nophoto.png<?php endif; ?>" height="184" width="174" alt="" /></a>
 
 							<div class="char-text">
 								<h3><?php echo $this->_tpl_vars['name']; ?>

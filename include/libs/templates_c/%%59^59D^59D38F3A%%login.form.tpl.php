@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 15:27:30
+<?php /* Smarty version 2.6.16, created on 2014-03-07 05:56:13
          compiled from ru/modules/security/index/login.form.tpl */ ?>
 	<div class="autorize">
 				<h2>Регистрация / Авторизация</h2>	

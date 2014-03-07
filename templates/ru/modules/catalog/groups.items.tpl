@@ -52,7 +52,8 @@
                         {/if}
                         {foreach from=$items item=item key=key} 
 						<div class="pr-box">
-							<a href="/{$item.uri}"><img src="/userfiles/catalog/1cbitrix/{$item.filename} " height="116" width="116" alt="" /></a>
+							<a href="/{$item.uri}">
+                                <img src="{if $item.filename}/userfiles/catalog/1cbitrix/{$item.filename}{else}/images/nophoto.png{/if}" height="116" width="116" alt="" /></a>
 
 							<div class="pr-info">
 								<div class="pr-text">
