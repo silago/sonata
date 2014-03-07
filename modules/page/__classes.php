@@ -71,8 +71,8 @@ class page  {
             ($filename = $image->resizeEx(
                                            $_FILES['filename']['tmp_name'],
                                            $image_name,     array('userfiles/',
-                                                                  70,
-                                                                  70
+                                                                  58,
+                                                                  68
                                                                  ),
                                            true,
                                            false,
