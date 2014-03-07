@@ -210,7 +210,7 @@ class template {
 		static function genTree1($tableName, $idCol = "group_id", $ownCol = "parent_group_id", $titCol = "name", $start = 0, $halt = -1, $orderBy = "") {
 			global $API, $return, $lang;
 			$return = array();
-			$sqlId = mysql_query("SELECT `".$idCol."`, `".$titCol."`, `".$ownCol."`, `hidden` FROM ".$API['config']['mysql']['prefix'].$tableName." WHERE ".$ownCol." = '".$start."'".(!empty($orderBy) ? " ORDER BY `".$orderBy."`" : ""));
+			$sqlId = mysql_query("SELECT `".$idCol."`, `".$titCol."`, `".$ownCol."`, `status` FROM ".$API['config']['mysql']['prefix'].$tableName." WHERE ".$ownCol." = '".$start."'".(!empty($orderBy) ? " ORDER BY `".$orderBy."`" : ""));
 			while ($result = mysql_fetch_array($sqlId)) {
 				$id    = $result[0];
 				$title = $result[1];

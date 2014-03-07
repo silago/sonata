@@ -436,7 +436,7 @@ class catalog extends mysql {
             page500();
         } //если в таблице ничего нет - ошибка 500
 
-        if ($sql->result['hidden'] == 'hidden') {
+        if ($sql->result['status'] == 1) {
             $select = 'checked';
         } else {
             $select = '';
