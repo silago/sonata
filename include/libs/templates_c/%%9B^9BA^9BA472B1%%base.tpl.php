@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 16:11:36
+<?php /* Smarty version 2.6.16, created on 2014-03-07 20:27:57
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 42, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 82, false),array('block', 'block', 'ru/base.tpl', 88, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 50, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 90, false),array('block', 'block', 'ru/base.tpl', 96, false),)), $this); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,9 +22,17 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 <script type="text/javascript" src="/js/js.js"></script>
 <script type="text/javascript" src="/js/jquery.notification.js"></script>
 
+
+<script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+
 <?php echo '
 <script>
   $(function() {
+    $(\'.fancybox\').fancybox();
+
     $( "#datepicker" ).datepicker({
       showOn: "button",
       buttonImage: "images/calendare.png",

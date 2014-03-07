@@ -14,7 +14,7 @@ class Orders
     public static $fizFields = array();
 	public $payments = array();
 	public $adminEmail = '';
-	public $appName = 'Технодом';
+	public $appName = 'Сонета';
 	
 	/* Получатель для выписки счета */
 	public $recipient = '';

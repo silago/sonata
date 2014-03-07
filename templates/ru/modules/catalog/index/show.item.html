@@ -5,8 +5,14 @@
 <div class="char-container">
 						<div class="char-info">
 							
-                            <a href="#"><img src="{if $item.filename}//userfiles/catalog/1cbitrix/{$photo}{else}/images/nophoto.png{/if}" height="184" width="174" alt="" /></a>
-
+                            <a href="#">
+                                {if $photo}
+                                <a class="fancybox" href="/userfiles/catalog/1cbitrix/{$photo}">    
+                                    <img src="/userfiles/catalog/1cbitrix/{$photo}" width="174" alt="" /></a>
+                                </a>
+                                {else}
+                                    <img src="/images/nophoto.png" width="174" alt="" /></a>
+                                {/if}
 							<div class="char-text">
 								<h3>{$name}</h3>	
 								<p>

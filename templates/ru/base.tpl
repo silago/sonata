@@ -18,9 +18,17 @@
 <script type="text/javascript" src="/js/js.js"></script>
 <script type="text/javascript" src="/js/jquery.notification.js"></script>
 
+
+<script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+
 {literal}
 <script>
   $(function() {
+    $('.fancybox').fancybox();
+
     $( "#datepicker" ).datepicker({
       showOn: "button",
       buttonImage: "images/calendare.png",

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-03 17:32:20
+<?php /* Smarty version 2.6.16, created on 2014-03-07 20:32:55
          compiled from ru/inner.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru/inner.html', 1, false),array('block', 'block', 'ru/inner.html', 2, false),array('function', 'show_menu', 'ru/inner.html', 7, false),)), $this); ?>

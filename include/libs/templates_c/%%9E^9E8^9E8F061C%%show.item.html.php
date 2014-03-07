@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-07 15:34:38
+<?php /* Smarty version 2.6.16, created on 2014-03-07 20:28:37
          compiled from ru/modules/catalog/index/show.item.html */ ?>
 <div style="margin-top:-20px;" class="nav">
 <?php echo $this->_tpl_vars['c_navigation']; ?>
@@ -8,8 +8,16 @@
 <div class="char-container">
 						<div class="char-info">
 							
-                            <a href="#"><img src="<?php if ($this->_tpl_vars['item']['filename']): ?>//userfiles/catalog/1cbitrix/<?php echo $this->_tpl_vars['photo'];  else: ?>/images/nophoto.png<?php endif; ?>" height="184" width="174" alt="" /></a>
-
+                            <a href="#">
+                                <?php if ($this->_tpl_vars['photo']): ?>
+                                <a class="fancybox" href="/userfiles/catalog/1cbitrix/<?php echo $this->_tpl_vars['photo']; ?>
+">    
+                                    <img src="/userfiles/catalog/1cbitrix/<?php echo $this->_tpl_vars['photo']; ?>
+" width="174" alt="" /></a>
+                                </a>
+                                <?php else: ?>
+                                    <img src="/images/nophoto.png" width="174" alt="" /></a>
+                                <?php endif; ?>
 							<div class="char-text">
 								<h3><?php echo $this->_tpl_vars['name']; ?>
 </h3>	
