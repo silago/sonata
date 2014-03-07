@@ -436,7 +436,7 @@ class catalog extends mysql {
             page500();
         } //если в таблице ничего нет - ошибка 500
 
-        if ($sql->result['status'] == 1) {
+        if ($sql->result['hidden'] == 'hidden') {
             $select = 'checked';
         } else {
             $select = '';
@@ -1143,11 +1143,11 @@ class catalog extends mysql {
             $template->assign("position", $groupsPosition[$key]);
             $body .= $template->get();
         }
+
         if (empty($body)) {
             $template = new template(api::setTemplate($this->tDir . "admin/groups.list.empty.html"));
             $body = $template->get();
         }
-
         $template = new template(api::setTemplate($this->tDir . "admin/groups.list.body.html"));
         $template->assign("body", $body);
         $this->data['content'] = $template->get();
