@@ -102,8 +102,9 @@ switch ($ret['uriGroup']) {
     break;
 
     case "forgotpass":
-        echo "forgotpass method";
-    break;
+        $security->restorePass();
+        
+        break;
 
     default:
         page404();

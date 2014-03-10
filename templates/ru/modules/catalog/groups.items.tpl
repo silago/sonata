@@ -4,24 +4,24 @@
 						<div class="sorting-box">
 							<ul>
                                 {if $p.page<3}
-<li {if $pagination.page == 1} class="active"{/if}><a href="{$uri}?page=1&per_page={$p.per_page}&order_by={$p.order_by}">1</a></li>
+<li {if $pagination.page == 1} class="active"{/if}><a href="{$uri}?page=1&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}">1</a></li>
 {if $p.total/$p.per_page > 1}
-<li {if $pagination.page == 2} class="active"{/if}><a href="{$uri}?page=2&per_page={$p.per_page}&order_by={$p.order_by}"">2</a></li>
+<li {if $pagination.page == 2} class="active"{/if}><a href="{$uri}?page=2&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}">2</a></li>
 {/if}
 {if $p.total/$p.per_page > 2}
-<li {if $pagination.page == 3} class="active"{/if}><a href="{$uri}?page=3&per_page={$p.per_page}&order_by={$p.order_by}"">3</a></li>
+<li {if $pagination.page == 3} class="active"{/if}><a href="{$uri}?page=3&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}">3</a></li>
 {/if}
 {else}
 
-<li >               <a href="{$uri}?page={$p.page-1}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page-1}</a></li>
+<li >               <a href="{$uri}?page={$p.page-1}&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}">{$p.page-1}</a></li>
 
 
-<li class="active" ><a href="{$uri}?page={$p.page}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page}</a></li>
+<li class="active" ><a href="{$uri}?page={$p.page}&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}">{$p.page}</a></li>
 
 
 
 {if $p.total/$p.per_page > $p.page}
-<li >               <a href="{$uri}?page={$p.page+1}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.page+1}</a></li>
+<li >               <a href="{$uri}?page={$p.page+1}&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}&order_dir={$p.order_dir}">{$p.page+1}</a></li>
 {/if}
 
 
@@ -31,12 +31,12 @@
                                 
                                 {if $p.total/$p.per_page > 3}
                                 <li>...</li>
-								<li><a href="/{$uri}?page={$p.total/$p.per_page|ceil}&per_page={$p.per_page}&order_by={$p.order_by}"">{$p.total/$p.per_page|ceil}</a></li>
+								<li><a href="/{$uri}?page={$p.total/$p.per_page|ceil}&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}">{$p.total/$p.per_page|ceil}</a></li>
 							    {/if}
                             </ul>
 
-							<p>Сортировать по: <a href="/{$uri}?order_by=value">цене</a>
-                            <a href="/{$uri}?order_by=name">алфавиту</a></p>	
+							<p>Сортировать по: <a href="/{$uri}?order_by=value&order_dir={if $p.order_dir==''}DESC{/if}">цене</a>
+                            <a href="/{$uri}?order_by=name&order_dir={if $p.order_dir==''}DESC{/if}">алфавиту</a></p>	
 
 							<div class="views">
 								<span>Показывать по:</span>	

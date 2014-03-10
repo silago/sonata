@@ -6,7 +6,7 @@
                     <div class="boxLogin"><span>Личный кабинет: </span>&nbsp;&nbsp; <a href="/logingo/">Вход</a> <!--<span>|</span> <a href="/register/">Регистрация</a> --></div>
                     
                     {else}
-                     <div class="boxLogin">Здравствуйте; <a href="/cabinet">{$userName}</a> &nbsp;&nbsp; <a href="/logout/">Выход</a></div>
+                     <div class="enter-box"> <span><a href="/cabinet">{$userName}</a></span> &nbsp;&nbsp; <a href="/logout/">Выход</a></div>
 			
 
                     {/if}

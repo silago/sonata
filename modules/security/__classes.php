@@ -13,7 +13,8 @@ class SecurityModule
     private static $passCheck = "/^[a-z0-9]+$/i";
     private static $passLength = 6;
 	private $data = array();
-
+    private $appName = 'Сонета';
+    private $adminEmail = 'admin@soneta.ru';    
     public $redirectAfterRegister = 'index';
     public $error = array();
 
@@ -100,7 +101,72 @@ class SecurityModule
         $this->content = $smarty->fetch(api::setTemplate('modules/admin/config.tpl'));	
 		return true;
     }	
-	
+	public function restorePass($email=false, $token=false)
+	{
+	global $smarty, $sql;
+	if ((isset($_GET['url'])))	$_SESSION['HTTP_REFERER'] = urldecode($_GET['url']);
+	#print_r($_SESSION);
+	#print_r($_GET);
+	#die('s');
+	$salt='=(';
+		#print_r($_POST);
+		#if (!isset($_POST['email'])) echo 1;	
+			if ((!isset($_POST['email'])) && (!isset($_GET['token'])))
+				{
+				if (!isset($_SESSION['HTTP_REFERER']))	$_SESSION['HTTP_REFERER']=$_SERVER['HTTP_REFERER'];
+				
+		
+				$this->tpl->assign('step', '1');
+				$template = $this->tpl->fetch(api::setTemplate('modules/security/index/restore.tpl'));
+				$this->pageTitle = 'Персональная информация';
+				$this->content=$template;	
+				}
+				else
+				if (!isset($_GET['token']))
+				{	#echo '1';
+					
+					
+				
+					
+					$htmlBody = " для востановления пароля перейдите по  <a href='".$this->appName."/forgotpass?token=".md5(md5($salt).md5($_POST['email']))."&mail=".$_POST['email']."&url=".urlencode($_SESSION['HTTP_REFERER'])."'> Cсылке </a>";	
+					$subject = 'Востановление пароля в интернет магазине "Универсам «Удача»"';		
+					$sub = "=?UTF-8?B?".base64_encode($subject)."?=";
+					$from_text = 'Администрация интернет-магазина "'.$this->appName.'"';		
+					$headers = "Content-Type: text/html; charset = \"UTF-8\";\n";		
+					$headers  .= "From:"."=?UTF-8?B?".base64_encode($from_text)."?="."<".$this->adminEmail.">\n";
+					$headers .= "MIME-Version: 1.0\n";
+					$headers .= "Content-Type: text/html; charset = \"UTF-8\";\n";
+					$headers .= "\n";			
+					mail($_POST['email'], $sub, $htmlBody, $headers);
+					
+					
+				$this->tpl->assign('step', '2');
+				$template = $this->tpl->fetch(api::setTemplate('modules/security/index/restore.tpl'));
+				$this->pageTitle = 'Персональная информация';
+				$this->content=$template;	
+				}
+				
+				else if (isset($_GET['token']))
+				{	$s = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 5)), 0, 5);
+					$this->content='Ваш новый пароль отправлен вам на  почту';
+					
+					$sql->query("update shop_users set password = MD5('{$s}')  where MD5(CONCAT(MD5('{$salt}'),MD5(`email`)))    = '{$_GET['token']}' ");
+					#echo ("update shop_users set password = MD5('{$s}')  where MD5(CONCAT(MD5('{$salt}'),MD5(`email`)))    = '{$_GET['token']}' ");
+					
+					$htmlBody = "Ваш новый пароль: {$s}                  ";	
+					$subject = 'Востановление пароля в интернет магазине "'.$this->appName.'"';		
+					$sub = "=?UTF-8?B?".base64_encode($subject)."?=";
+					$from_text = 'Администрация интернет-магазина "'.$this->appName.'"';		
+					$headers = "Content-Type: text/html; charset = \"UTF-8\";\n";		
+					$headers  .= "From:"."=?UTF-8?B?".base64_encode($from_text)."?="."<".$this->adminEmail.">\n";
+					$headers .= "MIME-Version: 1.0\n";
+					$headers .= "Content-Type: text/html; charset = \"UTF-8\";\n";
+					$headers .= "\n";			
+					mail($_GET['mail'], $sub, $htmlBody, $headers);
+				}
+			
+				
+	}
 	public function getAjaxAuthForm()
     {
         global $smarty, $basket;
@@ -192,13 +258,16 @@ class SecurityModule
             $val = explode('=', $value);
             $data1[$val['0']] = htmlspecialchars(urldecode($val['1']));
         }
-			
-		if(empty($data1['surname']) && !preg_match('/^[a-zа-я]+$/ui', $data1['surname'])){
-			$err['surname'] = 'Неверно заполнено поле Фамилия';
+
+        $fio_ = $data1['surname'];
+        $fio =  explode(' ',$data1['surname']);
+        $data1['surname'] = @$fio[0]; 
+        $data1['name'] = @$fio[1]; 
+        $data1['patronymic'] = @$fio[2]; 
+
+		if(empty($fio_) && !preg_match('/^[a-zа-я\ ]+$/ui', $fio_)){
+			$err['surname'] = 'Неверно заполнено поле Ф.И.О.';
 		}	
-		if(empty($data1['name']) && !preg_match('/^[a-zа-я]+$/ui', $data1['name'])){
-			$err['name'] = 'Неверно заполнено поле Имя';
-		}
 		
 		if(empty($data1['phone']) || !preg_match("/^[0-9]{4,13}+$/", $data1['phone'])){
 			$err['phone'] = 'Неверно заполнено поле телефон';
@@ -424,9 +493,11 @@ class SecurityModule
                 $_SESSION['sec_id'] = $userId;
                 
                 $sql->query("DELETE FROM `shop_basket` WHERE `user_id` = '{$userId}'");
+
                 
 
                 if(!empty($_SESSION['basket'])){
+                    $sql->query("delete FROM `shop_basket` WHERE `user_id` = '".$userId ."'");
                     foreach($_SESSION['basket'] as $key => $value){
                         $sql->query("SELECT `quantity` as 'quantity' FROM `shop_basket` WHERE `user_id` = '".$userId ."' AND `item_id` = '".$_SESSION['basket'][$key]['item_id']."'", true);
 

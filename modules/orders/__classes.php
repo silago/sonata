@@ -810,7 +810,7 @@ class Orders
         global $smarty, $sql, $basket, $mSecurity, $catalog;					
 		
 		
-		
+        $_SESSION['to_redirect'] == '/basket';
 				
 		
 		

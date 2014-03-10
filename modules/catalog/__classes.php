@@ -140,8 +140,10 @@ class catalog extends mysql {
     
     $page       = ( isset($_GET['page']) ? $_GET['page'] : 1);
     $order_by   = ( isset($_GET['order_by']) ? $_GET['order_by'] : 'name');
+    $order_dir   = ( isset($_GET['order_dir']) ? $_GET['order_dir'] : 'ASC');
+    
     $per_page   = ( isset($_GET['per_page']) ? $_GET['per_page'] : 10);
-    $pagination = array('total'=>$count,'page'=>$page,'per_page'=>$per_page,'order_by'=>$order_by);
+    $pagination = array('total'=>$count,'page'=>$page,'per_page'=>$per_page,'order_by'=>$order_by,'order_dir'=>$order_dir);
     
 
     $query =  "select shop_items.*, shop_itemimages.filename, shop_prices.value,
@@ -151,7 +153,7 @@ class catalog extends mysql {
     left join shop_groups on shop_items.parent_group_id = shop_groups.group_id
     left join shop_prices on shop_items.item_id = shop_prices.item_id
     where 1 and shop_items.parent_group_id = '{$id}' group by shop_items.id 
-    order by {$order_by} limit ".(($page-1)*$per_page).", {$per_page}
+    order by {$order_by} {$order_dir} limit ".(($page-1)*$per_page).", {$per_page}
     
     ";
     $sql->query($query);

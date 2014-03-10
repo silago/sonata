@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-07 22:06:28
+<?php /* Smarty version 2.6.16, created on 2014-03-10 06:14:00
          compiled from ru/modules/catalog/groups.items.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 34, false),)), $this); ?>
@@ -12,24 +12,28 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 <li <?php if ($this->_tpl_vars['pagination']['page'] == 1): ?> class="active"<?php endif; ?>><a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=1&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
 ">1</a></li>
 <?php if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > 1): ?>
 <li <?php if ($this->_tpl_vars['pagination']['page'] == 2): ?> class="active"<?php endif; ?>><a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=2&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
-"">2</a></li>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
+">2</a></li>
 <?php endif;  if ($this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'] > 2): ?>
 <li <?php if ($this->_tpl_vars['pagination']['page'] == 3): ?> class="active"<?php endif; ?>><a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=3&per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
-"">3</a></li>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
+">3</a></li>
 <?php endif;  else: ?>
 
 <li >               <a href="<?php echo $this->_tpl_vars['uri']; ?>
 ?page=<?php echo $this->_tpl_vars['p']['page']-1; ?>
 &per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
-""><?php echo $this->_tpl_vars['p']['page']-1; ?>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
+"><?php echo $this->_tpl_vars['p']['page']-1; ?>
 </a></li>
 
 
@@ -37,7 +41,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 ?page=<?php echo $this->_tpl_vars['p']['page']; ?>
 &per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
-""><?php echo $this->_tpl_vars['p']['page']; ?>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
+"><?php echo $this->_tpl_vars['p']['page']; ?>
 </a></li>
 
 
@@ -47,7 +52,9 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 ?page=<?php echo $this->_tpl_vars['p']['page']+1; ?>
 &per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
-""><?php echo $this->_tpl_vars['p']['page']+1; ?>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
+"><?php echo $this->_tpl_vars['p']['page']+1; ?>
 </a></li>
 <?php endif; ?>
 
@@ -62,15 +69,16 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/
 ?page=<?php echo ((is_array($_tmp=$this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'])) ? $this->_run_mod_handler('ceil', true, $_tmp) : ceil($_tmp)); ?>
 &per_page=<?php echo $this->_tpl_vars['p']['per_page']; ?>
 &order_by=<?php echo $this->_tpl_vars['p']['order_by']; ?>
-""><?php echo ((is_array($_tmp=$this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'])) ? $this->_run_mod_handler('ceil', true, $_tmp) : ceil($_tmp)); ?>
+&order_dir=<?php echo $this->_tpl_vars['p']['order_dir']; ?>
+"><?php echo ((is_array($_tmp=$this->_tpl_vars['p']['total']/$this->_tpl_vars['p']['per_page'])) ? $this->_run_mod_handler('ceil', true, $_tmp) : ceil($_tmp)); ?>
 </a></li>
 							    <?php endif; ?>
                             </ul>
 
 							<p>Сортировать по: <a href="/<?php echo $this->_tpl_vars['uri']; ?>
-?order_by=value">цене</a>
+?order_by=value&order_dir=<?php if ($this->_tpl_vars['p']['order_dir'] == ''): ?>DESC<?php endif; ?>">цене</a>
                             <a href="/<?php echo $this->_tpl_vars['uri']; ?>
-?order_by=name">алфавиту</a></p>	
+?order_by=name&order_dir=<?php if ($this->_tpl_vars['p']['order_dir'] == ''): ?>DESC<?php endif; ?>">алфавиту</a></p>	
 
 							<div class="views">
 								<span>Показывать по:</span>	

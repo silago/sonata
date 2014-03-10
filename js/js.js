@@ -137,11 +137,10 @@ function registergo(id){//alert(1);
                         if(!(data[i] == undefined)){
                             jQuery('div#error').html(html + data[i]+'<br/>');
                         }
-                      $('#register input[type=submit]').removeAttr('disabled','disabled');  
                     }
 
 				$('#error').show();
-                
+                $('#register input[type=submit]').removeAttr('disabled');  
                 }
                 else
                 {}
