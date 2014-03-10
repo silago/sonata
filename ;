@@ -61,24 +61,24 @@
 
 							<div class="s1 block">
 								<span>Улица <strong>*</strong></span>
-								<input type="text" placeholder="" value="{$userdata.data.order.street}" name="order_street" />	
+								<input type="text" placeholder="" name="order_street" />	
 							</div>
 
 							<div class="s1 block">
 								<div class="bl-box">
 											<div class="adr">
 												<span>Дом </span>
-												<input type="text" value="{$userdata.data.order.house}" name="order_house" placeholder="" class="c1" />	
+												<input type="text" name="order_house" placeholder="" class="c1" />	
 											</div>
 
 											<div class="adr">
 												<span>Корпус</span>
-												<input type="text" value="{$userdata.data.order.corp}" name="order_corp" placeholder="" class="c2" />	
+												<input type="text" name="order_corp" placeholder="" class="c2" />	
 											</div>	
 
 											<div class="adr">
 												<span>Квартира/офис</span>
-												<input type="text" placeholder="" value="{$userdata.data.order.office}" name="order_office" class="c3" />	
+												<input type="text" placeholder="" name="order_office" class="c3" />	
 											</div>
 										</div>	
 							</div>
@@ -127,7 +127,7 @@
                                 <input type="submit" value="Продолжить" />	
                                 
                                 
-								<div class="help-text p1" style="display:none;">
+								<div class="help-text p1" style="display:none;>
 									При данном способое оплаты  оплата будет произведена наличными , при получении товара.
 									<img src="/images/help-img.png" height="10" width="4" alt="" />	
 								</div>

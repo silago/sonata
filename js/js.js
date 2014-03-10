@@ -41,7 +41,7 @@ function deleteFromCart(id) {
 						$('.q-'+id).closest('tr').hide(300);
 						//console.log(id);
 						$.createNotification({content:'позиция удалена'})
-						
+					    document.location.reload(true);	
 						gettotal();
 						gettotalitems();
                       //  jQuery('div#basket').empty();
@@ -143,9 +143,11 @@ function registergo(id){//alert(1);
                 $('#register input[type=submit]').removeAttr('disabled');  
                 }
                 else
-                {}
-					//document.location='/';
-               // alert(data);
+                {   
+
+					document.location='/';
+                }
+                    // alert(data);
                 console.log(data.length)
                 console.log(data);                  
             }

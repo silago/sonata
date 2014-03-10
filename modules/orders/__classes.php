@@ -810,7 +810,6 @@ class Orders
         global $smarty, $sql, $basket, $mSecurity, $catalog;					
 		
 		
-        $_SESSION['to_redirect'] == '/basket';
 				
 		
 		
@@ -818,8 +817,10 @@ class Orders
 		
 		if(Security::$auth==false){
 			    
-
-				header('location: /login/');
+            $_SESSION['goto']='/checkout';
+           #var_dump($_SESSION); 
+           #     die('s');
+                header('location: /login/');
                 				
 				if (isset($_POST['discountType'])) 
 					$_SESSION['discountType']=$_POST['discountType'];
@@ -964,7 +965,8 @@ class Orders
 
             $smarty->assign('shipList', $shipList);
             $smarty->assign('towns', $towns);
-            
+
+
         $smarty->assign('userdata',security::$userData);
             $this->content = $smarty->fetch(api::setTemplate('modules/orders/index/checkout.tpl'));		
 		}

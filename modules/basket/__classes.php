@@ -313,23 +313,23 @@ class Basket
 		  
 		  if(Security::$auth==true){              			  
 			  #$sql->query("UPDATE `#__#shop_items` SET `quantity` = '".$quantity."' WHERE `item_id` = '".$_POST['id']."' AND `user_id` = '".Security::$userData['id']."'");
-			  $sql->query("select quantity from `#__#shop_basket` WHERE `item_id` = '".$_POST['id']."' AND `user_id` = '".Security::$userData['id']."' limit 1",true);
-			  $basket_quantity=$sql->result['quantity'];
-			  $dif = $quantity-$basket_quantity;
-			  if ($dif>$remains) die(json_encode(array('error'=>'Запрашиваемое вами количество товаров отсутствует на складе')));
+			  #$sql->query("select quantity from `#__#shop_basket` WHERE `item_id` = '".$_POST['id']."' AND `user_id` = '".Security::$userData['id']."' limit 1",true);
+			  #$basket_quantity=$sql->result['quantity'];
+			  #$dif = $quantity-$basket_quantity;
+			  #if ($dif>$remains) die(json_encode(array('error'=>'Запрашиваемое вами количество товаров отсутствует на складе')));
 			  
 			  $sql->query("UPDATE `#__#shop_basket` SET `quantity` = '".$quantity."' WHERE `item_id` = '".$_POST['id']."' AND `user_id` = '".Security::$userData['id']."'");
 
 			 echo json_encode(array('success'=>'ok'));
           }else{
 			$basket_quantity=$_SESSION['basket'][$this->postArray['id']]['quantity'];
-			$dif = $quantity-$basket_quantity;
-            if ($dif>$remains) die(json_encode(array('error'=>'Запрашиваемое вами количество товаров отсутствует на складе')));
+			#$dif = $quantity-$basket_quantity;
+            #if ($dif>$remains) die(json_encode(array('error'=>'Запрашиваемое вами количество товаров отсутствует на складе')));
             
             $_SESSION['basket'][$this->postArray['id']]['quantity'] = $quantity;
             echo json_encode(array('success'=>'ok'));
           }
-          $sql->query("UPDATE `#__#shop_items` SET `remains` = `remains` - ".$dif." WHERE `item_id` = '".$_POST['id']."'");
+          #$sql->query("UPDATE `#__#shop_items` SET `remains` = `remains` - ".$dif." WHERE `item_id` = '".$_POST['id']."'");
 
 			
         }
@@ -357,7 +357,7 @@ class Basket
                 unset($_SESSION['basket'][$this->postArray['id']]);
                 $array = array('content' => $this->show(), 'amount' => $this->getCountOfItems());
             }
-            $sql->query("UPDATE `#__#shop_items` SET `remains` = `remains` + ".$q." WHERE `item_id` = '".$this->postArray['id']."'");
+           # $sql->query("UPDATE `#__#shop_items` SET `remains` = `remains` + ".$q." WHERE `item_id` = '".$this->postArray['id']."'");
 
             echo json_encode($array);
         }

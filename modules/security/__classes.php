@@ -251,14 +251,21 @@ class SecurityModule
     public function registerGo()
     {
         global $sql, $orders, $smarty;
-		$dataArray=array();
-        $data = explode('&', $_POST['value']);
-        $err  = array();
-        foreach ($data as $key => $value) {
-            $val = explode('=', $value);
-            $data1[$val['0']] = htmlspecialchars(urldecode($val['1']));
-        }
+		#$dataArray=array();
+        //$data = $_POST['value'];
 
+
+        parse_str($_POST['value'],$data);
+        #var_dump($data);
+        #die();
+        $err  = array();
+        $dataArray = $data;
+        $data1 = $data;
+        #foreach ($data as $key => $value) {
+            #al = explode('=', $value);
+            #data1[$val['0']] = htmlspecialchars(urldecode($val['1']));
+        #}
+          
         $fio_ = $data1['surname'];
         $fio =  explode(' ',$data1['surname']);
         $data1['surname'] = @$fio[0]; 
@@ -326,12 +333,18 @@ class SecurityModule
 				}
 			} 
 			
-			$dataArray = json_encode($dataArray);
-			
-			$_SESSION['info'] = array("area" => 'public', "title" => 'Вы успешно зарегистрировались', "desc" => '', "uri" => '', "class" => 'alert-success',);
+			#$dataArray = json_encode($dataArray);
+            $dataArray=$data1;
+
+            unset($dataArray['pass']);
+            unset($dataArray['pass2']);
+            $dataArray['data']=@$this->p['data'];
+            $dataArray =json_encode($dataArray);
+            //$dataArray['data']=$_POST['data'];
+            $_SESSION['info'] = array("area" => 'public', "title" => 'Вы успешно зарегистрировались', "desc" => '', "uri" => '', "class" => 'alert-success',);
 
             $sql->query("INSERT INTO `#__#shop_users` (`email`, `password`, `name`, `surname`, `patronymic`, `reg_date`, `org`, `state`, `data`, `phone`)					                                VALUES
-			('" . $data1['email'] . "', '" . md5($data1['pass']) . "', '" . $data1['name'] . "', '" . $data1['surname'] . "', '" . $data1['patronymic'] . "', NOW(), '".$data1['org']."', '0', '".addslashes($dataArray)."', '".$data1['phone']."')");
+			('" . $data1['email'] . "', '" . md5($data1['pass']) . "', '" . $data1['name'] . "', '" . $data1['surname'] . "', '" . $data1['patronymic'] . "', NOW(), '".$data1['org']."', '0', '".($dataArray)."', '".$data1['phone']."')");
 
             /* Добавить услове если в настройках разрешена авторизация сразу после регистрации */
             $sql->query("SELECT `id` as 'id' FROM `#__#shop_users` WHERE `email` = '" . $data1['email'] . "' && `password` ='" . md5($data1['pass']) . "'", true);
@@ -417,7 +430,6 @@ class SecurityModule
 	
 	public function login()
     {
-
 
         global $smarty, $basket;
 
@@ -540,8 +552,21 @@ class SecurityModule
 				$n = ( (isset($sql->result['name'])) ? $sql->result['name'] : '');
 				
 				messageSessOnly('Вы успешно вошли в систему', '', 'loginerr');
-				if (isset($_POST['url']))
-				header('Location: '.$_POST['url']);
+                
+                #var_dump($_SESSION);  
+                if (isset($_SESSION['goto']))
+                    {
+                        $url_ = $_SESSION['goto'];
+                        
+                        #  unset($_SESSION['goto']);
+                 #die($url_);
+                        header('Location: '.$url_);
+                        die();
+                    }
+                
+                 #die('s');
+                if (isset($_POST['url']))
+                header('Location: '.$_POST['url']);
 					else
                 message("Здравствуйте ".$n.", Вы успешно вошли в систему.", "", 'catalog', "alert-success");
                
@@ -579,10 +604,9 @@ class SecurityModule
             $data['reg_date'] = Security::$userData['reg_date'];
 
             foreach ($data as $key => $value) {
-                $data[$key] = stripslashes($value);
+                $data[$key] = @stripslashes($value);
             }
-
-            $data['data'] = $dateRet;
+           // $data['data'] = $dateRet;
             $data['error'] =  $this->error;
         } else {
             $data = Security::$userData;
@@ -592,16 +616,15 @@ class SecurityModule
 		foreach ($data as $key => $value) {
             $smarty->assign($key, $value);
         }
-
-        if(!empty($data['data'])){
-            foreach($data['data'] as $key => $value){
-                foreach(SecurityModule::$orgFields as $key1 => $value1){
-                    if($key == $value1['name']){
-                        SecurityModule::$orgFields[$key1]['value'] = stripslashes($value);
-                    }
-                }
-            }
-        }
+              #if(!empty($data['data'])){
+        #    foreach($data['data'] as $key => $value){
+        #        foreach(SecurityModule::$orgFields as $key1 => $value1){
+        #            if($key == $value1['name']){
+        #                SecurityModule::$orgFields[$key1]['value'] = stripslashes($value);
+        #            }
+        #        }
+        #    }
+        #}
 
         $smarty->assign('fields', SecurityModule::$orgFields);
         $orgForm = $smarty->fetch(api::setTemplate('modules/security/index/cabinet.form.org.tpl'));
@@ -619,13 +642,17 @@ class SecurityModule
         
 		$smarty->assign('fields', SecurityModule::$fizFields);
         $fizForm = $smarty->fetch(api::setTemplate('modules/security/index/cabinet.form.fiz.tpl'));		
-		
+
+        /*
 		if($data['org'] == '0' || $data['org'] == '1'){
 			$smarty->assign('fizForm', $fizForm);
 		}elseif($data['org'] == '2'){
 			$smarty->assign('orgForm', $orgForm);
-		}
-		
+        }
+         */
+		  $smarty->assign('data',$data['data']);
+
+
         $template = $smarty->fetch(api::setTemplate('modules/security/index/cabinet.form.tpl'));
         $this->content = $template;
 		$this->pageTitle = 'Персональная информация';
@@ -635,6 +662,14 @@ class SecurityModule
     {
         global $sql;
         $dataRet=array();
+            
+        $fio = explode(' ',$this->postArray['name']);
+        $this->postArray['surname']=$fio[0];
+        $this->postArray['name']=$fio[1];
+        $this->postArray['patronymic']=$fio[2];
+
+
+
 
         if ($this->postArray['passchange'] == 1) {
             $changePasswordResult = $this->passChange($id, $this->postArray['oldpass'], $this->postArray['newpass'], $this->postArray['newpassconfirm']);
@@ -648,6 +683,7 @@ class SecurityModule
             $this->error = array_merge($this->error, $changeBaseDataResult);
         }
 
+        /*
         if ($this->postArray['org'] == 1) {
             $changeOrgResult = $this->changeFizData($this->postArray);
             foreach(SecurityModule::$fizFields as $key => $value){
@@ -684,6 +720,7 @@ class SecurityModule
                 $data = addslashes(json_encode($data));
             }
         }
+         */
 
         if(!empty($this->error)){
 			
@@ -692,16 +729,13 @@ class SecurityModule
 				
 				
 			
-            $sql->query("UPDATE `#__#shop_users` SET `name` = '" . $this->postArray['name'] . "', `surname` = '" . $this->postArray['surname'] . "', `patronymic` = '" . $this->postArray['patronymic'] . "', `phone` = '" . $this->postArray['phone'] . "', `email` = '" . $this->postArray['email'] . "' , `addr` = '".$this->postArray['addr']."', `discount` = '".$this->postArray['discount']."' WHERE `id` = '" . $id . "'");
+            @$sql->query("UPDATE `#__#shop_users` SET `name` = '" . $this->postArray['name'] . "', `surname` = '" . $this->postArray['surname'] . "', `patronymic` = '" . $this->postArray['patronymic'] . "', `phone` = '" . $this->postArray['phone'] . "', `email` = '" . $this->postArray['email'] . "' , `addr` = '".$this->postArray['addr']."', `discount` = '".$this->postArray['discount']."' WHERE `id` = '" . $id . "'");
 
             if ($this->postArray['passchange'] == 1){
                 $sql->query("UPDATE `#__#shop_users` SET `password` = '".md5($this->postArray['newpass'])."'");
             }
 
-            if ($this->postArray['org'] == 1){
-                $sql->query("UPDATE `#__#shop_users` SET `org` = '".$this->postArray['org']."', `org_id` = '0', `data` = '" . $data . "' WHERE `id` = '" . $id . "'");
-            }
-
+            /*
             if ($this->postArray['org'] == 2){
                 $sql->query("UPDATE `#__#shop_users` SET `org` = '".$this->postArray['org']."', `data` = '" . $data . "' WHERE `id` = '" . $id . "'");
                 $sql->query("SELECT `id` FROM `#__#shop_org` WHERE `inn` = '".$this->postArray['inn_org']."'",true);
@@ -714,8 +748,15 @@ class SecurityModule
                     $org_id = $sql->result['id'];
                     $sql->query("UPDATE `#__#shop_users` SET `org_id` = '".$org_id."' WHERE `id` = '" . $id . "'");
                 }
-            }
+            }*/
+            
 
+            $data = $_POST;
+
+            unset($data['passchange']);
+            unset($data['newpass']);
+            unset($data['newpassconfirm']);
+            $sql->query("UPDATE `#__#shop_users` SET `data` = '".json_encode($data)."'  WHERE `id` = '" . $id . "'");
             message("Данные сохранены", "", "cabinet", "alert-success");
         }
 
@@ -749,7 +790,7 @@ class SecurityModule
     private function changeBaseData($name, $surname, $patronymic)
     {
         $result = array();
-
+        $post = $_POST;
         if (strlen($name) == 0) {
             $result[] = 'Не заполено поле Имя<br/>';
         }
@@ -759,6 +800,7 @@ class SecurityModule
         }
         
         	if(empty($post['phone']) || !preg_match("/^[0-9]{4,13}+$/", $post['phone']))		
+        	#if(empty($post['phone']) || !preg_match("/^[0-9]{4,13}+$/", $post['phone']))		
 			$result[] = 'Неверно заполнено поле телефон';
 
        # if (strlen($surname) == 0) {
@@ -774,7 +816,7 @@ class SecurityModule
         #}
 
         #if (strlen($patronymic) > 0 && !preg_match('/^[a-zа-я]+$/ui', $patronymic)) {
-        #    $result[] = 'Поле Отчество содержит недопустимые символы<br/>';
+        #    $result[T = 'Поле Отчество содержит недопустимые символы<br/>';
         #}
 
         return $result;
@@ -898,7 +940,8 @@ class SecurityModule
 		
 		$cfgValue = api::getConfig("modules", "security", "defTemplate");
         $this->template = ($cfgValue != "") ? $cfgValue : '';
-
+        
+        $this->p = $_POST;
         if (isset($_POST) && !empty($_POST)) {
             $this->postArray = api::slashData($_POST);
         }

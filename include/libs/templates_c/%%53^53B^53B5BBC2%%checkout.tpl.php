@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-07 20:42:25
+<?php /* Smarty version 2.6.16, created on 2014-03-11 00:00:15
          compiled from ru/modules/orders/index/checkout.tpl */ ?>
 <?php echo '
 <script>
@@ -68,7 +68,8 @@
 
 							<div class="s1 block">
 								<span>Улица <strong>*</strong></span>
-								<input type="text" placeholder="" name="order_street" />	
+								<input type="text" placeholder="" valude="<?php echo $this->_tpl_vars['userdata']['data']['order']['street']; ?>
+" name="order_street" />	
 							</div>
 
 							<div class="s1 block">
@@ -126,17 +127,24 @@
 								<p>Оплата <strong><?php echo $this->_tpl_vars['total']; ?>
 </strong> руб.</p>	
                                  
-								<label class="s1"><input value="cashpayment" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при доставке</label>
-								<label class="s1"><input value="billpayment" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при доставке</label>
+								<label class="s1"><input value="cashpayment" onclick="$('.p1').show(); $('.p2').hide();" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при доставке</label>
+								<label class="s1"><input value="billpayment" onclick="$('.p2').show(); $('.p1').hide();" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при доставке</label>
                         
-                                <label class="s2" style="display:none;"><input value="cashpayment" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при самовывозе</label>
-								<label class="s2" style="display:none;"><input value="billpayment" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при самовывозе</label>
+                                <label class="s2" style="display:none;"><input  onclick="$('.p1').show(); $('.p2').hide();" value="cashpayment" class="niceRadio" type="radio" name="pname" /> Наличными. Курьеру при самовывозе</label>
+								<label class="s2" style="display:none;"><input  onclick="$('.p2').show(); $('.p1').hide();" value="billpayment" class="niceRadio" type="radio" name="pname" /> Банковкой картой, курьеру при самовывозе</label>
 								
                                 <input type="submit" value="Продолжить" />	
+                                
+                                
+								<div class="help-text p1" style="display:none;">
+									При данном способое оплаты  оплата будет произведена наличными , при получении товара.
+									<img src="/images/help-img.png" height="10" width="4" alt="" />	
+								</div>
 
-								<div class="help-text">
-									Подробное описание способа оплаты. Выписывая счет, вы имеете возможность оплатить свой заказ одним из способов, предложенных в данной форме. Выписывая счет, вы имеете возможность оплатить свой заказ одним из способов, предложенных в данной форме.
-									<img src="images/help-img.png" height="10" width="4" alt="" />	
+
+								<div class="help-text p2" style="display:none;">
+									При данном способое оплаты  оплата будет произведена банковской картой , при получении товара.
+									<img src="/images/help-img.png" height="10" width="4" alt="" />	
 								</div>
 							</div>
 					</div>	

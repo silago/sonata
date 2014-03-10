@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-10 03:30:02
+<?php /* Smarty version 2.6.16, created on 2014-03-11 00:39:07
          compiled from ru/modules/security/index/login.form.tpl */ ?>
 	<div class="autorize" id="login-auth-form" >
 				<h2>Регистрация / Авторизация</h2>	
@@ -84,12 +84,12 @@
 
 							<div class="ur block">
 								<span>Название органиции</span>
-								<input name="organizaion_name" type="text" placeholder="" />	
+								<input name="data[organizaion_name]" type="text" placeholder="" />	
 							</div>
 
 							<div  class="ur block">
 								<span>ИНН</span>
-								<input name="inn" type="text" placeholder="" />	
+								<input name="data[inn]" type="text" placeholder="" />	
 							</div>
 
 							<div class="block">

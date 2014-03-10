@@ -129,7 +129,13 @@ body {
 			.about-block a:hover {text-decoration: none;}
 			.about-block .time, .help .time {background: url(../images/time-icon.png) no-repeat 0 2px;}
 			.about-block .delivery, .help .delivery {background: url(../images/delivery.png) no-repeat 0 3px;}
-			.about-block .pay, .help .pay {background: url(../images/pay-icon.png) no-repeat;}
+			.help ul li {margin-top:10px;}
+            .help ul li:nth-child(1) {background: url(../images/orders.png) no-repeat 0 3px;}
+			.help ul li:nth-child(2) {background: url(../images/time-icon.png) no-repeat 0 3px;}
+			.help ul li:nth-child(3) {background: url(../images/delivery.png) no-repeat 0 3px;}
+			
+            
+            .about-block .pay, .help .pay {background: url(../images/pay-icon.png) no-repeat;}
 			.orders {background: url(../images/orders.png) no-repeat 0 2px;}
 
 .autorize {padding-bottom: 140px;}
