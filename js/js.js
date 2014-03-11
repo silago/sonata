@@ -85,7 +85,7 @@ function gettotalitems(){
                 url: '/totalitems/',
             
                 success: function(data){
-				$('.countOfItems i').html(data);
+				$('.countOfItems i').html(data+'&nbsp;');
                 }
             });
         return false;
