@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-10 01:51:26
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:13:20
          compiled from ru/plugins/topLoginForm/index.tpl */ ?>
 			
 			

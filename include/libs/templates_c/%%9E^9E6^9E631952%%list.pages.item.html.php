@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2013-07-17 13:59:33
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:47:52
          compiled from ru/modules/page/admin/list.pages.item.html */ ?>
 <?php $_from = $this->_tpl_vars['pages']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):

@@ -1,247 +1,172 @@
-<?php /* Smarty version 2.6.16, created on 2013-10-23 16:05:22
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:38:07
          compiled from ru/modules/orders/index/show.order.tpl */ ?>
-<?php echo '
-<script>
-    function discard(orderid){
-		if(confirm(\'Вы уверены, что хотите отменить заказ?\')){			
-			jQuery.ajax({
-                type: \'POST\',
-                url: \'/discardorder/\',
-				dataType: "json",                 
-                data: {orderid:orderid},
-                success: function(data){															
-					if(data.type == \'alert-success\'){						
-						jQuery(\'button#bill\').remove();
-						jQuery(\'a#discard\').remove();						
-						jQuery(\'div#buttons\').append(\'<button id="renew" class="button guest" onclick="return reneworder(\'+orderid+\');">Подтвердить заказ</button>\')
-						jQuery(\'#error\').addClass(\'alert\').addClass(data.type);
-						jQuery(\'#error\').html(data.content)
-					}else{
-						jQuery(\'#error\').addClass(\'alert\').addClass(data.type);
-						jQuery(\'#error\').html(data.content)
-					}
-					
-                }
-            });			
-		}	
-		return false;
-	}
-	
-	function reneworder(orderid){					
-			jQuery.ajax({
-                type: \'POST\',
-                url: \'/reneworder/\',
-				dataType: "json",                 
-                data: {orderid:orderid},
-                success: function(data){															
-					if(data.type == \'alert-success\'){						
-						
-						jQuery(\'button#renew\').remove();						
-						
-						jQuery(\'div#buttons\').append(\'<button id="bill" class="button guest" type="submit">Счет</button>&nbsp;&nbsp;\');
-						jQuery(\'div#buttons\').append(\'<a id="discard" style="margin-bottom:12px;" href="#" onclick="return discard(\'+orderid+\');" class="validate button reg">Отменить заказ</a>\')
-						
-						
-						jQuery(\'#error\').addClass(\'alert\').addClass(data.type);
-						jQuery(\'#error\').html(data.content)
-					}else{
-						jQuery(\'#error\').addClass(\'alert\').addClass(data.type);
-						jQuery(\'#error\').html(data.content)
-					}
-					
-                }
-            });			
-		return false;
-	}
-</script>
+<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
+smarty_core_load_plugins(array('plugins' => array(array('function', 'show_menu', 'ru/modules/orders/index/show.order.tpl', 16, false),array('modifier', 'date_format', 'ru/modules/orders/index/show.order.tpl', 70, false),)), $this); ?>
+
+<div style="margin-top:-20px; clear:left;" class="container-content">
+		<div class="aside-setting">
+					<div class="nav-aside">
+						<ul>
+							<li><a href="/cabinet">Личный кабинет</a></li>
+							<li class="active"><a href="/orderslist">Мои заказы</a></li>
+							<li><a href="/basket">Моя корзина</a></li>
+						</ul>	
+					</div>
+
+					<div class="help">
+						<span>Помощь</span>
+
+						<div class="block">
+                             <?php echo smarty_function_show_menu(array('menuid' => 7), $this);?>
+
+						<!--	<p><a class="orders" href="#">Как заказать</a></p>	
+							<p><a class="delivery" href="#">Условия доставки</a></p>
+							<p><a class="pay" href="#">Условия оплаты</a></p>	
+						-->
+                            </div>	
+					</div>
+				</div>
 
 
-
-<style>
-.showbill {background: #ff5bf2;
-background: -moz-linear-gradient(top, #ff5bf2, #cd27c0);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff5bf2), color-stop(100%,#cd27c0));
-background: -webkit-linear-gradient(top, #ff5bf2, #cd27c0);
-background: -o-linear-gradient(top, #ff5bf2, #cd27c0);
-background: -ms-linear-gradient(top, #ff5bf2, #cd27c0);
-background: linear-gradient(top, #ff5bf2, #cd27c0);
--pie-background: linear-gradient(#ff5bf2, #cd27c0);
-border-radius:5px;
-border:0px;
-color:#fff;
-font-weight:bold;
-padding:5px;
-
-}
-</style>
-
-'; ?>
+            
+				<div class="content">
 
 
+                
+                
+                <div class="content">
 
-			 <div class="your-order">
-                        <p>Ваш заказ <em>№<?php echo $this->_tpl_vars['id']; ?>
-</em> успешно сформирован</p>
-                        <br>
-                        <p> В ближайшее время с вами свяжется наш менеджер и уточнит детали вашего заказа.	 </p>
-						
-						<?php if ($this->_tpl_vars['pname'] == 'Безналичный расчет'): ?>
-						 <p> <a href="#"> 
-							 
-							 <form method="post" action="/bill/" target="_blank" id="bill">
-							 <input type="hidden" class="button_4" name="order_id" value="<?php echo $this->_tpl_vars['id']; ?>
-">
-							 <input class="button_4" type="submit" value="Счет">  </input>
-							 </form>		 </a> </p>
-                        <?php endif; ?>
-                    </div><!-- end your-order -->
-			
-			<div class="order-btn">
-                        <input  style="width:200px;" type="button" class="button_4" href="/orderslist" value="Список заказов" onclick="document.location='/orderslist';">
-            </div>
-			
-			<br>
-			<div id="error"></div>	
-			
-			
-					
-			<div style="display:none;" class="itemCart" style="float:left;margin-left:10px;margin-bottom:16px;"><a href="/orderslist/">Список заказов</a></div>
-			
-			
-			
-			<table  style="display:none;" border="0" cellspacing="0" cellpadding="0" class="prods_content cart" style="margin-left:10px; color: #888;">
-				
-					<tbody>
-					<tr>
-						<th colspan="2"><span><span>Заказ №<?php echo $this->_tpl_vars['id']; ?>
-</span></span></th>
-					</tr>
-					<tr>
-						<td align="right" style="padding-right:15px;">Вид доставки:</td>
-						<td><strong><input size="80" name="" type="text" value="<?php echo $this->_tpl_vars['sname']; ?>
-" disabled></strong></td>
-					</tr>
-					
-					<?php if ($this->_tpl_vars['sprice'] != '0.00'): ?>
-					<tr>
-						<td align="right" style="padding-right:15px;">Стоимость доставки:</td>
-						<td><strong><input size="80" name="" type="text" value="<?php echo $this->_tpl_vars['sprice']; ?>
- руб." disabled></strong></td>
-					</tr>
-					<?php endif; ?>
-					<?php if ($this->_tpl_vars['speriod'] != ''): ?>
-					<tr>
-						<td align="right" style="padding-right:15px;">Срок доставки:</td>
-						<td><strong><input size="80" name="" type="text" value="<?php echo $this->_tpl_vars['speriod']; ?>
-" disabled></strong></td>
-					</tr>
-					<?php endif; ?>					
-					<tr>
-						<td align="right" style="padding-right:15px;">Тип оплаты:</td>
-						<td><strong><input size="80" name="" type="text" value="<?php echo $this->_tpl_vars['pname']; ?>
-" disabled></strong></td>
-					</tr>
-					<tr>
-						<td align="right" style="padding-right:15px;">Город:</td>
-						<td><strong><input size="80" name="" type="text" value="<?php echo $this->_tpl_vars['tname']; ?>
-" disabled></strong></td>
-					</tr>
-					<?php $_from = $this->_tpl_vars['data']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
-?>
-					<?php if ($this->_tpl_vars['item']['showInOrder'] == 1): ?>
-					<tr>
-						<td class="key"><?php echo $this->_tpl_vars['item']['description']; ?>
-:</td>
-						<td><strong><input size="30" name="" type="text" value="<?php echo $this->_tpl_vars['item']['value']; ?>
-" disabled></strong></td>
-					</tr>
-					<?php endif; ?>
-					<?php endforeach; endif; unset($_from); ?>					
-					</tbody>
-			</table>
-			<br/>
-            <table  style="display:none;" border="0" cellspacing="0" cellpadding="0" class="prods_content cart" style="margin-left:10px; color: #888;">
-					<tbody>
-						<tr>
-							<th align="center" colspan="4">Позиции заказа</th>
-						</tr>
-						<tr>
-							<th align="center" width="50%">Наименование товара</th>
-							<th align="center">Цена</th>
-							<th align="center">Количество</th>
-							<th align="center">Итого</th>														
-						</tr>
-						<?php $_from = $this->_tpl_vars['order_data']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
-?>
-						<?php if (is_int ( $this->_tpl_vars['key'] )): ?>
-						<tr class="sectiontableentry2">
-							<td align="left" style="border-right: 1px solid #E5E5E5; border-bottom:1px solid #E5E5E5;padding:10px;">
-								<a style="color: #817A7A; text-decoration: none;" href="<?php echo $this->_tpl_vars['item']['uri']; ?>
-"><?php echo $this->_tpl_vars['item']['name']; ?>
-</a></td>
-							<td align="center" style="border-right: 1px solid #E5E5E5; border-bottom:1px solid #E5E5E5;"><?php echo $this->_tpl_vars['item']['price']; ?>
- руб.</td>
-							<td align="center" style="border-right: 1px solid #E5E5E5; border-bottom:1px solid #E5E5E5;"><?php echo $this->_tpl_vars['item']['quantity']; ?>
+					<div class="product">
+						<a class="back" href="/orderlist/"><p>Назад к списку</p></a>
+						<h2>Заказ № <?php echo $this->_tpl_vars['id']; ?>
+</h2>	
+
+						<div class="cont-block">
+							<div class="my-order-list">
+								<table>
+									<tr class="title">
+										<td class="num">Номер</td>
+										<td class="status">Статус</td>
+										<td class="date">Дата</td>
+										<td class="delive">Доставка</td>
+										<td class="pay">Оплата</td>
+										<td class="summ">Сумма</td>
+									</tr>
+
+									<tr>
+										<td class="num"><?php echo $this->_tpl_vars['id']; ?>
 </td>
-							<td align="center" style="border-bottom:1px solid #E5E5E5;"><?php echo $this->_tpl_vars['item']['total']; ?>
+										<td class="status"><span>
+                                        
+                            	<?php if ($this->_tpl_vars['state'] == 0): ?>
+									В обработке
+								<?php elseif ($this->_tpl_vars['state'] == 1): ?>
+									Ожидает оплаты
+								<?php elseif ($this->_tpl_vars['state'] == 2): ?>
+										Оплачен
+								<?php elseif ($this->_tpl_vars['state'] == 3): ?>
+										Доставка
+								<?php elseif ($this->_tpl_vars['state'] == 4): ?>
+										Выполнен
+								<?php elseif ($this->_tpl_vars['state'] == 5): ?>
+										Отменен
+								<?php endif; ?>
+    
+                                        
+                                        </span></td>
+							<td class="date"><?php echo ((is_array($_tmp=$this->_tpl_vars['date'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%d.%m.%Y") : smarty_modifier_date_format($_tmp, "%d.%m.%Y")); ?>
+</td>
+										<td class="delive">
+                                        
+                                <?php if ($this->_tpl_vars['data']['sname'] == 1): ?> Курьером <?php else: ?> Самовывоз <?php endif; ?>
+                                        </td>
+										<td class="pay">
+                                        
+                            <?php if ($this->_tpl_vars['data']['pname'] == 'cashpayment'): ?> Наличными <?php else: ?> Банкрвской картой <?php endif; ?>
+                                        </td>
+										<td class="summ"><?php echo $this->_tpl_vars['order_data']['total']; ?>
  руб.</td>
-						</tr>
-						<?php endif; ?>
-						<?php endforeach; endif; unset($_from); ?>
-						<?php if ($this->_tpl_vars['order_data']['sprice'] != '0.00'): ?>
-						<tr class="sectiontableentry2">
-							<td style="border-right: 1px solid #E5E5E5; border-bottom:1px solid #E5E5E5;padding:10px;">Доставка</td>
-							<td align="center" style="border-right: 1px solid #E5E5E5; border-bottom:1px solid #E5E5E5"><?php echo $this->_tpl_vars['order_data']['sprice']; ?>
- руб.</td>
-							<td align="center" style="border-right: 1px solid #E5E5E5; border-bottom:1px solid #E5E5E5">1</td>
-							<td align="center" style="border-bottom:1px solid #E5E5E5"><?php echo $this->_tpl_vars['order_data']['sprice']; ?>
- руб.</td>
-						</tr>
-						<?php endif; ?>
-						
-						<?php if ($this->_tpl_vars['order_data']['sprice'] != '0.00'): ?>
-						<tr class="sectiontableentry2">
-							<td colspan="2" align="right" style="border-right: 1px solid #E5E5E5;padding-right:10px;">Итого:</td>
-							<td align="center" colspan="2"><?php echo $this->_tpl_vars['order_data']['cost']; ?>
- руб.</td>
-						</tr>
-						<?php else: ?>
-						<tr class="sectiontableentry2">
-							<td colspan="2" align="right" style="border-right: 1px solid #E5E5E5;padding-right:10px;">Итого:</td>
-							<td align="center" colspan="2"><?php echo $this->_tpl_vars['order_data']['total']; ?>
- руб.</td>
-						</tr>
-						<?php endif; ?>
-					</tbody>	
-			</table>
-			
-<br/>
-<form  style="display:none;" method="post" action="/bill/" target="_blank" id="bill">
-	<input type="hidden" name="order_id" value="<?php echo $this->_tpl_vars['id']; ?>
-">
-	
-	<div id="buttons">
-		<?php if ($this->_tpl_vars['state'] != 5): ?>
-			<div class="itemCart" style="float:left">
-				<a id="bill" onclick="$('form#bill').submit()" href="#"><?php echo $this->_tpl_vars['action']; ?>
+									</tr>
+								</table>	
+							</div>
+						</div>
+
+						<div class="info-list">
+							<div class="box">
+								<p><strong>Имя</strong> <span><?php echo $this->_tpl_vars['data']['order_name']; ?>
+</span></p>
+
+								<p><strong>Телефон</strong> <span> <?php echo $this->_tpl_vars['data']['order_phone']; ?>
+</span></p>
+
+								<p><strong>e-mail</strong> <span><?php echo $this->_tpl_vars['data']['email']; ?>
+</span></p>	
+							</div>
+
+							<div class="box">
+								<p><strong class="a1">Адрес:</strong> <span>
+<?php echo $this->_tpl_vars['data']['order_street']; ?>
+ <?php echo $this->_tpl_vars['data']['order_house']; ?>
+ <?php echo $this->_tpl_vars['data']['order_office']; ?>
+
+                                </span></p>
+
+								<p><strong class="a1">Дата дотавки:</strong> <span><?php echo $this->_tpl_vars['data']['order_date']; ?>
+</span></p>
+
+								<p><strong class="a1">Время дотавки:</strong> <span>в <?php echo $this->_tpl_vars['data']['order_time1']; ?>
+:<?php echo $this->_tpl_vars['data']['order_time2']; ?>
+</span></p>	
+							</div>	
+						</div>
+
+						<div class="structure">
+							<h3>Состав заказа</h3>	
+
+							<div class="structure-box">
+								<div class="basket-cont">
+						<table>
+							<tr class="title">
+								<!-- <td class="imgs"></td> -->
+								<td class="imgs" style="width:0px; padding-right:0px;"></td>
+								<td class="name">Название</td>
+								<td class="ed">Цена за ед.</td>
+								<td class="kv">Кол-во</td>
+								<td class="summ">Сумма</td>
+							</tr>
+
+						        <?php $_from = $this->_tpl_vars['order_data']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['item']):
+?>
+							    <?php if (isset ( $this->_tpl_vars['item']['name'] )): ?>
+                                
+                                <tr>
+                                <td class="imgs" style="width:0px; padding-right:0px;"> </td>
+								<!--
+                                 <td class="imgs"><a href="#"><img src="images/img-table.jpg" height="67" width="67" alt="" /></a></td>
+								-->
+                                 <td class="name">
+									<a href="#"><?php echo $this->_tpl_vars['item']['name']; ?>
 </a>
-			</div>			
-		<?php endif; ?> 
-	
-		<?php if ($this->_tpl_vars['state'] == 0): ?>
-			<div class="itemCart" style="float:left">
-				<a id="discard" onclick='return discard("<?php echo $this->_tpl_vars['id']; ?>
-");' href="#">Отменить заказ</a>
-			</div>				
-		<?php endif; ?>
-	
-		<?php if ($this->_tpl_vars['state'] == 5): ?>
-			<button id="renew" class="button guest" onclick='return reneworder("<?php echo $this->_tpl_vars['id']; ?>
-");'>Подтвердить заказ</button>
-		<?php endif; ?> 
-	</div>	
-</form>
-<div style="clear:left;"></div>
-<div  style="display:none;" class="itemCart" style="float:left;margin-left:14px;margin-top:18px;margin-bottom:16px;"><a href="/orderslist/">Список заказов</a></div>
+								</td>
+								<td class="ed"><?php echo $this->_tpl_vars['item']['price']; ?>
+ руб.</td>
+								<td class="kv"><?php echo $this->_tpl_vars['item']['quantity']; ?>
+</td>
+								<td class="summ"><span><?php echo $this->_tpl_vars['item']['total']; ?>
+ руб.</span></td>
+							</tr>
+<?php endif; ?>
+                            <?php endforeach; endif; unset($_from); ?>
+						</table>
+					</div>	
+							</div>
+						</div>
+					</div>
+				</div>	
+                
+                
+                
+                </div>
+</div>
+</div>

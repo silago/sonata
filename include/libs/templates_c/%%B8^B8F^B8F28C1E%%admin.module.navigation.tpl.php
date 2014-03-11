@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2013-08-07 12:47:40
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:47:52
          compiled from ru/modules/admin/admin.module.navigation.tpl */ ?>
 <script>
 	$("a[href $= 'listItems.php']").parent().parent().append('<li><a href="/admin/tags/">Бренды</a></li>');

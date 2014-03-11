@@ -1,3 +1,4 @@
+
 <div style="margin-top:-20px; clear:left;" class="container-content">
 		<div class="aside-setting">
 					<div class="nav-aside">
@@ -64,9 +65,7 @@
                                 {if $item.sname == 1} Курьером {else} Самовывоз {/if}
                             </td>
                             
-                            <td class="pay"> 
-                            {if $item.data.pname == 'cashpayment'} Наличными {else} Банкрвской картой {/if}
-                            </td>
+                            <td class="pay">{$item.order_data.cost} руб.</td>
                             <td class="summ">{$item.order_data.total} руб.</td>
 															
 								

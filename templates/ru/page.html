@@ -2,11 +2,17 @@
     {block name=content}
     	<div class="box-container">
 				<h2>{$pageTitle}</h2>
-					<div class="serv-container">
-					{foreach from=$child item=item}
+					
+                <div class="serv-container">
+				
+         			<div class="aut-box">
+						{$content}
+					</div>           
+                    {foreach from=$child item=item}
                     
                     <div class="sr-box">
-							<table>
+							
+                            <table>
 								<tr>
 									<td><a href="/{$item.uri}.html"><img src="/userfiles/{$item.image}" height="85" width="73" alt="" /></a></td>
 									<td>

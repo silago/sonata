@@ -110,34 +110,51 @@
 <div id="footer">
 	<div class="sub-info">
 		<div class="sub-box">
-			<span>Способы оплаты:</span>	
+		
+        {show_banner section=bottom1}
+        <!--
+        <span>Способы оплаты:</span>	
 			<p><a href="#">Наличный расчет</a></p>
 			<p><a href="#">Безналичный расчет</a></p>
-		</div>
-
-		<div class="sub-box">
-			<span>Мы принимаем:</span>	
+		-->
+            </div>
+        
+		
+        <div class="sub-box">
+        {show_banner section=bottom2}
+		<!--
+        <span>Мы принимаем:</span>	
 			<a href="#"><img src="/images/visa.png" height="34" width="58" alt="" /></a>
 			<a href="#"><img src="/images/mastercard.png" height="34" width="58" alt="" /></a>
-		</div>	
+		-->
+            </div>	
+        
 
-		<div class="sub-box">
-			<span>Адрес и почта:</span>	
+		        <div class="sub-box">
+        {show_banner section=bottom3}
+		<!--
+            <span>Адрес и почта:</span>	
 			<p class="address">г. Иркутск, ул. Декабрьских событий 50/1</p>
 			<p class="mail"><a href="mailto:soneta@sonetarf.ru">soneta@sonetarf.ru</a></p>
-		</div>
+		-->
+            </div>
+        
 		<div class="clear"></div>
 
 		<p class="copyright">© Copyright ООО «Сонета» 1992-2014 Все права защищены.</p>
 	</div>
 
 	<div class="sub-phone">
-		<span>Многоканльный:</span>	
+		
+                        {show_banner section=bottom4}
+        <!--
+        <span>Многоканльный:</span>	
 		<p><strong>8 (3952)</strong> 505-818</p>
 
 		<span>Факс / бухгалтерия:</span>	
 		<p><strong>8 (3952)</strong> 30-19-02</p>
-	</div>
+	    -->
+        </div>
 </div>
 
 </body>

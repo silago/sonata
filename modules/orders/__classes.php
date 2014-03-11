@@ -702,14 +702,16 @@ class Orders
 			message("Для просмотра списка заказов необходимо авторизоваться", "", "login", "alert-error");		
 		}else{
 			
-			$sql->query("SELECT `id`, `shipment_id`, `state`, `order_data`, `date`, `payment_id` FROM `shop_orders` WHERE `user_id` = '".Security::$userData['id']."' order by `id` DESC");
+			$sql->query("SELECT `id`, `shipment_id`, `state`, `data`, `order_data`, `date`, `payment_id` FROM `shop_orders` WHERE `user_id` = '".Security::$userData['id']."' order by `id` DESC");
 			while($sql->next_row_assoc()){				
 				$orders[] = $sql->result;				
-			}				
+            
+            }				
 			
 			if (isset($orders))
 			foreach($orders as $key => $value){
 				$orders[$key]['order_data'] = json_decode($orders[$key]['order_data'], true);
+				$orders[$key]['data'] = json_decode($orders[$key]['data'], true);
 				$orders[$key]['button'] = $this->getPaymentButton($orders[$key]['payment_id']);
 			}						
 			if (isset($orders))

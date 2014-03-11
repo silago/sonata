@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-02-24 17:35:40
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:15:15
          compiled from /home/silago/work/sonata/templates/ru/plugins/showMenu/index.tpl */ ?>
 <?php if ($this->_tpl_vars['tree']): ?>
 <ul style=""  class="main-menu">

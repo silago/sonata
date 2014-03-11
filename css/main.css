@@ -26,7 +26,8 @@ q:before, q:after, blockquote:before, blockquote:after { content:""; }
 /* css begin */
 html, body { height:100%; }
 body {
-	font-family: 'open_sansregular';
+
+    font-family: 'open_sansregular';
 	font-size: 14px;
 	color: #000;
 	background: #fff;
@@ -93,7 +94,7 @@ body {
    .menu ul li a {padding: 17px 26px 18px 25px;}
 }
 
-.bg {background: url(../images/bg.png); box-shadow: inset 5px 0 5px #5f91cb; padding: 30px 0; margin-top: -30px;}
+.bg {background: url(../images/bg.jpg); box-shadow: inset 5px 0 5px #5f91cb; padding: 30px 0; margin-top: -30px;}
 	.container {overflow: hidden;}
 		.service-box {margin-left: -5px;}
 			.service-box h2, .news-container h2 {padding: 30px 0 0 5px; font-size: 24px; color: #fff;}

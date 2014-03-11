@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-11 00:00:15
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:49:06
          compiled from ru/modules/orders/index/checkout.tpl */ ?>
 <?php echo '
 <script>
@@ -68,7 +68,7 @@
 
 							<div class="s1 block">
 								<span>Улица <strong>*</strong></span>
-								<input type="text" placeholder="" valude="<?php echo $this->_tpl_vars['userdata']['data']['order']['street']; ?>
+								<input type="text" placeholder="" value="<?php echo $this->_tpl_vars['userdata']['data']['order']['street']; ?>
 " name="order_street" />	
 							</div>
 
@@ -76,17 +76,20 @@
 								<div class="bl-box">
 											<div class="adr">
 												<span>Дом </span>
-												<input type="text" name="order_house" placeholder="" class="c1" />	
+												<input type="text" value="<?php echo $this->_tpl_vars['userdata']['data']['order']['house']; ?>
+" name="order_house" placeholder="" class="c1" />	
 											</div>
 
 											<div class="adr">
 												<span>Корпус</span>
-												<input type="text" name="order_corp" placeholder="" class="c2" />	
+												<input type="text" value="<?php echo $this->_tpl_vars['userdata']['data']['order']['corp']; ?>
+" name="order_corp" placeholder="" class="c2" />	
 											</div>	
 
 											<div class="adr">
 												<span>Квартира/офис</span>
-												<input type="text" placeholder="" name="order_office" class="c3" />	
+												<input type="text" placeholder="" value="<?php echo $this->_tpl_vars['userdata']['data']['order']['office']; ?>
+" name="order_office" class="c3" />	
 											</div>
 										</div>	
 							</div>

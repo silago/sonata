@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2013-10-23 14:28:59
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:49:05
          compiled from ru/modules/orders/index/checkout.fiz.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'ru/modules/orders/index/checkout.fiz.tpl', 7, false),)), $this); ?>

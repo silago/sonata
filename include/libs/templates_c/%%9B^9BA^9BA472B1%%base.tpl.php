@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-07 20:27:57
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:49:06
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 50, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 90, false),array('block', 'block', 'ru/base.tpl', 96, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 50, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 90, false),array('function', 'show_banner', 'ru/base.tpl', 114, false),array('block', 'block', 'ru/base.tpl', 96, false),)), $this); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -118,34 +118,55 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 <div id="footer">
 	<div class="sub-info">
 		<div class="sub-box">
-			<span>Способы оплаты:</span>	
+		
+        <?php echo smarty_function_show_banner(array('section' => 'bottom1'), $this);?>
+
+        <!--
+        <span>Способы оплаты:</span>	
 			<p><a href="#">Наличный расчет</a></p>
 			<p><a href="#">Безналичный расчет</a></p>
-		</div>
+		-->
+            </div>
+        
+		
+        <div class="sub-box">
+        <?php echo smarty_function_show_banner(array('section' => 'bottom2'), $this);?>
 
-		<div class="sub-box">
-			<span>Мы принимаем:</span>	
+		<!--
+        <span>Мы принимаем:</span>	
 			<a href="#"><img src="/images/visa.png" height="34" width="58" alt="" /></a>
 			<a href="#"><img src="/images/mastercard.png" height="34" width="58" alt="" /></a>
-		</div>	
+		-->
+            </div>	
+        
 
-		<div class="sub-box">
-			<span>Адрес и почта:</span>	
+		        <div class="sub-box">
+        <?php echo smarty_function_show_banner(array('section' => 'bottom3'), $this);?>
+
+		<!--
+            <span>Адрес и почта:</span>	
 			<p class="address">г. Иркутск, ул. Декабрьских событий 50/1</p>
 			<p class="mail"><a href="mailto:soneta@sonetarf.ru">soneta@sonetarf.ru</a></p>
-		</div>
+		-->
+            </div>
+        
 		<div class="clear"></div>
 
 		<p class="copyright">© Copyright ООО «Сонета» 1992-2014 Все права защищены.</p>
 	</div>
 
 	<div class="sub-phone">
-		<span>Многоканльный:</span>	
+		
+                        <?php echo smarty_function_show_banner(array('section' => 'bottom4'), $this);?>
+
+        <!--
+        <span>Многоканльный:</span>	
 		<p><strong>8 (3952)</strong> 505-818</p>
 
 		<span>Факс / бухгалтерия:</span>	
 		<p><strong>8 (3952)</strong> 30-19-02</p>
-	</div>
+	    -->
+        </div>
 </div>
 
 </body>
