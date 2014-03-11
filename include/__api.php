@@ -350,6 +350,9 @@ if (isset ($API['groupImage'])) {
 //die();
 
 $smarty->assign('content',$API['content']);
+$smarty->assign('pageTitle',@$API['pageTitle']);
+$smarty->assign('md',@$API['md']);
+$smarty->assign('mk',$API['md']);
 echo $smarty->fetch(api::setTemplate($_template));
 
 

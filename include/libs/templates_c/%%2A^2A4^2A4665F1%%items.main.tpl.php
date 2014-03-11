@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-07 20:32:48
+<?php /* Smarty version 2.6.16, created on 2014-03-11 14:50:54
          compiled from ru/modules/catalog/items.main.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'show_banner', 'ru/modules/catalog/items.main.tpl', 15, false),)), $this); ?>

@@ -146,8 +146,10 @@ if (!empty($mk)) $API['mk'] = $mk;
 @$API['mk'] = (empty($mk) ? $catalog->data['mk'] : $API['mk']);
 @$API['pageTitle'] 	= $catalog->data['pageTitle'];
 
+
 $smarty->assign('navigation',$API['navigation']);
 
 
 
 ?>
+

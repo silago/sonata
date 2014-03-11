@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-11 15:49:06
+<?php /* Smarty version 2.6.16, created on 2014-03-11 14:50:54
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 50, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 90, false),array('function', 'show_banner', 'ru/base.tpl', 114, false),array('block', 'block', 'ru/base.tpl', 96, false),)), $this); ?>
@@ -7,7 +7,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>title</title>
+<title><?php echo $this->_tpl_vars['pageTitle']; ?>
+</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css" />
 <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>

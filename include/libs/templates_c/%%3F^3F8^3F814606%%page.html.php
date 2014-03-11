@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-03 17:45:50
+<?php /* Smarty version 2.6.16, created on 2014-03-11 14:50:58
          compiled from ru/page.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru/page.html', 1, false),array('block', 'block', 'ru/page.html', 2, false),)), $this); ?>
@@ -7,13 +7,20 @@ smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru/
     	<div class="box-container">
 				<h2><?php echo $this->_tpl_vars['pageTitle']; ?>
 </h2>
-					<div class="serv-container">
-					<?php $_from = $this->_tpl_vars['child']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+					
+                <div class="serv-container">
+				
+         			<div class="aut-box">
+						<?php echo $this->_tpl_vars['content']; ?>
+
+					</div>           
+                    <?php $_from = $this->_tpl_vars['child']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['item']):
 ?>
                     
                     <div class="sr-box">
-							<table>
+							
+                            <table>
 								<tr>
 									<td><a href="/<?php echo $this->_tpl_vars['item']['uri']; ?>
 .html"><img src="/userfiles/<?php echo $this->_tpl_vars['item']['image']; ?>
