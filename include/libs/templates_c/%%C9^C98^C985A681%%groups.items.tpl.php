@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-10 06:14:00
+<?php /* Smarty version 2.6.16, created on 2014-03-11 15:12:51
          compiled from ru/modules/catalog/groups.items.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'ceil', 'ru/modules/catalog/groups.items.tpl', 34, false),)), $this); ?>

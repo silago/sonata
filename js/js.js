@@ -162,20 +162,23 @@ function registergo(id){//alert(1);
         {	
 			v = $('.q-'+id).val();
             v = parseInt(v);
-			//v = v-1;
-		//	alert(v);
-			
-			//	v = 1;
 			if (v>1)
 			{
 			$(obj).parent().children('input').val(v-1);
 			if (!changeQty(id))		
 				$(obj).parent().children('input').val(v);
 			}
-			
-			
+            recount(obj,v-1);
 		}
 		
+        function recount(obj,q)
+            {
+            
+			var ed = parseFloat($(obj).closest('tr').find('.ed').html());
+            var val = ed*q;
+            $(obj).closest('tr').find('.summ').find('span').html(val+' руб.');
+            }
+
 		function plus(obj,id)
         {   
             console.log(id);
@@ -186,7 +189,8 @@ function registergo(id){//alert(1);
 			$(obj).parent().children('input').val(v+1);
 			if (!changeQty(id))
 				$(obj).parent().children('input').val(v);
-			
+            recount(obj,v+1);
+
 		}       
 function changeQty(id){
 	//alert('s');

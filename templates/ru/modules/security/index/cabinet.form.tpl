@@ -65,7 +65,7 @@
 
 									<div class="block">
 										<span>Имя</span>	
-										<input value="{$name} {$surname} {$patronymic}" name="name" type="text"/>
+										<input value="{$surname} {$name} {$patronymic}" name="name" type="text"/>
 									</div>
 
 									<div class="block">
