@@ -176,7 +176,7 @@ function registergo(id){//alert(1);
             
 			var ed = parseFloat($(obj).closest('tr').find('.ed').html());
             var val = ed*q;
-            $(obj).closest('tr').find('.summ').find('span').html(val+' руб.');
+            $(obj).closest('tr').find('.summ').find('span').html(val.toFixed(2)+' руб.');
             }
 
 		function plus(obj,id)
