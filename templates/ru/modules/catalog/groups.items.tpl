@@ -1,7 +1,8 @@
 					<div class="product">
 						<h2>{$pageTitle}</h2>	
-						{if $p.total/$p.per_page>1}
 						<div class="sorting-box">
+
+						{if $p.total/$p.per_page>1}
 							<ul>
                                 {if $p.page<3}
 <li {if $pagination.page == 1} class="active"{/if}><a href="{$uri}?page=1&per_page={$p.per_page}&order_by={$p.order_by}&order_dir={$p.order_dir}">1</a></li>
@@ -35,6 +36,7 @@
 							    {/if}
                             </ul>
 
+                        {/if}
 							<p>Сортировать по: <a href="/{$uri}?order_by=value&order_dir={if $p.order_dir==''}DESC{/if}">цене</a>
                             <a href="/{$uri}?order_by=name&order_dir={if $p.order_dir==''}DESC{/if}">алфавиту</a></p>	
 
@@ -49,7 +51,7 @@
 								 </select>
 							</div>
 						</div>
-                        {/if}
+                        {if $items}
                         {foreach from=$items item=item key=key} 
 						<div class="pr-box">
 							<a href="/{$item.uri}">
@@ -69,12 +71,16 @@
 							</div>	
 						</div>
                         {/foreach}
-                    
+                        {else}
+                        <div class="pr-box">
+                            <p> Данный раздел находится в стадии наполнения </p>
+                        </div>
+                        {/if}
                         
-                        
-                    	{if $p.total/$p.per_page>1}
 						<div class="sorting-box">
-							<ul>
+							
+                    	{if $p.total/$p.per_page>1}
+                            <ul>
                                 {if $p.page<3}
 <li {if $pagination.page == 1} class="active"{/if}><a href="{$uri}?page=1&per_page={$p.per_page}&order_by={$p.order_by}">1</a></li>
 {if $p.total/$p.per_page > 1}
@@ -107,6 +113,7 @@
 							    {/if}
                             </ul>
 
+                        {/if}
 							<p>Сортировать по: <a href="/{$uri}?order_by=value">цене</a>
                             <a href="/{$uri}?order_by=name">алфавиту</a></p>	
 
@@ -121,6 +128,5 @@
 								 </select>
 							</div>
 						</div>
-                        {/if}
                          
                     </div>
