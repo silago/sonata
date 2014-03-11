@@ -349,6 +349,9 @@ if (isset ($API['groupImage'])) {
 //echo var_dump(api::setTemplate($_template));
 //die();
 
+if (empty(@$API['pageTitle']))
+                        $API['pageTitle']='Сонета';
+
 $smarty->assign('content',$API['content']);
 $smarty->assign('pageTitle',@$API['pageTitle']);
 $smarty->assign('md',@$API['md']);
