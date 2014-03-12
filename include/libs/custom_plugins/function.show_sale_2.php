@@ -29,7 +29,7 @@ function smarty_function_show_sale_2_html($items)
 
 								<a class="title" href="/'.$row['uri'].'">'.$row['name'].'</a>
 								<p>'.$row['value'].' руб.</p>
-							<a href="#" onclick="addToChart('.$row['id'].',1); return false;"
+							<a href="#" onclick="addToChart('.$row['id'].',1); return false;"><span>В корзину</span></a>
 						</div>';
 				endforeach;
 				return $html;
