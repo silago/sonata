@@ -11,5 +11,11 @@
 
     </div>
 {/foreach}
-
 {show_banner section=maingoods}
+
+<div>
+<h2>Распродажа товаров</h2>
+	<div class="ms">
+{show_sale_2}
+</div>
+</div>

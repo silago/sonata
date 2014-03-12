@@ -87,7 +87,7 @@ switch ($ret['table']) {
         include_once("modules/page/__classes.php"); 
         $pages = new Page();
         $catalog->data['content']=$catalog->get_groups(false, array('parent_group_id'=>'0'));
-        $catalog->data['content'].=$pages->get_pages(false, array('onmain'=>'1'));
+        //$catalog->data['content'].=$pages->get_pages(false, array('onmain'=>'1'));
    $_template = "index.html";
 
     break;
