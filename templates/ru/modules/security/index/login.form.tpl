@@ -82,7 +82,7 @@
 
 							<div class="ur block">
 								<span>Название органиции</span>
-								<input name="data[organizaion_name]" type="text" placeholder="" />	
+								<input name="data[organization_name]" type="text" placeholder="" />	
 							</div>
 
 							<div  class="ur block">
