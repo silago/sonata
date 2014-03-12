@@ -2,3 +2,5 @@ __config.php
 include/__config.php
 include/libs/template_c/*
 *.sw*
+router.txt
+cache/router.txt
