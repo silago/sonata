@@ -125,16 +125,16 @@ class SecurityModule
 				if (!isset($_GET['token']))
 				{	#echo '1';
 					
-                    $sql->query('select * from shop_shop where email="'.$_POST['email'].'"',true);
+                    $sql->query('select * from shop_users where email="'.$_POST['email'].'"',true);
                     if ($sql->result==false)
                     {
                     	$this->pageTitle = 'Персональная информация';
-                        $this->content='Пользователь с данным email не найден';
+                        $this->content="<div class='box-cont'><div style='padding:50px;'><h1>Пользователь с данным email не найден'</h1></div></div>";
                         return false;
                     }
 					
 					$htmlBody = " для востановления пароля перейдите по  <a href='".$this->appName."/forgotpass?token=".md5(md5($salt).md5($_POST['email']))."&mail=".$_POST['email']."&url=".urlencode($_SESSION['HTTP_REFERER'])."'> Cсылке </a>";	
-					$subject = 'Востановление пароля в интернет магазине "Универсам «Удача»"';		
+					$subject = 'Востановление пароля в интернет магазине "Универсам «Сонета»"';		
 					$sub = "=?UTF-8?B?".base64_encode($subject)."?=";
 					$from_text = 'Администрация интернет-магазина "'.$this->appName.'"';		
 					$headers = "Content-Type: text/html; charset = \"UTF-8\";\n";		
@@ -516,19 +516,19 @@ class SecurityModule
 
                 $_SESSION['sec_id'] = $userId;
                 
-                $sql->query("DELETE FROM `shop_basket` WHERE `user_id` = '{$userId}'");
+                #$sql->query("DELETE FROM `shop_basket` WHERE `user_id` = '{$userId}'");
 
                 
 
                 if(!empty($_SESSION['basket'])){
                     $sql->query("delete FROM `shop_basket` WHERE `user_id` = '".$userId ."'");
                     foreach($_SESSION['basket'] as $key => $value){
-                        $sql->query("SELECT `quantity` as 'quantity' FROM `shop_basket` WHERE `user_id` = '".$userId ."' AND `item_id` = '".$_SESSION['basket'][$key]['item_id']."'", true);
+                        #$sql->query("SELECT `quantity` as 'quantity' FROM `shop_basket` WHERE `user_id` = '".$userId ."' AND `item_id` = '".$_SESSION['basket'][$key]['item_id']."'", true);
 
-                        if($sql->num_rows() > 0){
-                          $quantity = $sql->result['quantity'] + $_SESSION['basket'][$key]['quantity'];
-                          $sql->query("UPDATE `shop_basket` SET `quantity` = '".$quantity."' WHERE `user_id` = '".$userId ."' AND `item_id` = '".$_SESSION['basket'][$key]['item_id']."'");
-                        }else{
+                        #if($sql->num_rows() > 0){
+                        #  $quantity = $sql->result['quantity'] + $_SESSION['basket'][$key]['quantity'];
+                        #  $sql->query("UPDATE `shop_basket` SET `quantity` = '".$quantity."' WHERE `user_id` = '".$userId ."' AND `item_id` = '".$_SESSION['basket'][$key]['item_id']."'");
+                        #}else{
                           $sql->query("INSERT INTO `shop_basket` (
                                                                     `item_id`,
                                                                     `user_id`,
@@ -554,7 +554,7 @@ class SecurityModule
                                                                 '".$_SESSION['basket'][$key]['is_new']."',
                                                                 '".$_SESSION['basket'][$key]['uri']."',
                                                                 '".$_SESSION['basket'][$key]['thumb']."')");
-                        }
+                        #}
                     }
                 unset($_SESSION['basket']);
                 }

@@ -116,7 +116,7 @@ class fb {
                             if (empty($postArray['email']))    $error='email';   			
                             if (empty($postArray['phone']))    $error='phone';                  		                  
                             if (empty($postArray['cname']))    $error='cname';       
-                            
+                                          
                             $cname = $_POST['cname'];
                             $from = 'admin';
 
@@ -140,15 +140,16 @@ class fb {
         {
                             $template = clone $smarty;
                             $template->assign('error',$error);
+                            $template->assign('post',$_POST);
                             $this->data['content'] = $template->fetch(api::setTemplate('modules/fb/index.form.body.html'));		
                             return false; 
         }
 
-
-        foreach($postArray as $row):
+            
+        foreach($postArray as $key=>$row):
             $message.="\r\n";
             $message.=$key.': ';
-            $html.=(gettype($row)=='array') ? implode(',',$row) : $row;
+            @$html.=(gettype($row)=='array') ? implode(',',$row) : $row;
         endforeach;
 
 		$header  = "From: ".$from."\n";
@@ -164,7 +165,11 @@ class fb {
 		foreach ($this->toArray as $row)
 			mail($row, "Письмо с сайта ".$from, $cname."\n".$message.' '.$email, $header);
         
-    	$this->data['content'] = "Письмо успешно отправлено";		
+        $this->data['content'] = "<div class='box-cont'><div style='padding:50px;'><h1>
+            Ваша заявка успешно отправлена.
+            </h1>
+            В ближайшее время с Вами встретится наш менеджер, для уточнения деталей заказа.
+            </div></div>";		
 			#return "Письмо успешно отправлено";
 
 		#message($this->lang['ok'], $this->lang['okDesc'], "index.php");

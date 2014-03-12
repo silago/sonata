@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-12 17:56:45
+<?php /* Smarty version 2.6.16, created on 2014-03-12 18:36:36
          compiled from ru/modules/fb/index.form.body.html */ ?>
         <?php echo '
         <script type="text/javascript">
@@ -26,22 +26,26 @@
 							<h3>Основные данные</h3>
 							<div class="block">
 								<span>Имя <strong>*</strong></span>
-								<input  name="cname" type="text" placeholder="" />	
+                                <input  name="cname" value="<?php echo $this->_tpl_vars['post']['cname']; ?>
+" type="text" placeholder="" />	
 							</div>	
 
 							<div class="block">
 								<span>Телефон <strong>*</strong></span>
-								<input name="phone" type="text" placeholder="" />	
+								<input name="phone" value="<?php echo $this->_tpl_vars['post']['phone']; ?>
+" type="text" placeholder="" />	
 							</div>
 
 							<div class="block">
 								<span>E-Mail <strong>*</strong></span>
-								<input name="email" type="text" placeholder="" class="" />	
+								<input name="email" value="<?php echo $this->_tpl_vars['post']['email']; ?>
+" type="text" placeholder="" class="" />	
 							</div>
 
 							<div class="block">
 								<span>Площадь объекта <strong>*</strong></span>
-								<input name="Площадь" type="text" placeholder="" />	
+								<input name="Площадь" value="<?php echo $this->_tpl_vars['post']['cname']; ?>
+" type="text" placeholder="" />	
 							</div>
 						</div>
 
