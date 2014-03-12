@@ -4,8 +4,14 @@
 $('document').ready( function()
 {
     gettotalitems();
-	if($('.ms').html().replace("\n",'').replace(" ","").length<4)
+    if ($('.ms').html()!=undefined)
+	if( $('.ms').html().replace("\n",'').replace(" ","").length<4)
 		$('.ms').parent().hide();
+		
+	$('#datepicker').click(function()
+	{
+		$(this).parent().find('img').click();
+	});
 
     $('ul.main-menu li').not('.active').children('ul').hide();
     url = window.location.href.toString().split('?')[0].split(window.location.host)[1];

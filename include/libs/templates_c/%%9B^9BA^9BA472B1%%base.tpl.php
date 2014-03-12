@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-12 19:34:56
+<?php /* Smarty version 2.6.16, created on 2014-03-12 23:59:19
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 51, false),array('function', 'show_menu', 'ru/base.tpl', 92, false),array('function', 'show_banner', 'ru/base.tpl', 116, false),array('block', 'block', 'ru/base.tpl', 98, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 74, false),array('function', 'show_menu', 'ru/base.tpl', 115, false),array('function', 'show_banner', 'ru/base.tpl', 139, false),array('block', 'block', 'ru/base.tpl', 121, false),)), $this); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,8 +31,31 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 
 
 <?php echo '
-<script>
+<script type="text/javascript">
   $(function() {
+	  $.datepicker.regional[\'ru\'] = { 
+closeText: \'Закрыть\', 
+prevText: \'&#x3c;Пред\', 
+nextText: \'След&#x3e;\', 
+currentText: \'Сегодня\', 
+monthNames: [\'Январь\',\'Февраль\',\'Март\',\'Апрель\',\'Май\',\'Июнь\', 
+\'Июль\',\'Август\',\'Сентябрь\',\'Октябрь\',\'Ноябрь\',\'Декабрь\'], 
+monthNamesShort: [\'Янв\',\'Фев\',\'Мар\',\'Апр\',\'Май\',\'Июн\', 
+\'Июл\',\'Авг\',\'Сен\',\'Окт\',\'Ноя\',\'Дек\'], 
+dayNames: [\'воскресенье\',\'понедельник\',\'вторник\',\'среда\',\'четверг\',\'пятница\',\'суббота\'], 
+dayNamesShort: [\'вск\',\'пнд\',\'втр\',\'срд\',\'чтв\',\'птн\',\'сбт\'], 
+dayNamesMin: [\'Вс\',\'Пн\',\'Вт\',\'Ср\',\'Чт\',\'Пт\',\'Сб\'], 
+dateFormat: \'dd.mm.yy\', 
+firstDay: 1, 
+isRTL: false 
+}; 
+
+$.datepicker.setDefaults($.datepicker.regional[\'ru\']); 
+	  
+	  
+	  
+	  
+	  
     $(\'.fancybox\').fancybox();
 
     $( "#datepicker" ).datepicker({

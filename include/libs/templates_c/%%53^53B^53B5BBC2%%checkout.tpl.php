@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-12 03:37:03
+<?php /* Smarty version 2.6.16, created on 2014-03-12 23:50:37
          compiled from ru/modules/orders/index/checkout.tpl */ ?>
 <?php echo '
 <script>
@@ -11,8 +11,7 @@
                 data: {form:form},
                 success: function(data){					
 					if(data.orderid && data.orderid.length > 0){
-                        alert(\'ok\');
-						//document.location = \'/order?order_id=\'+data.orderid;
+						document.location = \'/order?order_id=\'+data.orderid;
 						jQuery(elem).find(\'button[type="submit"]\').attr(\'disabled\', \'disabled\');
 					}else{
 						jQuery(\'#error\').removeClass(\'alert\').removeClass(\'alert-error\');
