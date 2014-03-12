@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-12 17:57:28
+<?php /* Smarty version 2.6.16, created on 2014-03-12 19:06:30
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 51, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 91, false),array('function', 'show_banner', 'ru/base.tpl', 115, false),array('block', 'block', 'ru/base.tpl', 97, false),)), $this); ?>

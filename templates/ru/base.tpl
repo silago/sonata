@@ -88,7 +88,8 @@
 
 	<div class="wrap">
 		<div class="menu">
-            {pages_menu_ul}
+
+            {show_menu menuid=2}
 		</div>	
 	</div>
     <div class="clear"> </div>
@@ -149,7 +150,7 @@
 		
                         {show_banner section=bottom4}
         <!--
-        <span>Многоканльный:</span>	
+*/*/        <span>Многоканльный:</span>	
 		<p><strong>8 (3952)</strong> 505-818</p>
 
 		<span>Факс / бухгалтерия:</span>	

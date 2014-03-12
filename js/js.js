@@ -20,9 +20,18 @@ $('document').ready( function()
         }
        
     });
+/*
+    $('ul.main-menu li').each(function()
+        {   
+            if ($(this).children('ul').length!=0)
+            $(this).children('a').click(function(e){
+                e.preventDefault();
+                $(this).parent().children('ul').toggle();});
+            });
 
+        });
+*/
 
-});
 
 
 function deleteFromCart(id) {
