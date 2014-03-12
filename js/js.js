@@ -144,8 +144,9 @@ function registergo(id){//alert(1);
                 }
                 else
                 {   
-
-					document.location='/';
+                    if (typeof(data.goto)!='undefined')
+					    document.location=data.goto;
+                    else document.location = '/';
                 }
                     // alert(data);
                 console.log(data.length)
@@ -173,11 +174,11 @@ function registergo(id){//alert(1);
 		
         function recount(obj,q)
             {
-            
+            if (q > 0) { 
 			var ed = parseFloat($(obj).closest('tr').find('.ed').html());
             var val = ed*q;
             $(obj).closest('tr').find('.summ').find('span').html(val.toFixed(2)+' руб.');
-            }
+            }}
 
 		function plus(obj,id)
         {   

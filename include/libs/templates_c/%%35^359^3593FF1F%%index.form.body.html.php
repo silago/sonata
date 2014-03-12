@@ -1,6 +1,22 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 17:03:42
+<?php /* Smarty version 2.6.16, created on 2014-03-12 17:56:45
          compiled from ru/modules/fb/index.form.body.html */ ?>
-	<h2>Калькулятор</h2>
+        <?php echo '
+        <script type="text/javascript">
+            
+            error = '; ?>
+'<?php echo $this->_tpl_vars['error']; ?>
+';<?php echo '
+            $(\'document\').ready(function()
+                    {
+                    html = \'<p class="alert-text"> Поле заполнено неверно <img width="3" height="10" alt="" src="/images/ln.png"></p>\'; 
+                    $(\'input[name=\'+error+\']\').addClass(\'alert-input\').after(html);
+                    });
+        </script>
+        
+        '; ?>
+
+
+        <h2>Калькулятор</h2>
                 <form action="?" method="post">
 				<div class="box-cont">
 					<div class="calc">
@@ -10,17 +26,17 @@
 							<h3>Основные данные</h3>
 							<div class="block">
 								<span>Имя <strong>*</strong></span>
-								<input  name="cname" type="text" placeholder="Антон Антоныч" />	
+								<input  name="cname" type="text" placeholder="" />	
 							</div>	
 
 							<div class="block">
 								<span>Телефон <strong>*</strong></span>
-								<input name="phone" type="text" placeholder="+7 (495) 456-24-23" />	
+								<input name="phone" type="text" placeholder="" />	
 							</div>
 
 							<div class="block">
 								<span>E-Mail <strong>*</strong></span>
-								<input name="email" type="text" placeholder="info@antinich.ru" class="alert-input" />	
+								<input name="email" type="text" placeholder="" class="" />	
 							</div>
 
 							<div class="block">

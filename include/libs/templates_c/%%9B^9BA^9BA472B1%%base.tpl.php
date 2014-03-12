@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-11 14:50:54
+<?php /* Smarty version 2.6.16, created on 2014-03-12 17:57:28
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 50, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 90, false),array('function', 'show_banner', 'ru/base.tpl', 114, false),array('block', 'block', 'ru/base.tpl', 96, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 51, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 91, false),array('function', 'show_banner', 'ru/base.tpl', 115, false),array('block', 'block', 'ru/base.tpl', 97, false),)), $this); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,6 +26,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 
 <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 <script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+<script type="text/javascript" src="/js/niceCheckbox.js"></script>
 <link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
 
 

@@ -125,8 +125,13 @@ class SecurityModule
 				if (!isset($_GET['token']))
 				{	#echo '1';
 					
-					
-				
+                    $sql->query('select * from shop_shop where email="'.$_POST['email'].'"',true);
+                    if ($sql->result==false)
+                    {
+                    	$this->pageTitle = 'Персональная информация';
+                        $this->content='Пользователь с данным email не найден';
+                        return false;
+                    }
 					
 					$htmlBody = " для востановления пароля перейдите по  <a href='".$this->appName."/forgotpass?token=".md5(md5($salt).md5($_POST['email']))."&mail=".$_POST['email']."&url=".urlencode($_SESSION['HTTP_REFERER'])."'> Cсылке </a>";	
 					$subject = 'Востановление пароля в интернет магазине "Универсам «Удача»"';		
@@ -381,7 +386,14 @@ class SecurityModule
 			mail($to, $sub, $htmlBody, $headers);
 		
 		}
-		#print_r($err);
+        #print_r($err)
+            if ($err['success']==true)
+            if (isset($_SESSION['goto']))
+                    {
+                        $url_ = $_SESSION['goto'];
+                        unset($_SESSION['goto']);
+                        $err['goto']=$url_;
+                    }
         echo json_encode($err);
     }
 
@@ -557,9 +569,7 @@ class SecurityModule
                 if (isset($_SESSION['goto']))
                     {
                         $url_ = $_SESSION['goto'];
-                        
-                        #  unset($_SESSION['goto']);
-                 #die($url_);
+                        unset($_SESSION['goto']);
                         header('Location: '.$url_);
                         die();
                     }

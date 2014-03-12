@@ -90,15 +90,16 @@ class fb {
 
 		// check post data
 		$postArray = slashArray($_POST);
-		$error     = false;
+        $error     = false;
+        $errorField = false;
 		$messageBody = "";
 		$checkEmail = "";
-
 						if (empty($postArray))
                         {
-                        
+
+
                             $template = clone $smarty;
-    	$this->data['content'] = $template->fetch(api::setTemplate('modules/fb/index.form.body.html'));		
+                            $this->data['content'] = $template->fetch(api::setTemplate('modules/fb/index.form.body.html'));		
 
 
                         
@@ -106,16 +107,44 @@ class fb {
         else 
         {
 
-						$from = 'admin';
-						$cname = $_POST['cname'];
-						if(empty($cname)) return "поле 'имя' не может быть пустым";
-						$fname = $_POST['fname'];
+                                                                                     
+                        
+                           
+                           
+                           
+                            if (empty($postArray['Площадь']))  $error='Площадь';			
+                            if (empty($postArray['email']))    $error='email';   			
+                            if (empty($postArray['phone']))    $error='phone';                  		                  
+                            if (empty($postArray['cname']))    $error='cname';       
+                            
+                            $cname = $_POST['cname'];
+                            $from = 'admin';
+
+                        #if(empty($cname)) return "поле 'имя' не может быть пустым";
+						$fname = @$_POST['fname'];
 						$email = $_POST['email'];
-						if(empty($email)) return "поле 'email' не может быть пустым";
+						#if(empty($email)) return "поле 'email' не может быть пустым";
 						$message = $_POST['message'];
-						if(empty($message)) return "поле 'сообщение' не может быть пустым";
+						#if(empty($message)) return "поле 'сообщение' не может быть пустым";
 						$theme = @$_POST['theme'];
         
+        
+        
+        
+        
+                            
+
+
+
+        if ($error)
+        {
+                            $template = clone $smarty;
+                            $template->assign('error',$error);
+                            $this->data['content'] = $template->fetch(api::setTemplate('modules/fb/index.form.body.html'));		
+                            return false; 
+        }
+
+
         foreach($postArray as $row):
             $message.="\r\n";
             $message.=$key.': ';
@@ -125,7 +154,8 @@ class fb {
 		$header  = "From: ".$from."\n";
 		$header .= "MIME-Version: 1.0\n";
 		$header .= "Content-Type: text/plain; charset=utf-8;\n";
-		//$header .= "Content-Transfer-Encoding: base64;\n";
+        
+        //$header .= "Content-Transfer-Encoding: base64;\n";
         
 
     

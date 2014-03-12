@@ -9,8 +9,7 @@
                 data: {form:form},
                 success: function(data){					
 					if(data.orderid && data.orderid.length > 0){
-                        alert('ok');
-						//document.location = '/order?order_id='+data.orderid;
+						document.location = '/order?order_id='+data.orderid;
 						jQuery(elem).find('button[type="submit"]').attr('disabled', 'disabled');
 					}else{
 						jQuery('#error').removeClass('alert').removeClass('alert-error');
@@ -272,7 +271,12 @@ $(document).ready( function() {
 
 $('ul.nav li:nth-child(2) a').click();
 	$('#description2').show();
-});
+
+    
+    
+$('.radio-block .niceRadio').first().addClass('radioChecked').click();
+    });
+
 </script>
 
 

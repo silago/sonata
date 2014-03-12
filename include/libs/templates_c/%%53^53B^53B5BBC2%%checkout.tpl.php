@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-11 15:49:06
+<?php /* Smarty version 2.6.16, created on 2014-03-12 03:37:03
          compiled from ru/modules/orders/index/checkout.tpl */ ?>
 <?php echo '
 <script>
@@ -62,7 +62,7 @@
                             </div>
 
 							<div class="radio-block">
-								<label><input onclick="$('.s2').hide(); $('.s1').show();"  class="niceRadio" name="sname" value="1" type="radio" /> Доставка</label>
+								<label><input onclick="$('.s2').hide(); $('.s1').show();"  class="niceRadio" name="sname" value="1" type="radio" checked=checked /> Доставка</label>
 								<label><input onclick="$('.s1').hide(); $('.s2').show();" class="niceRadio" name="sname" value="2" type="radio" /> Самовывоз</label>	
 							</div>
 
@@ -294,7 +294,12 @@ $(document).ready( function() {
 
 $(\'ul.nav li:nth-child(2) a\').click();
 	$(\'#description2\').show();
-});
+
+    
+    
+$(\'.radio-block .niceRadio\').first().addClass(\'radioChecked\').click();
+    });
+
 </script>
 
 

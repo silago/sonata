@@ -21,6 +21,7 @@
 
 <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 <script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+<script type="text/javascript" src="/js/niceCheckbox.js"></script>
 <link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
 
 
