@@ -2,8 +2,7 @@
 
 
 .menu ul li:hover ul {display:block!important;}
-
-
+input.change-pass:disabled {color:gray;}
 
 #error {color:red; margin-bottom:20px;}
 .menu-left ul ul {display:none!important;}

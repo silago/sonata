@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-12 19:06:30
+<?php /* Smarty version 2.6.16, created on 2014-03-12 19:34:56
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 51, false),array('function', 'pages_menu_ul', 'ru/base.tpl', 91, false),array('function', 'show_banner', 'ru/base.tpl', 115, false),array('block', 'block', 'ru/base.tpl', 97, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 51, false),array('function', 'show_menu', 'ru/base.tpl', 92, false),array('function', 'show_banner', 'ru/base.tpl', 116, false),array('block', 'block', 'ru/base.tpl', 98, false),)), $this); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -95,7 +95,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
 
 	<div class="wrap">
 		<div class="menu">
-            <?php echo smarty_function_pages_menu_ul(array(), $this);?>
+
+            <?php echo smarty_function_show_menu(array('menuid' => 2), $this);?>
 
 		</div>	
 	</div>
@@ -162,7 +163,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 
                         <?php echo smarty_function_show_banner(array('section' => 'bottom4'), $this);?>
 
         <!--
-        <span>Многоканльный:</span>	
+*/*/        <span>Многоканльный:</span>	
 		<p><strong>8 (3952)</strong> 505-818</p>
 
 		<span>Факс / бухгалтерия:</span>	

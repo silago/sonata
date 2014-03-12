@@ -80,26 +80,40 @@
 								</div>
                                 
                         		<div class="box">
+                                    {literal}
 									<p>Смена пароля</p>
-                                	<input type="hidden" name="passchange" id="passchange" value="{$passchange}">
+                                	<script type="text/javascript">
+                                    pone = false;
+                                    ptwo = false;
+                                    pthree = false;
+                                    function pcheck()
+                                    {
+                                    if (pone && ptwo && pthree)
+                                        $('.change-pass').removeAttr('disabled');
+                                    else
+                                        $('.change-pass').attr('disabled','disabled');
+                                    }
+                                    </script>
+                                    
+                                    <input  type="hidden" name="passchange" id="passchange" value="{$passchange}">
                         
                                     <div class="block">
 										<span>Старый пароль</span>	
-										<input type="password" name="oldpass" placeholder="********" />
+										<input onchange="if ($(this).val()!='') pone=true; else pone=false; pcheck();" type="password" name="oldpass" placeholder="********" />
 									</div>
 
 
 									<div class="block">
 										<span>Новый пароль</span>	
-										<input type="password" name="newpass" placeholder="********" />
+										<input onchange="if ($(this).val()!='') ptwo=true; else ptwo=false; pcheck();" type="password" name="newpass" placeholder="********" />
 									</div>
 
 									<div class="block">
 										<span>Повторить пароль</span>	
-										<input type="password" name="newpassconfirm" placeholder="********" />
+										<input onchange="if ($(this).val()!='') pthree=true; else pthree=false; pcheck();" type="password" name="newpassconfirm" placeholder="********" />
 									</div>
-
-									<input type="submit" value="Сменить пароль" class="change-pass" />	
+                                    {/literal}
+									<input disabled=disabled type="submit" value="Сменить пароль" class="change-pass" />	
 								</div>
 
                                

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-10 23:44:06
+<?php /* Smarty version 2.6.16, created on 2014-03-12 19:38:14
          compiled from ru/modules/security/index/cabinet.form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'show_menu', 'ru/modules/security/index/cabinet.form.tpl', 15, false),)), $this); ?>
@@ -74,8 +74,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'show_menu',
 
 									<div class="block">
 										<span>Имя</span>	
-										<input value="<?php echo $this->_tpl_vars['name']; ?>
- <?php echo $this->_tpl_vars['surname']; ?>
+										<input value="<?php echo $this->_tpl_vars['surname']; ?>
+ <?php echo $this->_tpl_vars['name']; ?>
  <?php echo $this->_tpl_vars['patronymic']; ?>
 " name="name" type="text"/>
 									</div>
@@ -94,27 +94,41 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'show_menu',
 								</div>
                                 
                         		<div class="box">
+                                    <?php echo '
 									<p>Смена пароля</p>
-                                	<input type="hidden" name="passchange" id="passchange" value="<?php echo $this->_tpl_vars['passchange']; ?>
-">
+                                	<script type="text/javascript">
+                                    pone = false;
+                                    ptwo = false;
+                                    pthree = false;
+                                    function pcheck()
+                                    {
+                                    if (pone && ptwo && pthree)
+                                        $(\'.change-pass\').removeAttr(\'disabled\');
+                                    else
+                                        $(\'.change-pass\').attr(\'disabled\',\'disabled\');
+                                    }
+                                    </script>
+                                    
+                                    <input  type="hidden" name="passchange" id="passchange" value="{$passchange}">
                         
                                     <div class="block">
 										<span>Старый пароль</span>	
-										<input type="password" name="oldpass" placeholder="********" />
+										<input onchange="if ($(this).val()!=\'\') pone=true; else pone=false; pcheck();" type="password" name="oldpass" placeholder="********" />
 									</div>
 
 
 									<div class="block">
 										<span>Новый пароль</span>	
-										<input type="password" name="newpass" placeholder="********" />
+										<input onchange="if ($(this).val()!=\'\') ptwo=true; else ptwo=false; pcheck();" type="password" name="newpass" placeholder="********" />
 									</div>
 
 									<div class="block">
 										<span>Повторить пароль</span>	
-										<input type="password" name="newpassconfirm" placeholder="********" />
+										<input onchange="if ($(this).val()!=\'\') pthree=true; else pthree=false; pcheck();" type="password" name="newpassconfirm" placeholder="********" />
 									</div>
+                                    '; ?>
 
-									<input type="submit" value="Сменить пароль" class="change-pass" />	
+									<input disabled=disabled type="submit" value="Сменить пароль" class="change-pass" />	
 								</div>
 
                                
