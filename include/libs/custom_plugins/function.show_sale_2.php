@@ -8,7 +8,7 @@ function smarty_function_show_sale_2($params,&$smarty)
 	left join shop_prices on shop_items.item_id = shop_prices.item_id
 	where 1 and is_hit = 1
 	group by shop_items.id
-	order by rand() limit 2 
+	order by rand() limit 12
 	");
 
     return smarty_function_show_sale_2_html($sql->getList());    
