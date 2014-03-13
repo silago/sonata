@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-03 16:03:14
+<?php /* Smarty version 2.6.16, created on 2014-03-13 15:31:58
          compiled from ru/modules/page/admin/edit.page.html */ ?>
 <div id="info">
     <ul class="breadcrumb">
@@ -53,7 +53,7 @@
                     <label class="control-label" for="url"><strong>Адрес страницы (uri):</strong></label>
                     <div class="controls">
                         <input type="text" name="uri" value="<?php echo $this->_tpl_vars['uri']; ?>
-" id="url" style="width:99%" maxlength="255" readonly>
+" id="url" style="width:99%" maxlength="255">
                     </div>
                 </div>
             </div>
@@ -98,6 +98,16 @@
 
 			</div>
 		</div>
+
+
+		<div class="row">
+			<div class="span12">
+			<center><strong>Краткое описание страницы:</strong></center></br>
+			<?php echo $this->_tpl_vars['fckFormText2']; ?>
+
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="span12">&nbsp;</div>
 		</div>

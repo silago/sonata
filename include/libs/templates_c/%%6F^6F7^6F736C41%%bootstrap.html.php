@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-11 15:47:52
+<?php /* Smarty version 2.6.16, created on 2014-03-13 15:31:55
          compiled from ru/bootstrap.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'api_func', 'ru/bootstrap.html', 736, false),)), $this); ?>
@@ -674,7 +674,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'api_func', 
 					});
 
 
-					/*$(\'input.position.span1\').change(function(){
+					$(\'input.position.span1\').change(function(){
 						var value = $(this).val();
 						var grpid = $(this).attr(\'rel\');
 						if(!value.match(\'^[0-9]+$\')){
@@ -685,7 +685,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'api_func', 
 							$(\'form#grplist\').find(\'button#savepos\').remove();
 							$(\'form#grplist\').append(\'<center><button type="submit" id="savepos" class="btn btn-success" style="margin-top:-145px;">Сохранить</button></center>\');
 						}
-					}); */
+					});
 
 					$("#tree").treeTable({
 						initialState: \'collapsed\',

@@ -267,7 +267,8 @@ class page  {
 										`mk` = '".$this->postArray['mk']."',
 										`pageTitle` = '".$this->postArray['pageTitle']."',
 										`onmain` = '".$this->postArray['onmain']."',
-										`shorttext` = '".$this->postArray['shorttext']."'
+										`shorttext` = '".$this->postArray['shorttext']."',
+										`uri` = '".$this->postArray['uri']."'
                                         
                                         WHERE
 										`id` = '".intval($this->postArray['pageId'])."'
@@ -279,7 +280,7 @@ class page  {
 
 
 	message($admLng['page']." &laquo;".$this->postArray['title']."&raquo; ".$admLng['editOk'], "", "/admin/page/index.php");
-
+    $this->installModule();
 	}
 
 	public function posChange(){
