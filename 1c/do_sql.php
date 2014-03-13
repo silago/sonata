@@ -50,13 +50,13 @@ if (true)
   				$crt_table = mysql_query("CREATE TABLE IF NOT EXISTS `shop_groups_temp` (
   										`id` int(10) unsigned NOT NULL AUTO_INCREMENT,	`group_id` tinytext NOT NULL, `parent_group_id` tinytext NOT NULL,
   										`name` tinytext NOT NULL, `image` tinytext NOT NULL, `thumb` tinytext NOT NULL,	`uri` tinytext NOT NULL,
-  										`description` text NOT NULL, `hidden` tinyint(1) NOT NULL, `position` int(10) NOT NULL,
+  										`description` text NOT NULL, `status` set('main','hidden') NOT NULL, `position` int(10) NOT NULL,
   										`md` tinytext NOT NULL,	`mk` tinytext NOT NULL,
  										`title` tinytext NOT NULL, PRIMARY KEY (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
  				$crt_table = mysql_query("CREATE TABLE IF NOT EXISTS `shop_groups2` (
   										`id` int(10) unsigned NOT NULL AUTO_INCREMENT,	`group_id` tinytext NOT NULL, `parent_group_id` tinytext NOT NULL,
   										`name` tinytext NOT NULL, `image` tinytext NOT NULL, `thumb` tinytext NOT NULL,	`uri` tinytext NOT NULL,
-  										`description` text NOT NULL, `hidden` tinyint(1) NOT NULL, `position` int(10) NOT NULL,
+  										`description` text NOT NULL, `status` set('main','hidden') NOT NULL, `position` int(10) NOT NULL,
   										`md` tinytext NOT NULL,	`mk` tinytext NOT NULL,
  										`title` tinytext NOT NULL, PRIMARY KEY (`group_id`(255)),KEY `id` (`id`)) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
  			 }
@@ -78,9 +78,9 @@ if (true)
              // echo mysql_error();
 			  if ($isupdate<>'true')
 			 	{
-			  		$query = mysql_query("INSERT INTO shop_groups2 (group_id, parent_group_id, name, image, thumb, description, hidden, position, md, mk, title)
+			  		$query = mysql_query("INSERT INTO shop_groups2 (group_id, parent_group_id, name, image, thumb, description, status, position, md, mk, title)
 			  					(SELECT shop_groups_temp.group_id, shop_groups_temp.parent_group_id, shop_groups_temp.name, shop_groups.image,
-			  					 shop_groups.thumb, shop_groups.description, shop_groups.hidden, shop_groups_temp.position, shop_groups.md, shop_groups.mk, shop_groups.title
+			  					 shop_groups.thumb, shop_groups.description, shop_groups.status, shop_groups_temp.position, shop_groups.md, shop_groups.mk, shop_groups.title
 			  					 FROM shop_groups_temp LEFT JOIN shop_groups ON shop_groups_temp.group_id = shop_groups.group_id)");
 			  		$query = mysql_query("DROP TABLE IF EXISTS shop_groups_temp");
 			  		$query = mysql_query("DROP TABLE IF EXISTS shop_groups");

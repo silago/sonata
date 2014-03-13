@@ -126,7 +126,7 @@ $.datepicker.setDefaults($.datepicker.regional['ru']);
 		</div>
 	</div>
     {block name=bottom}
-
+    
     {/block}
 
 	<!-- footer -->

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-06 13:30:20
+<?php /* Smarty version 2.6.16, created on 2014-03-13 15:02:13
          compiled from ru/index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru/index.html', 1, false),array('block', 'block', 'ru/index.html', 2, false),)), $this); ?>
@@ -8,7 +8,10 @@ smarty_core_load_plugins(array('plugins' => array(array('block', 'extends', 'ru/
 		<div class="about">
 			<a href="#"><img src="/images/about-banner.png" height="120" width="372" alt="" /></a>
 			<div class="about-info">
-				<h2>О нас</h2>	
+				<h2>О магазине</h2>	
+                <P>
+                    <strong> Также вы можете приобрести товары представленные в каталоге в нашем магазине по адресу ул. Декабрьских событий д. 50 </strong>
+                </P>
 				<p>В наше время сложно  чем-то удивить. Много придумано и изобретено,  но человеческие отношения, сервис, отзывчивость и взаимопомощь всегда и во все времена востребованы в человеческом обществе.  Поэтому главной целью нашей компании  является создание благоприятных условий для долгосрочных.</p>
 			</div>	
 		</div>	
