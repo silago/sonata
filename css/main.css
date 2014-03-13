@@ -1,5 +1,6 @@
 /* reset */
 
+.sale-block .button {margin-left:20px; position:absolute; bottom:10px;}
 
 .menu ul li:hover ul {display:block!important;}
 input.change-pass:disabled {color:gray;}

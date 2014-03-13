@@ -20,7 +20,7 @@ function smarty_function_show_serv_html($items)
 					
 							<p><a href="/'.$row['uri'].'"><img width="142" height="" alt="" src="/upload/thumbnails/'.$row['image'].'"></a>
 							</p>
-								<a href="/'.$row['uri'].'">'.$row['name'].'</a>	
+								<a href="/'.$row['uri'].'">'.$row['title'].'</a>	
 						</div>';
 				endforeach;
 				return $html;
