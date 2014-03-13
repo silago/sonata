@@ -18,7 +18,7 @@ function smarty_function_show_serv_html($items)
 				//else $row['filename']='/userfiles/catalog/1cbitrix/'.$row['filename'];
 				$html.='<div class="serv-block">
 					
-							<p><a href="/'.$row['uri'].'"><img width="142" height="" alt="" src="/userfiles/'.$row['image'].'"></a>
+							<p><a href="/'.$row['uri'].'"><img width="62" height="" alt="" src="/userfiles/'.$row['image'].'"></a>
 							</p>
 								<a href="/'.$row['uri'].'">'.$row['title'].'</a>	
 						</div>';
