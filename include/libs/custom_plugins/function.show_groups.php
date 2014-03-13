@@ -2,7 +2,7 @@
 
 function smarty_function_show_groups($params,&$smarty)
 {	global $sql;
-	$sql->query("select * from shop_groups where `parent_group_id` = '0'");
+	$sql->query("select * from shop_groups where `parent_group_id` = '0' order by position");
 	
 
     return smarty_function_show_groups_html($sql->getList());    
