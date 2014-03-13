@@ -71,8 +71,8 @@ class page  {
             ($filename = $image->resizeEx(
                                            $_FILES['filename']['tmp_name'],
                                            $image_name,     array('userfiles/',
-                                                                  58,
-                                                                  68
+                                                                  73,
+                                                                  85
                                                                  ),
                                            true,
                                            false,
@@ -107,7 +107,8 @@ class page  {
 											`pageTitle`,
 											`position`,
                                             `image`,
-                                            `onmain`
+                                            `onmain`,
+                                            `shorttext`
 											) values (
 														'".$this->postArray['ownerId']."',
 														'".$this->postArray['title']."',
@@ -120,7 +121,8 @@ class page  {
 														'".$this->postArray['pageTitle']."',
 														'".$position."',
 														'".$this->postArray["image"]."',
-														'".$this->postArray["onmain"]."'
+														'".$this->postArray["onmain"]."',
+														'".$this->postArray["shorttext"]."'
                                                         )");
 
         api::routerUpdate('page', 'group', null, $this->postArray['uri'], 'add');
@@ -199,7 +201,7 @@ class page  {
 	public function editPage($id, $dataArray=array()){
 		global $sql, $smarty;
 
-        $sql->query("SELECT `title`, `uri`, `template`, `redirect`, `md`, `mk`, `ownerId`, `text`, `pageTitle`, `image`, `onmain` FROM #__#pages WHERE `id` = '".$id."'", true);
+        $sql->query("SELECT `title`, `uri`, `template`, `redirect`, `md`, `mk`, `ownerId`, `text`, `pageTitle`, `image`, `onmain`, `shorttext` FROM #__#pages WHERE `id` = '".$id."'", true);
         if ($sql->num_Rows() == 0) {
             page404();
         }
@@ -224,8 +226,17 @@ class page  {
         $editorForm->Height = 450;
         $textForm=$editorForm->CreateHtml();
 
+
+        $editorForm2 = new FCKeditor('shorttext') ;
+        $editorForm2->Value = isset ($dataArray['shorttext']) ? $dataArray['shorttext'] : $sql->result['shorttext'] ;
+        $editorForm2->Height = 450;
+        $textForm2=$editorForm2->CreateHtml();
+
+
+
         $smarty->assign("selectOwnerPage",	$this->genSelectOwnerPage($sql->result['ownerId'], $id));
         $smarty->assign("fckFormText",		$textForm);
+        $smarty->assign("fckFormText2",		$textForm2);
         $smarty->assign("id", $id);
         $smarty->assign("title", $sql->result['title']);
 
@@ -255,7 +266,8 @@ class page  {
 										`md` = '".$this->postArray['md']."',
 										`mk` = '".$this->postArray['mk']."',
 										`pageTitle` = '".$this->postArray['pageTitle']."',
-										`onmain` = '".$this->postArray['onmain']."'
+										`onmain` = '".$this->postArray['onmain']."',
+										`shorttext` = '".$this->postArray['shorttext']."'
                                         
                                         WHERE
 										`id` = '".intval($this->postArray['pageId'])."'
