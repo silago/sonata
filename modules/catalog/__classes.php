@@ -139,7 +139,7 @@ class catalog extends mysql {
     $sql->query("select count(id) as c from shop_items where parent_group_id = '{$id}'",true);    $count = $sql->result['c'];
     
     $page       = ( isset($_GET['page']) ? $_GET['page'] : 1);
-    $order_by   = ( isset($_GET['order_by']) ? $_GET['order_by'] : 'name');
+    $order_by   = ( isset($_GET['order_by']) ? $_GET['order_by'] : 'value');
     $order_dir   = ( isset($_GET['order_dir']) ? $_GET['order_dir'] : 'ASC');
     
     $per_page   = ( isset($_GET['per_page']) ? $_GET['per_page'] : 10);
