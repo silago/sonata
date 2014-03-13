@@ -8,7 +8,9 @@ $('document').ready( function()
 	if( $('.ms').html().replace("\n",'').replace(" ","").length<4)
 		$('.ms').parent().hide();
 
+    
 
+    if ($('.auth-box').html()!=undefined)
 	if( $('.auth-box').html().replace("\n",'').replace(" ","").length<4)
 		$('.auth-box').parent().hide();
 
