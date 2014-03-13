@@ -279,9 +279,13 @@ class page  {
             $sql->query("UPDATE pages set `image` = '{$fname}' where id = '".intval($this->postArray['pageId'])."'");
 
 
-	message($admLng['page']." &laquo;".$this->postArray['title']."&raquo; ".$admLng['editOk'], "", "/admin/page/index.php");
-    $this->installModule();
-	}
+        api::routerUpdate('page', 'group', null, $this->postArray['uri'], 'add');
+
+   $this->installModule();
+message($admLng['page']." &laquo;".$this->postArray['title']."&raquo; ".$admLng['editOk'], "", "/admin/page/index.php");
+   
+	
+    }
 
 	public function posChange(){
         global $sql;
