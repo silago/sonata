@@ -1,3 +1,4 @@
+
 {extends template=ru/base.tpl}
     {block name=content}
     	<div class="box-container">
@@ -8,25 +9,6 @@
          			<div class="aut-box">
 						{$content}
 					</div>           
-                    {foreach from=$child item=item}
-                    
-                    <div class="sr-box">
-							
-                            <table>
-								<tr>
-									<td><a href="/{$item.uri}.html"><img src="/userfiles/{$item.image}" height="85" width="73" alt="" /></a></td>
-									<td>
-										<a href="/{$item.uri}.html">{$item.title}</a>
-									<p>
-                                        {$item.shorttext}
-                                    </p>
-                                    
-                                    
-                                    </td>
-								</tr>
-							</table>	
-						</div>
-                   {/foreach} 
                     </div>
 				<div class="banner-box">
 							<a href="#"><img src="images/banner.png" height="120" width="314" alt="" /></a>
