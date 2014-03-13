@@ -152,7 +152,7 @@ class fb {
             @$html.=(gettype($row)=='array') ? implode(',',$row) : $row;
         endforeach;
 
-		$header  = "From: ".$from."\n";
+		$header  = "From: ".$this->fromEmail."\n";
 		$header .= "MIME-Version: 1.0\n";
 		$header .= "Content-Type: text/plain; charset=utf-8;\n";
         
@@ -162,8 +162,8 @@ class fb {
     
 
 		//$body = base64_encode($messageBody);
-		foreach ($this->toArray as $row)
-			mail($row, "Письмо с сайта ".$from, $cname."\n".$message.' '.$email, $header);
+		#foreach ($this->toArray as $row)
+			mail($this->to, "Письмо с сайта ".$this->fromEmail, $cname."\n".$message.' '.$email, $header);
         
         $this->data['content'] = "<div class='box-cont'><div style='padding:50px;'><h1>
             Ваша заявка успешно отправлена.

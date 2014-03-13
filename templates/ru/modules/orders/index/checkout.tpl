@@ -35,6 +35,9 @@
 
 				<div class="box-cont">
 					<div class="serv-form">
+                        <div id="error" class="block">
+
+                        </div>
 						<div class="block">
 								<span>Имя <strong>*</strong></span>
 								<input type="text" value="{$userdata.name} {$userdata.surname}" name="order_name" placeholder="Антон Антоныч" />	

@@ -54,6 +54,7 @@ $.datepicker.setDefaults($.datepicker.regional['ru']);
     $('.fancybox').fancybox();
 
     $( "#datepicker" ).datepicker({
+      startDate: "+0d",
       showOn: "button",
       buttonImage: "images/calendare.png",
       buttonImageOnly: true

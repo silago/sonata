@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-12 23:50:37
+<?php /* Smarty version 2.6.16, created on 2014-03-13 17:09:33
          compiled from ru/modules/orders/index/checkout.tpl */ ?>
 <?php echo '
 <script>
@@ -38,6 +38,9 @@
 
 				<div class="box-cont">
 					<div class="serv-form">
+                        <div id="error" class="block">
+
+                        </div>
 						<div class="block">
 								<span>Имя <strong>*</strong></span>
 								<input type="text" value="<?php echo $this->_tpl_vars['userdata']['name']; ?>

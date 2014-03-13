@@ -1338,7 +1338,6 @@ class Orders
 				#echo $htmlBody;
 			mail($to, $sub, $htmlBody, $headers);			
 		}
-		
 		echo (json_encode($error));
 	}
 
