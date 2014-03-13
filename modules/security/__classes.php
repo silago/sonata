@@ -113,7 +113,9 @@ class SecurityModule
 		#if (!isset($_POST['email'])) echo 1;	
 			if ((!isset($_POST['email'])) && (!isset($_GET['token'])))
 				{
-				if (!isset($_SESSION['HTTP_REFERER']))	$_SESSION['HTTP_REFERER']=$_SERVER['HTTP_REFERER'];
+				if (!isset($_SESSION['HTTP_REFERER']))
+                    $_SESSION['HTTP_REFERER']=
+                        @$_SERVER['HTTP_REFERER'];
 				
 		
 				$this->tpl->assign('step', '1');

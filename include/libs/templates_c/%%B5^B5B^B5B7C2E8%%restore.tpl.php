@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-10 03:37:16
+<?php /* Smarty version 2.6.16, created on 2014-03-13 15:14:04
          compiled from ru/modules/security/index/restore.tpl */ ?>
 <div style="padding:20px;" class="box-cont">
 <?php if ($this->_tpl_vars['step'] == 1): ?>
@@ -9,7 +9,7 @@
 <p> Просто введите ваш e-mail адрес в поле ниже и мы отправим вам дальнешие инструкции для востановления пароля. </p>
 
 <br>
-<input style="border:0px; border-radius:5px; padding:10px; width:500px; height:21px;" type="textfield" name="email" placeholder="email" class="reg-input">
+<input style="border:0px; border-radius:5px; padding:20px; width:500px; height:21px;" type="textfield" name="email" placeholder="email" class="reg-input">
 <input type="submit" style="width:300px;" class="reg-submit" style="display:inline-block;" name="submit" value="Отправить данные">
 
 </form>
