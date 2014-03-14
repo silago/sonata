@@ -1,6 +1,7 @@
 					<div class="product">
 						<h2>{$pageTitle}</h2>	
-						<div class="sorting-box">
+                        {if $p.total>0}
+                        <div class="sorting-box">
 
 						{if $p.total/$p.per_page>1}
 							<ul>
@@ -51,6 +52,7 @@
 								 </select>
 							</div>
 						</div>
+{/if}
                         {if $items}
                         {foreach from=$items item=item key=key} 
 						<div class="pr-box">
@@ -76,7 +78,7 @@
                             <p> Данный раздел находится в стадии наполнения </p>
                         </div>
                         {/if}
-                        
+                        {if $p.total>0}                   
 						<div class="sorting-box">
 							
                     	{if $p.total/$p.per_page>1}
@@ -128,5 +130,5 @@
 								 </select>
 							</div>
 						</div>
-                         
+{/if}
                     </div>

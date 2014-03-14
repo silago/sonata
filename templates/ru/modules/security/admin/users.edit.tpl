@@ -34,7 +34,6 @@
 		<input type="text" name="name" id="inputName" value="{$i.name}">
     </div>
   </div>
-  
   <div class="control-group">
     <label class="control-label" for="inputPhone">Телефон</label>
     <div class="controls">

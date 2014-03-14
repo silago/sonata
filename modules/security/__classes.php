@@ -949,10 +949,11 @@ class SecurityModule
 	
 	if ($edit===true) 
 	$this->tpl->assign('edit', 'true');	
-	
 	$data['data'] = $this->model->getUserList($id);
 	$this->tpl->assign('data', $data['data']);
-	
+
+
+
 	$template = $this->tpl->fetch(api::setTemplate('modules/security/admin/users.edit.tpl'));
     $this->content=$template;
 	}

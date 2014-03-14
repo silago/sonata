@@ -21,7 +21,6 @@ class SecurityModel
 	
 	function getUserList($id=false)
 	{	global  $sql;		
-			
 		
 		if (!$id)
 			$where = '1';
