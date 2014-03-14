@@ -1,6 +1,6 @@
 					<div class="product">
 						<h2>{$pageTitle}</h2>	
-                        {if $p.total>0}
+                        {if $items}
                         <div class="sorting-box">
 
 						{if $p.total/$p.per_page>1}
@@ -78,7 +78,7 @@
                             <p> Данный раздел находится в стадии наполнения </p>
                         </div>
                         {/if}
-                        {if $p.total>0}                   
+                        {if $items}                   
 						<div class="sorting-box">
 							
                     	{if $p.total/$p.per_page>1}
