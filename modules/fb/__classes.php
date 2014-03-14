@@ -145,7 +145,12 @@ class fb {
                             return false; 
         }
 
-            
+        $message = '';
+        $message.='Имя: '.$postArray['cname']."\n"; unset($postArray['cname']);
+        $message.='Телефон: '.$postArray['phone']."\n"; unset($postArray['phone']);
+        $message.='Email: '.$postArray['email']."\n"; unset($postArray['email']);
+        $message.='Комментарий: '.$postArray['message']."\n"; unset($postArray['message']);
+        $message."\n";
         foreach($postArray as $key=>$row):
             $message.="\r\n";
             $message.=$key.': ';
