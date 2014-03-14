@@ -54,9 +54,11 @@ $.datepicker.setDefaults($.datepicker.regional['ru']);
     $('.fancybox').fancybox();
 
     $( "#datepicker" ).datepicker({
-      startDate: "+0d",
+      minDate: (new Date(new Date().getTime()+24 * 60 * 60 * 1000)),
+      //minDate: "dateTomorrow",
+      
       showOn: "button",
-      buttonImage: "images/calendare.png",
+      buttonImage: "/images/calendare.png",
       buttonImageOnly: true
     });
   });

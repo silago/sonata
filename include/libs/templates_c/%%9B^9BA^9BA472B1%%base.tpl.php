@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-13 17:14:53
+<?php /* Smarty version 2.6.16, created on 2014-03-14 16:39:39
          compiled from ru/base.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 75, false),array('function', 'show_menu', 'ru/base.tpl', 116, false),array('function', 'show_banner', 'ru/base.tpl', 140, false),array('block', 'block', 'ru/base.tpl', 122, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'top_form', 'ru/base.tpl', 77, false),array('function', 'show_menu', 'ru/base.tpl', 118, false),array('function', 'show_banner', 'ru/base.tpl', 142, false),array('block', 'block', 'ru/base.tpl', 124, false),)), $this); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -59,9 +59,11 @@ $.datepicker.setDefaults($.datepicker.regional[\'ru\']);
     $(\'.fancybox\').fancybox();
 
     $( "#datepicker" ).datepicker({
-      startDate: "+0d",
+      minDate: (new Date(new Date().getTime()+24 * 60 * 60 * 1000)),
+      //minDate: "dateTomorrow",
+      
       showOn: "button",
-      buttonImage: "images/calendare.png",
+      buttonImage: "/images/calendare.png",
       buttonImageOnly: true
     });
   });

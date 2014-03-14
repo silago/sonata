@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-13 17:09:33
+<?php /* Smarty version 2.6.16, created on 2014-03-14 16:23:12
          compiled from ru/modules/orders/index/checkout.tpl */ ?>
 <?php echo '
 <script>

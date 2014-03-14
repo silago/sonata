@@ -1575,12 +1575,19 @@ class catalog extends mysql {
             }
 
             $smarty->assign('items', $output);
+            
+
             $template = $smarty->fetch(api::setTemplate($this->tDir . "index/show.group.body.html"));
             $this->data['content'] = $template;
+            
             $this->data['template'] = 'catalog.html';//$this->groupsTemplate;			
 			$this->data['sortBox'] = $this->buildSortBox ($count, $pagination);
 			$this->data['bottomPagination'] = $pagination;
 			$this->data['filterItemsChecked'] = $filterItemsChecked;
+           
+           
+            if (0==count($output))
+            $this->data['content'] = '<div style="margin-top:-20px; padding:15px;" class="pr-box"><div class="pr-info">По вашему запросу ничего не найдено</div></div>';
             return true;
 			
 			
@@ -1588,7 +1595,8 @@ class catalog extends mysql {
 			
 			$this->data['content'] = "catalogSearch";
 			$this->data['template'] = "inner.html";
-		} else {
+        } else {
+            $this->data['content'] = '<div class="pr-box"><div class="pr-info">По вашему запросу ничего не найдено</div></div>';
 			$this->indexShowGroup ('group1');
 			$this->data['template'] = "catalog.html";
 		}
