@@ -6,9 +6,7 @@
 	<tr>
 		<th>	id			</th>
 		<th>	Email		</th>
-		<th>	Имя					</th>
-		<th>	Фамилия				</th>
-		<th>	Отчество			</th>
+		<th>	ФИО					</th>
 		<th>	Дата регистрации	</th>
 		<th>		</th>
 		<th>		</th>
@@ -18,8 +16,6 @@
 		<td>	{$i.id}	</td>
 		<td>	{$i.email}	</td>
 		<td>	{$i.name}	</td>
-		<td>	{$i.surname}	</td>
-		<td>	{$i.patronymic}	</td>
 		<td>	{$i.reg_date}	</td>
 		<td>  <a  onclick='	if (!confirm("Удалить пользователя")) return false; ' href="/admin/security/userDelete.php/{$i.id}">	Удалить	</a>	</td>
 		<td>  <a href="/admin/security/userEdit.php/{$i.id}">Редактировать</a>	</td>

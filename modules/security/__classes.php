@@ -207,8 +207,8 @@ class SecurityModule
         
         $smarty->assign('count', $count);
         $smarty->assign('name', Security::$userData['name']);
-        $smarty->assign('surname', Security::$userData['surname']);
-        $smarty->assign('patronymic', Security::$userData['patronymic']);
+        $smarty->assign('surname', @Security::$userData['surname']);
+        $smarty->assign('patronymic', @Security::$userData['patronymic']);
 
         $template = $smarty->fetch(api::setTemplate('modules/security/ajax.cabinet.div.html'));
         echo $template;
@@ -272,13 +272,15 @@ class SecurityModule
         #}
           
         $fio_ = $data1['surname'];
-        $fio =  explode(' ',$data1['surname']);
-        $data1['surname'] = @$fio[0]; 
-        $data1['name'] = @$fio[1]; 
-        $data1['patronymic'] = @$fio[2]; 
+        $data1['name'] = $data1['surname'];
+        unset($data1['surname']);
+        #$fio =  explode(' ',$data1['surname']);
+        #$data1['surname'] = @$fio[0]; 
+        #$data1['name'] = @$fio[1]; 
+        #$data1['patronymic'] = @$fio[2]; 
 
 		if(empty($fio_) && !preg_match('/^[a-zа-я\ ]+$/ui', $fio_)){
-			$err['surname'] = 'Неверно заполнено поле Ф.И.О.';
+			$err['name'] = 'Неверно заполнено поле Ф.И.О.';
 		}	
 		
 		if(empty($data1['phone']) || !preg_match("/^[0-9]{4,13}+$/", $data1['phone'])){
@@ -349,7 +351,7 @@ class SecurityModule
             $_SESSION['info'] = array("area" => 'public', "title" => 'Вы успешно зарегистрировались', "desc" => '', "uri" => '', "class" => 'alert-success',);
 
             $sql->query("INSERT INTO `#__#shop_users` (`email`, `password`, `name`, `surname`, `patronymic`, `reg_date`, `org`, `state`, `data`, `phone`)					                                VALUES
-			('" . $data1['email'] . "', '" . md5($data1['pass']) . "', '" . $data1['name'] . "', '" . $data1['surname'] . "', '" . $data1['patronymic'] . "', NOW(), '".$data1['org']."', '0', '".($dataArray)."', '".$data1['phone']."')");
+			('" . $data1['email'] . "', '" . md5($data1['pass']) . "', '" . $data1['name'] . "', '" . @$data1['surname'] . "', '" . @$data1['patronymic'] . "', NOW(), '".$data1['org']."', '0', '".($dataArray)."', '".$data1['phone']."')");
 
             /* Добавить услове если в настройках разрешена авторизация сразу после регистрации */
             $sql->query("SELECT `id` as 'id' FROM `#__#shop_users` WHERE `email` = '" . $data1['email'] . "' && `password` ='" . md5($data1['pass']) . "'", true);
@@ -697,10 +699,10 @@ class SecurityModule
         global $sql;
         $dataRet=array();
             
-        $fio = explode(' ',$this->postArray['name']);
-        $this->postArray['surname']=$fio[0];
+        #$fio = explode(' ',$this->postArray['name']);
+        #$this->postArray['surname']=$fio[0];
         $this->postArray['name']=$fio[1];
-        $this->postArray['patronymic']=$fio[2];
+        #$this->postArray['patronymic']=$fio[2];
 
 
 
@@ -763,7 +765,7 @@ class SecurityModule
 				
 				
 			
-            @$sql->query("UPDATE `#__#shop_users` SET `name` = '" . $this->postArray['name'] . "', `surname` = '" . $this->postArray['surname'] . "', `patronymic` = '" . $this->postArray['patronymic'] . "', `phone` = '" . $this->postArray['phone'] . "', `email` = '" . $this->postArray['email'] . "' , `addr` = '".$this->postArray['addr']."', `discount` = '".$this->postArray['discount']."' WHERE `id` = '" . $id . "'");
+            @$sql->query("UPDATE `#__#shop_users` SET `name` = '" . $this->postArray['name'] . "', `surname` = '" . @$this->postArray['surname'] . "', `patronymic` = '" . @$this->postArray['patronymic'] . "', `phone` = '" . $this->postArray['phone'] . "', `email` = '" . $this->postArray['email'] . "' , `addr` = '".$this->postArray['addr']."', `discount` = '".$this->postArray['discount']."' WHERE `id` = '" . $id . "'");
 
             if ($this->postArray['passchange'] == 1){
                 $sql->query("UPDATE `#__#shop_users` SET `password` = '".md5($this->postArray['newpass'])."'");
@@ -821,7 +823,7 @@ class SecurityModule
         return $result;
     }
 
-    private function changeBaseData($name, $surname, $patronymic)
+    private function changeBaseData($name, $surname='', $patronymic='')
     {
         $result = array();
         $post = $_POST;

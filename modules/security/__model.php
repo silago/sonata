@@ -29,8 +29,14 @@ class SecurityModel
 			$where = " `id` = {$id}  ";
 			
 		$sql->query("select * from shop_users where {$where} order by reg_date desc");         
-		$result = $sql->getList();   
-		
+		$r  = $sql->getList();   
+        foreach ($r as &$row):
+            
+            $row['data']=json_decode($row['data'],true);
+            $row['data']=@$row['data']['data'];
+
+        endforeach;
+        return $r;
 		# парсить ебическую строку data =\ это лучше к хуям снести
 		
 		#foreach ($result as &$item) 

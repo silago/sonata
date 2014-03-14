@@ -35,29 +35,30 @@
     </div>
   </div>
   
-    <div class="control-group">
-    <label class="control-label" for="inputSurname">Фамилия</label>
-    <div class="controls">
-		<input type="text" name="surname" id="inputSurname" value="{$i.surname}">
-    </div>
-  </div>
-  
-   <div class="control-group">
-    <label class="control-label" for="inputPatronymic">Отчество</label>
-    <div class="controls">
-		<input type="text" id="inputPatronymic" name="patronymic" value="{$i.patronymic}">
-    </div>
-  </div>
-  
-  
-  
   <div class="control-group">
     <label class="control-label" for="inputPhone">Телефон</label>
     <div class="controls">
 		<input type="text" name="phone"  id="inputPhone" value="{$i.phone}">
     </div>
   </div>
-  
+    
+    <div style=""  class="control-group">
+{if $i.org == 1} 
+    <table>
+        <tr><td colspan=2> Юридическое лицо </td></tr>
+        <tr><td> Название оргазинации:  </td><td> {$i.data.organization_name}</td> </tr>
+        <tr><td> ИНН:  </td>  <td> {$i.data.inn}</td>  </tr> 
+    </table>
+{else}
+<table>
+<tr>
+<td>Физическое лицо</td>
+</tr>
+</table>
+
+{/if}
+
+    </div>
   <div class="control-group">
     <div class="controls">
      

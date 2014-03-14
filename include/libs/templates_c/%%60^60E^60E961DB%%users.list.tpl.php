@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2013-08-01 17:15:59
+<?php /* Smarty version 2.6.16, created on 2014-03-14 17:59:06
          compiled from ru/modules/security/admin/users.list.tpl */ ?>
 
 
@@ -8,9 +8,7 @@
 	<tr>
 		<th>	id			</th>
 		<th>	Email		</th>
-		<th>	Имя					</th>
-		<th>	Фамилия				</th>
-		<th>	Отчество			</th>
+		<th>	ФИО					</th>
 		<th>	Дата регистрации	</th>
 		<th>		</th>
 		<th>		</th>
@@ -24,10 +22,6 @@
 		<td>	<?php echo $this->_tpl_vars['i']['email']; ?>
 	</td>
 		<td>	<?php echo $this->_tpl_vars['i']['name']; ?>
-	</td>
-		<td>	<?php echo $this->_tpl_vars['i']['surname']; ?>
-	</td>
-		<td>	<?php echo $this->_tpl_vars['i']['patronymic']; ?>
 	</td>
 		<td>	<?php echo $this->_tpl_vars['i']['reg_date']; ?>
 	</td>

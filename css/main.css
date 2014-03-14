@@ -1,5 +1,5 @@
 /* reset */
-
+.container-content {clear:left;}
 .sale-block .button {margin-left:20px!important; position:absolute; bottom:10px;}
 
 .menu ul li:hover ul {display:block!important;}

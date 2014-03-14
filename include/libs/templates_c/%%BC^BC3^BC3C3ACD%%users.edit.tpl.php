@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2013-10-30 15:37:02
+<?php /* Smarty version 2.6.16, created on 2014-03-14 17:59:04
          compiled from ru/modules/security/admin/users.edit.tpl */ ?>
 <?php echo '
 <style>
@@ -41,24 +41,6 @@
     </div>
   </div>
   
-    <div class="control-group">
-    <label class="control-label" for="inputSurname">Фамилия</label>
-    <div class="controls">
-		<input type="text" name="surname" id="inputSurname" value="<?php echo $this->_tpl_vars['i']['surname']; ?>
-">
-    </div>
-  </div>
-  
-   <div class="control-group">
-    <label class="control-label" for="inputPatronymic">Отчество</label>
-    <div class="controls">
-		<input type="text" id="inputPatronymic" name="patronymic" value="<?php echo $this->_tpl_vars['i']['patronymic']; ?>
-">
-    </div>
-  </div>
-  
-  
-  
   <div class="control-group">
     <label class="control-label" for="inputPhone">Телефон</label>
     <div class="controls">
@@ -66,7 +48,26 @@
 ">
     </div>
   </div>
-  
+    
+    <div style=""  class="control-group">
+<?php if ($this->_tpl_vars['i']['org'] == 1): ?> 
+    <table>
+        <tr><td colspan=2> Юридическое лицо </td></tr>
+        <tr><td> Название оргазинации:  </td><td> <?php echo $this->_tpl_vars['i']['data']['organization_name']; ?>
+</td> </tr>
+        <tr><td> ИНН:  </td>  <td> <?php echo $this->_tpl_vars['i']['data']['inn']; ?>
+</td>  </tr> 
+    </table>
+<?php else: ?>
+<table>
+<tr>
+<td>Физическое лицо</td>
+</tr>
+</table>
+
+<?php endif; ?>
+
+    </div>
   <div class="control-group">
     <div class="controls">
      
