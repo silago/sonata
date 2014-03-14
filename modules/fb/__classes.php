@@ -149,7 +149,7 @@ class fb {
         foreach($postArray as $key=>$row):
             $message.="\r\n";
             $message.=$key.': ';
-            @$html.=(gettype($row)=='array') ? implode(',',$row) : $row;
+            $message.=(gettype($row)=='array') ? implode(',',$row) : $row;
         endforeach;
 
 		$header  = "From: ".$this->fromEmail."\n";
