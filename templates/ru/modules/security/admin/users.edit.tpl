@@ -42,23 +42,21 @@
     </div>
   </div>
     
-    <div style=""  class="control-group">
 {if $i.org == 1} 
-    <table>
-        <tr><td colspan=2> Юридическое лицо </td></tr>
-        <tr><td> Название оргазинации:  </td><td> {$i.data.organization_name}</td> </tr>
-        <tr><td> ИНН:  </td>  <td> {$i.data.inn}</td>  </tr> 
-    </table>
-{else}
-<table>
-<tr>
-<td>Физическое лицо</td>
-</tr>
-</table>
-
+    <div style=""  class="control-group">
+        <h4 class="controls">Юридическое лицо </h4>
+    </div>
+    <div style=""  class="control-group">
+        <label class="control-label">  Название оргазинации:  </label> <div class="controls">{$i.data.organization_name}</div>
+    </div>
+    <div style=""  class="control-group">
+        <label class="control-label"> ИНН:                    </label> <div class="controls"> {$i.data.inn}</div> 
+    </div>    
+{else} <div style=""  class="control-group">
+        <h4 class="controls">Физическое лицо </h4>
+    </div>
 {/if}
 
-    </div>
   <div class="control-group">
     <div class="controls">
      

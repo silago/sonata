@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.16, created on 2014-03-14 17:59:04
+<?php /* Smarty version 2.6.16, created on 2014-03-14 18:09:56
          compiled from ru/modules/security/admin/users.edit.tpl */ ?>
 <?php echo '
 <style>
@@ -49,25 +49,23 @@
     </div>
   </div>
     
-    <div style=""  class="control-group">
 <?php if ($this->_tpl_vars['i']['org'] == 1): ?> 
-    <table>
-        <tr><td colspan=2> Юридическое лицо </td></tr>
-        <tr><td> Название оргазинации:  </td><td> <?php echo $this->_tpl_vars['i']['data']['organization_name']; ?>
-</td> </tr>
-        <tr><td> ИНН:  </td>  <td> <?php echo $this->_tpl_vars['i']['data']['inn']; ?>
-</td>  </tr> 
-    </table>
-<?php else: ?>
-<table>
-<tr>
-<td>Физическое лицо</td>
-</tr>
-</table>
-
+    <div style=""  class="control-group">
+        <h4 class="controls">Юридическое лицо </h4>
+    </div>
+    <div style=""  class="control-group">
+        <label class="control-label">  Название оргазинации:  </label> <div class="controls"><?php echo $this->_tpl_vars['i']['data']['organization_name']; ?>
+</div>
+    </div>
+    <div style=""  class="control-group">
+        <label class="control-label"> ИНН:                    </label> <div class="controls"> <?php echo $this->_tpl_vars['i']['data']['inn']; ?>
+</div> 
+    </div>    
+<?php else: ?> <div style=""  class="control-group">
+        <h4 class="controls">Физическое лицо </h4>
+    </div>
 <?php endif; ?>
 
-    </div>
   <div class="control-group">
     <div class="controls">
      
